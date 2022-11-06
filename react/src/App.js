@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import SearchParams from './components/SearchParams'
 import SearchResults from './components/SearchResults'
+import Deck from './components/Deck'
 import CardContext from './CardContext';
 
 function App() {
@@ -29,13 +30,7 @@ function App() {
       </div>}
 
       {tab==='slide3' &&<div id="tab-three" class="tab-content">
-        <div class="search-header-container">
-          <h2 id="search-header">Card Deck</h2>
-            <section class="instructions">
-              <h6 class="instructions-text">Browse through and click on any card to remove it from your deck.</h6>
-            </section>
-        </div>
-        {/* <Deck /> */}
+        <Deck />
       </div>}
 
       <Footer />

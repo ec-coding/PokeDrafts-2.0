@@ -108,7 +108,7 @@ export default function SearchParams() {
                     <div class="basic-search row">
 
                         <section class="name-input search-input">
-                            <h3>Text</h3>
+                            <h3>Text Search</h3>
                             <ul class="type-input-div">
                                 <li class="text-search">
                                     <h6>Card Name</h6>
@@ -227,61 +227,12 @@ export default function SearchParams() {
                             </ul>
                         </section>
 
+                    </div>
 
-                        <div class="accordion accordion-container" id="accordionPanelsStayOpenExample">
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        Advanced Search
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-
-
-
-                                    <div class="accordion" id="accordionPanelsStayOpenExample">
-
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                                    Accordion Item #2
-                                                </button>
-                                            </h2>
-                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                                <div class="accordion-body">
-                                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                                    Accordion Item #3
-                                                </button>
-                                            </h2>
-                                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                                <div class="accordion-body">
-                                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-
-
-
-
+                    <div class="button-box">
+                        <div class="search-input hidden-box">
 
                         </div>
-
 
                         <section class="button-input">
                             <ul class="row">
@@ -294,7 +245,80 @@ export default function SearchParams() {
                             </ul>
                         </section>
                     </div>
-                    <div class="advanced-search">
+
+                    <div class="advanced-search row">
+
+                        <div class="accordion accordion-container " id="accordionPanelsStayOpenExample">
+
+                            <div class="accordion-item accordion-master">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button collapsed accordion-master-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        Advanced Search
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+
+
+
+                                    <div class="accordion accordion-inner" id="accordionPanelsStayOpenExample">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                    Rarity
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+
+                                                <ul class="accordion-body type-input-div">
+                                                    <li class="list-one-third">
+                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <label for=""> Common</label>
+                                                    </li>
+                                                    <li class="list-one-third">
+                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <label for=""> Uncommon</label>
+                                                    </li>
+                                                    <li class="list-one-third">
+                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <label for=""> Rare</label>
+                                                    </li>
+                                                    <li class="list-one-third">
+                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <label for=""> Rare Holo</label>
+                                                    </li>
+                                                    <li class="list-one-third">
+                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <label for=""> Promo</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                    Artist
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                                <ul class="accordion-body type-input-div">
+                                                    <li>
+                                                        <h6></h6>
+                                                        <input type="text" placeholder="Search by Artist..." />
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="search-input hidden-box"></div>
+
                     </div>
                 </div>
             </div>

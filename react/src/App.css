@@ -258,6 +258,7 @@ hr {
 }
 
 .attack-name {
+  font-weight: bold;
   flex: 1.2;
 }
 
@@ -354,6 +355,55 @@ hr {
   #dedede 84%,
   #caa1de 93%,
   #dea1ca)
+}
+
+.modal-button-container {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.modal-button-container button {
+  margin: 0 5px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ffffff;
+  filter: drop-shadow(2px 2px 2px black);
+  color: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 5px 30px;
+  border: 2px solid rgba(145, 145, 145, 0.35);
+  transition: 0.2s;
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
+  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+  background-image: linear-gradient(-72deg,
+  #dedede,
+  #ffffff 16%,
+  #dedede 21%,
+  #ffffff 24%,
+  #b4b4b4 27%,
+  #dedede 36%,
+  #ffffff 45%,
+  #ffffff 60%,
+  #dedede 72%,
+  #ffffff 80%,
+  #dedede 84%,
+  #a1a1a1);
+}
+
+.modal-button-container button:hover {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.modal-button-container button:active {
+  transform: scale(0.9);
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.modal-button-container button a {
+  color: rgba(0, 0, 0, 0.75) !important;
+  text-decoration: none;
 }
 
 /* MODAL COLORS */
@@ -573,11 +623,17 @@ ul {
   pointer-events: none;
 }
 
+.button-box {
+  display: flex;
+  justify-content: center;
+}
+
 .button-input {
   width: 600px;
-  justify-content: right;
+  justify-content: center;
   display: flex;
   padding: 0 5px;
+  margin: 0px 5px;
 }
 
 .button-input ul {
@@ -625,11 +681,26 @@ ul {
   transform: scale(0.9);
 }
 
+.search-container {
+  margin: 0 auto;
+}
+
 .search-container .basic-search {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+
+.search-container .advanced-search {
+  margin-top: -8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden-box {
+  visibility: hidden;
 }
 
 .search-header-container {
@@ -794,12 +865,25 @@ input[type=radio] {
 
 .accordion-container {
   padding: 0;
-  width: 125vh;
-  margin: 2vh 0;
-
+  width: 600px;
 }
 
-.accordion-button {
+.accordion-master {
+  border: 3px solid rgba(255, 255, 255, 0.75);
+  border-radius: 15px;
+}
+
+.accordion-master-button {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.72);
+  text-decoration: none;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 0 #ffffff; */
+  box-shadow:
+    2px 2px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5)
+  ;
   background-image: linear-gradient(
     -72deg,
     #dedeff,
@@ -815,4 +899,17 @@ input[type=radio] {
     #dedeff 84%,
     #555564
   );
+}
+
+.accordion ul {
+  border-radius: 0 !important;
+}
+
+.accordion-inner .accordion-item button {
+  border-radius: 0 !important;
+}
+
+.accordion-inner h2 {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

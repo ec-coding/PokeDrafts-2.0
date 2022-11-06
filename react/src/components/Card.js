@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from './Icon'
+import Button from './Button'
 import CardAttributes from './CardAttributes'
 
 export default function Card({ card }) {
@@ -24,8 +25,12 @@ export default function Card({ card }) {
             <div class="modal-body card-master" className={targetType}>
 
               <div class="row card-box">
-                <div class="card-divider">
+                <div class="card-divider card-image">
                   <img src={card.images.large} class="modal-img" alt="..." />
+                  <div class="row modal-button-container">
+                    <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
+                    <Button addCardToDeck={card} />
+                  </div>
                 </div>
 
                 <div class="card-divider card-text">
@@ -63,7 +68,6 @@ export default function Card({ card }) {
                 </div>
 
               </div>
-              <button type="button" class="btn btn-primary">Add to Deck</button>
             </div>
           </div>
 

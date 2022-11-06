@@ -34,7 +34,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-let port = process.env.PORT || 8000; 
+let port = process.env.PORT || 7000; 
 
 //How do I put this in an env file?
 // let db,
@@ -62,7 +62,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     // store: new MongoStore({ mongoUrl: process.env.MONGO_URI })
-    store: new MongoStore({ mongooseConnection: process.env.MONGO_URI })
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
 // Passport middleware
@@ -84,7 +84,7 @@ app.use('/auth', authRoutes)
 app.use('/decks', decksRoutes)
 
 // Port Info
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 7000
 
 app.listen(
     PORT, 
