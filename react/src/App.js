@@ -1,18 +1,21 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SearchParams from './components/SearchParams'
 import SearchResults from './components/SearchResults'
 import Deck from './components/Deck'
 import CardContext from './CardContext';
+import DeckContext from './DeckContext';
 
 function App() {
   const changeCards = useState([])
+  const changeDecks = useState([])
   const [tab, changeTab] = useState('slide1')
 
   return (
     <CardContext.Provider value={changeCards} >
+    <DeckContext.Provider value={changeDecks} >
     <div className="App">
       <Header />
       <div class="tab">
@@ -35,6 +38,7 @@ function App() {
 
       <Footer />
     </div>
+    </DeckContext.Provider>
     </CardContext.Provider>
   );
 }

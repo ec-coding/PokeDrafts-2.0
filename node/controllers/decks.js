@@ -17,7 +17,7 @@ module.exports = {
             const cards = deck.cards
             const cardCount = cards.length
             const cardName = req.body.name
-            res.render('decks.ejs', {
+            res.render('index.html', {
                 name: req.user.firstName,
                 cards,
                 quantity: cardCount,
@@ -66,7 +66,8 @@ module.exports = {
 			deck.cards.push(
                 {
                     name: req.body.name,
-                    value: req.body.value,
+                    value: req.body.images.small
+                    //ADD ALL OTHER VALUES FROM THE CARD MODALS, LIKE ATTACK, ATTACK COST, ETC
                 },
             )
             deck.save()

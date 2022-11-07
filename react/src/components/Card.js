@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useState, useContext } from 'react';
+import DeckContext from '../DeckContext';
 import Icon from './Icon'
-import Button from './Button'
 import CardAttributes from './CardAttributes'
 
 export default function Card({ card }) {
   const targetModal = `card-modal-${card.id}`
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
+
+  const [decks, changeDecks] = useContext(DeckContext)
+
+  function addCardToDeck() {
+    fetch('http://localhost:7000/decks/createDeckCard', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify(card)
+  })
+      .then((response) => response.json())
+      .then(data => {
+          // add card AFTER it is saved to DB
+          let newDeck = [...decks, card]
+          changeDecks(newDeck)
+          console.log(data)
+
+      })
+  }
+
 
   return (
     <>
@@ -29,7 +51,7 @@ export default function Card({ card }) {
                   <img src={card.images.large} class="modal-img" alt="..." />
                   <div class="row modal-button-container">
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
-                    <Button addCardToDeck={card} />
+                    <button type="button" class="btn btn-primary col" onClick={addCardToDeck}>Add to Deck</button>
                   </div>
                 </div>
 

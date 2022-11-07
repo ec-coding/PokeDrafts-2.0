@@ -62,16 +62,18 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     // store: new MongoStore({ mongoUrl: process.env.MONGO_URI })
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    // store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
-// Passport middleware
-app.use(passport.initialize())
-app.use(passport.session())
+// // Passport middleware
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 // Set global var
 app.use(function (req, res, next) {
-    res.locals.user = req.user || null
+    // res.locals.user = req.user || null
+    res.locals.user = req.user || {id: "636719291b683e06dddaa82c"}
+    req.user = {id: "636719291b683e06dddaa82c"}
     next()
 })
 
