@@ -96,29 +96,6 @@ export default function Card({ card }) {
         </div>
       </div>
 
-      {/* <div class="modal fade" id={targetModal} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">{card.name}</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img src={card.images.large} type="button" class="modal-img" alt="..." />
-              <br />
-              <h3>Name: {card.name}</h3>
-              <h3>Type: {card.types}</h3>
-              <h3>Weakness: {card.weaknesses[0].type}</h3>
-              <h3>Desc: {card.flavorText}</h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add to Deck</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
     </>
   )
 }

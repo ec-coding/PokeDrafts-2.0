@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SearchParams from './components/SearchParams'
@@ -10,12 +11,28 @@ import DeckContext from './DeckContext';
 
 function App() {
   const changeCards = useState([])
-  const changeDecks = useState([])
+  // const changeDecks = useState([])
   const [tab, changeTab] = useState('slide1')
+  const [decks, changeDecks] = useState([]);
+
+  console.log(typeof(changeDecks));
+
+  useEffect(() => {
+      fetch('http://localhost:7000/decks/profile')
+      .then((res) => res.json())
+      .then((response) => {
+        changeDecks(response)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, []);
+
+
 
   return (
     <CardContext.Provider value={changeCards} >
-    <DeckContext.Provider value={changeDecks} >
+    <DeckContext.Provider value={{decks, changeDecks}} >
     <div className="App">
       <Header />
       <div class="tab">

@@ -272,23 +272,23 @@ export default function SearchParams() {
 
                                                 <ul class="accordion-body type-input-div">
                                                     <li class="list-one-third">
-                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <input class="type-input" type="radio" id="" name="type" />
                                                         <label for=""> Common</label>
                                                     </li>
                                                     <li class="list-one-third">
-                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <input class="type-input" type="radio" id="" name="type" />
                                                         <label for=""> Uncommon</label>
                                                     </li>
                                                     <li class="list-one-third">
-                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <input class="type-input" type="radio" id="" name="type" />
                                                         <label for=""> Rare</label>
                                                     </li>
                                                     <li class="list-one-third">
-                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <input class="type-input" type="radio" id="" name="type" />
                                                         <label for=""> Rare Holo</label>
                                                     </li>
                                                     <li class="list-one-third">
-                                                        <input class="type-input" type="radio" id="" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                        <input class="type-input" type="radio" id="" name="type" />
                                                         <label for=""> Promo</label>
                                                     </li>
                                                 </ul>

@@ -17,13 +17,14 @@ module.exports = {
             const cards = deck.cards
             const cardCount = cards.length
             const cardName = req.body.name
-            res.render('index.html', {
-                name: req.user.firstName,
-                cards,
-                quantity: cardCount,
-                cardName
-                // ofEachCard: specificCardCount
-            })
+            res.json('')
+            // res.render('index.html', {
+            //     name: req.user.firstName,
+            //     cards,
+            //     quantity: cardCount,
+            //     cardName
+            //     // ofEachCard: specificCardCount
+            // })
         } catch (err) {
             console.error(err)
             res.render('error/500')
