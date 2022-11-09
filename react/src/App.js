@@ -11,9 +11,8 @@ import DeckContext from './DeckContext';
 
 function App() {
   const changeCards = useState([])
-  // const changeDecks = useState([])
+  const [decks, changeDecks] = useState([])
   const [tab, changeTab] = useState('slide1')
-  const [decks, changeDecks] = useState([]);
 
   console.log(typeof(changeDecks));
 
@@ -21,6 +20,7 @@ function App() {
       fetch('http://localhost:7000/decks/profile')
       .then((res) => res.json())
       .then((response) => {
+        console.log(response)
         changeDecks(response)
       })
       .catch((err) => {
@@ -28,11 +28,17 @@ function App() {
       })
   }, []);
 
+// FOUNDATION (CR & D OF CRUD)
+// START WITH LISTING ALL THE DECKS, ADDING NEW DECKS, AND DELETING DECKS
 
+// UPDATE - CHANGE DECK NAME
+
+
+// MIT LICENSE 
 
   return (
     <CardContext.Provider value={changeCards} >
-    <DeckContext.Provider value={{decks, changeDecks}} >
+    <DeckContext.Provider value={[decks, changeDecks]} >
     <div className="App">
       <Header />
       <div class="tab">

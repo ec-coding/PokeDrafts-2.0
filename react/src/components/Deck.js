@@ -5,7 +5,7 @@ import Card from './Card'
 export default function SearchResults() {
 
     const [decks, changeDecks] = useContext(DeckContext)
-
+    console.log(decks)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(decks, 20);
 
@@ -37,7 +37,7 @@ export default function SearchResults() {
                                 <div class="carousel-item active">
                                     {slides.map(card => {
                                         return (
-                                            <Card card={card} />
+                                            <Card card={card} onDeck={true} />
                                         )
                                     })}
                                 </div>
@@ -47,7 +47,7 @@ export default function SearchResults() {
                                 <div class="carousel-item">
                                     {slides.map(card => {
                                         return (
-                                            <Card card={card} />
+                                            <Card card={card} onDeck={true}  />
                                         )
                                     })}
                                 </div>

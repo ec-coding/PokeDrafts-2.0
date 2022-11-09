@@ -17,7 +17,7 @@ module.exports = {
             const cards = deck.cards
             const cardCount = cards.length
             const cardName = req.body.name
-            res.json('')
+            res.json(cards)
             // res.render('index.html', {
             //     name: req.user.firstName,
             //     cards,
@@ -65,11 +65,8 @@ module.exports = {
                 })
             }
 			deck.cards.push(
-                {
-                    name: req.body.name,
-                    value: req.body.images.small
+                    req.body
                     //ADD ALL OTHER VALUES FROM THE CARD MODALS, LIKE ATTACK, ATTACK COST, ETC
-                },
             )
             deck.save()
             let card = deck.cards.at(-1)

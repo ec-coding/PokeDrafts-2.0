@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const user = require('./user')
-const Card = require('./card')
+// const Card = require('./card')
 
 const DeckSchema = new mongoose.Schema({
     user: {
@@ -8,7 +8,6 @@ const DeckSchema = new mongoose.Schema({
         ref: 'User',
     },
     cards: [
-        Card
     ]
 })
 

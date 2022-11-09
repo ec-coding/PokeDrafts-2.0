@@ -3,7 +3,7 @@ import DeckContext from '../DeckContext';
 import Icon from './Icon'
 import CardAttributes from './CardAttributes'
 
-export default function Card({ card }) {
+export default function Card({ card, onDeck }) {
   const targetModal = `card-modal-${card.id}`
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
@@ -51,6 +51,8 @@ export default function Card({ card }) {
                   <img src={card.images.large} class="modal-img" alt="..." />
                   <div class="row modal-button-container">
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
+                    {/* IF STATEMENT HERE, 2nd PROP PASSED INTO CARD SHOW ADD TO DECK BUTTON OR SHOW REMOVE FROM DECK BUTTON */}
+                    {/* IF ONDECK = TRUE, SHOW REMOVE FROM DECK BUTTON */}
                     <button type="button" class="btn btn-primary col" onClick={addCardToDeck}>Add to Deck</button>
                   </div>
                 </div>
