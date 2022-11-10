@@ -6,6 +6,7 @@
     "body-parser": "^1.20.1",
     "connect-mongo": "^4.6.0",
     "connect-mongodb-session": "^3.1.1",
+    "consolidate": "^0.16.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -14,6 +15,7 @@
     "mongodb": "^4.9.0",
     "mongoose": "^6.5.4",
     "morgan": "^1.10.0",
+    "mustache": "^4.2.0",
     "nodemon": "^2.0.19",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0"

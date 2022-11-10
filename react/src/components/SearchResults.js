@@ -37,7 +37,7 @@ export default function SearchResults() {
                                 <div class="carousel-item active">
                                     {slides.map(card => {
                                         return (
-                                            <Card card={card} />
+                                            <Card card={card} onDeck={false} />
                                         )
                                     })}
                                 </div>
@@ -47,7 +47,7 @@ export default function SearchResults() {
                                 <div class="carousel-item">
                                     {slides.map(card => {
                                         return (
-                                            <Card card={card} />
+                                            <Card card={card} onDeck={false} />
                                         )
                                     })}
                                 </div>

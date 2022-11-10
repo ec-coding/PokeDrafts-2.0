@@ -14,19 +14,40 @@ export default function Card({ card, onDeck }) {
     fetch('http://localhost:7000/decks/createDeckCard', {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(card)
-  })
+    })
       .then((response) => response.json())
       .then(data => {
-          // add card AFTER it is saved to DB
-          let newDeck = [...decks, card]
-          changeDecks(newDeck)
-          console.log(data)
+        let newDeck = [...decks, card]
+        changeDecks(newDeck)
+        console.log(data)
 
       })
+  }
+
+  function removeCardFromDeck() {
+    fetch('http://localhost:7000/decks/deleteCard', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(card)
+    })
+      .then(res => {
+        if (res.ok) {
+          console.log(res)
+          res.remove()
+          return res
+        }
+      })
+  }
+
+  let button;
+  if (onDeck == false) {
+    button = <button type="button" class="btn btn-primary col" onClick={addCardToDeck}>Add to Deck</button>
+  } else if (onDeck == true) {
+    button = <button type="button" class="btn btn-primary col" onClick={removeCardFromDeck}>Delete</button>
   }
 
 
@@ -53,7 +74,7 @@ export default function Card({ card, onDeck }) {
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
                     {/* IF STATEMENT HERE, 2nd PROP PASSED INTO CARD SHOW ADD TO DECK BUTTON OR SHOW REMOVE FROM DECK BUTTON */}
                     {/* IF ONDECK = TRUE, SHOW REMOVE FROM DECK BUTTON */}
-                    <button type="button" class="btn btn-primary col" onClick={addCardToDeck}>Add to Deck</button>
+                    {button}
                   </div>
                 </div>
 

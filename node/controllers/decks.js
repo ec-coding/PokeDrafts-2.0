@@ -65,8 +65,7 @@ module.exports = {
                 })
             }
 			deck.cards.push(
-                    req.body
-                    //ADD ALL OTHER VALUES FROM THE CARD MODALS, LIKE ATTACK, ATTACK COST, ETC
+                req.body
             )
             deck.save()
             let card = deck.cards.at(-1)
@@ -107,6 +106,8 @@ module.exports = {
             const userID = req.user.id
             const deck = await Deck.findOne({ user: userID })
             deck.cards = deck.cards.filter(card => card._id != req.body.id)
+            console.log(cards)
+            console.log(deck)
             deck.save()
             console.log(`Deleted card`)
             res.json('')

@@ -12,6 +12,7 @@ const {MongoClient, ObjectId} = require('mongodb')
 const connectDB = require('./config/db')
 const bodyParser = require('body-parser')
 const app = express()
+var engines = require('consolidate')
 const cors = require ('cors');
 const mainRoutes = require('./routes/main')
 const authRoutes = require('./routes/auth')
@@ -55,6 +56,12 @@ app.use(methodOverride(function (req, res) {
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
+
+// Views
+app.set('views', path.join(__dirname, 'views'));
+app.engine('html', engines.mustache)
+app.set('view engine', 'html');
+
 
 // Sessions
 app.use(session({
