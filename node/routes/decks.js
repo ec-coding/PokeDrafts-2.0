@@ -26,7 +26,7 @@ router.get('/countDeckCard', ensureAuth, decksController.countDeckCard)
 
 // @desc    Deletes a single card upon clicking it
 // @route   DELETE /deleteCard
-router.delete('/deleteCard', ensureAuth, decksController.deleteCard)
+router.delete('/deleteCard/', ensureAuth, decksController.deleteCard)
 
 // @desc    Deletes all cards upon clicking the "Delete Deck" button
 // @route   DELETE /deleteDeck

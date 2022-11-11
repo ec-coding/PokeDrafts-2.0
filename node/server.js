@@ -58,7 +58,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Views
-app.set('views', path.join(__dirname, 'views'));
 app.engine('html', engines.mustache)
 app.set('view engine', 'html');
 

@@ -1,5 +1,6 @@
 const Deck = require('../models/deck')
 const Card = require('../models/card')
+const { MongoClient, ObjectID } = require('mongodb')
 
 module.exports = {
     getProfile: async (req, res) => {
@@ -7,8 +8,8 @@ module.exports = {
         try {
             // req.body.user = req.user.id
             // const cards = await Cards.find({ user:req.user.id }).lean()
-
             let deck = await Deck.findOne({ 
+
                 user:req.user.id 
             })
             if (deck === null) {
@@ -20,8 +21,8 @@ module.exports = {
             res.json(cards)
             // res.render('index.html', {
             //     name: req.user.firstName,
-            //     cards,
             //     quantity: cardCount,
+            //     cards,
             //     cardName
             //     // ofEachCard: specificCardCount
             // })
@@ -64,9 +65,10 @@ module.exports = {
                     user:req.user.id 
                 })
             }
-			deck.cards.push(
-                req.body
-            )
+			deck.cards.push({ 
+                _id: new ObjectID(), 
+                ...req.body
+            })
             deck.save()
             let card = deck.cards.at(-1)
             res.json(card)
@@ -105,9 +107,8 @@ module.exports = {
         try {
             const userID = req.user.id
             const deck = await Deck.findOne({ user: userID })
-            deck.cards = deck.cards.filter(card => card._id != req.body.id)
-            console.log(cards)
-            console.log(deck)
+            deck.cards = deck.cards.filter(card => card._id != req.body._id)
+            console.log(req.body._id)
             deck.save()
             console.log(`Deleted card`)
             res.json('')

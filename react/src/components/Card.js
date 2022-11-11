@@ -21,23 +21,26 @@ export default function Card({ card, onDeck }) {
     })
       .then((response) => response.json())
       .then(data => {
-        let newDeck = [...decks, card]
+        let newDeck = [...decks, data]
         changeDecks(newDeck)
         console.log(data)
 
       })
   }
 
-  function removeCardFromDeck() {
+  function removeCardFromDeck(id) {
     fetch('http://localhost:7000/decks/deleteCard', {
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(card)
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
-          console.log(res)
-          res.remove()
+          const updateDeck = decks.filter((item) => item !== card)
+          changeDecks(updateDeck)
+          document.getElementById("close-modal").click();
           return res
         }
       })
@@ -62,7 +65,7 @@ export default function Card({ card, onDeck }) {
 
             <div class="modal-header" >
               <h1 class="modal-title fs-4" id="exampleModalLabel">Card Info</h1>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+              <button type="button" id="close-modal" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
             </div>
 
             <div class="modal-body card-master" className={targetType}>
