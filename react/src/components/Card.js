@@ -7,6 +7,7 @@ export default function Card({ card, onDeck }) {
   const targetModal = `card-modal-${card.id}`
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
+  const closeModal = `close-modal-${card.id}`
 
   const [decks, changeDecks] = useContext(DeckContext)
 
@@ -39,8 +40,8 @@ export default function Card({ card, onDeck }) {
       .then((res) => {
         if (res.ok) {
           const updateDeck = decks.filter((item) => item !== card)
+          document.getElementById(closeModal).click();
           changeDecks(updateDeck)
-          document.getElementById("close-modal").click();
           return res
         }
       })
@@ -65,7 +66,7 @@ export default function Card({ card, onDeck }) {
 
             <div class="modal-header" >
               <h1 class="modal-title fs-4" id="exampleModalLabel">Card Info</h1>
-              <button type="button" id="close-modal" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+              <button type="button" id={closeModal} class="btn btn-secondary" data-bs-dismiss="modal">X</button>
             </div>
 
             <div class="modal-body card-master" className={targetType}>
@@ -97,6 +98,12 @@ export default function Card({ card, onDeck }) {
                     <CardAttributes cardRules={card?.rules} />
                   </div>
 
+
+                  <CardAttributes statTrio={card} />
+                  <CardAttributes cardBio={card?.flavorText} />
+
+{/* Separate background for unique info */}
+
                   <div>
                     <div className="row">
                       <h6 class="col">Set: {card?.set.name}</h6>
@@ -109,9 +116,6 @@ export default function Card({ card, onDeck }) {
                     </div>
                   </div>
                   <hr />
-                  <CardAttributes statTrio={card} />
-                  <CardAttributes cardBio={card?.flavorText} />
-
 
                 </div>
 

@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <>
-            <div id="title-container">
+            <div id="footer-container">
                 <br />
                 <br />
                 <br />
