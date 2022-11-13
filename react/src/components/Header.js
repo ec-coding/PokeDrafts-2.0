@@ -7,7 +7,7 @@ export default function Header() {
                 <h1>
                     <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
                 </h1>
-                <h3>A Deck Builder App for the Pokémon Trading Card Game</h3>
+                <h3>A Virtual Deck Builder for the Pokémon Trading Card Game</h3>
             </div>
         </>
     )

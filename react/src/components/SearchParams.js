@@ -43,7 +43,7 @@ export default function SearchParams() {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=1&pageSize=54&orderBy=set&q=`
+        fetchURLText = url + `page=1&pageSize=24&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -105,7 +105,7 @@ export default function SearchParams() {
                 </div>
 
                 <div class="search-container">
-                    <div class="basic-search row">
+                    <div class="basic-search">
 
                         <section class="name-input search-input">
                             <h3>Text Search</h3>
@@ -120,6 +120,7 @@ export default function SearchParams() {
                                 </li>
                             </ul>
                         </section>
+
                         <section class="supertype-input-sec search-input">
                             <h3>Card Type</h3>
                             <ul class="type-input-div">
@@ -145,7 +146,7 @@ export default function SearchParams() {
                         </section>
 
                         <section class="subtype-input-sec search-input">
-                            <h3>Set</h3>
+                            <h3>Card Set</h3>
                             <ul class="type-input-div">
                                 <li class="list-one-third">
                                     <img src="https://i.imgur.com/W4Xecen.png" alt="" />
@@ -187,7 +188,7 @@ export default function SearchParams() {
 
 
                         <section class="type-input-sec search-input">
-                            <h3>Type</h3>
+                            <h3>Energy Type</h3>
                             <ul class="type-input-div">
                                 <li class="list-one-third">
                                     <div class="icon-Grass" />
@@ -230,9 +231,6 @@ export default function SearchParams() {
                     </div>
 
                     <div class="button-box">
-                        <div class="search-input hidden-box">
-
-                        </div>
 
                         <section class="button-input">
                             <ul class="row">
@@ -246,7 +244,7 @@ export default function SearchParams() {
                         </section>
                     </div>
 
-                    <div class="advanced-search row">
+                    {/* <div class="advanced-search">
 
                         <div class="accordion accordion-container " id="accordionPanelsStayOpenExample">
 
@@ -315,11 +313,7 @@ export default function SearchParams() {
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="search-input hidden-box"></div>
-
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

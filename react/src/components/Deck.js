@@ -6,7 +6,7 @@ export default function SearchResults() {
 
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
-    const chunks = arrayChunks(decks, 20);
+    const chunks = arrayChunks(decks, 8);
 
     return (
         <>
@@ -78,8 +78,6 @@ export default function SearchResults() {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
-
         </>
     )
 }
