@@ -59,7 +59,11 @@ function App() {
             <Deck />
 
           </div>}
-          <div class="search-header-container"></div>
+          <div class="search-footer-container">
+            <section class="search-footer">
+
+            </section>
+          </div>
 
           <Footer />
         </div>

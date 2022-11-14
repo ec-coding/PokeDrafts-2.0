@@ -116,7 +116,7 @@ export default function SearchParams() {
                                 </li>
                                 <li class="text-search">
                                     <h6>Keywords</h6>
-                                    <input type="text" id="keyword-search" placeholder="Coming soon..." />
+                                    <input type="text" id="keyword-search" placeholder="Search by keyword..." />
                                 </li>
                             </ul>
                         </section>
@@ -144,48 +144,6 @@ export default function SearchParams() {
                                 </li>
                             </ul>
                         </section>
-
-                        <section class="subtype-input-sec search-input">
-                            <h3>Card Set</h3>
-                            <ul class="type-input-div">
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/W4Xecen.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
-                                    <label for="base"> Base</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
-                                    <label for="jungle"> Jungle</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/E5Axps4.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
-                                    <label for="fossil"> Fossil</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/ljLojgC.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
-                                    <label for="base-two"> Base 2</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/NeziRcu.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
-                                    <label for="team-rocket"> Team Rocket</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
-                                    <label for="gym-heroes"> Gym Heroes</label>
-                                </li>
-                                <li class="list-one-third">
-                                    <img src="https://i.imgur.com/jKAre0A.png" alt="" />
-                                    <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
-                                    <label for="gym-challenge"> Gym Challenge</label>
-                                </li>
-                            </ul>
-                        </section>
-
 
                         <section class="type-input-sec search-input">
                             <h3>Energy Type</h3>
@@ -224,6 +182,47 @@ export default function SearchParams() {
                                     <div class="icon-Colorless" alt="" />
                                     <input class="type-input" type="radio" id="type-colorless" name="type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
                                     <label for="type-colorless"> Colorless</label>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="subtype-input-sec search-input">
+                            <h3>Expansion</h3>
+                            <ul class="type-input-div">
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/W4Xecen.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
+                                    <label for="base"> Base</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
+                                    <label for="jungle"> Jungle</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/E5Axps4.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
+                                    <label for="fossil"> Fossil</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/ljLojgC.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
+                                    <label for="base-two"> Base 2</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/NeziRcu.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
+                                    <label for="team-rocket"> Team Rocket</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
+                                    <label for="gym-heroes"> Gym Heroes</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/jKAre0A.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
+                                    <label for="gym-challenge"> Gym Challenge</label>
                                 </li>
                             </ul>
                         </section>
