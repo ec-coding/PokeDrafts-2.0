@@ -1,5 +1,9 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import {Route} from 'react-router-dom';
+import Home from './Home';
+import Profile from './Profile';
+import Nav from './Nav';
 import axios from 'axios';
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -37,6 +41,11 @@ function App() {
   // MIT LICENSE 
 
   return (
+    <>
+    <Nav />
+    <Route path="/" exact component={Home} >
+    </Route>
+    <Route path="/profile" component={Profile}>
     <CardContext.Provider value={changeCards} >
       <DeckContext.Provider value={[decks, changeDecks]} >
         <div className="App">
@@ -69,6 +78,8 @@ function App() {
         </div>
       </DeckContext.Provider>
     </CardContext.Provider>
+    </Route>
+  </>
   );
 }
 

@@ -4,6 +4,36 @@ header, body, footer {
   text-align: center;
 }
 
+.navbar {
+  padding: 0;
+  border-bottom: 1px solid rgb(70, 70, 70);
+}
+
+.navbar .container-fluid {
+  background: repeating-linear-gradient(180deg, #646464, #d60000 2px, #565656 1px);
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  color: white;
+  background-color: #d9690d;
+}
+
+.navbar button {
+  margin-top: 13px;
+}
+
+.navbar-nav .nav-link.active {
+  color: white;
+}
+
 body {
   padding-right: 0 !important;
   border: 1px solid #565656;
@@ -606,7 +636,8 @@ hr {
 
 /* Create an active/current tablink class */
 .tab button:active {
-  transform: scale(0.9);
+  transform: scale(0.85);
+  transition: 0.2s;
 }
 
 /* Style the tab content */
@@ -744,11 +775,16 @@ ul {
   min-height: 12vh;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-  background: rgba(75, 75, 75, 0.35)
+  background: repeating-linear-gradient(180deg, #9b9b9b, #4e4e4e 2px, #565656 1px);
 }
 
 .search-header-container h2, h6 {
   font-weight: bold;
+}
+
+.search-header-container h6 {
+  font-size: 17px;
+  text-shadow: 1.5px 1.5px 0 #000000;
 }
 
 .search-footer-container {
@@ -759,7 +795,7 @@ ul {
   min-height: 12vh;
   border-top: 1px solid rgb(72, 72, 72);
   border-bottom: 1px solid rgb(72, 72, 72);
-  background: rgb(98, 98, 98);
+  background: repeating-linear-gradient(180deg, #9b9b9b, #4e4e4e 2px, #565656 1px);
   background-size: cover;
 }
 
@@ -790,7 +826,8 @@ ul {
   ;
   margin: 0px;
   padding: 3px 0 5px 15px;
-  background-image: linear-gradient(to right, rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(236, 236, 236), rgb(252, 178, 178), rgb(255, 116, 116));
+  background: repeating-linear-gradient(180deg, #bbbbbb, #ff6a6a 1px, #ffc8c8 2px);
+  /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
 }
 
 .type-input-div {
