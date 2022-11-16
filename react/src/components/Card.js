@@ -22,10 +22,9 @@ export default function Card({ card, onDeck }) {
     })
       .then((response) => response.json())
       .then(data => {
+        console.log(data)
         let newDeck = [...decks, data]
         changeDecks(newDeck)
-        console.log(data)
-
       })
   }
 

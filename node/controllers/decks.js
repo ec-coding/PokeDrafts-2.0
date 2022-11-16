@@ -10,7 +10,7 @@ module.exports = {
             // const cards = await Cards.find({ user:req.user.id }).lean()
             let deck = await Deck.findOne({ 
 
-                user:req.user.id 
+                user:req.user
             })
             if (deck === null) {
                 deck = new Deck ()
@@ -58,11 +58,11 @@ module.exports = {
     createDeckCard: async (req, res) => {
         try {
             let deck = await Deck.findOne({ 
-                user:req.user.id 
+                user:req.user 
             })
             if (deck === null) {
                 deck = new Deck ({ 
-                    user:req.user.id 
+                    user:req.user
                 })
             }
 			deck.cards.push({ 

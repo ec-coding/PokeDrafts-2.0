@@ -61,7 +61,10 @@ function App() {
         path="/login"
         element={user?.email ? <Navigate to="/home" /> : <Login />}
       />
-
+      <Route
+        path="/signup"
+        element={user?.email ? <Navigate to="/home" /> : <SignUp />}
+      />
       <Route
         path="/home"
         element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
