@@ -1,12 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import SearchParams from './components/SearchParams'
-import SearchResults from './components/SearchResults'
-import Deck from './components/Deck'
-import CardContext from './CardContext';
-import DeckContext from './DeckContext';
+
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Landing from "./screens/Landing";
 import Login from "./screens/Login";
@@ -16,15 +10,12 @@ import Home from "./screens/Home";
 
 function App() {
   const [user, setUser] = useState({});
-  const changeCards = useState([])
   const [decks, changeDecks] = useState([])
-  const [tab, changeTab] = useState('slide1')
 
   console.log(typeof (changeDecks));
 
   useEffect(() => {
     const theUser = localStorage.getItem("user");
-
     if (theUser && !theUser.includes("undefined")) {
       setUser(JSON.parse(theUser));
     }

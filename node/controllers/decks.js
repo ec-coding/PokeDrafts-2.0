@@ -8,7 +8,7 @@ module.exports = {
             // req.body.user = req.user.id
             // const cards = await Cards.find({ user:req.user.id }).lean()
             let deck = await Deck.findOne({ 
-                user:req.user
+                user:req.user._id
             })
             if (deck === null) {
                 deck = new Deck ()
@@ -56,12 +56,11 @@ module.exports = {
     createDeckCard: async (req, res) => {
         try {
             let deck = await Deck.findOne({
-                user:req.user
+                user:req.user._id
             })
             if (deck === null) {
-                console.log(id)
                 deck = new Deck ({ 
-                    user: ObjectID(id)
+                    user: req.user._id
                 })
             }
 			deck.cards.push({ 
@@ -73,7 +72,7 @@ module.exports = {
             res.json(card)
         } catch (err) {
             console.error(err)
-            res.render('error/500')
+            res.json(err)
         }
     },
     // countCardQuantity: async (req, res) => {

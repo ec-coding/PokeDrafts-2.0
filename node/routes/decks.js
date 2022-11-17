@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
 const decksController = require('../controllers/decks')
+const passport = require('passport')
 
 // // @desc    Get collection of cards and render it on your index.ejs
 // // @route   GET /
@@ -17,7 +18,7 @@ router.get('/putCardName', ensureAuth, decksController.putCardName)
 
 // @desc    Clones the card you clicked from search results and places it in the deck
 // @route   POST /createDeckCard
-router.post('/createDeckCard', ensureAuth, decksController.createDeckCard)
+router.post('/createDeckCard', passport.authenticate('jwt', { session: false }), decksController.createDeckCard)
 
 // @desc    Counts how many cards a user has in their deck
 // @route   GET /countDeckCard
