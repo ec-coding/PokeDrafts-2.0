@@ -1,24 +1,25 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import {Route} from 'react-router-dom';
-import Home from './Home';
-import Profile from './Profile';
-import Nav from './Nav';
-import axios from 'axios';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import SearchParams from './components/SearchParams'
-import SearchResults from './components/SearchResults'
-import Deck from './components/Deck'
-import CardContext from './CardContext';
-import DeckContext from './DeckContext';
+import UserContext from './UserContext';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Landing from "./screens/Landing";
+import Login from "./screens/Login";
+import SignUp from "./screens/SignUp"
+import Home from "./screens/Home";
+
 
 function App() {
-  const changeCards = useState([])
+  const [user, setUser] = useState({});
   const [decks, changeDecks] = useState([])
-  const [tab, changeTab] = useState('slide1')
 
   console.log(typeof (changeDecks));
+
+  useEffect(() => {
+    const theUser = localStorage.getItem("user");
+    if (theUser && !theUser.includes("undefined")) {
+      setUser(JSON.parse(theUser));
+    }
+  }, []);
 
   useEffect(() => {
     fetch('http://localhost:7000/decks/profile')
@@ -41,45 +42,62 @@ function App() {
   // MIT LICENSE 
 
   return (
-    <>
-    <Nav />
-    <Route path="/" exact component={Home} >
-    </Route>
-    <Route path="/profile" component={Profile}>
-    <CardContext.Provider value={changeCards} >
-      <DeckContext.Provider value={[decks, changeDecks]} >
-        <div className="App">
-          <Header />
-          <div class="tab">
-            <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
-            <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
-            <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
+    <UserContext.Provider value={user}>
+    <BrowserRouter>
+    <Routes>
+
+      <Route
+        path="/"
+        element={user?.email ? <Navigate to="/home" /> : <Landing />}
+      />
+      <Route
+        path="/login"
+        element={user?.email ? <Navigate to="/home" /> : <Login />}
+      />
+      <Route
+        path="/signup"
+        element={user?.email ? <Navigate to="/home" /> : <SignUp />}
+      />
+      <Route
+        path="/home"
+        element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
+      />
+      
+      {/* <CardContext.Provider value={changeCards} >
+        <DeckContext.Provider value={[decks, changeDecks]} >
+          <div className="App">
+            <Header />
+            <div class="tab">
+              <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
+              <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
+              <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
+            </div>
+
+            {tab === 'slide1' && <div id="tab-one" class="tab-content">
+              <SearchParams />
+            </div>}
+
+            {tab === 'slide2' && <div id="tab-two" class="tab-content">
+              <SearchResults />
+            </div>}
+
+            {tab === 'slide3' && <div id="tab-three" class="tab-content">
+              <Deck />
+
+            </div>}
+            <div class="search-footer-container">
+              <section class="search-footer">
+
+              </section>
+            </div>
+
+            <Footer />
           </div>
-
-          {tab === 'slide1' && <div id="tab-one" class="tab-content">
-            <SearchParams />
-          </div>}
-
-          {tab === 'slide2' && <div id="tab-two" class="tab-content">
-            <SearchResults />
-          </div>}
-
-          {tab === 'slide3' && <div id="tab-three" class="tab-content">
-            <Deck />
-
-          </div>}
-          <div class="search-footer-container">
-            <section class="search-footer">
-
-            </section>
-          </div>
-
-          <Footer />
-        </div>
-      </DeckContext.Provider>
-    </CardContext.Provider>
-    </Route>
-  </>
+        </DeckContext.Provider>
+      </CardContext.Provider> */}
+      </Routes>
+    </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 

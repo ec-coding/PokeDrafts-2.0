@@ -12,11 +12,14 @@ const {MongoClient, ObjectId} = require('mongodb')
 const connectDB = require('./config/db')
 const bodyParser = require('body-parser')
 const app = express()
+const { OAuth2Client } = require("google-auth-library");
+const jwt = require("jsonwebtoken");
 var engines = require('consolidate')
 const cors = require ('cors');
 const mainRoutes = require('./routes/main')
 const authRoutes = require('./routes/auth')
 const decksRoutes = require('./routes/decks')
+const User = require('./models/user')
 
 // Load Config
 dotenv.config({ path: './config/config.env' })
@@ -71,15 +74,13 @@ app.use(session({
     // store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
-// // Passport middleware
+// Passport middleware
 // app.use(passport.initialize())
 // app.use(passport.session())
 
 // Set global var
 app.use(function (req, res, next) {
-    // res.locals.user = req.user || null
-    res.locals.user = req.user || {id: "636719291b683e06dddaa82c"}
-    req.user = {id: "636719291b683e06dddaa82c"}
+    res.locals.user = req.user || null
     next()
 })
 
@@ -91,7 +92,107 @@ app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
 app.use('/decks', decksRoutes)
 
-// Port Info
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const client = new OAuth2Client(GOOGLE_CLIENT_ID);
+
+async function verifyGoogleToken(token) {
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: GOOGLE_CLIENT_ID,
+    });
+    return { payload: ticket.getPayload() };
+  } catch (error) {
+    return { error: "Invalid user detected. Please try again" };
+  }
+}
+
+app.post("/signup", async (req, res) => {
+    try {
+      // console.log({ verified: verifyGoogleToken(req.body.credential) });
+      if (req.body.credential) {
+        const verificationResponse = await verifyGoogleToken(req.body.credential);
+  
+        if (verificationResponse.error) {
+          return res.status(400).json({
+            message: verificationResponse.error,
+          });
+        }
+  
+        const profile = verificationResponse?.payload;
+
+        const newUser = {
+            googleId: profile.email,
+            displayName: profile.name,
+            firstName: profile.given_name,
+            lastName: profile.family_name,
+            // image: profile.photos[0].value
+        }
+
+        let user = await User.create(newUser)
+
+        res.status(201).json({
+          message: "Signup was successful",
+          user: {
+            firstName: profile?.given_name,
+            lastName: profile?.family_name,
+            picture: profile?.picture,
+            email: profile?.email,
+            token: jwt.sign({ email: profile?.email }, process.env.JWT_SECRET, {
+              expiresIn: "1d",
+            }),
+          },
+        });
+      }
+    } catch (error) {
+
+      res.status(500).json({
+        message: "An error occurred. Registration failed.",
+      });
+    }
+  });
+
+  app.post("/login", async (req, res) => {
+    try {
+      if (req.body.credential) {
+        const verificationResponse = await verifyGoogleToken(req.body.credential);
+        if (verificationResponse.error) {
+          return res.status(400).json({
+            message: verificationResponse.error,
+          });
+        }
+  
+        const profile = verificationResponse?.payload;
+
+        let user = await User.findOne({ googleId: profile.email })
+  
+        if (!user) {
+          return res.status(400).json({
+            message: "You are not registered. Please sign up",
+          });
+        }
+  
+        res.status(201).json({
+          message: "Login was successful",
+          user: {
+            firstName: profile?.given_name,
+            lastName: profile?.family_name,
+            picture: profile?.picture,
+            email: profile?.email,
+            token: jwt.sign({ email: profile?.email }, process.env.JWT_SECRET, {
+              expiresIn: "1d",
+            }),
+          },
+        });
+      }
+    } catch (error) {
+      res.status(500).json({
+        message: error?.message || error,
+      });
+    }
+  });
+
+// Port Info - ALWAYS LEAVE AT BOTTOM
 const PORT = process.env.PORT || 7000
 
 app.listen(

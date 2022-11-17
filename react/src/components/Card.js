@@ -1,31 +1,35 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import UserContext from '../UserContext';
 import DeckContext from '../DeckContext';
 import Icon from './Icon'
 import CardAttributes from './CardAttributes'
 
 export default function Card({ card, onDeck }) {
+
   const targetModal = `card-modal-${card.id}`
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
   const closeModal = `close-modal-${card.id}`
 
+  const user = useContext(UserContext);
   const [decks, changeDecks] = useContext(DeckContext)
 
   function addCardToDeck() {
-    fetch('http://localhost:7000/decks/createDeckCard', {
+    fetch('http://localhost:7000/decks/createDeckCard',  { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + user.token
       },
       body: JSON.stringify(card)
     })
+    // Card is not being created with the user's ID
       .then((response) => response.json())
       .then(data => {
+        console.log(data)
         let newDeck = [...decks, data]
         changeDecks(newDeck)
-        console.log(data)
-
       })
   }
 
@@ -33,7 +37,8 @@ export default function Card({ card, onDeck }) {
     fetch('http://localhost:7000/decks/deleteCard', {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + user.token
       },
       body: JSON.stringify(card)
     })
