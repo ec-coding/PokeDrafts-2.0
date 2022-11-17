@@ -2,7 +2,6 @@ const { request } = require('express')
 const express = require('express')
 const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
-// const cardsController = require('../controllers/cards')
 const decksController = require('../controllers/decks')
 
 // // @desc    Get collection of cards and render it on your index.ejs

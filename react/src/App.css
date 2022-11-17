@@ -4,13 +4,39 @@ header, body, footer {
   text-align: center;
 }
 
+body {
+  padding-right: 0 !important;
+  border: 1px solid #565656;
+  box-shadow:
+    2px 2px 0.5em rgba(0, 0, 0, 0.55),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.55),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+    background: repeating-linear-gradient(45deg, #000000, #2a244b 2px, #565656 1px);
+}
+
+hr {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+
+/* NAVBAR */
 .navbar {
   padding: 0;
   border-bottom: 1px solid rgb(70, 70, 70);
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 1280px;
+  margin-left: -1px;
+  z-index: 10;
+  display: flex;
 }
 
 .navbar .container-fluid {
-  background: repeating-linear-gradient(180deg, #646464, #d60000 2px, #565656 1px);
+  background-image: linear-gradient(to right, gray, white, gray, rgb(236, 236, 236), gray);
+  padding: 2px 5px;
 }
 
 .navbar li a {
@@ -34,20 +60,95 @@ header, body, footer {
   color: white;
 }
 
-body {
-  padding-right: 0 !important;
-  border: 1px solid #565656;
-  box-shadow:
-    2px 2px 0.5em rgba(0, 0, 0, 0.55),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.55),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
-    background: repeating-linear-gradient(45deg, #000000, #2a244b 2px, #565656 1px);
+.nav-item-two {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: right;
+  justify-content: right;
 }
 
-hr {
-  margin-top: 12px;
-  margin-bottom: 12px;
+.nav-item-two li {
+  display: flex;
+  align-items: right;
+  justify-content: right;
 }
+
+#logout-button {
+  font-size: 20px;
+  padding: 8px 20px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-image: linear-gradient(to right, gray, white, gray, rgb(236, 236, 236), gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: linear-gradient( 89.9deg,  rgb(255, 50, 50), rgb(255, 166, 65), rgba(252,246,19,1), rgba(252,246,19,1), rgb(255, 166, 65), rgb(255, 50, 50)); */
+  /* border-left: 2px solid rgba(0, 0, 0, 0.25);
+  border-left: 2px solid rgba(0, 0, 0, 0.25); */
+  border-top: 1px solid rgb(72, 72, 72);
+  border-bottom: 1px solid rgb(72, 72, 72);
+}
+
+.tab-content {
+  background: repeating-linear-gradient(180deg, #111111, #4e4e4e 2px, #565656 1px);
+  /* background: radial-gradient(#ff4d50, #ff383b, #CA0002, #780000); */
+  background-size: cover;
+  min-height: 50vh;
+  margin: 0 auto;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  margin-top: 0;
+  cursor: pointer;
+  padding: 8px 36px;
+  transition: 0.3s;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ffffff;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 5px 30px;
+  background-image: linear-gradient(to right, rgb(182, 182, 182), rgb(236, 236, 236), rgb(182, 182, 182), rgb(170, 170, 170));
+  filter: drop-shadow(1px 1px 1px rgb(168, 168, 168));
+  color: rgba(0, 0, 0, 0.75);
+  padding: 5px 30px;
+  border: 2px solid rgba(145, 145, 145, 0.35);
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
+  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+  /* box-shadow:
+  2px 2px 2px rgba(122, 122, 122, 0.55),
+  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
+  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+  background: rgb(255, 254, 230); */
+  /* background-image: linear-gradient( 89.9deg,  rgb(255, 166, 65) -2.8%, rgba(252,246,19,1) 50.8%, rgb(255, 166, 65) 107.9% ); */
+  /* border: 3.5px solid rgba(255, 255, 174, 0.35); */
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button:active {
+  transform: scale(0.85);
+  transition: 0.2s;
+}
+
+/* Style the tab content */
+.tabcontent {
+  /* display: none; */
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
 
 .App {
   text-align: center;
@@ -79,7 +180,9 @@ hr {
   color: #61dafb;
 }
 
+/* HEADER */
 #title-container {
+  margin-top: 40px;
   color: white;
   text-shadow: 1px 1px 0 #000000;
   background-image: url('https://images.hdqwalls.com/wallpapers/blue-texture-pf.jpg');
@@ -94,6 +197,7 @@ hr {
   font-size: 26px;
 }
 
+/* FOOTER */
 #footer-container {
   color: white;
   text-shadow: 1px 1px 0 #000000;
@@ -212,6 +316,12 @@ hr {
 
 .icon-sm {
   zoom:0.85;
+}
+
+/* PROFILE */
+
+.profile-container {
+  background: gray;
 }
 
 /* CARD COMPONENT */
@@ -366,6 +476,25 @@ hr {
 }
 
 /* MODAL COMPONENT */
+.modal {
+  --bs-modal-width: 900px;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px 5px black);
+}
+
+.slide-img:hover {
+  opacity: 0.90
+}
+
+.slide-img:active {
+  transform: scale(.90);
+  filter: drop-shadow(3px 3px 3px black);
+}
+
 #exampleModalLabel {
   margin-left: 10px;
 }
@@ -559,96 +688,6 @@ hr {
   filter: drop-shadow(5px 5px 5px black);
 }
 
-/* MODAL COMPONENT */
-.modal {
-  --bs-modal-width: 900px;
-}
-
-.modal-img {
-  width: 100%;
-  border-radius: 15px;
-  filter: drop-shadow(5px 5px 5px black);
-}
-
-.slide-img:hover {
-  opacity: 0.90
-}
-
-.slide-img:active {
-  transform: scale(.90);
-  filter: drop-shadow(3px 3px 3px black);
-}
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  background-image: linear-gradient(to right, gray, white, gray, rgb(236, 236, 236), gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-image: linear-gradient( 89.9deg,  rgb(255, 50, 50), rgb(255, 166, 65), rgba(252,246,19,1), rgba(252,246,19,1), rgb(255, 166, 65), rgb(255, 50, 50)); */
-  /* border-left: 2px solid rgba(0, 0, 0, 0.25);
-  border-left: 2px solid rgba(0, 0, 0, 0.25); */
-  border-top: 1px solid rgb(72, 72, 72);
-  border-bottom: 1px solid rgb(72, 72, 72);
-}
-
-.tab-content {
-  background: repeating-linear-gradient(180deg, #111111, #4e4e4e 2px, #565656 1px);
-  /* background: radial-gradient(#ff4d50, #ff383b, #CA0002, #780000); */
-  background-size: cover;
-  min-height: 50vh;
-  margin: 0 auto;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  cursor: pointer;
-  padding: 8px 36px;
-  transition: 0.3s;
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 1px 1px 0 #ffffff;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 5px 30px;
-  background-image: linear-gradient(to right, rgb(182, 182, 182), rgb(236, 236, 236), rgb(182, 182, 182), rgb(170, 170, 170));
-  filter: drop-shadow(1px 1px 1px rgb(168, 168, 168));
-  color: rgba(0, 0, 0, 0.75);
-  padding: 5px 30px;
-  border: 2px solid rgba(145, 145, 145, 0.35);
-  box-shadow:
-  2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
-  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
-  /* box-shadow:
-  2px 2px 2px rgba(122, 122, 122, 0.55),
-  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
-  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
-  background: rgb(255, 254, 230); */
-  /* background-image: linear-gradient( 89.9deg,  rgb(255, 166, 65) -2.8%, rgba(252,246,19,1) 50.8%, rgb(255, 166, 65) 107.9% ); */
-  /* border: 3.5px solid rgba(255, 255, 174, 0.35); */
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button:active {
-  transform: scale(0.85);
-  transition: 0.2s;
-}
-
-/* Style the tab content */
-.tabcontent {
-  /* display: none; */
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-
 /* SEARCH PARAMETERS */
 ul {
   list-style: none;
@@ -761,10 +800,6 @@ ul {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-}
-
-.hidden-box {
-  visibility: hidden;
 }
 
 .search-header-container {

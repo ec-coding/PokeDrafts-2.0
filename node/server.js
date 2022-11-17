@@ -75,8 +75,8 @@ app.use(session({
 }))
 
 // Passport middleware
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Set global var
 app.use(function (req, res, next) {
@@ -130,8 +130,7 @@ app.post("/signup", async (req, res) => {
         }
 
         let user = await User.create(newUser)
-
-  
+        
         res.status(201).json({
           message: "Signup was successful",
           user: {

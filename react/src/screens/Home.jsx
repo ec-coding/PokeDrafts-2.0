@@ -3,48 +3,83 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SearchParams from '../components/SearchParams'
 import SearchResults from '../components/SearchResults'
+import Profile from '../components/Profile'
 import Deck from '../components/Deck'
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
 
-const Home = ({ user }) => {
+const Home = ({}) => {
+    const logout = () => {
+        localStorage.removeItem("user");
+        window.location.reload();
+    };
+
+    const [user, setUser] = useState({});
     const changeCards = useState([])
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
 
     useEffect(() => {
-        fetch('http://localhost:7000/decks/profile')
-          .then((res) => res.json())
-          .then((response) => {
-            console.log(response)
-            changeDecks(response)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
+        const theUser = localStorage.getItem("user");
+    
+        if (theUser && !theUser.includes("undefined")) {
+          setUser(JSON.parse(theUser));
+        }
       }, []);
 
-    const logout = () => {
-        localStorage.removeItem("user");
-        window.location.reload();
-    };
-    return (
-        <div style={{ textAlign: "center", margin: "3rem" }}>
-            <h1>Dear {user?.email}</h1>
+    useEffect(() => {
+        fetch('http://localhost:7000/decks/profile')
+            .then((res) => res.json())
+            .then((response) => {
+                console.log(response)
+                changeDecks(response)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, []);
 
-            <p>
-                You are viewing this page because you are logged in or you just signed
-                up
-            </p>
+
+    return (
+        <>
             <CardContext.Provider value={changeCards} >
                 <DeckContext.Provider value={[decks, changeDecks]} >
                     <div className="App">
+
+                        <nav class="navbar navbar-expand-lg bg-light">
+                            <div class="container-fluid tab">
+
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
+                                        </li>
+                                    </ul>
+                                    <ul class="nav-item-two">
+                                        <li>
+                                            <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+
                         <Header />
-                        <div class="tab">
-                            <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
-                            <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
-                            <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
-                        </div>
+                        {tab === 'slide0' && <div id="tab-zero" class="tab-content">
+
+                            <Profile user={user}/>
+
+                        </div>}
+
 
                         {tab === 'slide1' && <div id="tab-one" class="tab-content">
                             <SearchParams />
@@ -63,26 +98,14 @@ const Home = ({ user }) => {
 
                             </section>
                         </div>
+                        <div>
 
+                        </div>
                         <Footer />
                     </div>
                 </DeckContext.Provider>
             </CardContext.Provider>
-            <div>
-                <button
-                    onClick={logout}
-                    style={{
-                        color: "red",
-                        border: "1px solid gray",
-                        backgroundColor: "white",
-                        padding: "0.5rem 1rem",
-                        cursor: "pointer",
-                    }}
-                >
-                    Logout
-                </button>
-            </div>
-        </div>
+        </>
     );
 };
 

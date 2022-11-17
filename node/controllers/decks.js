@@ -4,12 +4,10 @@ const { MongoClient, ObjectID } = require('mongodb')
 
 module.exports = {
     getProfile: async (req, res) => {
-        console.log(req.user)
         try {
             // req.body.user = req.user.id
             // const cards = await Cards.find({ user:req.user.id }).lean()
             let deck = await Deck.findOne({ 
-
                 user:req.user
             })
             if (deck === null) {
@@ -57,12 +55,13 @@ module.exports = {
 
     createDeckCard: async (req, res) => {
         try {
-            let deck = await Deck.findOne({ 
-                user:req.user 
+            let deck = await Deck.findOne({
+                user:req.user
             })
             if (deck === null) {
+                console.log(id)
                 deck = new Deck ({ 
-                    user:req.user
+                    user: ObjectID(id)
                 })
             }
 			deck.cards.push({ 
@@ -94,7 +93,6 @@ module.exports = {
     countDeckCard: async (req, res) => {
         try {
 
-            console.log(cardCount)
             res.render('decks.ejs', {
                 quantity: cardCount,
             })
