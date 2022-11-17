@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
+import UserContext from '../UserContext';
 import DeckContext from '../DeckContext';
 import Icon from './Icon'
 import CardAttributes from './CardAttributes'
 
 export default function Card({ card, onDeck }) {
-  const [user, setUser] = useState({});
+
   const targetModal = `card-modal-${card.id}`
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
   const closeModal = `close-modal-${card.id}`
 
+  const user = useContext(UserContext);
   const [decks, changeDecks] = useContext(DeckContext)
 
   function addCardToDeck() {
@@ -35,7 +37,8 @@ export default function Card({ card, onDeck }) {
     fetch('http://localhost:7000/decks/deleteCard', {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + user.token
       },
       body: JSON.stringify(card)
     })
@@ -48,14 +51,6 @@ export default function Card({ card, onDeck }) {
         }
       })
   }
-
-  useEffect(() => {
-    const theUser = localStorage.getItem("user");
-
-    if (theUser && !theUser.includes("undefined")) {
-      setUser(JSON.parse(theUser));
-    }
-  }, []);
 
   let button;
   if (onDeck == false) {

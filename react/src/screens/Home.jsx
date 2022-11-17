@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SearchParams from '../components/SearchParams'
 import SearchResults from '../components/SearchResults'
 import Profile from '../components/Profile'
 import Deck from '../components/Deck'
+import UserContext from '../UserContext';
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
 
@@ -14,21 +15,18 @@ const Home = ({}) => {
         window.location.reload();
     };
 
-    const [user, setUser] = useState({});
+    const user = useContext(UserContext);
     const changeCards = useState([])
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
 
     useEffect(() => {
-        const theUser = localStorage.getItem("user");
-    
-        if (theUser && !theUser.includes("undefined")) {
-          setUser(JSON.parse(theUser));
-        }
-      }, []);
-
-    useEffect(() => {
-        fetch('http://localhost:7000/decks/profile')
+        fetch('http://localhost:7000/decks/profile', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + user.token
+              },
+        })
             .then((res) => res.json())
             .then((response) => {
                 console.log(response)

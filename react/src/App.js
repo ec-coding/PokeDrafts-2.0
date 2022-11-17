@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-
+import UserContext from './UserContext';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Landing from "./screens/Landing";
 import Login from "./screens/Login";
@@ -42,8 +42,10 @@ function App() {
   // MIT LICENSE 
 
   return (
+    <UserContext.Provider value={user}>
     <BrowserRouter>
     <Routes>
+
       <Route
         path="/"
         element={user?.email ? <Navigate to="/home" /> : <Landing />}
@@ -95,6 +97,7 @@ function App() {
       </CardContext.Provider> */}
       </Routes>
     </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 
