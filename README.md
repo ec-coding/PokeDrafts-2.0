@@ -273,3 +273,5 @@ Building this app has allowed me to learn and exercise a variety of different co
 11/1/2022
 1. The design and functionality for the Text, Card Type, Set, and Type parameters have all been completed on the Search Cards tab.
 
+11/13/2022
+1. Began implementing Google authentication for React using oauth and updated passport modules.
