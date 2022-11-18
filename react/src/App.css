@@ -226,6 +226,12 @@ hr {
 
 }
 
+#tab-three .slide-img {
+  transform: scale(0.7);
+  margin: -35px -25px;
+  padding: 0;
+}
+
 /* ICONS */
 .icon-Grass {
   background-image: url('https://i.imgur.com/9NMFHcH.png');
@@ -306,6 +312,7 @@ hr {
   padding-top: 0px;
 }
 
+
 .card-title-box div {
   zoom:1.00;
 }
@@ -321,7 +328,15 @@ hr {
 /* PROFILE */
 
 .profile-container {
-  background: gray;
+  background: rgb(192, 192, 192);
+}
+
+.profile-container h1 {
+  margin-bottom: 0;
+}
+
+.profile {
+  padding-top: 20px;
 }
 
 /* CARD COMPONENT */
@@ -466,8 +481,11 @@ hr {
 }
 
 .card-bio {
+  background: repeating-linear-gradient(180deg, #d3d3d3, #ffffff 1px, #565656 1px);
   border: 2px solid rgb(255, 255, 255);
   padding: 3px 3px;
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
 .center-box {
@@ -484,6 +502,10 @@ hr {
   width: 100%;
   border-radius: 15px;
   filter: drop-shadow(5px 5px 5px black);
+}
+
+.slide-img {
+  border-radius: 1vh !important;
 }
 
 .slide-img:hover {

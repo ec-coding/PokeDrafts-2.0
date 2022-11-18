@@ -72,7 +72,7 @@ const Home = ({}) => {
                         </nav>
 
                         <Header />
-                        {tab === 'slide0' && <div id="tab-zero" class="tab-content">
+                        {tab === 'slide0' && <div id="tab-zero">
 
                             <Profile user={user}/>
 

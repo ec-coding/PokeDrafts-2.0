@@ -3,11 +3,12 @@ import DeckContext from '../DeckContext';
 import Card from './Card'
 
 export default function SearchResults() {
-
+    const [typePokemon, changeTypePokemon] = useState([])
+    const [typeTrainer, changeTypeTrainer] = useState([])
+    const [typeEnergy, changeTypeEnergy] = useState([])
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
-    const chunks = arrayChunks(decks, 8);
-
+    const chunks = arrayChunks(decks, 60);
     return (
         <>
             <div class="search-header-container">
@@ -19,14 +20,13 @@ export default function SearchResults() {
 
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-indicators">
+                {/* <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+                </div> */}
 
                 <div class="carousel-inner active">
-
 
                     {/* How do you assign an array chunk to each carousel? */}
 
@@ -35,6 +35,16 @@ export default function SearchResults() {
                             return (
                                 <div class="carousel-item active">
                                     {slides.map(card => {
+                                        if (card.type == "Pokémon") {
+
+                                        } else if (card.type == "Trainer") {
+
+                                        } else if (card.type == "Pokémon") {
+
+                                        }
+
+
+
                                         return (
                                             <Card card={card} onDeck={true} />
                                         )
@@ -69,14 +79,14 @@ export default function SearchResults() {
                     </div> */}
 
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button>
+                </button> */}
             </div>
         </>
     )

@@ -97,7 +97,7 @@ export default function Card({ card, onDeck }) {
                   </div>
                   <hr />
 
-                  <div>
+                  <div class="card-attack-box">
                     <CardAttributes pokemonPower={card?.abilities} />
                     <CardAttributes pokemonAttacks={card?.attacks} />
                     <CardAttributes cardRules={card?.rules} />
