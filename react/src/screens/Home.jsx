@@ -29,7 +29,7 @@ const Home = ({}) => {
         })
             .then((res) => res.json())
             .then((response) => {
-                console.log(response)
+                // console.log(response)
                 changeDecks(response)
             })
             .catch((err) => {

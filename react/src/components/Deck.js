@@ -3,12 +3,37 @@ import DeckContext from '../DeckContext';
 import Card from './Card'
 
 export default function SearchResults() {
-    const [typePokemon, changeTypePokemon] = useState([])
-    const [typeTrainer, changeTypeTrainer] = useState([])
-    const [typeEnergy, changeTypeEnergy] = useState([])
+    const typePokemon = []
+    const typeTrainer = []
+    const typeEnergy = []
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(decks, 60);
+
+    decks.sort((a, b) => a.name.localeCompare(b.name))
+
+
+    // HOW DO I MAKE THIS MUTATE THE ARRAYS?
+    // var groupBy = function (xs, key) {
+    //     return xs.reduce(function (rv, x) {
+    //         (rv[x[key]] = rv[x[key]] || []).push(x);
+    //         return rv;
+    //     }, {});
+    // };
+
+    // groupBy(decks, 'id')
+
+    // SORT BY CARD TYPE
+    for (var i = 0; i < decks.length; i++) {
+        if (decks[i].supertype === "Pokémon") {
+            typePokemon.push(decks[i])
+        } else if (decks[i].supertype === "Trainer") {
+            typeTrainer.push(decks[i])
+        } else if (decks[i].supertype === "Energy") {
+            typeEnergy.push(decks[i])
+        }
+    }
+
     return (
         <>
             <div class="search-header-container">
@@ -26,46 +51,70 @@ export default function SearchResults() {
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div> */}
 
-                <div class="carousel-inner active">
+                <div class="deck-inner carousel-inner active">
 
-                    {/* How do you assign an array chunk to each carousel? */}
 
                     {chunks.map(slides => {
                         if (chunks.indexOf(slides) === 0) {
                             return (
-                                <div class="carousel-item active">
-                                    {slides.map(card => {
-                                        if (card.type == "Pokémon") {
-
-                                        } else if (card.type == "Trainer") {
-
-                                        } else if (card.type == "Pokémon") {
-
-                                        }
-
-
-
-                                        return (
-                                            <Card card={card} onDeck={true} />
-                                        )
-                                    })}
-                                </div>
-                            )
-                        } else {
-                            return (
-                                <div class="carousel-item">
-                                    {slides.map(card => {
-                                        return (
-                                            <Card card={card} onDeck={true} />
-                                        )
-                                    })}
-                                </div>
+                                <>
+                                    <h4>Pokémon</h4>
+                                    <div class="deck-type type-pokemon">
+                                        
+                                        {typePokemon.map((card) => {
+                                            return (
+                                                <Card card={card} onDeck={true} />
+                                            )
+                                        })}
+                                    </div>
+                                    <h4>Trainer</h4>
+                                    <div class="deck-type type-trainer">
+                                        {typeTrainer.map((card) => {
+                                            return (
+                                                <Card card={card} onDeck={true} />
+                                            )
+                                        })}
+                                    </div>
+                                    <h4>Energy</h4>
+                                    <div class="deck-type type-energy">
+                                        {typeEnergy.map((card) => {
+                                            return (
+                                                <Card card={card} onDeck={true} />
+                                            )
+                                        })}
+                                    </div>
+                                </>
                             )
                         }
-                    })}
+                    })
+                    }
 
-                    {/* RESEARCH ARRAY CHUNKING */}
 
+                    {/* How do you assign an array chunk to each carousel? */}
+
+                    {/* {chunks.map(slides => {
+                            if (chunks.indexOf(slides) === 0) {
+                                return (
+                                    <div class="carousel-item active">
+                                        {slides.map(card => {
+                                            return (
+                                                <Card card={card} onDeck={true} />
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div class="carousel-item">
+                                        {slides.map(card => {
+                                            return (
+                                                <Card card={card} onDeck={true} />
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            }
+                        })} */}
                     {/* <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
@@ -78,8 +127,8 @@ export default function SearchResults() {
                         </div>
                     </div> */}
 
-                </div>
-                {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+
+                    {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
@@ -87,7 +136,9 @@ export default function SearchResults() {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button> */}
+                </div>
             </div>
         </>
     )
 }
+
