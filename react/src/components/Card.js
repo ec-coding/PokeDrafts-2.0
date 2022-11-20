@@ -107,8 +107,6 @@ export default function Card({ card, onDeck }) {
                   <CardAttributes statTrio={card} />
                   <CardAttributes cardBio={card?.flavorText} />
 
-{/* Separate background for unique info */}
-
                   <div>
                     <div className="row">
                       <h6 class="col">Set: {card?.set.name}</h6>

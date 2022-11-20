@@ -12,16 +12,16 @@ export default function SearchResults() {
 
     decks.sort((a, b) => a.name.localeCompare(b.name))
 
-
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
-    // var groupBy = function (xs, key) {
-    //     return xs.reduce(function (rv, x) {
-    //         (rv[x[key]] = rv[x[key]] || []).push(x);
-    //         return rv;
-    //     }, {});
-    // };
+    var groupBy = function (xs, key) {
+        return xs.reduce(function (rv, x) {
+            (rv[x[key]] = rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
+    };
 
-    // groupBy(decks, 'id')
+    const deckDict = groupBy(decks, 'id')
+
 
     // SORT BY CARD TYPE
     for (var i = 0; i < decks.length; i++) {
@@ -33,6 +33,104 @@ export default function SearchResults() {
             typeEnergy.push(decks[i])
         }
     }
+
+    const renderPokemon = () => {
+        const mySet2 = new Set()
+
+        let retArr = []
+        for (var i = 0; i < typePokemon.length; i++) {
+            mySet2.add(typePokemon[i].id)
+        }
+
+        for(const [key, value] of mySet2.entries())  {
+
+            retArr.push(
+                <div className={'deck-card-stack pokemon-card-stack'} >
+                    {deckDict[value].map((card, index) => {
+                        return (
+                            <div className={'deck-card pokemon-card'} style={{
+                                // zIndex: index + 1, 
+                                top: 30 * index
+                                }} >
+                                <Card card={card} onDeck={true} />
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+
+        }
+        return retArr
+    }
+
+    const renderTrainer = () => {
+        const mySet3 = new Set()
+
+        let retArr = []
+        for (var i = 0; i < typeTrainer.length; i++) {
+            mySet3.add(typeTrainer[i].id)
+        }
+        for(const [key, value] of mySet3.entries())  {
+            
+            retArr.push(
+                <div className={'deck-card-stack trainer-card-stack'} >
+                    {deckDict[value].map((card, index) => {
+                        return (
+                            <div className={'deck-card trainer-card'} style={{
+                                // zIndex: index + 1, 
+                                top: 30 * index
+                                }} >
+                                <Card card={card} onDeck={true} />
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+
+        }
+        return retArr
+    }
+ 
+    const renderEnergy = () => {
+        const mySet4 = new Set()
+
+        let retArr = []
+        for (var i = 0; i < typeEnergy.length; i++) {
+            mySet4.add(typeEnergy[i].id)
+        }
+        for(const [key, value] of mySet4.entries())  {
+            retArr.push(
+                <div className={'deck-card-stack energy-card-stack'} >
+                    {deckDict[value].map((card, index) => {
+                        if (index < 4) {
+                            return (
+                                <div className={'deck-card energy-card'} style={{
+                                    // zIndex: index + 1, 
+                                    top: 30 * index
+                                    }} >
+                                    <Card card={card} onDeck={true} />
+                                </div>
+                            )
+                        }
+                    })}
+                </div>
+            )
+        }
+        console.log(mySet4.size)
+        console.log(typeEnergy)
+        return retArr
+    }
+
+
+    // console.log('@@@ render pokemon', renderPokemon())
+
+    // let typeDict;
+    // for (var i = 0; i < decks.length; i++) {
+    //     if (typeDict[decks[i].supertype])
+    //         typeDict[decks[i].supertype].push(decks[i])
+    //     else
+    //         typeDict[decks[i].supertype] = [decks[i]]
+    // }
 
     return (
         <>
@@ -58,30 +156,19 @@ export default function SearchResults() {
                         if (chunks.indexOf(slides) === 0) {
                             return (
                                 <>
-                                    <h4>Pokémon</h4>
-                                    <div class="deck-type type-pokemon">
-                                        
-                                        {typePokemon.map((card) => {
-                                            return (
-                                                <Card card={card} onDeck={true} />
-                                            )
-                                        })}
+                                    <h4 class="card-stack-title">Pokémon</h4>
+                                    <div className="deck-type type-pokemon">
+                                        {renderPokemon()}
                                     </div>
-                                    <h4>Trainer</h4>
-                                    <div class="deck-type type-trainer">
-                                        {typeTrainer.map((card) => {
-                                            return (
-                                                <Card card={card} onDeck={true} />
-                                            )
-                                        })}
+
+                                    <h4 class="card-stack-title">Trainer</h4>
+                                    <div className="deck-type type-trainer">
+                                        {renderTrainer()}
                                     </div>
-                                    <h4>Energy</h4>
+
+                                    <h4 class="card-stack-title">Energy</h4>
                                     <div class="deck-type type-energy">
-                                        {typeEnergy.map((card) => {
-                                            return (
-                                                <Card card={card} onDeck={true} />
-                                            )
-                                        })}
+                                        {renderEnergy()}
                                     </div>
                                 </>
                             )
