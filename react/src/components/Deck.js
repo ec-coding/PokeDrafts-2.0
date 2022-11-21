@@ -1,14 +1,16 @@
 import React, { useState, useContext } from 'react';
+import UserContext from '../UserContext';
 import DeckContext from '../DeckContext';
 import Card from './Card'
 
-export default function SearchResults() {
+export default function UserDeck() {
     const typePokemon = []
     const typeTrainer = []
     const typeEnergy = []
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(decks, 60);
+    const user = useContext(UserContext);
 
     decks.sort((a, b) => a.name.localeCompare(b.name))
 
@@ -21,7 +23,6 @@ export default function SearchResults() {
     };
 
     const deckDict = groupBy(decks, 'id')
-
 
     // SORT BY CARD TYPE
     for (var i = 0; i < decks.length; i++) {
@@ -42,7 +43,7 @@ export default function SearchResults() {
             mySet2.add(typePokemon[i].id)
         }
 
-        for(const [key, value] of mySet2.entries())  {
+        for (const [key, value] of mySet2.entries()) {
 
             retArr.push(
                 <div className={'deck-card-stack pokemon-card-stack'} >
@@ -51,7 +52,7 @@ export default function SearchResults() {
                             <div className={'deck-card pokemon-card'} style={{
                                 // zIndex: index + 1, 
                                 top: 30 * index
-                                }} >
+                            }} >
                                 <Card card={card} onDeck={true} />
                             </div>
                         )
@@ -70,8 +71,8 @@ export default function SearchResults() {
         for (var i = 0; i < typeTrainer.length; i++) {
             mySet3.add(typeTrainer[i].id)
         }
-        for(const [key, value] of mySet3.entries())  {
-            
+        for (const [key, value] of mySet3.entries()) {
+
             retArr.push(
                 <div className={'deck-card-stack trainer-card-stack'} >
                     {deckDict[value].map((card, index) => {
@@ -79,7 +80,7 @@ export default function SearchResults() {
                             <div className={'deck-card trainer-card'} style={{
                                 // zIndex: index + 1, 
                                 top: 30 * index
-                                }} >
+                            }} >
                                 <Card card={card} onDeck={true} />
                             </div>
                         )
@@ -90,7 +91,7 @@ export default function SearchResults() {
         }
         return retArr
     }
- 
+
     const renderEnergy = () => {
         const mySet4 = new Set()
 
@@ -98,7 +99,7 @@ export default function SearchResults() {
         for (var i = 0; i < typeEnergy.length; i++) {
             mySet4.add(typeEnergy[i].id)
         }
-        for(const [key, value] of mySet4.entries())  {
+        for (const [key, value] of mySet4.entries()) {
             retArr.push(
                 <div className={'deck-card-stack energy-card-stack'} >
                     {deckDict[value].map((card, index) => {
@@ -107,7 +108,7 @@ export default function SearchResults() {
                                 <div className={'deck-card energy-card'} style={{
                                     // zIndex: index + 1, 
                                     top: 30 * index
-                                    }} >
+                                }} >
                                     <Card card={card} onDeck={true} />
                                 </div>
                             )
@@ -119,6 +120,23 @@ export default function SearchResults() {
         console.log(mySet4.size)
         console.log(typeEnergy)
         return retArr
+    }
+
+    function deleteDeck(id) {
+        fetch('http://localhost:7000/decks/deleteDeck', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + user.token
+            },
+        })
+            .then((res) => {
+                if (res.ok) {
+                    let deckState = []
+                    changeDecks(deckState)
+                    return res
+                }
+            })
     }
 
 
@@ -140,7 +158,19 @@ export default function SearchResults() {
                     <h6 class="instructions-text">Browse through and click on any card to remove it from your deck.</h6>
                 </section>
             </div>
-
+            <section class="deck-buttons button-input">
+                <ul class="row">
+                <li class="col">
+                        <button type="submit">Rename Deck</button>
+                    </li>
+                    <li class="col">
+                        <button type="submit">Sort Deck</button>
+                    </li>
+                    <li class="col">
+                        <button type="submit" onClick={deleteDeck}>Delete Deck</button>
+                    </li>
+                </ul>
+            </section>
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 {/* <div class="carousel-indicators">
@@ -156,6 +186,7 @@ export default function SearchResults() {
                         if (chunks.indexOf(slides) === 0) {
                             return (
                                 <>
+                                {/* Show counters for # of cards in each stack */}
                                     <h4 class="card-stack-title">Pokémon</h4>
                                     <div className="deck-type type-pokemon">
                                         {renderPokemon()}

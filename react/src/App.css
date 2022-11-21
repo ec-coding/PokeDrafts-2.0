@@ -506,7 +506,11 @@ hr {
 }
 
 .slide-img {
+  width: 22vh;
+  padding: 5px;
+  margin: 5px;
   border-radius: 1vh !important;
+  filter: drop-shadow(5px 5px 5px black);
 }
 
 .slide-img:hover {
@@ -699,14 +703,6 @@ hr {
     2px 2px 0.5em rgba(122, 122, 122, 0.55),
     inset 1px 1px 0 rgba(255, 255, 255, 0.9),
     inset -1px -1px 0 rgba(0, 0, 0, 0.5);
-}
-
-.slide-img {
-  transform: scale(0.95);
-  padding: 5px;
-  margin: 5px;
-  border-radius: 15px;
-  filter: drop-shadow(5px 5px 5px black);
 }
 
 /* SEARCH PARAMETERS */
@@ -985,7 +981,7 @@ input[type=radio] {
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 7.5% !important;
+  width: 6% !important;
   background: rgba(0, 0, 0, 0.75);
   margin: auto;
 }
@@ -1051,13 +1047,15 @@ input[type=radio] {
 /* DECK COMPONENT */
 .deck-inner {
   padding-top: 3vh;
+  /* margin-bottom: 3.5vh; */
 }
 
 .card-stack-title {
   color: rgb(224, 224, 224);
   width: 15%;
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 5px 30px;
+  border: 2px dashed darkgray;
 }
 
 .deck-inner .slide-img {
@@ -1099,7 +1097,6 @@ input[type=radio] {
   position: relative;
   flex: 1;
   margin-bottom: 8vh;
-
 }
 
 .deck-card:first-child {
@@ -1109,3 +1106,22 @@ input[type=radio] {
 .deck-card {
   position: absolute;
 }
+
+.deck-buttons {
+  width: 100%;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid darkgray;
+  margin: 0;
+}
+
+.deck-buttons ul {
+  margin: 0;
+  justify-content: center;
+}
+
+.deck-buttons button {
+  width: 200px;
+}
+
+/* MODAL NOTIFICATION */

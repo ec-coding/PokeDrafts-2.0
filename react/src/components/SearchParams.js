@@ -43,7 +43,7 @@ export default function SearchParams() {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=1&pageSize=48&orderBy=set&q=`
+        fetchURLText = url + `page=1&pageSize=60&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }

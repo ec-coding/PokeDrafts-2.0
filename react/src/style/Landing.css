@@ -1,0 +1,21 @@
+header,
+body,
+footer {
+  max-width: none;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.landing-container {
+    height: 72.5vh;
+    background-image: url('https://i.imgur.com/91T4JcC.jpg');
+    background-position: top -10vh center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.landing-body {
+    background: white;
+    height: 40vh;
+}

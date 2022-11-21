@@ -27,7 +27,6 @@ export default function Card({ card, onDeck }) {
     // Card is not being created with the user's ID
       .then((response) => response.json())
       .then(data => {
-        console.log(data)
         let newDeck = [...decks, data]
         changeDecks(newDeck)
       })
@@ -81,10 +80,11 @@ export default function Card({ card, onDeck }) {
                   <img src={card.images.large} class="modal-img" alt="..." />
                   <div class="row modal-button-container">
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
-                    {/* IF STATEMENT HERE, 2nd PROP PASSED INTO CARD SHOW ADD TO DECK BUTTON OR SHOW REMOVE FROM DECK BUTTON */}
-                    {/* IF ONDECK = TRUE, SHOW REMOVE FROM DECK BUTTON */}
                     {button}
                   </div>
+                  {/* <section class="card-added-notice">
+                      <h4>{card?.name} was added to your deck!</h4>
+                  </section> */}
                 </div>
 
                 <div class="card-divider card-text">
