@@ -13,9 +13,194 @@ footer {
     background-size: 100%;
     background-repeat: no-repeat;
     border: none;
+    padding-top: 20px;
+    position: relative;
+}
+
+.landing-navbar {
+    margin: 0 auto;
+    display: flex;
+    width: 82.5%;
+}
+
+.landing-navbar ul {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+}
+
+.landing-navbar li {
+    padding-top: 5px;
+}
+
+.landing-navbar ul img {
+    width: 25vh;
+    margin-right: 3vh;
+}
+
+.landing-navbar ul+ul {
+    display: flex;
+    justify-content: right;
+}
+
+.landing-navbar button {
+    background: inherit;
+    border: none;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.landing-navbar a {
+    color: rgb(212, 212, 212);
+    text-decoration: none;
+}
+
+.landing-navbar a:hover {
+    transition: 0.2s;
+    color: white;
+}
+
+.landing-title-container {
+    margin-top: 10vh;
+    color: white;
+}
+
+.landing-title-container h1 {
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .landing-body {
+    min-height: 60vh;
     background: white;
-    height: 40vh;
+    padding-bottom: 8vh;
 }
+
+.landing-articles article {
+    width: 30vh;
+}
+
+/* .landing-articles img {
+    position: relative;
+    width: 250px;
+    height: 343px;
+    border-radius: 1vh;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px black);
+} */
+
+.flip-card-container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    z-index: 10;
+    margin-top: -12vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.2s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front img {
+    position: relative;
+    width: 250px;
+    height: 343px;
+    border-radius: 0.5em;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px black);
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-back img {
+    position: relative;
+    width: 250px;
+    height: 343px;
+    border-radius: 0.5em;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px black);
+  }
+
+  .landing-set-container {
+    margin-top: 30vh;
+    padding-bottom: 5vh;
+    width: 82.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landing-set-container h2, .landing-button-container h2 {
+    margin: 0 auto;
+    padding: 35px;
+    font-size: 24px;
+    color: rgb(54, 54, 54);
+    background: rgb(202, 202, 202);
+  }
+
+  .landing-sets {
+    margin-top: 3vh;
+  }
+
+  .landing-sets img {
+    position: relative;
+    width: 200px;
+    height: 350px;
+    border-radius: 0.5em;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px black);
+    margin: 2vh 0;
+  }
+
+  .landing-sets img:hover {
+    transform: scale(1.08);
+  }
+
+  .landing-button-container {
+    margin: 0 auto;
+    padding: 0;
+    width: 82.5%;
+  }
+
+  .landing-button-container button {
+    margin: 2vh;
+  }
+
+  .landing-button-container button a {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+  }
+
+  .landing-button-container button a:hover {
+    color: rgb(112, 112, 112);
+  }

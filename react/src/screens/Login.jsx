@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import '../style/SignUp.css';
 
 // https://developers.google.com/identity/gsi/web/reference/js-reference
 
@@ -31,24 +32,37 @@ const Login = () => {
 
   return (
     <>
-      <nav style={{ padding: "2rem" }}>
-        <Link to="/">Go Back</Link>
-      </nav>
-      <header style={{ textAlign: "center" }}>
-        <h1>Login to continue</h1>
-      </header>
-      <main
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {loading ? <div>Loading....</div> : <div id="loginDiv"></div>}
+      <main class="median-master-container">
+        <div class="median-container row">
+          <section class="median-form-container col">
+
+            <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
+
+            <div class="median-form">
+
+              <h1>Log in with Google</h1>
+              <div class="signup-container">
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                {loading ? <div>Loading....</div> : <div id="loginDiv"></div>}
+              </div>
+
+              <span>Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply</span>
+
+              <nav class="landing-return" style={{ padding: "2rem" }}>
+                <Link to="/"><i class='fas fa-angle-double-left'></i>Go Back</Link>
+              </nav>
+
+            </div>
+
+
+          </section>
+          <section class="median-bg-container col"></section>
+        </div>
       </main>
-      <footer></footer>
+
+
+
+
     </>
   );
 };
