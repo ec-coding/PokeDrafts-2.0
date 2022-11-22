@@ -1,0 +1,93 @@
+.notification-area {
+    position:fixed;
+    bottom: -4.5vh;
+    right:10px;
+    width:300px;
+    height:20vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-top;
+  }
+  
+  .notification-area .notification {
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    position:relative;
+    padding:15px 10px;
+    background:#111;
+    color:#f5f5f5;
+    font-family:"Raleway";
+    font-size:14px;
+    font-weight:600;
+    border-radius:5px;
+    margin:5px 0px;
+    opacity:0;
+    left:250px;
+    z-index: 10;
+  }
+  
+  @keyframes fadeInFromNone {
+      0% {
+          display: none;
+          opacity: 0;
+        
+      }
+  
+      5% {
+          display: block;
+          opacity: 1;
+          left: 0px;
+      }
+    
+      75% {
+          display: block;
+          opacity: 1;
+          left: 0px;
+      }
+  
+      100% {
+          display: block;
+          opacity: 0;
+          left: 250px;
+      
+      }
+  }
+  .notification-area .fade_out {
+    animation: fadeInFromNone 5s ease-out;
+  }
+  
+  .notification-area .move_element_up {
+    animation: fadeInFromNone 5s ease-out;
+  }
+  
+  .notification-area .do_after_goan{
+     opacity: 1;
+     overflow-y: hidden;
+     visibility: hidden;
+     left: 0px ;
+     -webkit-animation: after_goan 0.5s;
+     animation: after_goan 0.5s;
+  
+  
+  }
+  
+  @keyframes after_goan {
+      0% {
+          visibility:hidden;
+          overflow-y: hidden;
+      } 
+      100% {
+          padding: 0px;
+          height: 0px;
+      }
+  }
+  
+  
+.notification-area .notification.success {
+    background:#389838;
+  }
+.notification-area .notification.error {
+    background:orangered;
+  }
+.notification-area .notification.info {
+    background:#00acee;
+  }

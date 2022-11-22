@@ -23,20 +23,21 @@ hr {
 /* NAVBAR */
 .navbar {
   padding: 0;
-  border-bottom: 1px solid rgb(70, 70, 70);
   overflow: hidden;
   background-color: #333;
   position: fixed;
   top: 0;
   width: 1280px;
-
+  border: none !important;
   z-index: 10;
   display: flex;
 }
 
 .navbar .container-fluid {
-  background-image: linear-gradient(to right, gray, white, gray, rgb(236, 236, 236), gray);
+  background-image: linear-gradient(to right, rgb(182, 182, 182), rgb(236, 236, 236), rgb(182, 182, 182), rgb(170, 170, 170));
   padding: 2px 5px;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .navbar li a {
@@ -94,7 +95,7 @@ hr {
 }
 
 .tab-content {
-  background: repeating-linear-gradient(180deg, #111111, #4e4e4e 2px, #565656 1px);
+  background: #303030;
   /* background: radial-gradient(#ff4d50, #ff383b, #CA0002, #780000); */
   background-size: cover;
   min-height: 50vh;
@@ -185,11 +186,19 @@ hr {
   margin-top: 40px;
   color: white;
   text-shadow: 1px 1px 0 #000000;
-  background-image: url('https://images.hdqwalls.com/wallpapers/blue-texture-pf.jpg');
+  background-image: url('https://i.imgur.com/eUFKNVm.png');
   /* background-image: linear-gradient(rgb(46, 113, 236), lightblue, rgb(46, 113, 236)); */
+  height: 55vh;
   background-size: cover;
+  background-position: top -13vh center;
   padding: 30px 0;
+}
 
+#title-container .title {
+  margin-top: 3vh;
+  margin-left: 4vh;
+  display: flex;
+  justify-content: left;
 }
 
 #title-container h3 {
@@ -823,9 +832,11 @@ ul {
   filter: drop-shadow(0px 0px 0px white);
   color: white;
   min-height: 12vh;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  background: repeating-linear-gradient(180deg, #9b9b9b, #4e4e4e 2px, #565656 1px);
+  background-image: url('https://cdn.staticcrate.com/stock-hd/effects/footagecrate-4k-looping-tech-background-clean-red-2-prev-full.png');
+  background-size: cover;
+  border-top: 3.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 3.5px solid rgba(0, 0, 0, 0.5);
+  opacity: 0.85;
 }
 
 .search-header-container h2,
@@ -844,17 +855,18 @@ h6 {
   filter: drop-shadow(0px 0px 0px white);
   color: white;
   min-height: 12vh;
-  border-top: 1px solid rgb(72, 72, 72);
-  border-bottom: 1px solid rgb(72, 72, 72);
-  background: repeating-linear-gradient(180deg, #9b9b9b, #4e4e4e 2px, #565656 1px);
+  background-image: url('https://cdn.staticcrate.com/stock-hd/effects/footagecrate-4k-looping-tech-background-clean-red-2-prev-full.png');
   background-size: cover;
+  border-top: 3.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 3.5px solid rgba(0, 0, 0, 0.5);
+  opacity: 0.85;
 }
 
 .search-input {
   padding: 0 !important;
   justify-content: center;
   width: 80vh;
-  margin: 0px auto 5px auto;
+  margin: 0px auto 6.5px auto;
   /* border: 3px solid rgba(255, 255, 255); */
 }
 
@@ -865,18 +877,18 @@ h6 {
 }
 
 .search-input h3 {
-  color: rgb(54, 54, 54);
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9);
+  color: rgb(255, 255, 255);
+  text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);
   text-align: left;
   text-decoration: none;
   font-weight: bold;
   box-shadow:
     2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   margin: 0px;
   padding: 3px 0 5px 15px;
-  background: repeating-linear-gradient(180deg, #bbbbbb, #ff6a6a 1px, #ffc8c8 2px);
+  background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180))
   /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
 }
 

@@ -3,6 +3,9 @@ import UserContext from '../UserContext';
 import DeckContext from '../DeckContext';
 import Icon from './Icon'
 import CardAttributes from './CardAttributes'
+import '../style/Card.css';
+
+
 
 export default function Card({ card, onDeck }) {
 
@@ -10,12 +13,14 @@ export default function Card({ card, onDeck }) {
   const targetModalID = `#card-modal-${card.id}`
   const targetType = `card-modal-${card.types}`
   const closeModal = `close-modal-${card.id}`
+  const addCard = `add-card-${card.id}`
+  const cardName = `${card.name}`
 
   const user = useContext(UserContext);
   const [decks, changeDecks] = useContext(DeckContext)
 
   function addCardToDeck() {
-    fetch('http://localhost:7000/decks/createDeckCard',  { 
+    fetch('http://localhost:7000/decks/createDeckCard', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,11 +29,13 @@ export default function Card({ card, onDeck }) {
       },
       body: JSON.stringify(card)
     })
-    // Card is not being created with the user's ID
+      // Card is not being created with the user's ID
       .then((response) => response.json())
       .then(data => {
+        notify("success", "This is demo success notification message");
         let newDeck = [...decks, data]
         changeDecks(newDeck)
+
       })
   }
 
@@ -49,6 +56,37 @@ export default function Card({ card, onDeck }) {
           return res
         }
       })
+  }
+
+  function notify(type, message) {
+    (() => {
+      let n = document.createElement("div");
+      let id = Math.random().toString(36).substr(2, 10);
+      n.setAttribute("id", id);
+      n.classList.add("notification", type);
+      n.classList.add("fade_out")
+      n.innerText = cardName + ' was added to your deck';
+      document.getElementById(addCard).appendChild(n);
+      setTimeout(() => {
+        var notifications = document.getElementById(addCard).getElementsByClassName("notification");
+        for (let i = 0; i < notifications.length; i++) {
+          if (notifications[i].getAttribute("id") == id) {
+            notifications[i].classList.remove("fade_out")
+            notifications[i].classList.add("do_after_goan");
+            setTimeout(() => {
+              var notifications = document.getElementById(addCard).getElementsByClassName("notification");
+              for (let i = 0; i < notifications.length; i++) {
+                if (notifications[i].getAttribute("id") == id) {
+                  notifications[i].remove();
+                  break;
+                }
+              }
+            }, 500);
+            break;
+          }
+        }
+      }, 3000);
+    })();
   }
 
   let button;
@@ -82,9 +120,6 @@ export default function Card({ card, onDeck }) {
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
                     {button}
                   </div>
-                  {/* <section class="card-added-notice">
-                      <h4>{card?.name} was added to your deck!</h4>
-                  </section> */}
                 </div>
 
                 <div class="card-divider card-text">
@@ -117,6 +152,8 @@ export default function Card({ card, onDeck }) {
                       <h6 class="col">Trending Price: <h6 class="no-margin-bottom">${card?.cardmarket.prices.trendPrice} USD</h6></h6>
                       <h6 class="col text-right">Last Updated: <h6 class="no-margin-bottom">{card?.cardmarket.updatedAt}</h6></h6>
                     </div>
+                    <div id={addCard} class="notification-area">
+                  </div>
                   </div>
                   <hr />
 

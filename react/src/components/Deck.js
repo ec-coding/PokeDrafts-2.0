@@ -117,8 +117,6 @@ export default function UserDeck() {
                 </div>
             )
         }
-        console.log(mySet4.size)
-        console.log(typeEnergy)
         return retArr
     }
 
