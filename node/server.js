@@ -173,7 +173,7 @@ app.post("/signup", async (req, res) => {
         }
   
         res.status(201).json({
-          message: "Login was successful",
+        //   message: "Login was successful",
           user: {
             firstName: profile?.given_name,
             lastName: profile?.family_name,

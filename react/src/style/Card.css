@@ -83,7 +83,7 @@
   
   
 .notification-area .notification.success {
-    background:#389838;
+    background:rgba(56, 152, 56, 0.75);
   }
 .notification-area .notification.error {
     background:orangered;

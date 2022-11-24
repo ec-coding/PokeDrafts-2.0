@@ -23,6 +23,7 @@ const useFetch = (url) => {
         if (data?.user) {
           localStorage.setItem("user", JSON.stringify(data?.user));
           window.location.reload();
+          return data
         }
 
         throw new Error(data?.message || data);

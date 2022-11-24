@@ -10,6 +10,7 @@ export default function UserDeck() {
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(decks, 60);
+
     const user = useContext(UserContext);
 
     decks.sort((a, b) => a.name.localeCompare(b.name))
@@ -93,6 +94,7 @@ export default function UserDeck() {
     }
 
     const renderEnergy = () => {
+        const energyChunks = arrayChunks(typeEnergy, 4);
         const mySet4 = new Set()
 
         let retArr = []

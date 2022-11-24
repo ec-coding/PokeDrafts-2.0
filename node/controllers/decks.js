@@ -67,7 +67,7 @@ module.exports = {
                 _id: new ObjectID(), 
                 ...req.body
             })
-            deck.save()
+            deck.update()
             let card = deck.cards.at(-1)
             res.json(card)
         } catch (err) {
@@ -104,9 +104,12 @@ module.exports = {
         try {
             const userID = req.user.id
             const deck = await Deck.findOne({ user: userID })
+            if (!deck) {
+                return res.status(404).json
+            }
             deck.cards = deck.cards.filter(card => card._id != req.body._id)
             console.log(req.body._id)
-            deck.save()
+            deck.update()
             console.log(`Deleted card`)
             res.json('')
         } catch (err) {

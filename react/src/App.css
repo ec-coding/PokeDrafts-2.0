@@ -188,14 +188,14 @@ hr {
   text-shadow: 1px 1px 0 #000000;
   background-image: url('https://i.imgur.com/eUFKNVm.png');
   /* background-image: linear-gradient(rgb(46, 113, 236), lightblue, rgb(46, 113, 236)); */
-  height: 55vh;
+  height: 52.5vh;
   background-size: cover;
-  background-position: top -13vh center;
+  background-position: top -15vh center;
   padding: 30px 0;
 }
 
 #title-container .title {
-  margin-top: 3vh;
+  margin-top: 2vh;
   margin-left: 4vh;
   display: flex;
   justify-content: left;
@@ -333,10 +333,6 @@ hr {
 }
 
 /* PROFILE */
-
-.profile-container {
-  background: rgb(192, 192, 192);
-}
 
 .profile-container h1 {
   margin-bottom: 0;
@@ -831,7 +827,7 @@ ul {
   text-shadow: 2px 2px 0 #000000;
   filter: drop-shadow(0px 0px 0px white);
   color: white;
-  min-height: 12vh;
+  min-height: 13vh;
   background-image: url('https://cdn.staticcrate.com/stock-hd/effects/footagecrate-4k-looping-tech-background-clean-red-2-prev-full.png');
   background-size: cover;
   border-top: 3.5px solid rgba(0, 0, 0, 0.5);
@@ -887,7 +883,7 @@ h6 {
     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
     inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   margin: 0px;
-  padding: 3px 0 5px 15px;
+  padding: 5px 0 8px 15px;
   background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180))
   /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
 }
