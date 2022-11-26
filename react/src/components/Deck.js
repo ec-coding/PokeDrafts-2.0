@@ -12,7 +12,7 @@ export default function UserDeck() {
     const chunks = arrayChunks(decks, 60);
 
     const user = useContext(UserContext);
-
+    console.log(decks.length)
     decks.sort((a, b) => a.name.localeCompare(b.name))
 
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?

@@ -67,7 +67,7 @@ module.exports = {
                 _id: new ObjectID(), 
                 ...req.body
             })
-            deck.update()
+            deck.save()
             let card = deck.cards.at(-1)
             res.json(card)
         } catch (err) {

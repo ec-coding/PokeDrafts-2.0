@@ -20,23 +20,60 @@ export default function Card({ card, onDeck }) {
   const [decks, changeDecks] = useContext(DeckContext)
 
   function addCardToDeck() {
-    fetch('http://localhost:7000/decks/createDeckCard', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + user.token
-      },
-      body: JSON.stringify(card)
-    })
-      // Card is not being created with the user's ID
-      .then((response) => response.json())
-      .then(data => {
-        notify("success", "This is demo success notification message");
-        let newDeck = [...decks, data]
-        changeDecks(newDeck)
-
-      })
+    const maxCards = 60
+    const maxDupes = 4
+    let cardDuplicateCount = decks.filter(element => element.id == card.id)
+    console.log(cardDuplicateCount.length)
+    console.log(card.subtypes[0])
+    if ((card.supertype === "Energy") && (card.subtypes[0] === "Basic")) {
+      if (decks.length < maxCards ) {
+        fetch('http://localhost:7000/decks/createDeckCard', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + user.token
+          },
+          body: JSON.stringify(card)
+        })
+          // Card is not being created with the user's ID
+          .then((response) => response.json())
+          .then(data => {
+            notify("success");
+            let newDeck = [...decks, data]
+            changeDecks(newDeck)
+    
+          })
+      } else if (decks.length === maxCards) {
+        notify("deck-full");
+      }
+    } else {
+      if (cardDuplicateCount.length < maxDupes) {
+        if (decks.length < maxCards ) {
+          fetch('http://localhost:7000/decks/createDeckCard', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'Bearer ' + user.token
+            },
+            body: JSON.stringify(card)
+          })
+            // Card is not being created with the user's ID
+            .then((response) => response.json())
+            .then(data => {
+              notify("success");
+              let newDeck = [...decks, data]
+              changeDecks(newDeck)
+      
+            })
+        } else if (decks.length === maxCards) {
+          notify("deck-full");
+        }
+      } else if (cardDuplicateCount.length === maxDupes) {
+        notify("dupe-full");
+      }
+    }
   }
 
   function removeCardFromDeck(id) {
@@ -58,14 +95,20 @@ export default function Card({ card, onDeck }) {
       })
   }
 
-  function notify(type, message) {
+  function notify(type) {
     (() => {
       let n = document.createElement("div");
       let id = Math.random().toString(36).substr(2, 10);
       n.setAttribute("id", id);
       n.classList.add("notification", type);
       n.classList.add("fade_out")
-      n.innerText = cardName + ' was added to your deck';
+      if (type == "success") {
+        n.innerText = cardName + ' was added to your deck';
+      } else if (type == "deck-full") {
+        n.innerText = 'Unable to add. You have reached the maximum of 60 cards for your deck.';
+      } else if (type == "dupe-full") {
+        n.innerText = 'Limit reached. You cannot add additional copies of this card to your deck.';
+      }
       document.getElementById(addCard).appendChild(n);
       setTimeout(() => {
         var notifications = document.getElementById(addCard).getElementsByClassName("notification");

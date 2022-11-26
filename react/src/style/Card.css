@@ -85,8 +85,11 @@
 .notification-area .notification.success {
     background:rgba(56, 152, 56, 0.75);
   }
-.notification-area .notification.error {
-    background:orangered;
+.notification-area .notification.deck-full {
+    background:rgba(60, 10, 95, 0.95);
+  }
+.notification-area .notification.dupe-full {
+    background:rgba(255, 68, 0, 0.95);
   }
 .notification-area .notification.info {
     background:#00acee;
