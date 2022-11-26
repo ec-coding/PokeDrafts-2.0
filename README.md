@@ -275,3 +275,10 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 11/13/2022
 1. Began implementing Google authentication for client-side code using oauth and updated passport modules.
+
+11/15/2022
+1. Google auth completed on both client and server-side code. 
+2. Scrapped site-based registration to minimize security issues.
+
+11/16/2022 
+1. Updating deck component with card stacks to visually represent quantity of cards with similar IDs.
