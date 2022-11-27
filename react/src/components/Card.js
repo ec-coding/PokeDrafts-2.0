@@ -18,15 +18,15 @@ export default function Card({ card, onDeck }) {
 
   const user = useContext(UserContext);
   const [decks, changeDecks] = useContext(DeckContext)
+  const cardCopyCount = decks.filter(element => element.id === card.id).length
 
   function addCardToDeck() {
     const maxCards = 60
     const maxDupes = 4
-    let cardDuplicateCount = decks.filter(element => element.id == card.id)
-    console.log(cardDuplicateCount.length)
-    console.log(card.subtypes[0])
-    if ((card.supertype === "Energy") && (card.subtypes[0] === "Basic")) {
-      if (decks.length < maxCards ) {
+    let cardDuplicateCount = decks.filter(element => element.id === card.id)
+    let doubleColorlessCount = decks.filter(element => element.name === "Double Colorless Energy")
+    if ((card.supertype === "Energy") && (card.subtypes[0] === "Basic") && (card.name != "Double Colorless Energy")) {
+      if (decks.length < maxCards) {
         fetch('http://localhost:7000/decks/createDeckCard', {
           method: 'POST',
           headers: {
@@ -42,14 +42,14 @@ export default function Card({ card, onDeck }) {
             notify("success");
             let newDeck = [...decks, data]
             changeDecks(newDeck)
-    
+
           })
       } else if (decks.length === maxCards) {
         notify("deck-full");
       }
-    } else {
-      if (cardDuplicateCount.length < maxDupes) {
-        if (decks.length < maxCards ) {
+    } else if (card.name === "Double Colorless Energy") {
+      if (doubleColorlessCount.length < maxDupes) {
+        if (decks.length < maxCards) {
           fetch('http://localhost:7000/decks/createDeckCard', {
             method: 'POST',
             headers: {
@@ -65,7 +65,31 @@ export default function Card({ card, onDeck }) {
               notify("success");
               let newDeck = [...decks, data]
               changeDecks(newDeck)
-      
+            })
+        } else if (decks.length === maxCards) {
+          notify("deck-full");
+        }
+      } else if (doubleColorlessCount.length === maxDupes) {
+        notify("dupe-full");
+      }
+    } else {
+      if (cardDuplicateCount.length < maxDupes) {
+        if (decks.length < maxCards) {
+          fetch('http://localhost:7000/decks/createDeckCard', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'Bearer ' + user.token
+            },
+            body: JSON.stringify(card)
+          })
+            // Card is not being created with the user's ID
+            .then((response) => response.json())
+            .then(data => {
+              notify("success");
+              let newDeck = [...decks, data]
+              changeDecks(newDeck)
             })
         } else if (decks.length === maxCards) {
           notify("deck-full");
@@ -73,7 +97,7 @@ export default function Card({ card, onDeck }) {
       } else if (cardDuplicateCount.length === maxDupes) {
         notify("dupe-full");
       }
-    }
+    } 
   }
 
   function removeCardFromDeck(id) {
@@ -102,11 +126,11 @@ export default function Card({ card, onDeck }) {
       n.setAttribute("id", id);
       n.classList.add("notification", type);
       n.classList.add("fade_out")
-      if (type == "success") {
+      if (type === "success") {
         n.innerText = cardName + ' was added to your deck';
-      } else if (type == "deck-full") {
+      } else if (type === "deck-full") {
         n.innerText = 'Unable to add. You have reached the maximum of 60 cards for your deck.';
-      } else if (type == "dupe-full") {
+      } else if (type === "dupe-full") {
         n.innerText = 'Limit reached. You cannot add additional copies of this card to your deck.';
       }
       document.getElementById(addCard).appendChild(n);
@@ -163,6 +187,10 @@ export default function Card({ card, onDeck }) {
                     <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
                     {button}
                   </div>
+                  <div class="row">
+                    <h5 class="col text-center">Cards in deck: {decks.length}</h5>  
+                    <h5 class="col text-center">Copies in deck: {cardCopyCount}</h5>                
+                  </div>
                 </div>
 
                 <div class="card-divider card-text">
@@ -196,7 +224,7 @@ export default function Card({ card, onDeck }) {
                       <h6 class="col text-right">Last Updated: <h6 class="no-margin-bottom">{card?.cardmarket.updatedAt}</h6></h6>
                     </div>
                     <div id={addCard} class="notification-area">
-                  </div>
+                    </div>
                   </div>
                   <hr />
 

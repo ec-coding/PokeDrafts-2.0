@@ -188,16 +188,19 @@ export default function UserDeck() {
                                 <>
                                 {/* Show counters for # of cards in each stack */}
                                     <h4 class="card-stack-title">Pokémon</h4>
+                                    <h4>x{typePokemon.length}</h4>
                                     <div className="deck-type type-pokemon">
                                         {renderPokemon()}
                                     </div>
 
                                     <h4 class="card-stack-title">Trainer</h4>
+                                    <h4>x{typeTrainer.length}</h4>
                                     <div className="deck-type type-trainer">
                                         {renderTrainer()}
                                     </div>
 
                                     <h4 class="card-stack-title">Energy</h4>
+                                    <h4>x{typeEnergy.length}</h4>
                                     <div class="deck-type type-energy">
                                         {renderEnergy()}
                                     </div>
@@ -254,6 +257,7 @@ export default function UserDeck() {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button> */}
+                <h4>Cards in Deck: {decks.length}</h4>
                 </div>
             </div>
         </>

@@ -1,6 +1,6 @@
 .notification-area {
     position:fixed;
-    bottom: -4.5vh;
+    top: 5.5vh;
     right:10px;
     width:300px;
     height:20vh;

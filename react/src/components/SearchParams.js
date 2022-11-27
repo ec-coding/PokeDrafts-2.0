@@ -37,8 +37,20 @@ export default function SearchParams() {
         if (cardSet.includes('gym2')) {
             subtypeParam += ` set.id:gym2 OR`
         }
+        if (cardSet.includes('neo1')) {
+            subtypeParam += ` set.id:neo1 OR`
+        }
+        if (cardSet.includes('neo2')) {
+            subtypeParam += ` set.id:neo2 OR`
+        }
+        if (cardSet.includes('neo3')) {
+            subtypeParam += ` set.id:neo3 OR`
+        }
+        if (cardSet.includes('neo4')) {
+            subtypeParam += ` set.id:neo4 OR`
+        }
         if (subtypeParam === '') {
-            subtypeParam = ` (set.id:base1 OR set.id:base2 OR set.id:base3 OR set.id:base4 OR set.id:base5 OR set.id:gym1 OR set.id:gym2)`
+            subtypeParam = ` (set.id:base1 OR set.id:base2 OR set.id:base3 OR set.id:base4 OR set.id:base5 OR set.id:gym1 OR set.id:gym2 OR set.id:neo1 OR set.id:neo2 OR set.id:neo3 OR set.id:neo4)`
         } else {
             subtypeParam = subtypeParam.slice(0, -2)
         }
@@ -137,7 +149,7 @@ export default function SearchParams() {
                                     <label for="card-type-trainer"> Trainer</label>
                                 </li>
                                 <li class="list-one-third">
-                                    <img src="https://i.imgur.com/wgTjLW5.png" alt="" />
+                                    <img src="https://media.discordapp.net/attachments/625333124808572932/1046148951826501712/30px-Rainbow-attack.png" alt="" />
                                     <input class="type-input" type="radio" id="card-type-energy" name="supertype"
                                         checked={cardType === 'Energy'} onChange={() => changeCardType('Energy')} />
                                     <label for="card-type-energy"> Energy</label>
@@ -183,6 +195,17 @@ export default function SearchParams() {
                                     <input class="type-input" type="radio" id="type-colorless" name="type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
                                     <label for="type-colorless"> Colorless</label>
                                 </li>
+                                <li class="list-one-third">
+                                    <div class="icon-Darkness" alt="" />
+                                    <input class="type-input" type="radio" id="type-darkness" name="type" checked={cardElement.includes('darkness')} onChange={() => changeCardElement('darkness')} />
+                                    <label for="type-darkness"> Darkness</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <div class="icon-Metal" alt="" />
+                                    <input class="type-input" type="radio" id="type-metal" name="type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
+                                    <label for="type-metal"> Metal</label>
+                                </li>
+
                             </ul>
                         </section>
 
@@ -224,6 +247,26 @@ export default function SearchParams() {
                                     <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
                                     <label for="gym-challenge"> Gym Challenge</label>
                                 </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="neo-genesis" name="subtype" value="neo1" checked={cardSet.includes('neo1')} onChange={cardSetToggle} />
+                                    <label for="neo-genesis"> Neo Genesis</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/7edrYfb.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="neo-discovery" name="subtype" value="neo2" checked={cardSet.includes('neo2')} onChange={cardSetToggle} />
+                                    <label for="neo-discovery"> Neo Discovery</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/rZWqc8M.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="neo-revelation" name="subtype" value="neo3" checked={cardSet.includes('neo3')} onChange={cardSetToggle} />
+                                    <label for="neo-revelation"> Neo Revelation</label>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
+                                    <label for="neo-destiny"> Neo Destiny</label>
+                             </li>
                             </ul>
                         </section>
 
