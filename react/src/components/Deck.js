@@ -14,6 +14,7 @@ export default function UserDeck() {
     const user = useContext(UserContext);
     console.log(decks.length)
     decks.sort((a, b) => a.name.localeCompare(b.name))
+    // decks.sort((a, b) => a.id.localeCompare(b.id))
 
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
     var groupBy = function (xs, key) {

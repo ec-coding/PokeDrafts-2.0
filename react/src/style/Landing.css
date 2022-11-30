@@ -174,12 +174,12 @@ footer {
 
   .landing-sets img {
     position: relative;
-    width: 200px;
-    height: 350px;
+    width: 220px;
+    height: 385px;
     border-radius: 0.5em;
     z-index: 10;
     filter: drop-shadow(5px 5px 5px black);
-    margin: 2vh 0;
+    margin: 2vh 0vh;
   }
 
   .landing-sets img:hover {

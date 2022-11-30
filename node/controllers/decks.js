@@ -107,10 +107,9 @@ module.exports = {
             if (!deck) {
                 return res.status(404).json
             }
-            console.log(deck.cards)
             deck.cards = deck.cards.filter(card => card._id != req.body._id)
-            console.log(req.body._id)
-            deck.update()
+            deck.save()
+            console.log(`Deleted card`)
             res.json('')
         } catch (err) {
             return res.render('error/500')

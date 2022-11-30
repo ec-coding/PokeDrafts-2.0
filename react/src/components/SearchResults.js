@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import CardContext from '../CardContext';
 import Card from './Card'
+import '../style/Dropdown.css';
 
 export default function SearchResults() {
 
@@ -18,6 +19,21 @@ export default function SearchResults() {
                     <h6 class="instructions-text">Browse through and click on any card for more information.</h6>
                 </section>
             </div>
+            
+            <section class="dropdown">
+            <button class="dropbtn">Sort By</button>
+                <div class="dropdown-content">
+                    <a href="#">Name</a>
+                    <a href="#">Type</a>
+                    <a href="#">ID</a>
+                    <a href="#">HP</a>
+                    <a href="#">Rarity</a>
+                    <a href="#">Artist</a>
+                </div>
+            </section>
+
+
+
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">

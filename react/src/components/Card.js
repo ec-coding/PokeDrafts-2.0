@@ -44,7 +44,7 @@ export default function Card({ card, onDeck }) {
             changeDecks(newDeck)
 
           })
-      } else if (decks.length === maxCards) {
+      } else if (decks.length >= maxCards) {
         notify("deck-full");
       }
     } else if (card.name === "Double Colorless Energy") {
@@ -66,10 +66,10 @@ export default function Card({ card, onDeck }) {
               let newDeck = [...decks, data]
               changeDecks(newDeck)
             })
-        } else if (decks.length === maxCards) {
+        } else if (decks.length >= maxCards) {
           notify("deck-full");
         }
-      } else if (doubleColorlessCount.length === maxDupes) {
+      } else if (doubleColorlessCount.length >= maxDupes) {
         notify("dupe-full");
       }
     } else {
@@ -91,10 +91,10 @@ export default function Card({ card, onDeck }) {
               let newDeck = [...decks, data]
               changeDecks(newDeck)
             })
-        } else if (decks.length === maxCards) {
+        } else if (decks.length >= maxCards) {
           notify("deck-full");
         }
-      } else if (cardDuplicateCount.length === maxDupes) {
+      } else if (cardDuplicateCount.length >= maxDupes) {
         notify("dupe-full");
       }
     } 
@@ -111,8 +111,8 @@ export default function Card({ card, onDeck }) {
     })
       .then((res) => {
         if (res.ok) {
-          const updateDeck = decks.filter((item) => item !== card)
           document.getElementById(closeModal).click();
+          const updateDeck = decks.filter((item) => item._id !== card._id)
           changeDecks(updateDeck)
           return res
         }
