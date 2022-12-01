@@ -170,6 +170,9 @@ footer {
 
   .landing-sets {
     margin-top: 3vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .landing-sets img {
@@ -179,7 +182,7 @@ footer {
     border-radius: 0.5em;
     z-index: 10;
     filter: drop-shadow(5px 5px 5px black);
-    margin: 2vh 0vh;
+    margin: 2vh 2vh;
   }
 
   .landing-sets img:hover {

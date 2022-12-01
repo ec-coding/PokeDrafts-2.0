@@ -49,6 +49,9 @@ const Home = ({}) => {
 
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
+                                        <li>
+                                        <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
+                                        </li>
                                         <li class="nav-item">
                                             <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                         </li>
