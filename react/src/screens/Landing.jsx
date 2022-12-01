@@ -65,48 +65,48 @@ const Landing = () => {
 
         <section class="landing-set-container">
           <h2>Featuring cards from the following sets:</h2>
-          <div class="landing-sets row">
-            <div class="col">
+          <div class="landing-sets">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></a>
               <h3>Base Set</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Jungle_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" /></a>
               <h3>Jungle</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Fossil_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/fzPnBJi.jpg" alt="" /></a>
               <h3>Fossil</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_2_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/l4fcVLN.jpg" alt="" /></a>
               <h3>Base Set 2</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Team_Rocket_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" /></a>
               <h3>Team Rocket</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Heroes_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/dk730u5.jpg" alt="" /></a>
               <h3>Gym Heroes</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/tsM9xhr.jpg" alt="" /></a>
               <h3>Gym Challenge</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/gtVq1l1.jpg" alt="" /></a>
               <h3>Neo Genesis</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Discovery_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/FDv9Uok.jpg" alt="" /></a>
               <h3>Neo Discovery</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Revelation_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/ON6FfPy.jpg" alt="" /></a>
               <h3>Neo Revelation</h3>
             </div>
-            <div class="col">
+            <div class="">
               <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Destiny_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/cA8s7UR.jpg" alt="" /></a>
               <h3>Neo Destiny</h3>
             </div>
