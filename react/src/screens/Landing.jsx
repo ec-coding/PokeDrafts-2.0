@@ -116,8 +116,8 @@ const Landing = () => {
         <section class="landing-button-container button-input row">
           <h2>Log in or sign up to begin</h2>
           <div>
-            <button><Link to="/signup">Sign Up</Link></button>
-            <button><Link to="/login">Login</Link></button>
+          <Link to="/signup"><button>Sign Up</button></Link>
+          <Link to="/login"><button>Login</button></Link>
           </div>
         </section>
 

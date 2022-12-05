@@ -107,6 +107,7 @@ module.exports = {
             if (!deck) {
                 return res.status(404).json
             }
+            // Figure out how to stop DDOS from rapid delete requests
             deck.cards = deck.cards.filter(card => card._id != req.body._id)
             deck.save()
             console.log(`Deleted card`)

@@ -209,24 +209,28 @@ export default function Card({ card, onDeck }) {
                     <CardAttributes cardRules={card?.rules} />
                   </div>
 
-
-                  <CardAttributes statTrio={card} />
-                  <CardAttributes cardBio={card?.flavorText} />
-
-                  <div>
-                    <div className="row">
+                  <div className="row">
                       <h6 class="col">Set: {card?.set.name}</h6>
                       <h6 class="col text-right">Rarity: {card?.rarity}</h6>
                     </div>
                     <hr />
-                    <div className="row">
-                      <h6 class="col">Trending Price: <h6 class="no-margin-bottom">${card?.cardmarket.prices.trendPrice} USD</h6></h6>
-                      <h6 class="col text-right">Last Updated: <h6 class="no-margin-bottom">{card?.cardmarket.updatedAt}</h6></h6>
+                    <div className="row card-price">
+                      <h6 class="col">Trending Price: <h6>${card?.cardmarket.prices.trendPrice} USD</h6></h6>
+                      <h6 class="col text-right">Last Updated: <h6>{card?.cardmarket.updatedAt}</h6></h6>
                     </div>
+                    <hr />
+
+                  <CardAttributes statTrio={card} />
+                  <CardAttributes cardBio={card?.flavorText} />
+                  <div className="row card-artist">
+                    <h6 class="col">Illustrator: {card?.artist}</h6>
+                  </div>
+                
+                  <div>
                     <div id={addCard} class="notification-area">
                     </div>
                   </div>
-                  <hr />
+
 
                 </div>
 

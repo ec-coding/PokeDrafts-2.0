@@ -1,0 +1,10 @@
+/* FOOTER */
+#footer-container {
+    color: white;
+    text-shadow: 1px 1px 0 #000000;
+    background-image: url('https://images.hdqwalls.com/wallpapers/blue-texture-pf.jpg');
+    /* background-image: linear-gradient(rgb(46, 113, 236), lightblue, rgb(46, 113, 236)); */
+    background-size: cover;
+    padding: 5vh 20vh;
+    text-align: left;
+  }

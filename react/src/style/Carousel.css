@@ -1,0 +1,21 @@
+/* CAROUSEL */
+.carousel-item {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    background: rgba(0, 0, 0, 0.75);
+
+  }
+  
+  .carousel-control-prev:active,
+  .carousel-control-next:active {
+    background-color: none;
+  }
+
+.carousel .carousel-indicators {
+  position: relative;
+}

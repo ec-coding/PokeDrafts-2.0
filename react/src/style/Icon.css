@@ -1,0 +1,92 @@
+/* ICONS */
+.icon-Grass {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -25px -50px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Fire {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: 0px 0px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Water {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -75px -50px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Lightning {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -50px -50px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Psychic {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -75px -25px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Fighting {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -50px -25px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Darkness {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: 0px -50px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Metal {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -75px 0px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Colorless {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -25px 0px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-Fairy {
+    background-image: url('https://i.imgur.com/9NMFHcH.png');
+    background-position: -50px 0px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .icon-text-box h6 {
+    padding-top: 3px;
+    padding-left: 5px;
+  }
+  
+  .icon-sm-row {
+    padding-top: 0px;
+  }
+  
+  
+  .card-title-box div {
+    zoom: 1.00;
+  }
+  
+  .card-trio-col div {
+    zoom: 0.95
+  }
+  
+  .icon-sm {
+    zoom: 0.85;
+  }

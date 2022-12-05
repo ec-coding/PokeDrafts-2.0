@@ -7,15 +7,18 @@ export default function UserDeck() {
     const typePokemon = []
     const typeTrainer = []
     const typeEnergy = []
+    const [nameSort, setNameSort] = useState(true)
+    const [typeSort, setTypeSort] = useState(true)
+    const [idSort, setIdSort] = useState(true)
+    const [hpSort, setHpSort] = useState(true)
+    const [raritySort, setRaritySort] = useState(true)
+    const [artistSort, setArtistSort] = useState(true)
     const [decks, changeDecks] = useContext(DeckContext)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(decks, 60);
-
     const user = useContext(UserContext);
-    console.log(decks.length)
-    decks.sort((a, b) => a.name.localeCompare(b.name))
-    // decks.sort((a, b) => a.id.localeCompare(b.id))
 
+    
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
     var groupBy = function (xs, key) {
         return xs.reduce(function (rv, x) {
@@ -141,6 +144,107 @@ export default function UserDeck() {
     }
 
 
+    // SORTING
+    const sortByName = () => {
+        if (nameSort === true) {
+            const sortedByName = [...decks].sort((a, b) => {
+                return a.name < b.name ? -1 : 1;
+            })
+            setNameSort(false)
+            changeDecks(sortedByName)
+        } else if (nameSort === false) {
+            const sortedByName = [...decks].sort((a, b) => {
+                return a.name < b.name ? 1 : -1;
+            })
+            setNameSort(true)
+            changeDecks(sortedByName)
+        }
+    }
+
+    // const sortByType = () => {
+    //     if (typeSort === true) {
+    //         const sortedByType = [...decks].sort((a, b) => {
+    //             return a.types[0] < b.types[0] ? -1 : 1
+    //         })
+    //         setTypeSort(false)
+    //         changeDecks(sortedByType)
+
+    //     } else if (typeSort === false) {
+    //         const sortedByType = [...decks].sort((a, b) => {
+    //             return b.types[0] > a.types[0] ? 1 : -1
+    //         })
+    //         setTypeSort(true)
+    //         changeDecks(sortedByType)
+    //     }
+    // }
+
+    const sortById = () => {
+        if (idSort === true) {
+            const sortedById = [...decks].sort((a, b) => {
+                return Number(a.number) < Number(b.number) ? -1 : 1
+            })
+            setIdSort(false)
+            changeDecks(sortedById)
+        } else if (idSort === false) {
+            const sortedById = [...decks].sort((a, b) => {
+                return Number(a.number) < Number(b.number) ? 1 : -1
+            })
+            setIdSort(true)
+            changeDecks(sortedById)
+        }
+    }
+
+    const sortByHP = () => {
+        if (hpSort === true) {
+            const sortedByHP = [...decks].sort((a, b) => {
+                return Number(a.hp) < Number(b.hp) ? 1 : -1
+            })
+            setHpSort(false)
+            changeDecks(sortedByHP)
+        } else if (hpSort === false) {
+            const sortedByHP = [...decks].sort((a, b) => {
+                return Number(a.hp) < Number(b.hp) ? -1 : 1
+            })
+            setHpSort(true)
+            changeDecks(sortedByHP)
+        }
+    }
+
+    const sortByRarity = () => {
+        if (raritySort === true) {
+            const sortedByRarity = [...decks].sort((a, b) => {
+                return a.rarity < b.rarity ? -1 : 1
+            })
+            setRaritySort(false)
+            changeDecks(sortedByRarity)
+        } else if (raritySort === false) {
+            const sortedByRarity = [...decks].sort((a, b) => {
+                return a.rarity < b.rarity ? 1 : -1
+            })
+            setRaritySort(true)
+            changeDecks(sortedByRarity)
+        }
+    }
+
+    const sortByArtist = () => {
+        if (artistSort === true) {
+            const sortedByArtist = [...decks].sort((a, b) => {
+                return a.artist < b.artist ? -1 : 1
+            })
+            setArtistSort(false)
+            changeDecks(sortedByArtist)
+        } else if (artistSort === false) {
+            const sortedByArtist = [...decks].sort((a, b) => {
+                return a.artist < b.artist ? 1 : -1
+            })
+            setArtistSort(true)
+            changeDecks(sortedByArtist)
+        }
+    }
+
+
+
+
     // console.log('@@@ render pokemon', renderPokemon())
 
     // let typeDict;
@@ -159,18 +263,28 @@ export default function UserDeck() {
                     <h6 class="instructions-text">Browse through and click on any card to remove it from your deck.</h6>
                 </section>
             </div>
-            <section class="deck-buttons button-input">
+            <section class="sub-header button-input">
                 <ul class="row">
-                <li class="col">
-                        <button type="submit">Rename Deck</button>
-                    </li>
                     <li class="col">
-                        <button type="submit">Sort Deck</button>
+                        <button type="submit">Rename Deck</button>
                     </li>
                     <li class="col">
                         <button type="submit" onClick={deleteDeck}>Delete Deck</button>
                     </li>
                 </ul>
+            </section>
+
+
+            <section class="sub-header button-input">
+                    <ul class="row">
+                        <li class="col"><h4>Sort By</h4></li>
+                        <li class="col"><button onClick={sortByName}>Name</button></li>
+                        {/* <li class="col"><button onClick={sortByType}>Type</button></li> */}
+                        <li class="col"><button onClick={sortById}>Set No.</button></li>
+                        <li class="col"><button onClick={sortByHP}>HP</button></li>
+                        <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
+                        <li class="col"><button onClick={sortByArtist}>Artist</button></li>
+                    </ul>
             </section>
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -181,27 +295,37 @@ export default function UserDeck() {
                 </div> */}
 
                 <div class="deck-inner carousel-inner active">
-
+                    <div>
+                    <h3>Deck 1</h3>
+                    <h4>Cards in Deck: {decks.length}</h4>
+                    </div>
+                    <br />
 
                     {chunks.map(slides => {
                         if (chunks.indexOf(slides) === 0) {
                             return (
                                 <>
-                                {/* Show counters for # of cards in each stack */}
-                                    <h4 class="card-stack-title">Pokémon</h4>
-                                    <h4>x{typePokemon.length}</h4>
+                                    {/* Show counters for # of cards in each stack */}
+                                    <div class="deck-header">
+                                        <h4 class="card-stack-title">Pokémon</h4>
+                                        <h4>x {typePokemon.length}</h4>
+                                    </div>
                                     <div className="deck-type type-pokemon">
                                         {renderPokemon()}
                                     </div>
 
-                                    <h4 class="card-stack-title">Trainer</h4>
-                                    <h4>x{typeTrainer.length}</h4>
+                                    <div class="deck-header">
+                                        <h4 class="card-stack-title">Trainer</h4>
+                                        <h4>x {typeTrainer.length}</h4>
+                                    </div>
                                     <div className="deck-type type-trainer">
                                         {renderTrainer()}
                                     </div>
 
-                                    <h4 class="card-stack-title">Energy</h4>
-                                    <h4>x{typeEnergy.length}</h4>
+                                    <div class="deck-header">
+                                        <h4 class="card-stack-title">Energy</h4>
+                                        <h4>x {typeEnergy.length}</h4>
+                                    </div>
                                     <div class="deck-type type-energy">
                                         {renderEnergy()}
                                     </div>
@@ -258,7 +382,6 @@ export default function UserDeck() {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button> */}
-                <h4>Cards in Deck: {decks.length}</h4>
                 </div>
             </div>
         </>

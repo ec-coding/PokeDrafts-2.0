@@ -8,6 +8,18 @@ import Deck from '../components/Deck'
 import UserContext from '../UserContext';
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
+import '../style/Icon.css';
+import '../style/TabView.css';
+import '../style/Navbar.css';
+import '../style/Modal.css';
+import '../style/Carousel.css';
+import '../style/Accordion.css';
+import '../style/Header.css';
+import '../style/Footer.css';
+import '../style/SearchParam.css';
+import '../style/Profile.css';
+import '../style/Card.css';
+import '../style/Deck.css';
 
 const Home = ({}) => {
     const logout = () => {
@@ -47,7 +59,7 @@ const Home = ({}) => {
                         <nav class="navbar navbar-expand-lg bg-light">
                             <div class="container-fluid tab">
 
-                                <div class="collapse navbar-collapse" id="navbarNav">
+                                <div class="collapse navbar-collapse">
                                     <ul class="navbar-nav">
                                         <li>
                                         <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
@@ -66,7 +78,7 @@ const Home = ({}) => {
                                         </li>
                                     </ul>
                                     <ul class="nav-item-two">
-                                        <li>
+                                        <li class="nav-item">
                                             <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
                                         </li>
                                     </ul>
