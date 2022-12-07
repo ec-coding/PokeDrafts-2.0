@@ -282,3 +282,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 11/16/2022 
 1. Updating deck component with card stacks to visually represent quantity of cards with similar IDs.
+
+12/5/2022
+1. Modifying search results to display card rears in place of empty results.
