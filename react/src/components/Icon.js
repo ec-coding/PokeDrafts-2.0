@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Icon(props) {
     //TYPE
-    const elementType = `icon-${props.type}`
+    const elementType = `icon-large icon-${props.type}`
 
     if (props.type !== undefined) {
         return (

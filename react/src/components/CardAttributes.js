@@ -54,7 +54,7 @@ export default function CardAttributes(props) {
     if (props.pokemonPower !== undefined) {
         return (
             <>
-                <div class="card-attr-border row card-ability">
+                <div class="row card-ability">
                     <h5 class="card-ability-title">Pokémon Power: {props.pokemonPower.map(x => x.name)?.join('')}</h5>
                     <h6>{props.pokemonPower.map(x => x.text)?.join('')}</h6>
                 </div>

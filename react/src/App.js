@@ -44,6 +44,7 @@ function App() {
   return (
     <UserContext.Provider value={user}>
     <BrowserRouter>
+    {/* Context for Light / Dark Mode */}
     <Routes>
 
       <Route

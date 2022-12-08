@@ -18,7 +18,7 @@ export default function UserDeck() {
     const chunks = arrayChunks(decks, 60);
     const user = useContext(UserContext);
 
-    
+
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
     var groupBy = function (xs, key) {
         return xs.reduce(function (rv, x) {
@@ -211,15 +211,32 @@ export default function UserDeck() {
     }
 
     const sortByRarity = () => {
+        function getSortForRarity(rarity) {
+            if (rarity === 'Rare Holo') {
+                return 1000;
+            }
+            if (rarity === 'Rare') {
+                return 100;
+            }
+            if (rarity === 'Uncommon') {
+                return 10;
+            }
+            return 0; // This would be Common
+        }
+
         if (raritySort === true) {
             const sortedByRarity = [...decks].sort((a, b) => {
-                return a.rarity < b.rarity ? -1 : 1
+                let aValue = getSortForRarity(a.rarity);
+                let bValue = getSortForRarity(b.rarity);
+                return aValue < bValue ? -1 : 1;
             })
             setRaritySort(false)
             changeDecks(sortedByRarity)
         } else if (raritySort === false) {
             const sortedByRarity = [...decks].sort((a, b) => {
-                return a.rarity < b.rarity ? 1 : -1
+                let aValue = getSortForRarity(a.rarity);
+                let bValue = getSortForRarity(b.rarity);
+                return aValue < bValue ? 1 : -1;
             })
             setRaritySort(true)
             changeDecks(sortedByRarity)
@@ -276,15 +293,15 @@ export default function UserDeck() {
 
 
             <section class="sub-header button-input">
-                    <ul class="row">
-                        <li class="col"><h4>Sort By</h4></li>
-                        <li class="col"><button onClick={sortByName}>Name</button></li>
-                        {/* <li class="col"><button onClick={sortByType}>Type</button></li> */}
-                        <li class="col"><button onClick={sortById}>Set No.</button></li>
-                        <li class="col"><button onClick={sortByHP}>HP</button></li>
-                        <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
-                        <li class="col"><button onClick={sortByArtist}>Artist</button></li>
-                    </ul>
+                <ul class="row">
+                    <li class="col"><h4>Sort By</h4></li>
+                    <li class="col"><button onClick={sortByName}>Name</button></li>
+                    {/* <li class="col"><button onClick={sortByType}>Type</button></li> */}
+                    <li class="col"><button onClick={sortById}>Set No.</button></li>
+                    <li class="col"><button onClick={sortByHP}>HP</button></li>
+                    <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
+                    <li class="col"><button onClick={sortByArtist}>Artist</button></li>
+                </ul>
             </section>
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -296,8 +313,8 @@ export default function UserDeck() {
 
                 <div class="deck-inner carousel-inner active">
                     <div class="deck-inner-header">
-                    <h3>Deck 1</h3>
-                    <h4>Cards in Deck: {decks.length}</h4>
+                        <h3>Deck 1</h3>
+                        <h4>Cards in Deck: {decks.length}</h4>
                     </div>
                     <br />
 

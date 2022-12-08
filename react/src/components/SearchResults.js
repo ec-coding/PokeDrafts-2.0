@@ -82,16 +82,32 @@ export default function SearchResults() {
     }
 
     const sortByRarity = () => {
+        function getSortForRarity(rarity) {
+            if (rarity === 'Rare Holo') {
+                return 1000;
+            }
+            if (rarity === 'Rare') {
+                return 100;
+            }
+            if (rarity === 'Uncommon') {
+                return 10;
+            }
+            return 0; // This would be Common
+        }
+
         if (raritySort === true) {
             const sortedByRarity = [...cards].sort((a, b) => {
-                return a.rarity < b.rarity ? -1 : 1
+                let aValue = getSortForRarity(a.rarity);
+                let bValue = getSortForRarity(b.rarity);
+                return aValue < bValue ? -1 : 1;
             })
-            console.log([...cards])
             setRaritySort(false)
             changeCards(sortedByRarity)
         } else if (raritySort === false) {
             const sortedByRarity = [...cards].sort((a, b) => {
-                return a.rarity < b.rarity ? 1 : -1
+                let aValue = getSortForRarity(a.rarity);
+                let bValue = getSortForRarity(b.rarity);
+                return aValue < bValue ? 1 : -1;
             })
             setRaritySort(true)
             changeCards(sortedByRarity)

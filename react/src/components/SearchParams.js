@@ -1,6 +1,12 @@
 import React, { useState, useContext } from 'react';
 import CardContext from '../CardContext';
 
+// LOOK UP LOADING STRATEGIES ie lazy loading of images
+// using logic to make first load good
+// load the 1st page, once the first page has loaded, load the subsequent next 2 pages in order
+
+// fill the buttons with an up and down arrow
+
 export default function SearchParams() {
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])

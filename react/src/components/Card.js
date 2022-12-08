@@ -97,7 +97,7 @@ export default function Card({ card, onDeck }) {
       } else if (cardDuplicateCount.length >= maxDupes) {
         notify("dupe-full");
       }
-    } 
+    }
   }
 
   function removeCardFromDeck(id) {
@@ -183,14 +183,20 @@ export default function Card({ card, onDeck }) {
               <div class="row card-box">
                 <div class="card-divider card-image">
                   <img src={card.images.large} class="modal-img" alt="..." />
-                  <div class="row modal-button-container">
-                    <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
-                    {button}
-                  </div>
-                  <div class="row">
-                    <h5 class="col text-center">Cards in deck: {decks.length}</h5>  
-                    <h5 class="col text-center">Copies in deck: {cardCopyCount}</h5>                
-                  </div>
+                  <section class="card-button-box">
+                    <div class="row modal-button-container">
+                      <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
+                      {button}
+                    </div>
+                    <div class="row card-counter">
+                      <div class="col">
+                      <h5 class="text-center">Cards in deck: {decks.length}</h5>
+                      </div>
+                      <div class="col">
+                      <h5 class="text-center">Copies in deck: {cardCopyCount}</h5>
+                      </div>
+                    </div>
+                  </section>
                 </div>
 
                 <div class="card-divider card-text">
@@ -210,22 +216,22 @@ export default function Card({ card, onDeck }) {
                   </div>
 
                   <div className="row">
-                      <h6 class="col">Set: {card?.set.name}</h6>
-                      <h6 class="col text-right">Rarity: {card?.rarity}</h6>
-                    </div>
-                    <hr />
-                    <div className="row card-price">
-                      <h6 class="col">Trending Price: <h6>${card?.cardmarket.prices.trendPrice} USD</h6></h6>
-                      <h6 class="col text-right">Last Updated: <h6>{card?.cardmarket.updatedAt}</h6></h6>
-                    </div>
-                    <hr />
+                    <h6 class="col">Set: {card?.set.name}</h6>
+                    <h6 class="col text-right right-padding-two">Rarity: {card?.rarity}</h6>
+                  </div>
+                  <hr />
+                  <div className="row card-price">
+                    <h6 class="col">Trending Price: <h6>${card?.cardmarket.prices.trendPrice} USD</h6></h6>
+                    <h6 class="col text-right right-padding-two">Last Updated: <h6>{card?.cardmarket.updatedAt}</h6></h6>
+                  </div>
+                  <hr />
 
                   <CardAttributes statTrio={card} />
                   <CardAttributes cardBio={card?.flavorText} />
                   <div className="row card-artist">
                     <h6 class="col">Illustrator: {card?.artist}</h6>
                   </div>
-                
+
                   <div>
                     <div id={addCard} class="notification-area">
                     </div>
