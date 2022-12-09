@@ -219,7 +219,7 @@ export default function SearchParams() {
                             <h3>Expansion</h3>
                             <ul class="type-input-div">
                                 <li class="list-one-third">
-                                    <img src="https://i.imgur.com/W4Xecen.png" alt="" />
+                                    <img src="https://i.imgur.com/yATpJei.png" alt="" />
                                     <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
                                     <label for="base"> Base</label>
                                 </li>
