@@ -33,7 +33,7 @@ const Home = ({}) => {
     const [tab, changeTab] = useState('slide1')
 
     useEffect(() => {
-        fetch('http://localhost:7000/decks/profile', {
+        fetch(`${process.env.REACT_APP_API_URL}/decks/profile`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + user.token

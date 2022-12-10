@@ -127,7 +127,7 @@ export default function UserDeck() {
     }
 
     function deleteDeck(id) {
-        fetch('http://localhost:7000/decks/deleteDeck', {
+        fetch(`${process.env.REACT_APP_API_URL}/decks/deleteDeck`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

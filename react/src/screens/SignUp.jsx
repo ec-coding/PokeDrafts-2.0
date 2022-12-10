@@ -7,7 +7,7 @@ import '../style/SignUp.css';
 
 const SignUp = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:7000/signup"
+    `${REACT_APP_API_URL}/signup`
   );
 
   useEffect(() => {

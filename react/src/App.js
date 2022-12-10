@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:7000/decks/profile')
+    fetch(`${process.env.REACT_APP_API_URL}/decks/profile`)
       .then((res) => res.json())
       .then((response) => {
         console.log(response)

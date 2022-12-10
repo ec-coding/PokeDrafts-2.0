@@ -27,7 +27,7 @@ export default function Card({ card, onDeck }) {
     let doubleColorlessCount = decks.filter(element => element.name === "Double Colorless Energy")
     if ((card.supertype === "Energy") && (card.subtypes[0] === "Basic") && (card.name != "Double Colorless Energy")) {
       if (decks.length < maxCards) {
-        fetch('http://localhost:7000/decks/createDeckCard', {
+        fetch(`${process.env.REACT_APP_API_URL}/decks/createDeckCard`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export default function Card({ card, onDeck }) {
     } else if (card.name === "Double Colorless Energy") {
       if (doubleColorlessCount.length < maxDupes) {
         if (decks.length < maxCards) {
-          fetch('http://localhost:7000/decks/createDeckCard', {
+          fetch(`${process.env.REACT_APP_API_URL}/decks/createDeckCard`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default function Card({ card, onDeck }) {
     } else {
       if (cardDuplicateCount.length < maxDupes) {
         if (decks.length < maxCards) {
-          fetch('http://localhost:7000/decks/createDeckCard', {
+          fetch(`${process.env.REACT_APP_API_URL}/decks/createDeckCard`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ export default function Card({ card, onDeck }) {
   }
 
   function removeCardFromDeck(id) {
-    fetch('http://localhost:7000/decks/deleteCard', {
+    fetch(`${process.env.REACT_APP_API_URL}/decks/deleteCard`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
