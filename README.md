@@ -285,3 +285,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 12/5/2022
 1. Modifying search results to display card rears in place of empty results.
+
+12/9/2022
+1. App was successfully hosted on Railway.
