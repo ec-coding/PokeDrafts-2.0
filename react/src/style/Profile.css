@@ -4,5 +4,20 @@
   }
   
   .profile {
-    padding-top: 20px;
+    background: rgb(80, 125, 180);
+    padding: 20px;
+    margin: 2vh;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-half {
+    margin: 1vh;
+    padding: 5vh;
+    min-width: 50vh;
+    box-shadow:
+    2px 2px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   }

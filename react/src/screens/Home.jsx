@@ -87,10 +87,8 @@ const Home = ({}) => {
                         </nav>
 
                         <Header />
-                        {tab === 'slide0' && <div id="tab-zero">
-
+                        {tab === 'slide0' && <div id="tab-zero" class="tab-content">
                             <Profile user={user}/>
-
                         </div>}
 
 
