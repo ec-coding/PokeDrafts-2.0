@@ -14,7 +14,7 @@ export default function SearchResults() {
     const [artistSort, setArtistSort] = useState(true)
 
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
-    const chunks = arrayChunks(cards, 24);
+    const chunks = arrayChunks(cards, 20);
 
     const sortByName = () => {
         if (nameSort === true) {

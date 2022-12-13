@@ -21,7 +21,7 @@ import '../style/Profile.css';
 import '../style/Card.css';
 import '../style/Deck.css';
 
-const Home = ({}) => {
+const Home = ({ }) => {
     const logout = () => {
         localStorage.removeItem("user");
         window.location.reload();
@@ -37,7 +37,7 @@ const Home = ({}) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + user.token
-              },
+            },
         })
             .then((res) => res.json())
             .then((response) => {
@@ -54,66 +54,67 @@ const Home = ({}) => {
         <>
             <CardContext.Provider value={changeCards} >
                 <DeckContext.Provider value={[decks, changeDecks]} >
-                    <div className="App">
+                    <nav class="navbar navbar-expand-lg bg-light">
+                        <div class="container-fluid tab">
 
-                        <nav class="navbar navbar-expand-lg bg-light">
-                            <div class="container-fluid tab">
-
-                                <div class="collapse navbar-collapse">
-                                    <ul class="navbar-nav">
-                                        <li>
+                            <div class="collapse navbar-collapse">
+                                <ul class="navbar-nav">
+                                    <li>
                                         <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
-                                        </li>
-                                        <li class="nav-item">
-                                            <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
-                                        </li>
-                                        <li class="nav-item">
-                                            <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
-                                        </li>
-                                        <li class="nav-item">
-                                            <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
-                                        </li>
-                                        <li class="nav-item">
-                                            <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
-                                        </li>
-                                    </ul>
-                                    <ul class="nav-item-two">
-                                        <li class="nav-item">
-                                            <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
-                                        </li>
-                                    </ul>
-                                </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
+                                    </li>
+                                </ul>
+                                <ul class="nav-item-two">
+                                    <li class="nav-item">
+                                        <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
+                                    </li>
+                                </ul>
                             </div>
-                        </nav>
-
-                        <Header />
-                        {tab === 'slide0' && <div id="tab-zero" class="tab-content">
-                            <Profile user={user}/>
-                        </div>}
-
-
-                        {tab === 'slide1' && <div id="tab-one" class="tab-content">
-                            <SearchParams />
-                        </div>}
-
-                        {tab === 'slide2' && <div id="tab-two" class="tab-content">
-                            <SearchResults />
-                        </div>}
-
-                        {tab === 'slide3' && <div id="tab-three" class="tab-content">
-                            <Deck />
-
-                        </div>}
-                        <div class="search-footer-container">
-                            <section class="search-footer">
-
-                            </section>
                         </div>
-                        <div>
+                    </nav>
 
+                    <div className="App">
+                        <div className="App-inner">
+                            <Header />
+                            {tab === 'slide0' && <div id="tab-zero" class="tab-content">
+                                <Profile user={user} />
+                            </div>}
+
+
+                            {tab === 'slide1' && <div id="tab-one" class="tab-content">
+                                <SearchParams />
+                            </div>}
+
+                            {tab === 'slide2' && <div id="tab-two" class="tab-content">
+                                <SearchResults />
+                            </div>}
+
+                            {tab === 'slide3' && <div id="tab-three" class="tab-content">
+                                <Deck />
+
+                            </div>}
+                            <div class="search-footer-container">
+                                <section class="search-footer">
+
+                                </section>
+                            </div>
+                            <div>
+
+                            </div>
                         </div>
-                        <Footer />
                     </div>
+                    <Footer />
                 </DeckContext.Provider>
             </CardContext.Provider>
         </>

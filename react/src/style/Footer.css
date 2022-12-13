@@ -2,9 +2,18 @@
 #footer-container {
     color: white;
     text-shadow: 1px 1px 0 #000000;
-    background-image: url('https://images.hdqwalls.com/wallpapers/blue-texture-pf.jpg');
-    /* background-image: linear-gradient(rgb(46, 113, 236), lightblue, rgb(46, 113, 236)); */
+    background: lightblue;
     background-size: cover;
-    padding: 5vh 20vh;
+    padding: 3.5vh 22vh;
     text-align: left;
   }
+
+.footer {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  padding: 2.5vh 3.5vh;
+  background:rgba(0, 55, 130, 0.65);
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+}

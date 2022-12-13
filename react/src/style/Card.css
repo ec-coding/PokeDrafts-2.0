@@ -123,6 +123,10 @@
   margin-bottom: 0;
 }
 
+.card-title-box h6 {
+  margin-bottom: 0;
+}
+
 .card-title-box div {
   margin-top: 3.5px;
 }
@@ -167,6 +171,10 @@
   inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
+.card-set h6 {
+  margin-bottom: 0.25vh;
+}
+
 .card-bio {
   border: none;
   padding: 3px 3px;
@@ -189,9 +197,12 @@
 }
 
 .card-trio-col .center-box {
-  margin: 0 auto;
-  margin-top: 0.25vh;
+  margin: 0.25vh auto;
   justify-content: center;
+}
+
+.card-trio-col h6 {
+  margin-bottom: 0;
 }
 
 .card-artist {

@@ -1,13 +1,16 @@
 /* HEADER */
 #title-container {
-    margin-top: 2.5vh;
     color: white;
     text-shadow: 1px 1px 0 #000000;
     background-image: url('https://i.imgur.com/eUFKNVm.png');
-    /* background-image: linear-gradient(rgb(46, 113, 236), lightblue, rgb(46, 113, 236)); */
     height: 48vh;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: white;
+    box-shadow:
+    2px 2px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   }
   
   #title-container .title {

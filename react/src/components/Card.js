@@ -215,7 +215,7 @@ export default function Card({ card, onDeck }) {
                     <CardAttributes cardRules={card?.rules} />
                   </div>
 
-                  <div className="row">
+                  <div className="row card-set">
                     <h6 class="col">Set: {card?.set.name}</h6>
                     <h6 class="col text-right right-padding-two">Rarity: {card?.rarity}</h6>
                   </div>

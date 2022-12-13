@@ -18,4 +18,15 @@
 
 .carousel .carousel-indicators {
   position: relative;
+  padding-top: 2vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.carousel {
+  min-height: 40vh;
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }

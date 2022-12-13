@@ -14,10 +14,9 @@
   }
   
   .tab-content {
-    background: #303030;
+    background: rgb(58, 58, 58);
     /* background: radial-gradient(#ff4d50, #ff383b, #CA0002, #780000); */
     background-size: cover;
-    min-height: 50vh;
     margin: 0 auto;
   }
   
@@ -83,9 +82,9 @@
   } */
 
   #tab-two .slide {
-    padding: 0 20vh;
+    padding: 0 8vh;
   }
 
   #tab-three .slide {
-    padding: 0 26.25vh;
+    padding: 0 12.75vh;
   }
