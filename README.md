@@ -288,3 +288,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 12/9/2022
 1. App was successfully hosted on Railway.
+
+12/10/2022
+1. Began CSS updates on tab content elements including profile page and card modal.
