@@ -73,8 +73,8 @@ footer {
 
 .landing-body {
     min-height: 60vh;
-    background: white;
-    padding-bottom: 8vh;
+    background:rgb(212, 212, 212);
+    padding-bottom: 3.5vh;
 }
 
 .landing-articles article {
@@ -90,7 +90,152 @@ footer {
     filter: drop-shadow(5px 5px 5px black);
 } */
 
-.flip-card-container {
+  .landing-set-container {
+    margin-top: 30vh;
+    width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landing-set-container h2, .landing-button-container h2 {
+    margin: 0 auto;
+    padding: 35px;
+    font-size: 24px;
+    color: rgb(54, 54, 54);
+    background: rgb(238, 238, 238);
+    box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .landing-sets {
+    padding: 3.5vh;
+    margin-top: 3vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgb(172, 172, 172);
+    box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .landing-sets section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgb(238, 238, 238);
+  }
+
+  .landing-sets .set-header {
+    text-shadow: 1px 1px 0 #ffffff;
+    border: 1px solid white;
+    padding: 0.5vh 0;
+    width: 100%;
+    box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 50vh;
+    background-image: linear-gradient(
+      -72deg,
+      #dedeff,
+      #ffffff 16%,
+      #dedeff 21%,
+      #ffffff 24%,
+      #dedeff 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedeff 72%,
+      #ffffff 80%,
+      #dedeff 84%,
+      #555564
+    );
+  }
+
+  .landing-sets .set-header+.set-header {
+    margin-bottom: 2vh;
+    background: white;
+  }
+
+  .landing-sets img {
+    position: relative;
+    width: 220px;
+    height: 385px;
+    border-radius: 0.5em;
+    z-index: 10;
+    filter: drop-shadow(5px 5px 5px black);
+    margin: 2vh 2vh;
+  }
+
+  .landing-sets img:hover {
+    transform: scale(1.07);
+  }
+
+  .landing-sets .set-booster-pack {
+    margin: 0 0.5vh 1vh 0.5vh;
+  }
+
+  .landing-sets .set-booster-pack h4 {
+    text-shadow: 1px 1px 0 #ffffff;
+    padding: 0.5vh 0;
+    margin: auto 2vh;
+    border: 1px solid white;
+    box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(
+      -72deg,
+      #dedede,
+      #ffffff 16%,
+      #dedede 21%,
+      #ffffff 24%,
+      #dedede 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedede 72%,
+      #ffffff 80%,
+      #dedede 84%,
+      #a1a1a1
+    );
+  }
+
+  .set-divider {
+    width: 100%;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    border: 1px solid white;
+    box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+    background: white;
+  }
+
+  .landing-body .landing-button-container {
+    margin: 0 auto;
+    margin-top: 3.5vh;
+    padding: 0;
+    width: 1480px;
+  }
+
+  .landing-button-container button {
+    margin: 2vh;
+  }
+
+  .landing-button-container button a {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+  }
+
+  .landing-button-container button a:hover {
+    color: rgb(112, 112, 112);
+  }
+
+  .flip-card-container {
     margin: 0 auto;
     width: 60%;
 }
@@ -150,60 +295,4 @@ footer {
     border-radius: 0.5em;
     z-index: 10;
     filter: drop-shadow(5px 5px 5px black);
-  }
-
-  .landing-set-container {
-    margin-top: 30vh;
-    padding-bottom: 5vh;
-    width: 82.5%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .landing-set-container h2, .landing-button-container h2 {
-    margin: 0 auto;
-    padding: 35px;
-    font-size: 24px;
-    color: rgb(54, 54, 54);
-    background: rgb(202, 202, 202);
-  }
-
-  .landing-sets {
-    margin-top: 3vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .landing-sets img {
-    position: relative;
-    width: 220px;
-    height: 385px;
-    border-radius: 0.5em;
-    z-index: 10;
-    filter: drop-shadow(5px 5px 5px black);
-    margin: 2vh 2vh;
-  }
-
-  .landing-sets img:hover {
-    transform: scale(1.08);
-  }
-
-  .landing-button-container {
-    margin: 0 auto;
-    padding: 0;
-    width: 82.5%;
-  }
-
-  .landing-button-container button {
-    margin: 2vh;
-  }
-
-  .landing-button-container button a {
-    text-decoration: none;
-    color: rgb(48, 48, 48);
-  }
-
-  .landing-button-container button a:hover {
-    color: rgb(112, 112, 112);
   }

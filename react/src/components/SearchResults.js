@@ -140,16 +140,16 @@ export default function SearchResults() {
             </div>
 
             <nav id="sub-header-nav" class="button-input sub-header">
-            <div>
-                <ul class="row">
-                    <li class="col"><h4>Sort By</h4></li>
-                    <li class="col"><button onClick={sortByName}>Name</button></li>
-                    <li class="col"><button onClick={sortByType}>Type</button></li>
-                    <li class="col"><button onClick={sortById}>Set No.</button></li>
-                    <li class="col"><button onClick={sortByHP}>HP</button></li>
-                    <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
-                    <li class="col"><button onClick={sortByArtist}>Artist</button></li>
-                </ul>
+                <div>
+                    <ul class="row">
+                        <li class="col"><h4>Sort By</h4></li>
+                        <li class="col"><button onClick={sortByName}>Name</button></li>
+                        <li class="col"><button onClick={sortByType}>Type</button></li>
+                        <li class="col"><button onClick={sortById}>Set No.</button></li>
+                        <li class="col"><button onClick={sortByHP}>HP</button></li>
+                        <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
+                        <li class="col"><button onClick={sortByArtist}>Artist</button></li>
+                    </ul>
                 </div>
             </nav>
 

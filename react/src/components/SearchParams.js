@@ -55,8 +55,11 @@ export default function SearchParams() {
         if (cardSet.includes('neo4')) {
             subtypeParam += ` set.id:neo4 OR`
         }
+        if (cardSet.includes('basep')) {
+            subtypeParam += ` set.id:basep OR`
+        }
         if (subtypeParam === '') {
-            subtypeParam = ` (set.id:base1 OR set.id:base2 OR set.id:base3 OR set.id:base4 OR set.id:base5 OR set.id:gym1 OR set.id:gym2 OR set.id:neo1 OR set.id:neo2 OR set.id:neo3 OR set.id:neo4)`
+            subtypeParam = ` (set.id:base1 OR set.id:base2 OR set.id:base3 OR set.id:base4 OR set.id:base5 OR set.id:gym1 OR set.id:gym2 OR set.id:neo1 OR set.id:neo2 OR set.id:neo3 OR set.id:neo4 OR set.id:basep)`
         } else {
             subtypeParam = subtypeParam.slice(0, -2)
         }
@@ -211,7 +214,6 @@ export default function SearchParams() {
                                     <input class="type-input" type="radio" id="type-metal" name="type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
                                     <label for="type-metal"> Metal</label>
                                 </li>
-
                             </ul>
                         </section>
 
@@ -272,7 +274,12 @@ export default function SearchParams() {
                                     <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
                                     <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
                                     <label for="neo-destiny"> Neo Destiny</label>
-                             </li>
+                                </li>
+                                <li class="list-one-third">
+                                    <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
+                                    <input class="type-input" type="checkbox" id="bs-promo" name="subtype" value="basep" checked={cardSet.includes('basep')} onChange={cardSetToggle} />
+                                    <label for="bs-promo"> Black Star Promos</label>
+                                </li>
                             </ul>
                         </section>
 

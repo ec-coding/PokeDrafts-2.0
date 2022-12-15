@@ -7,10 +7,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
-    box-shadow:
-    2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   }
   
   #title-container .title {
@@ -27,4 +23,5 @@
     width: 20vh;
     /* margin: 0.5vh; */
     margin-right: 2vh;
+    margin-top: 0.5vh;
   }

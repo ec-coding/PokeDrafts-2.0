@@ -57,7 +57,7 @@ const Home = ({ }) => {
                     <nav class="navbar navbar-expand-lg bg-light">
                         <div class="container-fluid tab">
 
-                            <div class="collapse navbar-collapse">
+
                                 <ul class="navbar-nav">
                                     <li>
                                         <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
@@ -75,12 +75,12 @@ const Home = ({ }) => {
                                         <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
                                     </li>
                                 </ul>
-                                <ul class="nav-item-two">
+                                <ul class="nav-item-two navbar-nav">
                                     <li class="nav-item">
                                         <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
                                     </li>
                                 </ul>
-                            </div>
+
                         </div>
                     </nav>
 

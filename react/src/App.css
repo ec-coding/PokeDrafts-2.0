@@ -1,5 +1,5 @@
 body {
-  background: white;
+  background: rgb(212, 212, 212);
 }
 
 ul {
@@ -12,18 +12,12 @@ hr {
 }
 
 .App {
-  max-width: 1480px;
   margin: 0 auto;
-  margin-bottom: 2.5vh;
 }
 
 .App-inner {
-  background:rgba(136, 136, 136, 0.25);
-  padding: 2vh;
-  box-shadow:
-  2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+  background: rgb(212, 212, 212);
+  padding: 2.5vh;
 }
 
 .App-logo {
@@ -103,11 +97,6 @@ hr {
   min-height: 13vh;
   background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
   background-size: cover;
-  border: 1px solid darkgray;
-  box-shadow:
-  2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .search-header-container h2,
@@ -128,10 +117,6 @@ h6 {
   min-height: 12vh;
   background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
   background-size: cover;
-  box-shadow:
-  2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .search-input {
@@ -256,13 +241,8 @@ input[type=radio] {
 .sub-header {
   width: 100%;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid darkgray;
+  background: rgb(212, 212, 212);
   margin: 0;
-  box-shadow:
-  2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .sub-header ul {
@@ -279,6 +259,10 @@ input[type=radio] {
   color: rgba(0, 0, 0, 0.75);
 }
 
+#sub-header-nav {
+  overflow: hidden;
+}
+
 #tab-two .sub-header button {
   width: 15vh;
 }
@@ -286,3 +270,4 @@ input[type=radio] {
 #tab-two .sub-header h4 {
   margin: 0.5vh 0;
 }
+

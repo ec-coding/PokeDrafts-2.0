@@ -21,6 +21,8 @@ const authRoutes = require('./routes/auth')
 const decksRoutes = require('./routes/decks')
 const User = require('./models/user')
 
+// CREATE A SAFELIST - ALL OF THE KNOWN SAFE IP ADDRESSES TO ACCESS BACKEND
+
 // Load Config
 dotenv.config({ path: './config/config.env' })
 

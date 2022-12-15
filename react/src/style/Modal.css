@@ -11,7 +11,7 @@
   }
   
   .slide-img {
-    width: 22vh;
+    width: 25.5vh;
     padding: 5px;
     margin: 5px;
     border-radius: 1vh;
@@ -34,7 +34,7 @@
   
   .modal-content {
     position: absolute;
-    transform: translate(0%, 5%);
+    transform: translate(0%, 6%);
     border: 5px rgba(255, 255, 255, 0.70) solid;
   }
   
