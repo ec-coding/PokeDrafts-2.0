@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import CardContext from '../CardContext';
 import Card from './Card'
 import '../style/Dropdown.css';
+import '../style/SearchResults.css';
 
 export default function SearchResults() {
 
@@ -139,10 +140,10 @@ export default function SearchResults() {
                 </section>
             </div>
 
-            <nav id="sub-header-nav" class="button-input sub-header">
+            <nav id="results-nav" class="sub-header">
                 <div>
                     <ul class="row">
-                        <li class="col"><h4>Sort By</h4></li>
+                        <li class="col nav-title"><h4>Sort By</h4></li>
                         <li class="col"><button onClick={sortByName}>Name</button></li>
                         <li class="col"><button onClick={sortByType}>Type</button></li>
                         <li class="col"><button onClick={sortById}>Set No.</button></li>
@@ -152,9 +153,6 @@ export default function SearchResults() {
                     </ul>
                 </div>
             </nav>
-
-
-
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">

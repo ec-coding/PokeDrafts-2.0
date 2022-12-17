@@ -17,7 +17,7 @@ hr {
 
 .App-inner {
   background: rgb(212, 212, 212);
-  padding: 2.5vh;
+  padding: 3.5vh;
 }
 
 .App-logo {
@@ -146,7 +146,7 @@ h6 {
   margin: 0px;
   padding: 5px 0 8px 15px;
   background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180))
-  /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
+    /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
 }
 
 .type-input-div {
@@ -251,23 +251,18 @@ input[type=radio] {
 }
 
 .sub-header button {
-  width: 20vh;
+  cursor: pointer;
+  width: 11.5vh;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ffffff;
+  color: rgba(0, 0, 0, 0.75);
+  background: inherit;
+  border: none;
 }
 
 .sub-header button a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.75);
 }
-
-#sub-header-nav {
-  overflow: hidden;
-}
-
-#tab-two .sub-header button {
-  width: 15vh;
-}
-
-#tab-two .sub-header h4 {
-  margin: 0.5vh 0;
-}
-

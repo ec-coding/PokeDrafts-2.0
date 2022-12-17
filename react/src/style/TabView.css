@@ -4,6 +4,8 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    overflow: clip;
+    top: 0;
   }
 
   /* #tab-one {
@@ -27,7 +29,12 @@
   #tab-two .slide {
     padding: 0 20vh;
   }
+  
+  #tab-two .sub-header h4 {
+    margin: 0.5vh 0;
+  }
 
   #tab-three .slide {
     padding: 0 12.75vh;
   }
+  

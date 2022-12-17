@@ -280,7 +280,7 @@ export default function UserDeck() {
                     <h6 class="instructions-text">Browse through and click on any card to remove it from your deck.</h6>
                 </section>
             </div>
-            <section class="sub-header button-input">
+            <section class="sub-header button-input deck-console">
                 <ul class="row">
                     <li class="col">
                         <button type="submit">Rename Deck</button>

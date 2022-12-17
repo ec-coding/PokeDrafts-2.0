@@ -1,0 +1,30 @@
+#results-nav {
+    background: rgb(192, 192, 192);
+    position: sticky;
+    display: flex;
+    z-index: 3;
+    top: 6.5vh;
+
+  }
+
+#results-nav ul li {
+    margin: 0;
+    padding: 0;
+    height: 4.5vh;
+}
+
+#results-nav .nav-title {
+    margin-right: 3vh;
+    margin-left: -5vh;
+    text-shadow: 1px 1px 0 #ffffff;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#results-nav button {
+    border: 0.5vh solid rgb(192, 192, 192);
+  }
+
+#results-nav button:hover {
+    border-top: 0.5vh solid rgb(110, 110, 110);
+    border-bottom: 0.5vh solid rgb(110, 110, 110);
+  }
