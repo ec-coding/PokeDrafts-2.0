@@ -291,3 +291,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 12/10/2022
 1. Began CSS updates on tab content elements including profile page and card modal.
+
+12/18/2022
+1. Continuing updates on UI and site layout.
