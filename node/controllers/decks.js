@@ -67,7 +67,7 @@ module.exports = {
                 _id: new ObjectID(), 
                 ...req.body
             })
-            deck.save()
+            await deck.save()
             let card = deck.cards.at(-1)
             res.json(card)
         } catch (err) {
@@ -109,7 +109,7 @@ module.exports = {
             }
             // Figure out how to stop DDOS from rapid delete requests
             deck.cards = deck.cards.filter(card => card._id != req.body._id)
-            deck.save()
+            await deck.save()
             console.log(`Deleted card`)
             res.json('')
         } catch (err) {
