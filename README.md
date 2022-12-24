@@ -294,3 +294,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 12/18/2022
 1. Continuing updates on UI and site layout.
+
+12/20/2022
+1. Added new set options for WotC Black Star Promo cards under search parameters.
