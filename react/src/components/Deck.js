@@ -282,9 +282,9 @@ export default function UserDeck() {
             </div>
             <section class="sub-header button-input deck-console">
                 <ul class="row">
-                    <li class="col">
+                    {/* <li class="col">
                         <button type="submit">Rename Deck</button>
-                    </li>
+                    </li> */}
                     <li class="col">
                         <button type="submit" onClick={deleteDeck}>Delete Deck</button>
                     </li>
@@ -292,17 +292,17 @@ export default function UserDeck() {
             </section>
 
 
-            <section class="sub-header button-input">
+            {/* <section class="sub-header button-input">
                 <ul class="row">
                     <li class="col"><h4>Sort By</h4></li>
                     <li class="col"><button onClick={sortByName}>Name</button></li>
-                    {/* <li class="col"><button onClick={sortByType}>Type</button></li> */}
+                    <li class="col"><button onClick={sortByType}>Type</button></li>
                     <li class="col"><button onClick={sortById}>Set No.</button></li>
                     <li class="col"><button onClick={sortByHP}>HP</button></li>
                     <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
                     <li class="col"><button onClick={sortByArtist}>Artist</button></li>
                 </ul>
-            </section>
+            </section> */}
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 {/* <div class="carousel-indicators">

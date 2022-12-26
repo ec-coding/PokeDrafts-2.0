@@ -131,6 +131,7 @@ footer {
   }
 
   .landing-sets .set-header {
+    color: rgb(54, 54, 54);
     text-shadow: 1px 1px 0 #ffffff;
     border: 1px solid white;
     padding: 0.5vh 0;
@@ -180,10 +181,11 @@ footer {
   }
 
   .landing-sets .set-booster-pack h4 {
+    color: rgb(54, 54, 54);
     text-shadow: 1px 1px 0 #ffffff;
-    padding: 0.5vh 0;
+    padding: 0.75vh 0;
     margin: auto 2vh;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow:
     1px 1px 0.5em rgba(122, 122, 122, 0.55),
     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),

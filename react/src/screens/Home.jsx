@@ -62,9 +62,9 @@ const Home = ({ }) => {
                                     <li>
                                         <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
                                     </li>
-                                    <li class="nav-item">
+                                    {/* <li class="nav-item">
                                         <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
-                                    </li>
+                                    </li> */}
                                     <li class="nav-item">
                                         <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
                                     </li>
@@ -87,9 +87,9 @@ const Home = ({ }) => {
                     <div className="App">
                         <div className="App-inner">
                             <Header />
-                            {tab === 'slide0' && <div id="tab-zero" class="tab-content">
+                            {/* {tab === 'slide0' && <div id="tab-zero" class="tab-content">
                                 <Profile user={user} />
-                            </div>}
+                            </div>} */}
 
 
                             {tab === 'slide1' && <div id="tab-one" class="tab-content">
