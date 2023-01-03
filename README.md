@@ -79,6 +79,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <h3 align="center">Built for the 100Devs 100-Hours Project</h3>
 <p align="center">
     <h3 align="center">Access the App <a href="http://pokedrafts.herokuapp.com/" target="blank">Here</a></h3>
+    <p align="center">Hosting service has been changed from Heroku to Railway.</p>
 </p>
 
 ## How It's Made:
