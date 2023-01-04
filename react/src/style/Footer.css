@@ -11,4 +11,8 @@
 .footer {
   padding: 2.5vh 10.5vh;
   background: rgba(0, 55, 130, 0.65);
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+  inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
