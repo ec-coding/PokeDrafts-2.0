@@ -301,3 +301,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 
 12/27/2022
 1. UI has been updated to remove WIP features (for enhanced presentation).
+
+1/3/2023
+1. Currently researching more into React states to implement tri-way sorting (ascending, descending, original state).
