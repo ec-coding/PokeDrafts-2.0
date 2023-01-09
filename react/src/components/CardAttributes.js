@@ -75,7 +75,7 @@ export default function CardAttributes(props) {
                             <div class="col row attack-icons">{attack.cost.map((x) => <Icon attackCost={x} />)}</div>
                             <h5 class="col text-right right-padding text-upwards flex-quarter attack-damage">{attack.damage}</h5>
                         </div>
-                        <h6>{attack.text}</h6>
+                        <p class="attack-text">{attack.text}</p>
                         <hr />
                     </div>
                 ))}
