@@ -15,11 +15,6 @@ hr {
   margin: 0 auto;
 }
 
-.App-inner {
-  background: rgb(212, 212, 212);
-  padding: 3.5vh;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

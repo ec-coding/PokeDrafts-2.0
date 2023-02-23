@@ -135,10 +135,10 @@ export default function SearchParams() {
                                     <h6>Card Name</h6>
                                     <input type="text" id="name-search" placeholder="Search by name..." />
                                 </li>
-                                <li class="text-search">
+                                {/* <li class="text-search">
                                     <h6>Keywords</h6>
                                     <input type="text" id="keyword-search" placeholder="Search by keyword..." />
-                                </li>
+                                </li> */}
                             </ul>
                         </section>
 
