@@ -305,3 +305,6 @@ Building this app has allowed me to learn and exercise a variety of different co
 1/3/2023
 1. Currently researching more into React states to implement tri-way sorting (ascending, descending, original state).
 2. Sorting currently accommodates ascending and descending for respective categories, such as name, set ID, rarity, etc.
+
+1/8/2023
+1. Updating fonts for card abilities and attacks to better fit with modal width.
