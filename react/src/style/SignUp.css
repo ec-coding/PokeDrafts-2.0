@@ -33,7 +33,6 @@
 }
 
 .median-bg-container {
-    
     background-image: url('https://i.imgur.com/6wEiIzD.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -57,4 +56,40 @@
 
 .landing-return a:hover {
     color: rgb(48, 48, 48);
+}
+
+@media screen and (max-width: 1200px) {
+    .median-bg-container {
+        background-image: url('https://i.imgur.com/6wEiIzD.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left -65vh center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .median-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .median-form-container {
+        margin: 0;
+        padding: 5vh;
+    }
+
+    .median-bg-container {
+        background-image: url('https://i.imgur.com/6wEiIzD.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex: 7 0 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .median-bg-container {
+        flex: 1.5 0 0;
+    }
 }
