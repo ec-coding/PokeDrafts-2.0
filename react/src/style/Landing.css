@@ -295,17 +295,13 @@ footer {
 
 @media screen and (max-width: 768px) {
   .landing-container {
-    height: 38.5vh;
-    background-position: top -5.5vh center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: none;
-    padding-top: 20px;
-    position: relative;
+    height: 50vh;
+    background-position: top 0 center;
+    background-size: cover;
   }
 
-  .landing-set-container {
-    margin-top: 3vh;
+  .landing-title-container {
+    margin-top: 25%;
   }
 
   .landing-sets {
@@ -414,7 +410,7 @@ footer {
     margin-right: 0;
     margin-left: auto;
   }
-  
+
   .landing-title-container h1 {
     font-size: 26px;
     font-weight: bold;
