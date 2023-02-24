@@ -335,7 +335,7 @@ footer {
 @media screen and (max-width: 576px) {
   .landing-container {
     height: 38.5vh;
-    background-position: top 0 center;
+    background-position: center;
   }
 
   .landing-container .landing-navbar {
@@ -345,7 +345,7 @@ footer {
   }
 
   .landing-set-container {
-    margin-top: 2.5vh;
+    margin-top: 0
   }
 
   .landing-title-container h1 {
@@ -381,5 +381,69 @@ footer {
   .landing-sets .set-booster-pack h4 {
     font-size: 20px;
     padding: 0.5vh 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landing-container {
+    height: 50vh;
+    background-position: top 0 center;
+    background-size: cover;
+  }
+
+  .landing-container .landing-navbar #title-img {
+    margin-right: 0;
+    width: 24vh;
+  }
+
+  .landing-container .landing-navbar li button a {
+    font-size: 16px;
+  }
+
+  .landing-container .landing-navbar #nav-ul-one li {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .landing-container .landing-navbar #nav-ul-two li {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .landing-container .landing-navbar #nav-ul-two li+li {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  .landing-title-container h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .landing-title-container h5 {
+    font-size: 16px;
+    padding: 0 5vh;
+  }
+
+  .landing-set-container h2 {
+    font-size: 18px;
+    padding: 2vh 2vh;
+  }
+
+  .landing-sets .set-divider h3 {
+    padding: 2% 0;
+    margin: 0 5%;
+    font-size: 24px;
+  }
+
+  .landing-sets .set-divider h4 {
+    padding: 2% 0;
+    margin: 0 5%;
+    font-size: 18px;
+  }
+
+  .landing-sets img {
+    height: 419px;
+    width: 242px;
   }
 }

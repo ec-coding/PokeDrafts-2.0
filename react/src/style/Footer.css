@@ -22,3 +22,9 @@
     padding: 2.5vh 5vh;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .footer {
+    font-size: 14px;
+  }
+}
