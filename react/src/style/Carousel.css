@@ -18,11 +18,16 @@
 
 .carousel .carousel-indicators {
   position: relative;
-  padding-top: 2vh;
+  padding-top: 0vh;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
 .carousel {
   min-height: 40vh;
+  border: 2px solid black;
+}
+
+.carousel-inner {
+  padding: 0 10vh;
 }

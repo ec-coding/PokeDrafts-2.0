@@ -1,0 +1,13 @@
+.homeContainer {
+    background: white;
+    margin: 0 auto;
+}
+
+.homeTabContainer {
+    margin: 0 2vh;
+}
+
+.homeSidebarContainer {
+    padding-top: 40px;
+    margin: 0 2vh;
+}

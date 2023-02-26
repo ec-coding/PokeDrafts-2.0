@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import CardContext from '../CardContext';
-import Card from './Card'
-import '../style/Dropdown.css';
-import '../style/SearchResults.css';
+import CardContext from '../../CardContext';
+import Card from '../Card'
+import '../../style/Dropdown.css';
+import './SearchResults.css';
 
 export default function SearchResults() {
 
@@ -133,11 +133,7 @@ export default function SearchResults() {
 
     return (
         <>
-            <div class="search-header-container">
-                <h2 id="search-header">Search Results</h2>
-                <section class="instructions">
-                    <h6 class="instructions-text">Browse through and click on any card for more information.</h6>
-                </section>
+            <div id="tab-two" class="search-header-container tab-content">
             </div>
 
             <nav id="results-nav" class="sub-header">

@@ -1,5 +1,7 @@
-body {
-  background: rgb(212, 212, 212);
+@import "rsuite/dist/rsuite.css";
+
+* {
+  box-sizing: border-box;
 }
 
 ul {
@@ -13,6 +15,7 @@ hr {
 
 .App {
   margin: 0 auto;
+  padding: 0 25vh;
 }
 
 .App-logo {
@@ -40,7 +43,6 @@ hr {
 .App-link {
   color: #61dafb;
 }
-
 
 .padding-expand {
   padding: 5px 5px;
@@ -85,13 +87,9 @@ hr {
 
 /* SUB-HEADER */
 .search-header-container {
-  padding: 16px 0;
-  text-shadow: 2px 2px 0 #000000;
+  text-shadow: 2px 2px 0 #ffffff;
   filter: drop-shadow(0px 0px 0px white);
-  color: white;
-  min-height: 13vh;
-  background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
-  background-size: cover;
+  color: rgb(92, 92, 92);
 }
 
 .search-header-container h2,
@@ -101,18 +99,17 @@ h6 {
 
 .search-header-container h6 {
   font-size: 17px;
-  text-shadow: 1.5px 1.5px 0 #000000;
 }
 
-.search-footer-container {
+/* .search-footer-container {
   padding: 16px 0;
   text-shadow: 2px 2px 0 #000000;
   filter: drop-shadow(0px 0px 0px white);
   color: white;
   min-height: 12vh;
-  background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
+  background: white;
   background-size: cover;
-}
+} */
 
 .search-input {
   padding: 0;
@@ -128,27 +125,13 @@ h6 {
   min-height: 8.5vh;
 }
 
-.search-input h3 {
-  color: rgb(255, 255, 255);
-  text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);
-  text-align: left;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow:
-    2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
-  margin: 0px;
-  padding: 5px 0 8px 15px;
-  background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180))
-    /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
-}
+
 
 .type-input-div {
   box-shadow:
     2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+    inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;

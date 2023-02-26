@@ -63,8 +63,7 @@
 }
 
 .tab-content {
-  background: rgb(58, 58, 58);
-  /* background: radial-gradient(#ff4d50, #ff383b, #CA0002, #780000); */
+  background: white;
   background-size: cover;
   margin: 0 auto;
 }
