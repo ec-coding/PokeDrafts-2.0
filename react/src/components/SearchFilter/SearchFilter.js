@@ -126,175 +126,176 @@ export default function SearchFilter() {
                     <input type="text" id="name-search" className="searchFilterSearchBar" placeholder="Search for cards..." />
                     <BiSearchAlt className='searchFilterIcon' size={24} />
                 </section>
-                <Panel header="Advanced Search" className="searchFilterAdvSearchContainer" collapsible bordered>
+                <div className="searchFilterBottomContainer">
+                    <Panel header="Advanced Search" className="searchFilterAdvSearchContainer" collapsible bordered>
 
-                    <div class="searchFilterContainer">
+                        <div class="searchFilterContainer">
 
-                        <div class="basic-search">
+                            <div class="basic-search">
 
-                            <Panel header="Card Type" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
-                                <section class="supertype-input-sec search-input">
-                                    <ul class="type-input-div">
-                                        <li class="list-one-third">
-                                            <img class="pkmn-icon" src="https://i.imgur.com/0n7qI08.png" alt="" />
-                                            <input class="type-input" type="radio" id="card-type-pokemon" name="supertype"
-                                                checked={cardType === 'Pokémon'} onChange={() => changeCardType('Pokémon')} />
-                                            <label for="card-type-pokemon"> Pokémon</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/N3AkovO.png" alt="" />
-                                            <input class="type-input" type="radio" id="card-type-trainer" name="supertype"
-                                                checked={cardType === 'Trainer'} onChange={() => changeCardType('Trainer')} />
-                                            <label for="card-type-trainer"> Trainer</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://media.discordapp.net/attachments/625333124808572932/1046148951826501712/30px-Rainbow-attack.png" alt="" />
-                                            <input class="type-input" type="radio" id="card-type-energy" name="supertype"
-                                                checked={cardType === 'Energy'} onChange={() => changeCardType('Energy')} />
-                                            <label for="card-type-energy"> Energy</label>
-                                        </li>
-                                    </ul>
-                                </section>
-                            </Panel>
+                                <Panel header="Card Type" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
+                                    <section class="supertype-input-sec search-input">
+                                        <ul class="type-input-div">
+                                            <li class="list-one-third">
+                                                <img class="pkmn-icon" src="https://i.imgur.com/0n7qI08.png" alt="" />
+                                                <input class="type-input" type="radio" id="card-type-pokemon" name="supertype"
+                                                    checked={cardType === 'Pokémon'} onChange={() => changeCardType('Pokémon')} />
+                                                <label for="card-type-pokemon"> Pokémon</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/N3AkovO.png" alt="" />
+                                                <input class="type-input" type="radio" id="card-type-trainer" name="supertype"
+                                                    checked={cardType === 'Trainer'} onChange={() => changeCardType('Trainer')} />
+                                                <label for="card-type-trainer"> Trainer</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://media.discordapp.net/attachments/625333124808572932/1046148951826501712/30px-Rainbow-attack.png" alt="" />
+                                                <input class="type-input" type="radio" id="card-type-energy" name="supertype"
+                                                    checked={cardType === 'Energy'} onChange={() => changeCardType('Energy')} />
+                                                <label for="card-type-energy"> Energy</label>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </Panel>
 
-                            <Panel header="Energy Type" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
-                                <section class="type-input-sec search-input">
-                                    <ul class="type-input-div">
-                                        <li class="list-one-third">
-                                            <div class="icon-Grass" />
-                                            <input class="type-input" type="radio" id="type-grass" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
-                                            <label for="type-grass"> Grass</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Fire" alt="" />
-                                            <input class="type-input" type="radio" id="type-fire" name="type" checked={cardElement.includes('fire')} onChange={() => changeCardElement('fire')} />
-                                            <label for="type-fire"> Fire</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Water" alt="" />
-                                            <input class="type-input" type="radio" id="type-water" name="type" checked={cardElement.includes('water')} onChange={() => changeCardElement('water')} />
-                                            <label for="type-water"> Water</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Lightning" alt="" />
-                                            <input class="type-input" type="radio" id="type-lightning" name="type" checked={cardElement.includes('lightning')} onChange={() => changeCardElement('lightning')} />
-                                            <label for="type-lightning"> Lightning</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Psychic" alt="" />
-                                            <input class="type-input" type="radio" id="type-psychic" name="type" checked={cardElement.includes('psychic')} onChange={() => changeCardElement('psychic')} />
-                                            <label for="type-psychic"> Psychic</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Fighting" alt="" />
-                                            <input class="type-input" type="radio" id="type-fighting" name="type" checked={cardElement.includes('fighting')} onChange={() => changeCardElement('fighting')} />
-                                            <label for="type-fighting"> Fighting</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Colorless" alt="" />
-                                            <input class="type-input" type="radio" id="type-colorless" name="type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
-                                            <label for="type-colorless"> Colorless</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Darkness" alt="" />
-                                            <input class="type-input" type="radio" id="type-darkness" name="type" checked={cardElement.includes('darkness')} onChange={() => changeCardElement('darkness')} />
-                                            <label for="type-darkness"> Darkness</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <div class="icon-Metal" alt="" />
-                                            <input class="type-input" type="radio" id="type-metal" name="type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
-                                            <label for="type-metal"> Metal</label>
-                                        </li>
-                                    </ul>
-                                </section>
-                            </Panel>
+                                <Panel header="Energy Type" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
+                                    <section class="type-input-sec search-input">
+                                        <ul class="type-input-div">
+                                            <li class="list-one-third">
+                                                <div class="icon-Grass" />
+                                                <input class="type-input" type="radio" id="type-grass" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                                <label for="type-grass"> Grass</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Fire" alt="" />
+                                                <input class="type-input" type="radio" id="type-fire" name="type" checked={cardElement.includes('fire')} onChange={() => changeCardElement('fire')} />
+                                                <label for="type-fire"> Fire</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Water" alt="" />
+                                                <input class="type-input" type="radio" id="type-water" name="type" checked={cardElement.includes('water')} onChange={() => changeCardElement('water')} />
+                                                <label for="type-water"> Water</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Lightning" alt="" />
+                                                <input class="type-input" type="radio" id="type-lightning" name="type" checked={cardElement.includes('lightning')} onChange={() => changeCardElement('lightning')} />
+                                                <label for="type-lightning"> Lightning</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Psychic" alt="" />
+                                                <input class="type-input" type="radio" id="type-psychic" name="type" checked={cardElement.includes('psychic')} onChange={() => changeCardElement('psychic')} />
+                                                <label for="type-psychic"> Psychic</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Fighting" alt="" />
+                                                <input class="type-input" type="radio" id="type-fighting" name="type" checked={cardElement.includes('fighting')} onChange={() => changeCardElement('fighting')} />
+                                                <label for="type-fighting"> Fighting</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Colorless" alt="" />
+                                                <input class="type-input" type="radio" id="type-colorless" name="type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
+                                                <label for="type-colorless"> Colorless</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Darkness" alt="" />
+                                                <input class="type-input" type="radio" id="type-darkness" name="type" checked={cardElement.includes('darkness')} onChange={() => changeCardElement('darkness')} />
+                                                <label for="type-darkness"> Darkness</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <div class="icon-Metal" alt="" />
+                                                <input class="type-input" type="radio" id="type-metal" name="type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
+                                                <label for="type-metal"> Metal</label>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </Panel>
 
-                            <Panel header="Expansion" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
-                                <section class="subtype-input-sec search-input">
-                                    <ul class="type-input-div">
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/yATpJei.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
-                                            <label for="base"> Base</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
-                                            <label for="jungle"> Jungle</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/E5Axps4.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
-                                            <label for="fossil"> Fossil</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/ljLojgC.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
-                                            <label for="base-two"> Base 2</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/NeziRcu.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
-                                            <label for="team-rocket"> Team Rocket</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
-                                            <label for="gym-heroes"> Gym Heroes</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/jKAre0A.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
-                                            <label for="gym-challenge"> Gym Challenge</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="neo-genesis" name="subtype" value="neo1" checked={cardSet.includes('neo1')} onChange={cardSetToggle} />
-                                            <label for="neo-genesis"> Neo Genesis</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/7edrYfb.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="neo-discovery" name="subtype" value="neo2" checked={cardSet.includes('neo2')} onChange={cardSetToggle} />
-                                            <label for="neo-discovery"> Neo Discovery</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/rZWqc8M.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="neo-revelation" name="subtype" value="neo3" checked={cardSet.includes('neo3')} onChange={cardSetToggle} />
-                                            <label for="neo-revelation"> Neo Revelation</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
-                                            <label for="neo-destiny"> Neo Destiny</label>
-                                        </li>
-                                        <li class="list-one-third">
-                                            <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
-                                            <input class="type-input" type="checkbox" id="bs-promo" name="subtype" value="basep" checked={cardSet.includes('basep')} onChange={cardSetToggle} />
-                                            <label for="bs-promo"> Black Star Promos</label>
-                                        </li>
-                                    </ul>
-                                </section>
-                            </Panel>
+                                <Panel header="Expansion" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
+                                    <section class="subtype-input-sec search-input">
+                                        <ul class="type-input-div">
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/yATpJei.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
+                                                <label for="base"> Base</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
+                                                <label for="jungle"> Jungle</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/E5Axps4.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
+                                                <label for="fossil"> Fossil</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/ljLojgC.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
+                                                <label for="base-two"> Base 2</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/NeziRcu.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
+                                                <label for="team-rocket"> Team Rocket</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
+                                                <label for="gym-heroes"> Gym Heroes</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/jKAre0A.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
+                                                <label for="gym-challenge"> Gym Challenge</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="neo-genesis" name="subtype" value="neo1" checked={cardSet.includes('neo1')} onChange={cardSetToggle} />
+                                                <label for="neo-genesis"> Neo Genesis</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/7edrYfb.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="neo-discovery" name="subtype" value="neo2" checked={cardSet.includes('neo2')} onChange={cardSetToggle} />
+                                                <label for="neo-discovery"> Neo Discovery</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/rZWqc8M.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="neo-revelation" name="subtype" value="neo3" checked={cardSet.includes('neo3')} onChange={cardSetToggle} />
+                                                <label for="neo-revelation"> Neo Revelation</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
+                                                <label for="neo-destiny"> Neo Destiny</label>
+                                            </li>
+                                            <li class="list-one-third">
+                                                <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
+                                                <input class="type-input" type="checkbox" id="bs-promo" name="subtype" value="basep" checked={cardSet.includes('basep')} onChange={cardSetToggle} />
+                                                <label for="bs-promo"> Black Star Promos</label>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </Panel>
+
+                            </div>
 
                         </div>
 
+                    </Panel>
+                    <div class="button-box">
+
+                        <section class="button-input">
+                            <ul class="row">
+                                <li class="col">
+                                    <button type="submit" id="search-button" onClick={submitClick}>Search</button>
+                                </li>
+                                <li class="col">
+                                    <button type="reset" id="reset-button">Reset</button>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-
-                </Panel>
-                <div class="button-box">
-
-                    <section class="button-input">
-                        <ul class="row">
-                            <li class="col">
-                                <button type="submit" id="search-button" onClick={submitClick}>Search</button>
-                            </li>
-                            <li class="col">
-                                <button type="reset" id="reset-button">Reset</button>
-                            </li>
-                        </ul>
-                    </section>
                 </div>
-
             </div>
         </>
     )

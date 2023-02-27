@@ -1,15 +1,19 @@
 import React from 'react'
 import './Parallax.css';
 
-const Parallax = () => {
-    return (
-        <>
-            <div>
-                <div>
+const Parallax = (props) => {
+
+
+        return (
+            <>
+                <div className="parallaxContainer">
+                    <div className={props.screen}>
+                    </div>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
+
+
 }
 
 export default Parallax

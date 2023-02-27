@@ -93,10 +93,11 @@ const Home = ({ }) => {
                                 </div>
 
                                 <SearchFilter />
-                                <Parallax />
+                                <Parallax screen="parallaxOne" />
                                 <SearchResults />
-                                <Parallax />
+                                <Parallax screen="parallaxTwo" />
                                 <Deck />
+                                <Parallax screen="parallaxThree" />
 
                             </div>
 
