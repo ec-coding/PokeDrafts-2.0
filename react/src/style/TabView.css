@@ -26,15 +26,6 @@
     background-image: linear-gradient(rgb(180, 145, 95), lightyellow, rgb(180, 145, 95));
   } */
 
-  #tab-two .slide {
-    padding: 0 20vh;
-  }
-  
   #tab-two .sub-header h4 {
     margin: 0.5vh 0;
   }
-
-  #tab-three .slide {
-    padding: 0 12.75vh;
-  }
-  

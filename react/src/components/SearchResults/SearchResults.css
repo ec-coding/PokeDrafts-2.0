@@ -28,3 +28,7 @@
     border-top: 0.5vh solid rgb(110, 110, 110);
     border-bottom: 0.5vh solid rgb(110, 110, 110);
   }
+
+.searchResultsMaster h4 {
+  margin-top: 1vh;
+}

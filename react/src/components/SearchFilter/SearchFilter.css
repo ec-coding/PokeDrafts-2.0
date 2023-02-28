@@ -61,37 +61,24 @@
   }
   
   .button-input ul {
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    justify-content: right;
     padding: 0;
+    margin: 0;
   }
   
   .button-input li {
     margin: 10px 0px;
   }
   
-  #search-param .button-input button {
+  .button-input button {
     background: rgb(218, 218, 218);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-shadow: 1px 1px 0 #ffffff;
-    filter: drop-shadow(1.5px 1.5px 1.5px black);
     color: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
-    padding: 5px 30px;
-    border: 2px solid rgba(145, 145, 145, 0.35);
-    transition: 0.2s;
-    box-shadow:
-      2px 2px 0.5em rgba(122, 122, 122, 0.55),
-      inset 2px 2px 0 rgba(255, 255, 255, 0.9),
-      inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+    padding: 1vh 3.5vh;
   }
   
-  .button-input button:active {
-    filter: drop-shadow(1px 1px 1px black);
-    transform: scale(0.9);
-  }
   
   .searchFilterMaster {
     margin-top: -2.5vh;
@@ -100,18 +87,6 @@
   .searchFilterContainer {
     margin: 0 auto;
     padding-bottom: 20px;
-  }
-  
-  .searchFilterContainer .basic-search {
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  
-  .searchFilterContainer .advanced-search {
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
   }
 
   .searchFilterSearchBar {
@@ -128,18 +103,15 @@
 
   .searchFilterAdvSearchContainer {
     text-align: center;
-    border: none;
-    margin: 0 20vh;
-  }
-
-  .searchFilterAdvSearchContainer svg{
-    display: none;
+    background-image: linear-gradient(to left, rgb(255, 140, 136), rgb(180, 45, 35));
+    border-radius: 0;
   }
 
   .searchFilterAdvSearchContainer span span {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
-    color: rgb(0, 0, 128);
+    text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);
+    color: white;
     text-decoration: none;
     margin: 0px;
   }
@@ -155,12 +127,12 @@
   }
   
   .searchFilterAdvSearchPanelHeader .rs-panel-header {
-    padding: 1vh;
-    margin-bottom: 1vh;
+    padding: 0.75vh;
+    margin: 0.35vh 0;
   }
 
   .searchFilterAdvSearchPanelHeader span span {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: rgb(255, 255, 255);
     text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);

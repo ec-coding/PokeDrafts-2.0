@@ -133,83 +133,82 @@ export default function SearchResults() {
 
     return (
         <>
-            <div id="tab-two" class="search-header-container tab-content">
-            </div>
+                <h4>Search Results</h4>
+                <nav id="results-nav" class="sub-header">
+                    <div>
+                        <ul class="row">
+                            <li class="col nav-title"><h4>Sort By</h4></li>
+                            <li class="col"><button onClick={sortByName}>Name</button></li>
+                            <li class="col"><button onClick={sortByType}>Type</button></li>
+                            <li class="col"><button onClick={sortById}>Set No.</button></li>
+                            <li class="col"><button onClick={sortByHP}>HP</button></li>
+                            <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
+                            <li class="col"><button onClick={sortByArtist}>Artist</button></li>
+                        </ul>
+                    </div>
+                </nav>
 
-            <nav id="results-nav" class="sub-header">
-                <div>
-                    <ul class="row">
-                        <li class="col nav-title"><h4>Sort By</h4></li>
-                        <li class="col"><button onClick={sortByName}>Name</button></li>
-                        <li class="col"><button onClick={sortByType}>Type</button></li>
-                        <li class="col"><button onClick={sortById}>Set No.</button></li>
-                        <li class="col"><button onClick={sortByHP}>HP</button></li>
-                        <li class="col"><button onClick={sortByRarity}>Rarity</button></li>
-                        <li class="col"><button onClick={sortByArtist}>Artist</button></li>
-                    </ul>
-                </div>
-            </nav>
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
 
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-
-                <div class="carousel-inner active">
+                    <div class="carousel-inner active">
 
 
-                    {/* How do you assign an array chunk to each carousel? */}
+                        {/* How do you assign an array chunk to each carousel? */}
 
-                    {chunks.map(slides => {
-                        if (chunks.indexOf(slides) === 0) {
-                            return (
-                                <div class="carousel-item active">
-                                    {slides.map(card => {
-                                        return (
-                                            <Card card={card} onDeck={false} />
-                                        )
-                                    })}
-                                </div>
-                            )
-                        } else {
-                            return (
-                                <div class="carousel-item">
-                                    {slides.map(card => {
-                                        return (
-                                            <Card card={card} onDeck={false} />
-                                        )
-                                    })}
-                                </div>
-                            )
-                        }
-                    })}
+                        {chunks.map(slides => {
+                            if (chunks.indexOf(slides) === 0) {
+                                return (
+                                    <div class="carousel-item active">
+                                        {slides.map(card => {
+                                            return (
+                                                <Card card={card} onDeck={false} />
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div class="carousel-item">
+                                        {slides.map(card => {
+                                            return (
+                                                <Card card={card} onDeck={false} />
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            }
+                        })}
 
-                    {/* RESEARCH ARRAY CHUNKING */}
+                        {/* RESEARCH ARRAY CHUNKING */}
 
-                    {/* <div class="carousel-caption d-none d-md-block">
+                        {/* <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div> */}
 
-                    {/* <div class="carousel-item">
+                        {/* <div class="carousel-item">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
                     </div> */}
 
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+
         </>
     )
 }

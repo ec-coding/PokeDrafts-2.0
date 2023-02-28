@@ -9,8 +9,6 @@ import Parallax from '../components/Parallax/Parallax'
 import UserContext from '../UserContext';
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
-import TabContainer from '../components/TabContainer/TabContainer'
-import SideBar from '../components/SideBar/SideBar'
 import '../style/Home.css'
 import '../style/Icon.css';
 import '../style/TabView.css';
@@ -21,8 +19,6 @@ import '../style/Accordion.css';
 import '../style/Footer.css';
 import '../style/Profile.css';
 import '../style/Card.css';
-import { FlexboxGrid } from 'rsuite';
-import FlexboxGridItem from 'rsuite/esm/FlexboxGrid/FlexboxGridItem';
 
 const Home = ({ }) => {
     const logout = () => {
@@ -89,14 +85,24 @@ const Home = ({ }) => {
                             <Header />
                             <div className="homeContainer">
                                 <div className="search-header-container">
-                                    
+
+                                </div>
+                                <div id="search-param tab-one" class="tab-content panel searchFilterMaster">
+                                    <SearchFilter />
                                 </div>
 
-                                <SearchFilter />
                                 <Parallax screen="parallaxOne" />
-                                <SearchResults />
+
+                                <div id="tab-two" class="searchResultsMaster">
+                                    <SearchResults />
+                                </div>
+
                                 <Parallax screen="parallaxTwo" />
-                                <Deck />
+
+                                <div id="tab-three">
+                                    <Deck />
+                                </div>
+                                
                                 <Parallax screen="parallaxThree" />
 
                             </div>

@@ -1,7 +1,7 @@
 /* MODAL COMPONENT */
 .modal {
     --bs-modal-width: 900px;
-    
+    --bs-modal-zindex: 1055;
   }
   
   .modal-img {

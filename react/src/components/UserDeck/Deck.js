@@ -258,8 +258,6 @@ export default function UserDeck() {
 
     return (
         <>
-            <div id="tab-three" class="search-header-container tab-content">
-            </div>
             <section class="sub-header button-input deck-console">
                 <ul class="row">
                     {/* <li class="col">
