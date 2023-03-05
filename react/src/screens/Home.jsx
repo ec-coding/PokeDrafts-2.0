@@ -30,6 +30,8 @@ const Home = ({ }) => {
     const changeCards = useState([])
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
+    const [searchResultsReveal, setSearchResultsReveal] = useState([])
+
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/decks/profile`, {
@@ -87,19 +89,19 @@ const Home = ({ }) => {
                                 <div className="search-header-container">
 
                                 </div>
-                                <div id="search-param tab-one" class="tab-content panel searchFilterMaster">
+                                <div id="tab-one" className="searchFilterMaster panel">
                                     <SearchFilter />
                                 </div>
 
                                 <Parallax screen="parallaxOne" />
 
-                                <div id="tab-two" class="searchResultsMaster">
+                                <div id="tab-two" className="searchResultsMaster panel">
                                     <SearchResults />
                                 </div>
 
                                 <Parallax screen="parallaxTwo" />
 
-                                <div id="tab-three">
+                                <div id="tab-three" className="deckMaster panel">
                                     <Deck />
                                 </div>
                                 
