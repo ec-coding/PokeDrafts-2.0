@@ -49,15 +49,11 @@
   justify-content: center;
 }
 
-#search-param .button-input {
-  width: 80vh;
-  justify-content: right;
-  margin: 0px 5px;
-}
-
-.button-input {
+.searchFilterBottomPanel .button-input {
   display: flex;
   padding: 0 5px;
+  width: 43.5vh;
+  justify-content: right;
 }
 
 .button-input ul {
@@ -67,6 +63,7 @@
 
 .button-input li {
   margin: 10px 0px;
+  padding: 0 5px;
 }
 
 .button-input button {
@@ -76,9 +73,12 @@
   text-shadow: 1px 1px 0 #ffffff;
   color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
-  padding: 1vh 3.5vh;
+  padding: 1vh 3vh;
 }
 
+.button-input #search-button {
+  background: rgb(160, 215, 255)
+}
 
 .searchFilterMaster {
   margin-top: -2.5vh;
@@ -90,7 +90,7 @@
 }
 
 .searchFilterSearchBar {
-  width: 40vh;
+  width: 45vh;
   height: 3.5vh;
   padding: 1.5vh 1vh;
   font-size: 18px;
@@ -102,9 +102,29 @@
 }
 
 .searchFilterAdvSearchContainer {
+  margin-top: 5px;
   text-align: center;
   background-image: linear-gradient(to left, rgb(255, 140, 136), rgb(180, 45, 35));
   border-radius: 0;
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 2px 2px 0 rgba(255, 255, 255, 0.9),
+  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+}
+
+.searchFilterAdvSearchContainer .rs-panel-collapse {
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset -1px -1px 0 rgba(255, 255, 255, 0.9),
+  inset 1px 1px 0 rgba(0, 0, 0, 0.34);
+}
+
+.searchFilterAdvSearchContainer .rs-panel-header {
+  padding: 12.5px;
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+  inset -1px -1px 0 rgba(0, 0, 0, 0.34);
 }
 
 .searchFilterAdvSearchContainer .rs-panel-header .rs-icon {
@@ -138,4 +158,23 @@
   text-shadow: 1px 1px 0 darkslategrey;
   text-decoration: none;
   margin: 0px;
+}
+
+.searchFilterAdvExpansion h4 {
+  color: white;
+  text-shadow: 1px 1px 0 darkslategrey;
+  padding-top: 1.5vh;
+  margin-bottom: 0;
+}
+
+.rarity-input-sec img {
+  width: 17px;
+  margin-right: 3.5px;
+  margin-left: 3.5px;
+}
+
+.rarity-input-sec .iconEnlarge {
+  padding: 1px;
+  width: 26px;
+  margin-right: 0px;
 }

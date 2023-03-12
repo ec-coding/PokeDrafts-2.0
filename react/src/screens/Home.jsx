@@ -30,8 +30,9 @@ const Home = ({ }) => {
     const changeCards = useState([])
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
-    const [searchResultsReveal, setSearchResultsReveal] = useState([])
+    const [showResults, setShowResults] = useState(false)
 
+    // REACT ROUTER
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/decks/profile`, {
@@ -50,6 +51,10 @@ const Home = ({ }) => {
             })
     }, []);
 
+    function onSearch() {
+        setShowResults(true)
+        // Sharing State Between Components
+    }
 
     return (
         <>
@@ -90,21 +95,23 @@ const Home = ({ }) => {
 
                                 </div>
                                 <div id="tab-one" className="searchFilterMaster panel">
-                                    <SearchFilter />
+                                    <SearchFilter onSearch={onSearch} />
                                 </div>
 
                                 <Parallax screen="parallaxOne" />
 
-                                <div id="tab-two" className="searchResultsMaster panel">
-                                    <SearchResults />
-                                </div>
+                                {(showResults) &&
+                                    <div id="tab-two" className="searchResultsMaster panel">
+                                        <SearchResults showResults={showResults} />
+                                    </div>  
+                                }
 
                                 <Parallax screen="parallaxTwo" />
 
                                 <div id="tab-three" className="deckMaster panel">
                                     <Deck />
                                 </div>
-                                
+
                                 <Parallax screen="parallaxThree" />
 
                             </div>

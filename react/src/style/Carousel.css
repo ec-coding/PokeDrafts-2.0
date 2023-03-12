@@ -1,7 +1,7 @@
 /* CAROUSEL */
 .carousel-item {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .carousel-control-prev,
@@ -21,11 +21,6 @@
   padding-top: 0vh;
   padding-bottom: 0;
   margin-bottom: 0;
-}
-
-.carousel {
-  /* min-height: 40vh; */
-  border: 2px solid black;
 }
 
 .carousel-inner {

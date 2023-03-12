@@ -11,13 +11,15 @@ import './SearchFilter.css'
 
 // fill the buttons with an up and down arrow
 
-export default function SearchFilter() {
+export default function SearchFilter({onSearch}) {
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])
     const [cardElement, changeCardElement] = useState('')
+    const [searchResultsReveal, setSearchResultsReveal] = useState('')
     // Contexts are states that multiple components can share
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
+    const [show, toggleShow] = useState(false)
 
     function getCards() {
         const nameInput = document.querySelector('#name-search').value
@@ -90,6 +92,8 @@ export default function SearchFilter() {
             .then(res => res.json())
             .then(response => {
                 changeCards(response.data)
+                toggleShow(false)
+                onSearch()
                 console.log(response)
                 // document.getElementById("tab-two-button").click()
             }, []);
@@ -111,15 +115,20 @@ export default function SearchFilter() {
         changeCardSet(cardSetArr)
     }
 
+
+    function cardRarityToggle(event) {
+
+    }
+
     const submitClick = event => {
+        toggleShow(true)
         getCards()
     }
 
     return (
         <>
-
-
             <section class="searchFilterSearchBarContainer">
+                <h5>Search by Card Name</h5>
                 <input type="text" id="name-search" className="searchFilterSearchBar" placeholder="Search for cards..." />
                 <BiSearchAlt className='searchFilterIcon' size={24} />
             </section>
@@ -139,12 +148,9 @@ export default function SearchFilter() {
             </div>
 
 
-            <Panel header="Advanced Search" className="searchFilterAdvSearchContainer searchFilterBottomPanel" collapsible bordered>
-
+            <Panel header="Advanced Search" className="searchFilterAdvSearchContainer" collapsible bordered>
                 <div class="searchFilterContainer">
-
-                    <div class="basic-search">
-
+                    <div class="searchFilter">
                         <Panel header="Card Type" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
                             <section class="supertype-input-sec search-input">
                                 <ul class="type-input-div">
@@ -224,66 +230,111 @@ export default function SearchFilter() {
 
                         <Panel header="Expansion" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
                             <section class="subtype-input-sec search-input">
+                                <div class="searchFilterAdvExpansion">
+                                    <h4>Generation I</h4>
+                                    <ul class="type-input-div">
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/yATpJei.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
+                                            <label for="base"> Base</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
+                                            <label for="jungle"> Jungle</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/E5Axps4.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
+                                            <label for="fossil"> Fossil</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/ljLojgC.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
+                                            <label for="base-two"> Base 2</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/NeziRcu.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
+                                            <label for="team-rocket"> Team Rocket</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
+                                            <label for="gym-heroes"> Gym Heroes</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/jKAre0A.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
+                                            <label for="gym-challenge"> Gym Challenge</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="searchFilterAdvExpansion">
+                                    <h4>Generation II</h4>
+                                    <ul class="type-input-div">
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="neo-genesis" name="subtype" value="neo1" checked={cardSet.includes('neo1')} onChange={cardSetToggle} />
+                                            <label for="neo-genesis"> Neo Genesis</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/7edrYfb.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="neo-discovery" name="subtype" value="neo2" checked={cardSet.includes('neo2')} onChange={cardSetToggle} />
+                                            <label for="neo-discovery"> Neo Discovery</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/rZWqc8M.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="neo-revelation" name="subtype" value="neo3" checked={cardSet.includes('neo3')} onChange={cardSetToggle} />
+                                            <label for="neo-revelation"> Neo Revelation</label>
+                                        </li>
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
+                                            <label for="neo-destiny"> Neo Destiny</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="searchFilterAdvExpansion">
+                                    <h4>Promotional</h4>
+                                    <ul class="type-input-div">
+                                        <li class="list-one-third">
+                                            <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
+                                            <input class="type-input" type="checkbox" id="bs-promo" name="subtype" value="basep" checked={cardSet.includes('basep')} onChange={cardSetToggle} />
+                                            <label for="bs-promo"> Black Star Promos</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </Panel>
+
+                        <Panel header="Rarity" className="searchFilterAdvSearchPanelHeader" collapsible bordered>
+                            <section class="rarity-input-sec search-input">
                                 <ul class="type-input-div">
                                     <li class="list-one-third">
-                                        <img src="https://i.imgur.com/yATpJei.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="base" name="subtype" value="base1" checked={cardSet.includes('base1')} onChange={cardSetToggle} />
-                                        <label for="base"> Base</label>
+                                        <img src="https://i.imgur.com/zI5tHNt.png" alt="" />
+                                        <input class="type-input" type="checkbox" id="rarity-common" name="rarity" value="Common" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                        <label for="rarity-common"> Common</label>
                                     </li>
                                     <li class="list-one-third">
-                                        <img src="https://i.imgur.com/Yr63AuT.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="jungle" name="subtype" value="base2" checked={cardSet.includes('base2')} onChange={cardSetToggle} />
-                                        <label for="jungle"> Jungle</label>
+                                        <img src="https://i.imgur.com/TQbnt7r.png" alt="" />
+                                        <input class="type-input" type="checkbox" id="rarity-uncommon" name="rarity" value="Uncommon" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                        <label for="rarity-uncommon"> Uncommon</label>
                                     </li>
                                     <li class="list-one-third">
-                                        <img src="https://i.imgur.com/E5Axps4.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="fossil" name="subtype" value="base3" checked={cardSet.includes('base3')} onChange={cardSetToggle} />
-                                        <label for="fossil"> Fossil</label>
+                                        <img src="https://i.imgur.com/tyMN1Lv.png" alt="" />
+                                        <input class="type-input" type="checkbox" id="rarity-rare" name="rarity" value="Rare" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                        <label for="rarity-rare"> Rare</label>
                                     </li>
                                     <li class="list-one-third">
-                                        <img src="https://i.imgur.com/ljLojgC.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="base-two" name="subtype" value="base4" checked={cardSet.includes('base4')} onChange={cardSetToggle} />
-                                        <label for="base-two"> Base 2</label>
+                                        <img className="iconEnlarge" src="https://i.imgur.com/Jk6IpPt.png" alt="" />
+                                        <input class="type-input" type="checkbox" id="rarity-rareHolo" name="rarity" value="Rare Holo" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                        <label for="rarity-rareHolo"> Rare Holo</label>
                                     </li>
                                     <li class="list-one-third">
-                                        <img src="https://i.imgur.com/NeziRcu.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="team-rocket" name="subtype" value="base5" checked={cardSet.includes('base5')} onChange={cardSetToggle} />
-                                        <label for="team-rocket"> Team Rocket</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/J8aFjHw.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="gym-heroes" name="subtype" value="gym1" checked={cardSet.includes('gym1')} onChange={cardSetToggle} />
-                                        <label for="gym-heroes"> Gym Heroes</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/jKAre0A.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="gym-challenge" name="subtype" value="gym2" checked={cardSet.includes('gym2')} onChange={cardSetToggle} />
-                                        <label for="gym-challenge"> Gym Challenge</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="neo-genesis" name="subtype" value="neo1" checked={cardSet.includes('neo1')} onChange={cardSetToggle} />
-                                        <label for="neo-genesis"> Neo Genesis</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/7edrYfb.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="neo-discovery" name="subtype" value="neo2" checked={cardSet.includes('neo2')} onChange={cardSetToggle} />
-                                        <label for="neo-discovery"> Neo Discovery</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/rZWqc8M.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="neo-revelation" name="subtype" value="neo3" checked={cardSet.includes('neo3')} onChange={cardSetToggle} />
-                                        <label for="neo-revelation"> Neo Revelation</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/O7ybLL9.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="neo-destiny" name="subtype" value="neo4" checked={cardSet.includes('neo4')} onChange={cardSetToggle} />
-                                        <label for="neo-destiny"> Neo Destiny</label>
-                                    </li>
-                                    <li class="list-one-third">
-                                        <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
-                                        <input class="type-input" type="checkbox" id="bs-promo" name="subtype" value="basep" checked={cardSet.includes('basep')} onChange={cardSetToggle} />
-                                        <label for="bs-promo"> Black Star Promos</label>
+                                        <img className="iconEnlarge" src="https://i.imgur.com/8E4WHGL.png" alt="" />
+                                        <input class="type-input" type="checkbox" id="rarity-rareShining" name="rarity" value="Rare Shining" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                        <label for="rarity-rareShining"> Rare Shining</label>
                                     </li>
                                 </ul>
                             </section>
@@ -294,9 +345,25 @@ export default function SearchFilter() {
                 </div>
                 <div className="panelFooter" collapsible>
                     <h5>Close Panel</h5>
+                    <div class="button-box">
+                        <section class="button-input">
+                            <ul class="row">
+                                <li class="col">
+                                    <Button type="submit" id="search-button" onClick={submitClick}>Search</Button>
+                                </li>
+                                <li class="col">
+                                    <Button type="reset" id="reset-button">Reset</Button>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
                 </div>
             </Panel>
 
+            {show && <div className="searchResultsDoor">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png" alt="" />
+            </div>}
+            
 
         </>
     )

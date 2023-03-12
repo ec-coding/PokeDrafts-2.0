@@ -153,8 +153,10 @@ h6 {
   display: grid;
   grid-template-columns: auto auto auto;
   padding-top: 1.5vh;
+  padding-left: 0;
   text-align: left;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .list-one-third .pkmn-icon {
@@ -171,9 +173,10 @@ h6 {
 }
 
 .list-one-third {
+  width: 220px;
   min-height: 3.8vh;
   max-height: 3.8vh;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   padding: 4px 5px;
   border: 1px solid black;
@@ -204,7 +207,7 @@ h6 {
 
 .type-input {
   float: right;
-  margin-top: 4px;
+  margin-top: 2.5px;
   margin-right: 5px;
   width: 18px;
   height: 18px;
