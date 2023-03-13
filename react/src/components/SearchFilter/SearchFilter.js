@@ -11,7 +11,7 @@ import './SearchFilter.css'
 
 // fill the buttons with an up and down arrow
 
-export default function SearchFilter({onSearch}) {
+export default function SearchFilter({ onSearch }) {
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])
     const [cardElement, changeCardElement] = useState('')
@@ -91,11 +91,12 @@ export default function SearchFilter({onSearch}) {
         })
             .then(res => res.json())
             .then(response => {
+                document.getElementById("tab-two-button").click()
                 changeCards(response.data)
-                toggleShow(false)
+                // toggleShow(false)
                 onSearch()
                 console.log(response)
-                // document.getElementById("tab-two-button").click()
+
             }, []);
     }
 
@@ -122,31 +123,37 @@ export default function SearchFilter({onSearch}) {
 
     const submitClick = event => {
         toggleShow(true)
+        document.getElementById('searchResultsLoading').scrollIntoView()
         getCards()
     }
 
     return (
         <>
-            <section class="searchFilterSearchBarContainer">
+            <h2>Your Deck Building Journey Begins Here!</h2>
+
+            <section class="searchFilterSearchBarMaster">
+                <div className="searchFilterSearchBarContainer">
                 <h5>Search by Card Name</h5>
                 <input type="text" id="name-search" className="searchFilterSearchBar" placeholder="Search for cards..." />
-                <BiSearchAlt className='searchFilterIcon' size={24} />
+
+
+                <div class="button-box searchFilterBottomPanel">
+                    <section class="button-input">
+                        <ul class="row">
+                            <li class="col">
+                                <Button type="submit" id="search-button" onClick={submitClick}>
+                                    Search
+                                    <BiSearchAlt className='searchFilterIcon' size={24} />
+                                </Button>
+                            </li>
+                            <li class="col">
+                                <Button type="reset" id="reset-button">Reset</Button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                </div>
             </section>
-
-            <div class="button-box searchFilterBottomPanel">
-
-                <section class="button-input">
-                    <ul class="row">
-                        <li class="col">
-                            <Button type="submit" id="search-button" onClick={submitClick}>Search</Button>
-                        </li>
-                        <li class="col">
-                            <Button type="reset" id="reset-button">Reset</Button>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-
 
             <Panel header="Advanced Search" className="searchFilterAdvSearchContainer" collapsible bordered>
                 <div class="searchFilterContainer">
@@ -341,7 +348,6 @@ export default function SearchFilter({onSearch}) {
                         </Panel>
 
                     </div>
-
                 </div>
                 <div className="panelFooter" collapsible>
                     <h5>Close Panel</h5>
@@ -358,13 +364,12 @@ export default function SearchFilter({onSearch}) {
                         </section>
                     </div>
                 </div>
+                <div id="searchResultsLoading"></div>
             </Panel>
 
             {show && <div className="searchResultsDoor">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png" alt="" />
+                {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png" alt="" /> */}
             </div>}
-            
-
         </>
     )
 }

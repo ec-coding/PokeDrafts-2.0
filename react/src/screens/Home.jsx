@@ -69,7 +69,7 @@ const Home = ({ }) => {
                                 {/* <li class="nav-item">
                                         <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                     </li> */}
-                                {/* <li class="nav-item">
+                                <li class="nav-item">
                                     <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
                                 </li>
                                 <li class="nav-item">
@@ -77,7 +77,7 @@ const Home = ({ }) => {
                                 </li>
                                 <li class="nav-item">
                                     <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
-                                </li> */}
+                                </li>
                             </ul>
                             <ul class="nav-item-two navbar-nav">
                                 <li class="nav-item">
@@ -89,28 +89,25 @@ const Home = ({ }) => {
 
                     <div className="App">
                         <div className="App-inner">
-                            <Header />
+                            {/* <Header /> */}
                             <div className="homeContainer">
                                 <div className="search-header-container">
 
                                 </div>
-                                <div id="tab-one" className="searchFilterMaster panel">
+                                {tab === 'slide1' && <div id="tab-one" className="searchFilterMaster panel">
                                     <SearchFilter onSearch={onSearch} />
-                                </div>
+                                </div>}
 
-                                <Parallax screen="parallaxOne" />
+                                {tab === 'slide2' && <div id="tab-two" className="searchResultsMaster panel">
+                                    <SearchResults showResults={showResults} />
+                                </div>}
 
-                                {(showResults) &&
-                                    <div id="tab-two" className="searchResultsMaster panel">
-                                        <SearchResults showResults={showResults} />
-                                    </div>  
-                                }
+                                {/* {(showResults) &&
+                                } */}
 
-                                <Parallax screen="parallaxTwo" />
-
-                                <div id="tab-three" className="deckMaster panel">
+                                {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
                                     <Deck />
-                                </div>
+                                </div>}
 
                                 <Parallax screen="parallaxThree" />
 

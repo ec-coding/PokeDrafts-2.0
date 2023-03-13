@@ -1,8 +1,20 @@
 
 .parallaxContainer div {
+    margin: 2vh 0;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
+/* .parallaxOne {
+    background-image: url('https://rare-gallery.com/uploads/posts/554354-pokemon-background.jpg');
+    height: 50vh;
+    background-size: 80%;
+} */
+
+/* .parallaxTwo {
+    background-image: url('https://rare-gallery.com/mocahbig/1332602-Braviary-Pokmon-Cyndaquil-Pokmon-Oshawott-Pokmon.jpg');
+    height: 50vh;
+    background-size: 80%;
+} */
 
