@@ -91,7 +91,7 @@ export default function SearchFilter({ onSearch }) {
         })
             .then(res => res.json())
             .then(response => {
-                document.getElementById("tab-two-button").click()
+                // document.getElementById("tab-two-button").click()
                 changeCards(response.data)
                 // toggleShow(false)
                 onSearch()
@@ -129,8 +129,6 @@ export default function SearchFilter({ onSearch }) {
 
     return (
         <>
-            <h2>Your Deck Building Journey Begins Here!</h2>
-
             <section class="searchFilterSearchBarMaster">
                 <div className="searchFilterSearchBarContainer">
                 <h5>Search by Card Name</h5>

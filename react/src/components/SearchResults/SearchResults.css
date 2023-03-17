@@ -30,6 +30,10 @@
   }
 
 
+.searchResultsMaster {
+  margin-top: 10vh;
+}
+
 .searchResultsDoor img {
   width: 15%
 }

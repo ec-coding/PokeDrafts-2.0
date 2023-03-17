@@ -85,9 +85,12 @@
 }
 
 .searchFilterMaster h2 {
-  color: rgb(172, 172, 172);
-  text-shadow: 1px 1px 0 #000000;
+  color: rgb(0, 255, 0);
+  text-shadow: 2px 2px 2px #5e53fd;
   font-weight: bold;
+  width: 100vh;
+  margin: 1vh auto;
+  padding: 1vh 0;
 }
 
 .searchFilterContainer {
@@ -96,22 +99,23 @@
 }
 
 .searchFilterSearchBarMaster {
-  background-image: url('https://i.imgur.com/bkvxp5e.png');
+  background-image: url('https://i.imgur.com/EhobWED.png');
   background-repeat: no-repeat;
   background-position: center;
-  height: 65.5vh;
+  background-size: 130%;
+  height: 56.5vh;
 }
 
 .searchFilterSearchBarContainer {
-  padding-top: 42.5vh;
+  padding-top: 32.5vh;
 }
 
 .searchFilterSearchBarContainer h5 {
-  text-align: left;
+  text-align: center;
   margin: 5px auto;
   padding-left: 2.5px;
   width: 40vh;
-  color: rgb(92, 92, 92);
+  color: rgb(72, 72, 72);
   text-shadow: 1px 1px 0 white;
   font-weight: bold;
   font-size: 18px;
@@ -122,6 +126,7 @@
   height: 3.5vh;
   padding: 1.5vh 1vh;
   font-size: 18px;
+  margin-bottom: 0.5vh;
 }
 
 #search-button .searchFilterIcon {
@@ -132,7 +137,7 @@
 
 .searchFilterAdvSearchContainer {
   margin: 0 auto;
-  margin-top: -2.5vh;
+  margin-top: 1vh;
   text-align: center;
   background-image: linear-gradient(to left, rgb(255, 140, 136), rgb(180, 45, 35));
   border-radius: 0;
@@ -140,12 +145,13 @@
   2px 2px 0.5em rgba(122, 122, 122, 0.55),
   inset 2px 2px 0 rgba(255, 255, 255, 0.9),
   inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+  width: 120vh;
 }
 
 .searchFilterAdvSearchContainer .rs-panel-collapse {
   box-shadow:
   2px 2px 0.5em rgba(122, 122, 122, 0.55),
-  inset -1px -1px 0 rgba(255, 255, 255, 0.9),
+  inset 0px -1px 0 rgba(255, 255, 255, 0.9),
   inset 0px 1px 0 rgba(0, 0, 0, 0.34);
 }
 

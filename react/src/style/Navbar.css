@@ -19,6 +19,7 @@
   .navbar .container-fluid {
     padding: 0 20vh;
     border: none;
+    background: rgba(173, 216, 230, 0.5);
   }
 
   .navbar li a {

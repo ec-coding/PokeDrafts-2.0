@@ -72,9 +72,9 @@ const Home = ({ }) => {
                                 <li class="nav-item">
                                     <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
                                 </li>
-                                <li class="nav-item">
+                                {/* <li class="nav-item">
                                     <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
-                                </li>
+                                </li> */}
                                 <li class="nav-item">
                                     <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
                                 </li>
@@ -94,13 +94,16 @@ const Home = ({ }) => {
                                 <div className="search-header-container">
 
                                 </div>
-                                {tab === 'slide1' && <div id="tab-one" className="searchFilterMaster panel">
-                                    <SearchFilter onSearch={onSearch} />
-                                </div>}
+                                {tab === 'slide1' && <div>
+                                    <div id="tab-one" className="searchFilterMaster panel">
+                                        <SearchFilter onSearch={onSearch} />
+                                    </div>
 
-                                {tab === 'slide2' && <div id="tab-two" className="searchResultsMaster panel">
-                                    <SearchResults showResults={showResults} />
-                                </div>}
+                                    <div id="tab-two" className="searchResultsMaster panel">
+                                        <SearchResults showResults={showResults} />
+                                    </div>
+                                </div>
+                                }
 
                                 {/* {(showResults) &&
                                 } */}

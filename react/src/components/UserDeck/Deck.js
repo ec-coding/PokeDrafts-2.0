@@ -291,7 +291,7 @@ export default function UserDeck() {
 
                 <div class="deck-inner carousel-inner active">
                     <div class="deck-inner-header">
-                        <h3>Deck 1</h3>
+                        <h3>Rain Dance</h3>
                         <h4>Cards in Deck: {decks.length}</h4>
                     </div>
                     <br />
