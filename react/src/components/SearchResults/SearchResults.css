@@ -28,3 +28,12 @@
     border-top: 0.5vh solid rgb(110, 110, 110);
     border-bottom: 0.5vh solid rgb(110, 110, 110);
   }
+
+
+.searchResultsMaster {
+  margin-top: 10vh;
+}
+
+.searchResultsDoor img {
+  width: 15%
+}

@@ -1,7 +1,7 @@
 /* CAROUSEL */
 .carousel-item {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .carousel-control-prev,
@@ -18,11 +18,11 @@
 
 .carousel .carousel-indicators {
   position: relative;
-  padding-top: 2vh;
+  padding-top: 0vh;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-.carousel {
-  min-height: 40vh;
+.carousel-inner {
+  padding: 0 10vh;
 }

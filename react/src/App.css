@@ -1,18 +1,50 @@
-body {
-  background: rgb(212, 212, 212);
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-ul {
+body ul {
   list-style: none;
 }
 
-hr {
+.App hr {
   margin-top: 12px;
   margin-bottom: 12px;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid;
+  opacity: .25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.App h4 {
+  font-size: calc(1.275rem + .2vw);
+}
+
+.App h5 {
+  font-size: 1.25rem;
+}
+
+.App p {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .App {
   margin: 0 auto;
+  padding: 0 25vh;
+  color: #212529;
 }
 
 .App-logo {
@@ -40,7 +72,6 @@ hr {
 .App-link {
   color: #61dafb;
 }
-
 
 .padding-expand {
   padding: 5px 5px;
@@ -85,13 +116,9 @@ hr {
 
 /* SUB-HEADER */
 .search-header-container {
-  padding: 16px 0;
-  text-shadow: 2px 2px 0 #000000;
+  text-shadow: 2px 2px 0 #ffffff;
   filter: drop-shadow(0px 0px 0px white);
-  color: white;
-  min-height: 13vh;
-  background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
-  background-size: cover;
+  color: rgb(92, 92, 92);
 }
 
 .search-header-container h2,
@@ -101,18 +128,17 @@ h6 {
 
 .search-header-container h6 {
   font-size: 17px;
-  text-shadow: 1.5px 1.5px 0 #000000;
 }
 
-.search-footer-container {
+/* .search-footer-container {
   padding: 16px 0;
   text-shadow: 2px 2px 0 #000000;
   filter: drop-shadow(0px 0px 0px white);
   color: white;
   min-height: 12vh;
-  background-image: linear-gradient(to right, rgb(255, 45, 45), rgb(255, 70, 70));
+  background: white;
   background-size: cover;
-}
+} */
 
 .search-input {
   padding: 0;
@@ -122,46 +148,19 @@ h6 {
   /* border: 3px solid rgba(255, 255, 255); */
 }
 
-.search-input ul {
-  background: rgb(128, 128, 128);
-  /* background-image: linear-gradient( 75.5deg,  rgba(217,115,115,1) 22.3%, rgba(234,245,165,1) 59.1%, rgba(165,245,242,1) 89.7% ); */
-  min-height: 8.5vh;
-}
-
-.search-input h3 {
-  color: rgb(255, 255, 255);
-  text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);
-  text-align: left;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow:
-    2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
-  margin: 0px;
-  padding: 5px 0 8px 15px;
-  background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180))
-    /* background-image: linear-gradient(to right, rgb(250, 120, 120), rgb(252, 178, 178), rgb(250, 182, 182), white, rgb(253, 166, 166), rgb(250, 120, 120), rgb(252, 178, 178), white, rgb(252, 178, 178), rgb(255, 116, 116), rgb(255, 85, 85)); */
-}
 
 .type-input-div {
-  box-shadow:
-    2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: auto auto auto;
-  padding: 10px;
+  padding-top: 1.5vh;
+  padding-left: 0;
   text-align: left;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .list-one-third .pkmn-icon {
   width: 28px;
-}
-
-.supertype-input-sec ul {
-  padding-top: 20px;
 }
 
 .supertype-input-sec img {
@@ -174,9 +173,10 @@ h6 {
 }
 
 .list-one-third {
+  width: 220px;
   min-height: 3.8vh;
   max-height: 3.8vh;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   padding: 4px 5px;
   border: 1px solid black;
@@ -186,20 +186,6 @@ h6 {
   background-color: rgb(82, 82, 82);
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 0 #000000;
-  /* background-image: linear-gradient(
-    -72deg,
-    #ffdeca,
-    #ffffff 16%,
-    #ffdeca 21%,
-    #ffffff 24%,
-    #ffdeca 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #ffdeca 72%,
-    #ffffff 80%,
-    #ffdeca 84%,
-    #de7345
-  ); */
 }
 
 .list-one-third div {
@@ -221,7 +207,7 @@ h6 {
 
 .type-input {
   float: right;
-  margin-top: 4px;
+  margin-top: 2.5px;
   margin-right: 5px;
   width: 18px;
   height: 18px;
@@ -260,4 +246,10 @@ input[type=radio] {
 .sub-header button a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    padding: 0;
+  }
 }

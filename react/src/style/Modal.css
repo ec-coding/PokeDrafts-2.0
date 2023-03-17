@@ -1,7 +1,7 @@
 /* MODAL COMPONENT */
 .modal {
     --bs-modal-width: 900px;
-    
+    --bs-modal-zindex: 1055;
   }
   
   .modal-img {
@@ -11,7 +11,7 @@
   }
   
   .slide-img {
-    width: 25.5vh;
+    width: 20.5vh;
     padding: 5px;
     margin: 5px;
     border-radius: 1vh;
@@ -34,7 +34,7 @@
   
   .modal-content {
     position: absolute;
-    transform: translate(0%, 10%);
+    transform: translate(0%, 0%);
     border: 5px rgba(255, 255, 255, 0.70) solid;
   }
   

@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
-import UserContext from '../UserContext';
-import DeckContext from '../DeckContext';
-import Card from './Card'
+import UserContext from '../../UserContext';
+import DeckContext from '../../DeckContext';
+import Card from '../Card'
+import './Deck.css'
 
 export default function UserDeck() {
     const typePokemon = []
@@ -161,23 +162,6 @@ export default function UserDeck() {
         }
     }
 
-    // const sortByType = () => {
-    //     if (typeSort === true) {
-    //         const sortedByType = [...decks].sort((a, b) => {
-    //             return a.types[0] < b.types[0] ? -1 : 1
-    //         })
-    //         setTypeSort(false)
-    //         changeDecks(sortedByType)
-
-    //     } else if (typeSort === false) {
-    //         const sortedByType = [...decks].sort((a, b) => {
-    //             return b.types[0] > a.types[0] ? 1 : -1
-    //         })
-    //         setTypeSort(true)
-    //         changeDecks(sortedByType)
-    //     }
-    // }
-
     const sortById = () => {
         if (idSort === true) {
             const sortedById = [...decks].sort((a, b) => {
@@ -274,12 +258,6 @@ export default function UserDeck() {
 
     return (
         <>
-            <div class="search-header-container">
-                <h2 id="search-header">Card Deck</h2>
-                <section class="instructions">
-                    <h6 class="instructions-text">Browse through and click on any card to remove it from your deck.</h6>
-                </section>
-            </div>
             <section class="sub-header button-input deck-console">
                 <ul class="row">
                     {/* <li class="col">
@@ -313,7 +291,7 @@ export default function UserDeck() {
 
                 <div class="deck-inner carousel-inner active">
                     <div class="deck-inner-header">
-                        <h3>Deck 1</h3>
+                        <h3>Rain Dance</h3>
                         <h4>Cards in Deck: {decks.length}</h4>
                     </div>
                     <br />

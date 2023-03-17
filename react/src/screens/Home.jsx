@@ -1,25 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import Footer from '../components/Footer'
-import SearchParams from '../components/SearchParams'
-import SearchResults from '../components/SearchResults'
+import SearchFilter from '../components/SearchFilter/SearchFilter'
+import SearchResults from '../components/SearchResults/SearchResults'
 import Profile from '../components/Profile'
-import Deck from '../components/Deck'
+import Deck from '../components/UserDeck/Deck'
+import Parallax from '../components/Parallax/Parallax'
 import UserContext from '../UserContext';
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
+import '../style/Home.css'
 import '../style/Icon.css';
 import '../style/TabView.css';
 import '../style/Navbar.css';
 import '../style/Modal.css';
 import '../style/Carousel.css';
 import '../style/Accordion.css';
-import '../style/Header.css';
 import '../style/Footer.css';
-import '../style/SearchParam.css';
 import '../style/Profile.css';
 import '../style/Card.css';
-import '../style/Deck.css';
 
 const Home = ({ }) => {
     const logout = () => {
@@ -31,6 +30,9 @@ const Home = ({ }) => {
     const changeCards = useState([])
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
+    const [showResults, setShowResults] = useState(false)
+
+    // REACT ROUTER
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/decks/profile`, {
@@ -49,6 +51,10 @@ const Home = ({ }) => {
             })
     }, []);
 
+    function onSearch() {
+        setShowResults(true)
+        // Sharing State Between Components
+    }
 
     return (
         <>
@@ -56,62 +62,60 @@ const Home = ({ }) => {
                 <DeckContext.Provider value={[decks, changeDecks]} >
                     <nav class="navbar navbar-expand-lg bg-light">
                         <div class="container-fluid tab">
-
-
-                                <ul class="navbar-nav">
-                                    <li>
-                                        <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
-                                    </li>
-                                    {/* <li class="nav-item">
+                            <ul class="navbar-nav">
+                                <li>
+                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" />
+                                </li>
+                                {/* <li class="nav-item">
                                         <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                     </li> */}
-                                    <li class="nav-item">
-                                        <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
-                                    </li>
-                                    <li class="nav-item">
-                                        <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
-                                    </li>
-                                    <li class="nav-item">
-                                        <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
-                                    </li>
-                                </ul>
-                                <ul class="nav-item-two navbar-nav">
-                                    <li class="nav-item">
-                                        <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
-                                    </li>
-                                </ul>
-
+                                <li class="nav-item">
+                                    <button id="tab-one-button" class="tab-links" onClick={() => changeTab('slide1')}>Search</button>
+                                </li>
+                                {/* <li class="nav-item">
+                                    <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
+                                </li> */}
+                                <li class="nav-item">
+                                    <button id="tab-three-button" class="tab-links" onClick={() => changeTab('slide3')}>Deck</button>
+                                </li>
+                            </ul>
+                            <ul class="nav-item-two navbar-nav">
+                                <li class="nav-item">
+                                    <button id="logout-button" class="tab-links" onClick={logout}>Logout</button>
+                                </li>
+                            </ul>
                         </div>
                     </nav>
 
                     <div className="App">
                         <div className="App-inner">
-                            <Header />
-                            {/* {tab === 'slide0' && <div id="tab-zero" class="tab-content">
-                                <Profile user={user} />
-                            </div>} */}
+                            {/* <Header /> */}
+                            <div className="homeContainer">
+                                <div className="search-header-container">
 
+                                </div>
+                                {tab === 'slide1' && <div>
+                                    <div id="tab-one" className="searchFilterMaster panel">
+                                        <SearchFilter onSearch={onSearch} />
+                                    </div>
 
-                            {tab === 'slide1' && <div id="tab-one" class="tab-content">
-                                <SearchParams />
-                            </div>}
+                                    <div id="tab-two" className="searchResultsMaster panel">
+                                        <SearchResults showResults={showResults} />
+                                    </div>
+                                </div>
+                                }
 
-                            {tab === 'slide2' && <div id="tab-two" class="tab-content">
-                                <SearchResults />
-                            </div>}
+                                {/* {(showResults) &&
+                                } */}
 
-                            {tab === 'slide3' && <div id="tab-three" class="tab-content">
-                                <Deck />
+                                {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
+                                    <Deck />
+                                </div>}
 
-                            </div>}
-                            <div class="search-footer-container">
-                                <section class="search-footer">
+                                <Parallax screen="parallaxThree" />
 
-                                </section>
                             </div>
-                            <div>
 
-                            </div>
                         </div>
                     </div>
                     <Footer />
