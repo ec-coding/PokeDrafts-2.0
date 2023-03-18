@@ -87,7 +87,7 @@ const Home = ({ }) => {
                         </div>
                     </nav>
 
-                    <div className="App">
+                    <div className="App text-center">
                         <div className="App-inner">
                             {/* <Header /> */}
                             <div className="homeContainer">
@@ -95,7 +95,7 @@ const Home = ({ }) => {
 
                                 </div>
                                 {tab === 'slide1' && <div>
-                                    <div id="tab-one" className="searchFilterMaster panel">
+                                    <div id="tab-one" className="searchFilterMaster panel px-4 text-left">
                                         <SearchFilter onSearch={onSearch} />
                                     </div>
 
