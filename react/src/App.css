@@ -33,18 +33,18 @@ h6 {
 }
 
 .App {
-  margin: 10vh auto 0 auto;
+  margin: 0vh auto 0 auto;
   padding: 0 25vh;
   color: #212529;
 }
 
-/* .App h4 {
+.App h4 {
   font-size: calc(1.275rem + .2vw);
 }
 
 .App h5 {
   font-size: 1.25rem;
-} */
+}
 
 /* .App p {
   margin-top: 0;
@@ -247,4 +247,8 @@ input[type=radio] {
   .App {
     padding: 0;
   }
+}
+
+.navbar-substitute {
+  height: 58.500px;
 }

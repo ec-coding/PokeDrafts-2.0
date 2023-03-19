@@ -86,6 +86,7 @@ const Home = ({ }) => {
                             </ul>
                         </div>
                     </nav>
+                    <div class="navbar-substitute"></div>  
 
                     <div className="App text-center">
                         <div className="App-inner">
@@ -95,24 +96,24 @@ const Home = ({ }) => {
 
                                 </div>
                                 {tab === 'slide1' && <div>
-                                    <div id="tab-one" className="searchFilterMaster panel px-4 text-left">
+
+                                {(showResults) &&
+                                    <div id="tab-two" className="searchResultsMaster panel mb-4">
+                                        <SearchResults showResults={showResults} />
+                                    </div>  
+                                }
+
+                                    <h3 class="bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
+                                    <div id="tab-one" className="searchFilterMaster bg-secondary border border-dark panel py-3 px-4 text-left">
                                         <SearchFilter onSearch={onSearch} />
                                     </div>
 
-                                    <div id="tab-two" className="searchResultsMaster panel">
-                                        <SearchResults showResults={showResults} />
-                                    </div>
                                 </div>
                                 }
-
-                                {/* {(showResults) &&
-                                } */}
 
                                 {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
                                     <Deck />
                                 </div>}
-
-                                <Parallax screen="parallaxThree" />
 
                             </div>
 

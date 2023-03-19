@@ -133,7 +133,7 @@ export default function SearchResults() {
 
     return (
         <>
-                <h4>Search Results</h4>
+                {/* <h4>Search Results</h4> */}
 
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                     {/* <div class="carousel-indicators">
@@ -141,7 +141,7 @@ export default function SearchResults() {
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div> */}
-                <nav id="results-nav" class="sub-header">
+                {/* <nav id="results-nav" class="sub-header">
                     <div>
                         <ul class="row">
                             <li class="col nav-title"><h4>Sort By</h4></li>
@@ -153,7 +153,7 @@ export default function SearchResults() {
                             <li class="col"><button onClick={sortByArtist}>Artist</button></li>
                         </ul>
                     </div>
-                </nav>
+                </nav> */}
                     <div class="carousel-inner active">
 
 
