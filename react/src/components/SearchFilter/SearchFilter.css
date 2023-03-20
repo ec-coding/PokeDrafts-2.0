@@ -1,18 +1,11 @@
 .searchFilterBottomPanel .button-input {
   display: flex;
   justify-content: right;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.button-input ul {
-  padding: 0;
-  margin: 0;
 }
 
 .button-input li {
   margin: 10px 0px;
-  padding: 0 5px;
+  /* padding: 0 5px; */
 }
 
 .button-input button {
@@ -29,8 +22,19 @@
   background: rgb(160, 215, 255)
 }
 
+.searchFilterHeader {
+  color: rgb(255, 255, 255);
+  text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
+  background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180));
+}
+
+
 .searchFilterMaster label {
   font-weight: bold;
+}
+
+.searchFilterMaster ul li {
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .searchFilterContainer .searchFilterAdvExpansion ul li img {
@@ -48,4 +52,3 @@
   height: 16px;
   width: 16px
 }
-

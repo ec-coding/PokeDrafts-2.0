@@ -60,7 +60,7 @@ const Home = ({ }) => {
         <>
             <CardContext.Provider value={changeCards} >
                 <DeckContext.Provider value={[decks, changeDecks]} >
-                    <nav class="navbar navbar-expand-lg bg-light">
+                    <nav class="navbar navbar-expand-lg bg-light border border-dark">
                         <div class="container-fluid tab">
                             <ul class="navbar-nav">
                                 <li>
@@ -86,7 +86,7 @@ const Home = ({ }) => {
                             </ul>
                         </div>
                     </nav>
-                    <div class="navbar-substitute"></div>  
+                    <div class="navbar-substitute"></div>
 
                     <div className="App text-center">
                         <div className="App-inner">
@@ -95,16 +95,20 @@ const Home = ({ }) => {
                                 <div className="search-header-container">
 
                                 </div>
-                                {tab === 'slide1' && <div>
+                                {tab === 'slide1' && <div class="searchFieldContainer">
 
-                                {(showResults) &&
-                                    <div id="tab-two" className="searchResultsMaster panel mb-4">
-                                        <SearchResults showResults={showResults} />
-                                    </div>  
-                                }
+                                    {(showResults) &&
+                                        <div>
+                                            <h3 class="searchFilterHeader bg-info border border-dark mb-0 py-1">Search Results</h3>
+                                            <div id="tab-two" className="searchResultsMaster">
+                                                <SearchResults showResults={showResults} />
+                                            </div>
+                                        </div>
 
-                                    <h3 class="bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
-                                    <div id="tab-one" className="searchFilterMaster bg-secondary border border-dark panel py-3 px-4 text-left">
+                                    }
+
+                                    <h3 class="searchFilterHeader bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
+                                    <div id="tab-one" className="searchFilterTab border border-dark panel text-left">
                                         <SearchFilter onSearch={onSearch} />
                                     </div>
 

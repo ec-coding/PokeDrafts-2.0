@@ -70,7 +70,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=1&pageSize=60&orderBy=set&q=`
+        fetchURLText = url + `page=1&pageSize=42&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -131,20 +131,20 @@ export default function SearchFilter({ onSearch }) {
         <>
             <div class="searchFilterMaster">
                 <section class="row mx-0">
-                    <div className="col-lg-5 mb-3">
-                        <h4 class="text-light">Search by Card Name</h4>
-                        <input type="text" id="name-search" className="searchFilterSearchBar my-1 p-3 w-100" placeholder="Search for cards..." />
+                    <div className="col-lg-5 mb-3 p-0">
+                        <h4 class="text-light px-1 textWhiteShadow">Search by Card Name</h4>
+                        <input type="text" id="name-search" className="searchFilterSearchBar m-1 p-3 w-100 border border-dark" placeholder="Search for cards..." />
 
                         <div class="button-box searchFilterBottomPanel">
                             <section class="button-input">
-                                <ul class="row">
-                                    <li class="col">
+                                <ul class="row p-0 m-0">
+                                    <li class="col px-2">
                                         <Button type="submit" id="search-button" onClick={submitClick}>
                                             Search
                                             <BiSearchAlt className='searchFilterIcon' size={24} />
                                         </Button>
                                     </li>
-                                    <li class="col">
+                                    <li class="col px-0">
                                         <Button type="reset" id="reset-button">Reset</Button>
                                     </li>
                                 </ul>
@@ -154,7 +154,7 @@ export default function SearchFilter({ onSearch }) {
                     <div class="col-lg-1"></div>
                     <div class="col-lg-6 mb-3 px-0">
                         <section class="supertype-input-sec search-input">
-                            <h4 class="text-light px-1">Card Type</h4>
+                            <h4 class="text-light px-1 textWhiteShadow">Card Type</h4>
                             <ul class="type-input-div row p-0 mx-0">
                                 <li class="text-left bg-light col-lg-5 col-md-5 m-1 pt-1 border rounded border-dark">
                                     <img class="pkmn-icon" src="https://i.imgur.com/0n7qI08.png" alt="" />
@@ -185,7 +185,7 @@ export default function SearchFilter({ onSearch }) {
                     <div class="row mx-0">
                         <div class="col-lg-6 mb-3 px-0">
                             <section class="type-input-sec search-input">
-                            <h4 class="text-light px-1">Energy Type</h4>
+                            <h4 class="text-light px-1 textWhiteShadow">Energy Type</h4>
                                 <ul class="type-input-div row p-0 mx-0">
                                     <li class="text-left bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Grass" alt="" />
@@ -235,7 +235,7 @@ export default function SearchFilter({ onSearch }) {
                                 </ul>
                             </section>
                             <section class="rarity-input-sec search-input">
-                                <h4 class="text-light px-1">Rarity</h4>
+                                <h4 class="text-light px-1 textWhiteShadow">Rarity</h4>
                                 <ul class="type-input-div row p-0 mx-0">
                                     <li class="text-left bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <img src="https://i.imgur.com/zI5tHNt.png" class="pb-1" alt="" />
@@ -268,9 +268,9 @@ export default function SearchFilter({ onSearch }) {
 
                         <div class="col-lg-6 mb-3 px-0">
                             <section class="subtype-input-sec search-input">
-                                <h4 class="text-light px-1">Expansion</h4>
+                                <h4 class="text-light px-1 textWhiteShadow">Expansion</h4>
                                 <div class="searchFilterAdvExpansion">
-                                    <h6 class="text-light px-1">Generation I</h6>
+                                    <h6 class="text-light px-1 textWhiteShadow">Generation I</h6>
                                     <ul class="type-input-div row p-0 mx-0">
                                         <li class="text-left bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/yATpJei.png" alt="" />
@@ -310,7 +310,7 @@ export default function SearchFilter({ onSearch }) {
                                     </ul>
                                 </div>
                                 <div class="searchFilterAdvExpansion">
-                                    <h6 class="text-light px-1">Generation II</h6>
+                                    <h6 class="text-light px-1 textWhiteShadow">Generation II</h6>
                                     <ul class="type-input-div row p-0 mx-0">
                                         <li class="text-left bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/zvHyF9a.png" alt="" />
@@ -335,7 +335,7 @@ export default function SearchFilter({ onSearch }) {
                                     </ul>
                                 </div>
                                 <div class="searchFilterAdvExpansion">
-                                    <h6 class="text-light px-1">Promotional</h6>
+                                    <h6 class="text-light px-1 textWhiteShadow">Promotional</h6>
                                     <ul class="type-input-div row p-0 mx-0">
                                         <li class="text-left bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/YaxCMXG.png" alt="" />
