@@ -20,6 +20,7 @@ export default function SearchFilter({ onSearch }) {
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
     const [show, toggleShow] = useState(false)
+    const [pageNumber, changePageNumber] = useState(1)
 
     function getCards() {
         const nameInput = document.querySelector('#name-search').value
@@ -70,7 +71,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=1&pageSize=42&orderBy=set&q=`
+        fetchURLText = url + `page=${pageNumber}&pageSize=14&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -94,9 +95,7 @@ export default function SearchFilter({ onSearch }) {
                 // document.getElementById("tab-two-button").click()
                 changeCards(response.data)
                 toggleShow(false)
-                onSearch()
-                console.log(response)
-
+                onSearch(response.totalCount)
             }, []);
     }
 

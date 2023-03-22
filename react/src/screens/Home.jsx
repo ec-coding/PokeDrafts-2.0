@@ -31,7 +31,8 @@ const Home = ({ }) => {
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
     const [showResults, setShowResults] = useState(false)
-
+    const [totalCount, changeTotalCount] = useState(0)
+    const [pageNumber, changePageNumber] = useState(0)
     // REACT ROUTER
 
     useEffect(() => {
@@ -51,8 +52,10 @@ const Home = ({ }) => {
             })
     }, []);
 
-    function onSearch() {
+    function onSearch(totalCount) {
         setShowResults(true)
+        changeTotalCount(totalCount)
+        changePageNumber (pageNumber)
         // Sharing State Between Components
     }
 
@@ -101,7 +104,7 @@ const Home = ({ }) => {
                                         <div>
                                             <h3 class="searchFilterHeader bg-info border border-dark mb-0 py-1">Search Results</h3>
                                             <div id="tab-two" className="searchResultsMaster">
-                                                <SearchResults showResults={showResults} />
+                                                <SearchResults showResults={showResults} totalCount={totalCount}/>
                                             </div>
                                         </div>
 
@@ -109,7 +112,7 @@ const Home = ({ }) => {
 
                                     <h3 class="searchFilterHeader bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
                                     <div id="tab-one" className="searchFilterTab border border-dark panel text-left">
-                                        <SearchFilter onSearch={onSearch} />
+                                        <SearchFilter onSearch={onSearch} pageNumber={pageNumber} />
                                     </div>
 
                                 </div>

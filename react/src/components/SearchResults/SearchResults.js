@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
+import ReactPaginate from 'react-paginate';
 import CardContext from '../../CardContext';
 import Card from '../Card'
 import '../../style/Dropdown.css';
 import './SearchResults.css';
 
-export default function SearchResults() {
-
+export default function SearchResults({ totalCount }) {
+    
     const [cards, changeCards] = useContext(CardContext)
     const [nameSort, setNameSort] = useState(true)
     const [typeSort, setTypeSort] = useState(true)
@@ -13,9 +14,23 @@ export default function SearchResults() {
     const [hpSort, setHpSort] = useState(true)
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
+    const [pageNumber, changePageNumber] = useState(0)
 
+    const itemsPerPage = 14;
+    const endOffset = pageNumber + itemsPerPage;
+    const currentItems = cards.slice(pageNumber, endOffset)
+    const pageCount = Math.ceil(totalCount / itemsPerPage)
+    console.log(totalCount)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(cards, 14);
+
+
+    const handlePageClick = (event) => {
+        // const newOffset = (event.selected * itemsPerPage) % totalCount;
+        const pageNumber = event.selected
+        console.log(pageNumber)
+        changePageNumber(pageNumber)
+    }
 
     const sortByName = () => {
         if (nameSort === true) {
@@ -33,23 +48,6 @@ export default function SearchResults() {
         }
     }
 
-    const sortByType = () => {
-        if (typeSort === true) {
-            const sortedByType = [...cards].sort((a, b) => {
-                return a.types[0] < b.types[0] ? -1 : 1
-            })
-            setTypeSort(false)
-            changeCards(sortedByType)
-
-        } else if (typeSort === false) {
-            const sortedByType = [...cards].sort((a, b) => {
-                return b.types[0] > a.types[0] ? 1 : -1
-            })
-            setTypeSort(true)
-            changeCards(sortedByType)
-        }
-    }
-
     const sortById = () => {
         if (idSort === true) {
             const sortedById = [...cards].sort((a, b) => {
@@ -63,22 +61,6 @@ export default function SearchResults() {
             })
             setIdSort(true)
             changeCards(sortedById)
-        }
-    }
-
-    const sortByHP = () => {
-        if (hpSort === true) {
-            const sortedByHP = [...cards].sort((a, b) => {
-                return Number(a.hp) < Number(b.hp) ? 1 : -1
-            })
-            setHpSort(false)
-            changeCards(sortedByHP)
-        } else if (hpSort === false) {
-            const sortedByHP = [...cards].sort((a, b) => {
-                return Number(a.hp) < Number(b.hp) ? -1 : 1
-            })
-            setHpSort(true)
-            changeCards(sortedByHP)
         }
     }
 
@@ -133,8 +115,8 @@ export default function SearchResults() {
 
     return (
         <>
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                    {/* <div class="carousel-indicators">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                {/* <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -152,60 +134,122 @@ export default function SearchResults() {
                         </ul>
                     </div>
                 </nav>
-                    <div class="searchResultsInner carousel-inner active">
+                <div class="searchResultsInner carousel-inner active">
 
 
-                        {/* How do you assign an array chunk to each carousel? */}
+                    {/* How do you assign an array chunk to each carousel? */}
 
-                        {chunks.map(slides => {
-                            if (chunks.indexOf(slides) === 0) {
-                                return (
-                                    <div class="carousel-item active">
-                                        {slides.map(card => {
-                                            return (
-                                                <Card card={card} onDeck={false} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            } else {
-                                return (
-                                    <div class="carousel-item">
-                                        {slides.map(card => {
-                                            return (
-                                                <Card card={card} onDeck={false} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            }
-                        })}
+                    {/* {chunks.map(slides => {
+                        if (chunks.indexOf(slides) === 0) {
+                            return (
+                                <div class="carousel-item active">
+                                    {slides.map(card => {
+                                        return (
+                                            <Card card={card} onDeck={false} />
+                                        )
+                                    })}
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div class="carousel-item">
+                                    {slides.map(card => {
+                                        return (
+                                            <Card card={card} onDeck={false} />
+                                        )
+                                    })}
+                                </div>
+                            )
+                        }
+                    })} */}
 
-                        {/* RESEARCH ARRAY CHUNKING */}
+                    {currentItems && currentItems.map ((card) => (
 
-                        {/* <div class="carousel-caption d-none d-md-block">
+                        <Card card={card} onDeck={false} />
+
+                    ))}
+
+                    <ReactPaginate
+                        nextLabel="next >"
+                        onPageChange={handlePageClick}
+                        pageRangeDisplayed={3}
+                        pageCount={pageCount}
+                        previousLabel="< previous"
+                        pageClassName="page-item"
+                        pageLinkClassName="page-link"
+                        previousClassName="page-item"
+                        previousLinkClassName="page-link"
+                        nextClassName="page-item"
+                        nextLinkClassName="page-link"
+                        breakLabel="..."
+                        breakClassName="page-item"
+                        breakLinkClassName="page-link"
+                        containerClassName="pagination"
+                        activeClassName="active"
+                        renderOnZeroPageCount={null}
+                    />
+
+                    {/* RESEARCH ARRAY CHUNKING */}
+
+                    {/* <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div> */}
 
-                        {/* <div class="carousel-item">
+                    {/* <div class="carousel-item">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
                     </div> */}
 
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
 
         </>
     )
 }
+
+// Unused Sort Functions
+
+    // const sortByType = () => {
+    //     if (typeSort === true) {
+    //         const sortedByType = [...cards].sort((a, b) => {
+    //             return a.types[0] < b.types[0] ? -1 : 1
+    //         })
+    //         setTypeSort(false)
+    //         changeCards(sortedByType)
+
+    //     } else if (typeSort === false) {
+    //         const sortedByType = [...cards].sort((a, b) => {
+    //             return b.types[0] > a.types[0] ? 1 : -1
+    //         })
+    //         setTypeSort(true)
+    //         changeCards(sortedByType)
+    //     }
+    // }
+
+    // const sortByHP = () => {
+    //     if (hpSort === true) {
+    //         const sortedByHP = [...cards].sort((a, b) => {
+    //             return Number(a.hp) < Number(b.hp) ? 1 : -1
+    //         })
+    //         setHpSort(false)
+    //         changeCards(sortedByHP)
+    //     } else if (hpSort === false) {
+    //         const sortedByHP = [...cards].sort((a, b) => {
+    //             return Number(a.hp) < Number(b.hp) ? -1 : 1
+    //         })
+    //         setHpSort(true)
+    //         changeCards(sortedByHP)
+    //     }
+    // }
+

@@ -34,7 +34,7 @@
 }
 
 .searchFilterMaster ul li {
-  filter: drop-shadow(2px 2px 2px black);
+  filter: drop-shadow(1.5px 1.5px 1.5px black);
 }
 
 .searchFilterContainer .searchFilterAdvExpansion ul li img {
