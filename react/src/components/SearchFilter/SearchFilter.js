@@ -71,7 +71,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=${pageNumber}&pageSize=14&orderBy=set&q=`
+        fetchURLText = url + `page=${pageNumber}&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -124,6 +124,7 @@ export default function SearchFilter({ onSearch }) {
         toggleShow(true)
         // document.getElementById('searchResultsLoading').scrollIntoView()
         getCards()
+
     }
 
     return (

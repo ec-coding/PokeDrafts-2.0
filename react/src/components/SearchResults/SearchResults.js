@@ -20,14 +20,11 @@ export default function SearchResults({ totalCount }) {
     const endOffset = pageNumber + itemsPerPage;
     const currentItems = cards.slice(pageNumber, endOffset)
     const pageCount = Math.ceil(totalCount / itemsPerPage)
-    console.log(totalCount)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(cards, 14);
-
-
+    
     const handlePageClick = (event) => {
-        // const newOffset = (event.selected * itemsPerPage) % totalCount;
-        const pageNumber = event.selected
+        const pageNumber = (event.selected * itemsPerPage) % totalCount;
         console.log(pageNumber)
         changePageNumber(pageNumber)
     }
@@ -116,11 +113,6 @@ export default function SearchResults({ totalCount }) {
     return (
         <>
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                {/* <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div> */}
                 <nav id="results-nav" class="sub-header border border-top-0 border-dark">
                     <div>
                         <ul class="row">

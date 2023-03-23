@@ -3,9 +3,9 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer'
 import SearchFilter from '../components/SearchFilter/SearchFilter'
 import SearchResults from '../components/SearchResults/SearchResults'
-import Profile from '../components/Profile'
+// import Profile from '../components/Profile'
 import Deck from '../components/UserDeck/Deck'
-import Parallax from '../components/Parallax/Parallax'
+// import Parallax from '../components/Parallax/Parallax'
 import UserContext from '../UserContext';
 import CardContext from '../CardContext';
 import DeckContext from '../DeckContext';
@@ -55,7 +55,7 @@ const Home = ({ }) => {
     function onSearch(totalCount) {
         setShowResults(true)
         changeTotalCount(totalCount)
-        changePageNumber (pageNumber)
+        changePageNumber(pageNumber)
         // Sharing State Between Components
     }
 
@@ -104,7 +104,11 @@ const Home = ({ }) => {
                                         <div>
                                             <h3 class="searchFilterHeader bg-info border border-dark mb-0 py-1">Search Results</h3>
                                             <div id="tab-two" className="searchResultsMaster">
-                                                <SearchResults showResults={showResults} totalCount={totalCount}/>
+                                                <SearchResults
+                                                    autoResetPage={true}
+                                                    showResults={showResults}
+                                                    totalCount={totalCount}
+                                                />
                                             </div>
                                         </div>
 
