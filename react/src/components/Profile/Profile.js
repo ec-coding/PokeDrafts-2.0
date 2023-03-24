@@ -5,11 +5,6 @@ const Profile = ({ user }) => {
         <>
             <div class="profile-body">
                 <div class="profile-container">
-
-                    <div class="search-header-container">
-                        <h2>Profile</h2>
-                    </div>
-
                     <div class="profile">
 
                         <section class="profile-half">

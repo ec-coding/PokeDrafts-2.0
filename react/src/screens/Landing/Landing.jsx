@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FlipCardBanner from "../components/FlipCardBanner/FlipCardBanner"
-import '../style/Landing.css';
-import Footer from '../components/Footer'
+import FlipCardBanner from "../../components/FlipCardBanner/FlipCardBanner"
+import './Landing.css';
+import Footer from '../../components/Footer/Footer'
 
 const Landing = () => {
   return (

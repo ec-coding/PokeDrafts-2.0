@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import UserContext from '../../UserContext';
 import DeckContext from '../../DeckContext';
-import Card from '../Card'
+import Card from '../Card/Card'
 import './Deck.css'
 
 export default function UserDeck() {
@@ -243,9 +243,6 @@ export default function UserDeck() {
         }
     }
 
-
-
-
     // console.log('@@@ render pokemon', renderPokemon())
 
     // let typeDict;
@@ -259,7 +256,7 @@ export default function UserDeck() {
     return (
         <>
             <section class="sub-header button-input deck-console">
-                <ul class="row">
+                <ul class="row bg-secondary mb-0 ps-0">
                     {/* <li class="col">
                         <button type="submit">Rename Deck</button>
                     </li> */}
@@ -290,18 +287,17 @@ export default function UserDeck() {
                 </div> */}
 
                 <div class="deck-inner carousel-inner active">
-                    <div class="deck-inner-header">
+                    <div class="deck-inner-header mb-3">
                         <h3>Rain Dance</h3>
                         <h4>Cards in Deck: {decks.length}</h4>
                     </div>
-                    <br />
 
                     {chunks.map(slides => {
                         if (chunks.indexOf(slides) === 0) {
                             return (
                                 <>
                                     {/* Show counters for # of cards in each stack */}
-                                    <div class="deck-header">
+                                    <div class="deck-header row d-flex justify-content-center">
                                         <h4 class="card-stack-title">Pokémon</h4>
                                         <h4>x {typePokemon.length}</h4>
                                     </div>
@@ -309,7 +305,7 @@ export default function UserDeck() {
                                         {renderPokemon()}
                                     </div>
 
-                                    <div class="deck-header">
+                                    <div class="deck-header row d-flex justify-content-center">
                                         <h4 class="card-stack-title">Trainer</h4>
                                         <h4>x {typeTrainer.length}</h4>
                                     </div>
@@ -317,7 +313,7 @@ export default function UserDeck() {
                                         {renderTrainer()}
                                     </div>
 
-                                    <div class="deck-header">
+                                    <div class="deck-header row d-flex justify-content-center">
                                         <h4 class="card-stack-title">Energy</h4>
                                         <h4>x {typeEnergy.length}</h4>
                                     </div>

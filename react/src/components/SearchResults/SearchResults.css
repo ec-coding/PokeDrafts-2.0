@@ -1,25 +1,29 @@
-#results-nav {
-    background: rgb(192, 192, 192);
-    position: sticky;
-    display: flex;
-    z-index: 3;
-    top: 6.5vh;
-  }
-
-#results-nav ul li {
-    margin: 0;
-    padding: 0;
-    height: 4.5vh;
+.searchResultsMaster {
+  background: var(--gold-gradient);
 }
 
-#results-nav .nav-title {
-    margin-right: 3vh;
-    margin-left: -5vh;
-    text-shadow: 1.5px 1.5px 0 black;
-    color: white;
+.searchResultsMaster ul {
+  margin: 1vh 0;
+  justify-content: center;
 }
 
-#results-nav button {
+.searchResultsMaster nav {
+  background: rgb(192, 192, 192);
+  position: sticky;
+  display: flex;
+  z-index: 5;
+  top: 6.5vh;
+}
+
+.searchResultsMaster nav .nav-title {
+  margin-right: 3vh;
+  margin-left: -5vh;
+  text-shadow: 1.5px 1.5px 0 black;
+  color: white;
+}
+
+.searchResultsMaster nav button {
+  border: 0.5vh solid rgb(192, 192, 192);
   cursor: pointer;
   width: 11.5vh;
   height: 100%;
@@ -28,24 +32,38 @@
   text-shadow: 1.5px 1.5px 0 black;
   color: white;
   background: inherit;
-  border: none;
 }
 
-#results-nav button a {
+.searchResultsMaster nav button:hover {
+  border-top: 0.5vh solid rgb(110, 110, 110);
+  border-bottom: 0.5vh solid rgb(110, 110, 110);
+}
+
+/* CAROUSEL */
+.carousel-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8.5%;
+  background: rgba(0, 0, 0, 0.75);
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.75);
 }
 
-#results-nav button:hover {
-    border-top: 0.5vh solid rgb(110, 110, 110);
-    border-bottom: 0.5vh solid rgb(110, 110, 110);
-  }
-
-.searchResultsInner {
-  background: var(--gold-gradient);
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  background-color: none;
 }
 
-.searchResultsInner ul {
-  margin: 1vh 0;
-  justify-content: center;
+.carousel .carousel-indicators {
+  position: relative;
+  padding-top: 0vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.carousel-inner {
+  padding: 0 12.5vh;
 }

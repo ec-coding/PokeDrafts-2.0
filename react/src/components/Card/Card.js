@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import UserContext from '../UserContext';
-import DeckContext from '../DeckContext';
-import Icon from './Icon'
-import CardAttributes from './CardAttributes'
-import '../style/Card.css';
-
-
+import UserContext from '../../UserContext';
+import DeckContext from '../../DeckContext';
+import Icon from '../Icon/Icon'
+import CardAttributes from '../CardAttributes/CardAttributes'
+import './Card.css';
 
 export default function Card({ card, onDeck }) {
 
@@ -166,7 +164,7 @@ export default function Card({ card, onDeck }) {
 
   return (
     <>
-      <img src={card.images.small} type="button" class="slide-img w-10" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
+      <img src={card.images.small} type="button" class="slide-img p-0 w-10" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
 
       <div class="modal fade" id={targetModal} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
@@ -190,16 +188,16 @@ export default function Card({ card, onDeck }) {
                     </div>
                     <div class="row card-counter">
                       <div class="col">
-                      <h5 class="text-center">Cards in deck: {decks.length}</h5>
+                      <h5 class="text-center pt-1">Cards in deck: {decks.length}</h5>
                       </div>
                       <div class="col">
-                      <h5 class="text-center">Copies in deck: {cardCopyCount}</h5>
+                      <h5 class="text-center pt-1">Copies in deck: {cardCopyCount}</h5>
                       </div>
                     </div>
                   </section>
                 </div>
 
-                <div class="card-divider card-text">
+                <div class="card-divider card-text text-start">
                   <div class="row card-title-box">
                     <CardAttributes cardName={card?.name} />
                     <CardAttributes cardCheck={card} />
@@ -216,20 +214,20 @@ export default function Card({ card, onDeck }) {
                   </div>
 
                   <div className="row card-set">
-                    <h6 class="col">Set: {card?.set.name}</h6>
-                    <h6 class="col text-right right-padding-two">Rarity: {card?.rarity}</h6>
+                    <h6 class="col mb-1">Set: {card?.set.name}</h6>
+                    <h6 class="col text-end pe-3 mb-1">Rarity: {card?.rarity}</h6>
                   </div>
                   <hr />
                   <div className="row card-price">
-                    <h6 class="col">Trending Price: <h6>${card?.cardmarket.prices.trendPrice} USD</h6></h6>
-                    <h6 class="col text-right right-padding-two">Last Updated: <h6>{card?.cardmarket.updatedAt}</h6></h6>
+                    <h6 class="col mb-0 pb-0">Trending Price: <h6 class="mb-0 pb-0">${card?.cardmarket.prices.trendPrice} USD</h6></h6>
+                    <h6 class="col text-end pe-3 mb-0 pb-0">Last Updated: <h6 class="mb-0 pb-0">{card?.cardmarket.updatedAt}</h6></h6>
                   </div>
                   <hr />
 
                   <CardAttributes statTrio={card} />
                   <CardAttributes cardBio={card?.flavorText} />
                   <div className="row card-artist">
-                    <h6 class="col">Illustrator: {card?.artist}</h6>
+                    <h6 class="col mt-2">Illustrator: {card?.artist}</h6>
                   </div>
 
                   <div>

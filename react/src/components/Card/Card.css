@@ -24,22 +24,6 @@
   padding: 0 15px 0 5px;
 }
 
-.card-button-box {
-  padding: 0 -1vh;
-  margin-top: 1vh;
-}
-
-.card-button-box .modal-button-container {
-  padding: 1.25vh 0;
-  margin: 0;
-  margin-bottom: 0.5vh;
-}
-
-.card-button-box .modal-button-container button {
-  padding: 0.5vh 0;
-  margin: 0 1vh;
-}
-
 .card-counter {
   margin: -0.25vh 0.5vh 0 0.5vh;
   border: 2px solid white;
@@ -52,16 +36,10 @@
 }
 
 .card-counter div+div {
-  margin: 0;
   border-left: 2px solid white;
 }
 
-.card-counter h5 {
-  padding-top: 0.5vh;
-}
-
 .card-divider {
-  text-align: left;
   float: left;
   flex: 50%;
 }
@@ -77,68 +55,15 @@
   inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.card-text h3 {
-  margin-bottom: 0;
-  /* text-shadow: 1px 1px 0 #ffffff; */
+.card-title-box h4 {
+  flex: 0.35;
 }
 
-.text-stage {
+.card-title-box h5 {
   padding-top: 3px;
 }
 
-/* ATTACKS */
-.card-attack-box .attack-name {
-  font-weight: bold;
-  flex: 1.2;
-}
-
-.card-attack-box .attack-icons {
-  margin: 0;
-  flex: 0.7;
-  /* justify-content: right; */
-}
-
-.card-attack-box .attack-cost {
-  flex: 0 0;
-  padding: 0;
-}
-
-.card-attack-box .attack-damage {
-  text-align: center;
-}
-
-.attack-text {
-  font-size: 14px;
-  font-weight: bold;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-.card-trio-col {
-  padding: 0;
-  text-align: center;
-}
-
-.card-price h6 {
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.card-title-box h4 {
-  flex: 0.35;
-  padding-top: 2.5px;
-  margin-bottom: 0;
-}
-
-.card-title-box h6 {
-  margin-bottom: 0;
-}
-
-.card-title-box div {
-  margin-top: 3.5px;
-}
-
 .card-ability {
-  
   margin: 0px -2.5px -5px -2.5px;
 }
 
@@ -168,8 +93,6 @@
 }
 
 .card-ability h6 {
-  margin: 0;
-  padding: 1vh 12px;
   font-size: 0.95rem;
   box-shadow:
   1px 1px 0.5em rgba(122, 122, 122, 0.55),
@@ -177,12 +100,22 @@
   inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.card-set h6 {
-  margin-bottom: 0.25vh;
+/* ATTACKS */
+.card-attack-box .attack-name {
+  flex: 1.2;
+}
+
+.card-attack-box .attack-icons {
+  flex: 0.7;
+}
+
+.attack-text {
+  font-size: 14px;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .card-bio {
-  border: none;
   padding: 3px 3px;
   margin-left: -4px;
   margin-right: -4px;
@@ -190,31 +123,13 @@
 
 .card-trio-row {
   min-height: 6vh;
-  padding: 0.35vh 0 0.15vh 0;
+  padding: 0.35vh 0 0.25vh 0;
   border: 1px solid rgba(255, 255, 255, 0.75);
-  margin: 0px -2.5px 0.75vh -2.5px;
+  margin: 0px -2.5px 1vh -2.5px;
   box-shadow:
   1px 1px 0.5em rgba(122, 122, 122, 0.55),
   inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
   inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
-}
-
-.card-trio-col {
-  margin-bottom: 0;
-}
-
-.card-trio-col .center-box {
-  margin: 0 auto;
-  margin-top: 0.25vh;
-  justify-content: center;
-}
-
-.card-trio-col h6 {
-  margin-bottom: 0;
-}
-
-.card-artist {
-  margin-top: 1.5vh;
 }
 
 /* NOTIFICATIONS */
@@ -300,7 +215,6 @@
           height: 0px;
       }
   }
-  
   
 .notification-area .notification.success {
     background:rgba(56, 152, 56, 0.75);

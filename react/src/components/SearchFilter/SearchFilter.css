@@ -1,14 +1,22 @@
-.searchFilterBottomPanel .button-input {
+.searchFilterMaster {
+  padding: 2vh 25vh !important;
+  background: var(--dark-grey);
+}
+
+.searchFilterMaster h4+input {
+  font-size: 18px;
+}
+
+.searchFilterMaster ul li {
+  filter: drop-shadow(1.5px 1.5px 1.5px black);
+}
+
+.button-box .button-input {
   display: flex;
   justify-content: right;
 }
 
-.button-input li {
-  margin: 10px 0px;
-  /* padding: 0 5px; */
-}
-
-.button-input button {
+.button-box .button-input button {
   background: rgb(218, 218, 218);
   font-size: 16px;
   font-weight: bold;
@@ -18,37 +26,3 @@
   padding: 0.75vh 1.75vh;
 }
 
-.button-input #search-button {
-  background: rgb(160, 215, 255)
-}
-
-.searchFilterHeader {
-  color: rgb(255, 255, 255);
-  text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
-  background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180));
-}
-
-
-.searchFilterMaster label {
-  font-weight: bold;
-}
-
-.searchFilterMaster ul li {
-  filter: drop-shadow(1.5px 1.5px 1.5px black);
-}
-
-.searchFilterContainer .searchFilterAdvExpansion ul li img {
-  width: 25px;
-  height: 25px
-}
-
-.searchFilterSearchBar {
-  height: 3.5vh;
-  font-size: 18px;
-}
-
-#search-button .searchFilterIcon {
-  margin-left: 0.75vh;
-  height: 16px;
-  width: 16px
-}

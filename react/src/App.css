@@ -3,23 +3,6 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
-  text-align: center;
-}
-
-body ul {
-  list-style: none;
-}
-
-.App hr {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  color: inherit;
-  border: 0;
-  border-top: 1px solid;
-  opacity: .25;
-}
-
 h1,
 h2,
 h3,
@@ -32,140 +15,21 @@ h6 {
   font-weight: 500;
 }
 
-h6 {
-  font-size: 1rem;
+body {
+  text-align: center;
 }
 
-.App {
-  margin: 0vh auto 0 auto;
-  /* padding: 0 25vh; */
-  color: #212529;
+body ul {
+  list-style: none;
 }
 
-#tab-one {
-  padding: 2vh 25vh !important;
-  background: var(--dark-grey);
-}
-
-#tab-two {
-  /* padding: 0 25vh !important; */
-}
-
-.App h4 {
-  font-size: calc(1.275rem + .2vw);
-}
-
-.App h5 {
-  font-size: 1.25rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.padding-expand {
-  padding: 5px 5px;
-}
-
-.text-right {
-  padding-right: 5px;
-  text-align: right;
-}
-
-.text-left {
-  padding-left: 12px;
-  text-align: left;
-}
-
-.right-padding {
-  padding-right: 10px;
-}
-
-.right-padding-two {
-  padding-right: 20px;
-}
-
-.text-upwards {
-  margin-top: -2px;
-}
-
-.flex-half {
-  flex: 0.5;
-  margin: 0;
+.App hr {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .flex-quarter {
   flex: 0.35;
-}
-
-.res-col {
-  flex: 0.2;
-  width: 10%;
-}
-
-
-/* SUB-HEADER */
-.search-header-container {
-  text-shadow: 2px 2px 0 #ffffff;
-  filter: drop-shadow(0px 0px 0px white);
-  color: rgb(92, 92, 92);
-}
-
-.search-header-container h2,
-h6 {
-  font-weight: bold;
-}
-
-.search-header-container h6 {
-  font-size: 17px;
-}
-
-.list-one-third .pkmn-icon {
-  width: 28px;
-}
-
-.supertype-input-sec img {
-  width: 24px;
-  margin-bottom: 6px;
-}
-
-.subtype-input-sec img {
-  width: 24px;
-}
-
-.list-one-third {
-  width: 220px;
-  min-height: 3.8vh;
-  max-height: 3.8vh;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 4px 5px;
-  border: 1px solid black;
-  border-radius: 0.4em;
-  filter: drop-shadow(2px 2px 2px black);
-  margin: 3px 5px;
-  background-color: rgb(82, 82, 82);
-  color: rgb(255, 255, 255);
-  text-shadow: 1px 1px 0 #000000;
-}
-
-.list-one-third div {
-  display: inline-block;
-  margin-left: 3px;
-  zoom: 0.9;
-  margin-bottom: -5px;
-}
-
-.list-one-third img {
-  margin-left: 3px;
-  zoom: 0.9;
-  margin-bottom: 3px;
-}
-
-.list-one-third label {
-  padding-left: 5px;
 }
 
 .type-input {
@@ -174,24 +38,6 @@ h6 {
   margin-right: 5px;
   width: 18px;
   height: 18px;
-}
-
-input[type=radio] {
-  border: 0px;
-  width: 18px;
-  height: 18px;
-}
-
-.sub-header {
-  width: 100%;
-  justify-content: center;
-  background: rgb(212, 212, 212);
-  margin: 0;
-}
-
-.sub-header ul {
-  margin: 0;
-  justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {

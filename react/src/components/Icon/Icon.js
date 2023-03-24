@@ -1,4 +1,5 @@
 import React from 'react'
+import './Icon.css'
 
 export default function Icon(props) {
     //TYPE
@@ -29,7 +30,7 @@ export default function Icon(props) {
     if (props.weakness !== undefined) {
         return (
             <>
-                <div class="center-box row icon-text-box">
+                <div class="mt-1 d-flex justify-content-center mx-auto row icon-text-box">
                     <div className={weaknessIcon}></div>
                     <h6 class="col-1">x2</h6>
                 </div>
@@ -43,7 +44,7 @@ export default function Icon(props) {
     if (props.resistance !== undefined) {
         return (
             <>
-                <div class="center-box row icon-text-box">
+                <div class="mt-1 d-flex justify-content-center mx-auto row icon-text-box">
                     <div className={resistIcon}></div>
                     <h6 class="col-2">-30</h6>
                 </div>
@@ -56,7 +57,7 @@ export default function Icon(props) {
         return (
             <>
                 <div class="container">
-                    <div class="center-box row">
+                    <div class="mt-1 d-flex justify-content-center mx-auto row">
                         <div class="icon-Colorless"></div>
                     </div>
                 </div>
@@ -66,7 +67,7 @@ export default function Icon(props) {
         return (
             <>
                 <div class="container">
-                    <div class="center-box row">
+                    <div class="mt-1 d-flex justify-content-center mx-auto row">
                         <div class="icon-Colorless"></div>
                         <div class="icon-Colorless"></div>
                     </div>
@@ -77,7 +78,7 @@ export default function Icon(props) {
         return (
             <>
                 <div class="container">
-                    <div class="center-box row">
+                    <div class="mt-1 d-flex justify-content-center mx-auto row">
                         <div class="icon-Colorless"></div>
                         <div class="icon-Colorless"></div>
                         <div class="icon-Colorless"></div>
@@ -89,7 +90,7 @@ export default function Icon(props) {
         return (
             <>
                 <div class="container">
-                    <div class="center-box row">
+                    <div class="mt-1 d-flex justify-content-center mx-auto row">
                         <div class="icon-Colorless"></div>
                         <div class="icon-Colorless"></div>
                         <div class="icon-Colorless"></div>

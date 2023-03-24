@@ -18,4 +18,5 @@ code {
   --green-gradient: linear-gradient(to right, rgb(21, 170, 21), rgb(84, 189, 84));
   --gold-gradient: linear-gradient(rgb(180, 145, 95), lightyellow, rgb(180, 145, 95));
   --dark-grey: rgb(128, 128, 128);
+  --charcoal-grey: rgb(58, 58, 58);
 }

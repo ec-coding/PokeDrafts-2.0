@@ -1,12 +1,12 @@
 import React from 'react'
-import Icon from './Icon'
+import Icon from '../Icon/Icon'
 
 export default function CardAttributes(props) {
     //CARD NAME
     if (props.cardName !== undefined) {
         return (
             <>
-                <h3>{props.cardName}</h3>
+                <h3 class="mb-0">{props.cardName}</h3>
             </>
         )
     }
@@ -16,13 +16,13 @@ export default function CardAttributes(props) {
         if (props.cardCheck?.supertype === "Pokémon") {
             return (
                 <>
-                    <h4 class="col text-right">{props.pokemonHP} HP</h4>
+                    <h4 class="col text-end mb-0 pe-1">{props.pokemonHP} HP</h4>
                 </>
             )
         } else if (props.cardCheck?.supertype === "Trainer") {
             return (
                 <>
-                    <h4 class="col text-left">{props.pokemonHP} HP</h4>
+                    <h4 class="col text-left mb-0">{props.pokemonHP} HP</h4>
                 </>
             )
         }
@@ -34,8 +34,8 @@ export default function CardAttributes(props) {
             return (
                 <>
                     <div class="col">
-                        <h5 class="text-stage">{props.cardCheck?.subtypes} Pokémon</h5>
-                        <h6>Evolves from {props.cardCheck?.evolvesFrom}</h6>
+                        <h5>{props.cardCheck?.subtypes} Pokémon</h5>
+                        <h6 class="mb-0">Evolves from {props.cardCheck?.evolvesFrom}</h6>
                     </div>
                 </>
             )
@@ -43,7 +43,7 @@ export default function CardAttributes(props) {
             return (
                 <>
                     <div class="col">
-                        <h5 class="text-stage">{props.cardCheck?.subtypes} Pokémon</h5>
+                        <h5>{props.cardCheck?.subtypes} Pokémon</h5>
                     </div>
                 </>
             )
@@ -56,7 +56,7 @@ export default function CardAttributes(props) {
             <>
                 <div class="row card-ability">
                     <h5 class="card-ability-title">Pokémon Power: {props.pokemonPower.map(x => x.name)?.join('')}</h5>
-                    <h6>{props.pokemonPower.map(x => x.text)?.join('')}</h6>
+                    <h6 class="m-0 py-2">{props.pokemonPower.map(x => x.text)?.join('')}</h6>
                 </div>
                 <br />
             </>
@@ -70,12 +70,12 @@ export default function CardAttributes(props) {
             <>
                 {props.pokemonAttacks.map((attack) => (
                     <div>
-                        <div class="row icon-sm-row">
-                            <h5 class="col text-upwards attack-name">{attack.name}</h5>
-                            <div class="col row attack-icons">{attack.cost.map((x) => <Icon attackCost={x} />)}</div>
-                            <h5 class="col text-right right-padding text-upwards flex-quarter attack-damage">{attack.damage}</h5>
+                        <div class="row icon-sm-row pt-0">
+                            <h5 class="attack-name col text-upwards fw-bold">{attack.name}</h5>
+                            <div class="attack-icons col row m-0">{attack.cost.map((x) => <Icon attackCost={x} />)}</div>
+                            <h5 class="attack-damage col text-upwards text-center flex-quarter">{attack.damage}</h5>
                         </div>
-                        <p class="attack-text">{attack.text}</p>
+                        <p class="attack-text mb-0">{attack.text}</p>
                         <hr />
                     </div>
                 ))}
@@ -89,13 +89,13 @@ export default function CardAttributes(props) {
         return (
             <>
                 <div class="card-trio-row row">
-                    <h6 class="card-trio-col col">Weakness
+                    <h6 class="card-trio-col text-center col mb-0 p-0">Weakness
                         <Icon weakness={props.statTrio.weaknesses?.map(x => x.type)?.join(', ')} />
                     </h6>
-                    <h6 class="card-trio-col col">Resistance
+                    <h6 class="card-trio-col text-center col mb-0 p-0">Resistance
                         <Icon resistance={props.statTrio.resistances?.map(x => x.type)?.join(', ')} />
                     </h6>
-                    <h6 class="card-trio-col col">Retreat Cost
+                    <h6 class="card-trio-col text-center col mb-0 p-0">Retreat Cost
                         <Icon retreat={props.statTrio.convertedRetreatCost} />
                     </h6>
                 </div>

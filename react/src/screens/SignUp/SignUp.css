@@ -45,6 +45,11 @@
     margin: 3.5vh;
 }
 
+#loginDiv iframe {
+    min-height: 50px;
+    min-width: 300px;
+}
+
 .landing-return {
     margin: 0 auto;
 }
