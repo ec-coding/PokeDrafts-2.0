@@ -19,6 +19,7 @@ export default function UserDeck() {
     const chunks = arrayChunks(decks, 60);
     const user = useContext(UserContext);
 
+    console.log(chunks)
 
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
     var groupBy = function (xs, key) {
@@ -266,7 +267,6 @@ export default function UserDeck() {
                 </ul>
             </section>
 
-
             {/* <section class="sub-header button-input">
                 <ul class="row">
                     <li class="col"><h4>Sort By</h4></li>
@@ -280,11 +280,6 @@ export default function UserDeck() {
             </section> */}
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                {/* <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div> */}
 
                 <div class="deck-inner carousel-inner active">
                     <div class="deck-inner-header mb-3">
@@ -296,7 +291,6 @@ export default function UserDeck() {
                         if (chunks.indexOf(slides) === 0) {
                             return (
                                 <>
-                                    {/* Show counters for # of cards in each stack */}
                                     <div class="deck-header row d-flex justify-content-center">
                                         <h4 class="card-stack-title">Pokémon</h4>
                                         <h4>x {typePokemon.length}</h4>
@@ -326,53 +320,6 @@ export default function UserDeck() {
                     })
                     }
 
-
-                    {/* How do you assign an array chunk to each carousel? */}
-
-                    {/* {chunks.map(slides => {
-                            if (chunks.indexOf(slides) === 0) {
-                                return (
-                                    <div class="carousel-item active">
-                                        {slides.map(card => {
-                                            return (
-                                                <Card card={card} onDeck={true} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            } else {
-                                return (
-                                    <div class="carousel-item">
-                                        {slides.map(card => {
-                                            return (
-                                                <Card card={card} onDeck={true} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            }
-                        })} */}
-                    {/* <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div> */}
-
-                    {/* <div class="carousel-item">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div> */}
-
-
-                    {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button> */}
                 </div>
             </div>
         </>

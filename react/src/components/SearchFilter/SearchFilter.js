@@ -70,7 +70,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=${pageNumber}&orderBy=set&q=`
+        fetchURLText = url + `page=${pageNumber}&pageSize=14&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -91,8 +91,8 @@ export default function SearchFilter({ onSearch }) {
         })
             .then(res => res.json())
             .then(response => {
-                // document.getElementById("tab-two-button").click()
                 changeCards(response.data)
+                console.log(response.data)
                 toggleShow(false)
                 onSearch(response.totalCount)
             }, []);
@@ -123,7 +123,37 @@ export default function SearchFilter({ onSearch }) {
         toggleShow(true)
         // document.getElementById('searchResultsLoading').scrollIntoView()
         getCards()
-        changePageNumber(0)
+    }
+
+    const resetInput = event => {
+        changeCardType('Pokémon')
+        changeCardSet([])
+        changeCardElement('')
+    }
+
+    const toggleCardElement = event => {
+        if (document.getElementById('card-type-pokemon').checked) {
+            document.getElementById('type-grass').style.display = 'block'
+            document.getElementById('type-fire').style.display = 'block'
+            document.getElementById('type-water').style.display = 'block'
+            document.getElementById('type-lightning').style.display = 'block'
+            document.getElementById('type-psychic').style.display = 'block'
+            document.getElementById('type-fighting').style.display = 'block'
+            document.getElementById('type-colorless').style.display = 'block'
+            document.getElementById('type-darkness').style.display = 'block'
+            document.getElementById('type-metal').style.display = 'block'
+        } else {
+            changeCardElement('')
+            document.getElementById('type-grass').style.display = 'none'
+            document.getElementById('type-fire').style.display = 'none'
+            document.getElementById('type-water').style.display = 'none'
+            document.getElementById('type-lightning').style.display = 'none'
+            document.getElementById('type-psychic').style.display = 'none'
+            document.getElementById('type-fighting').style.display = 'none'
+            document.getElementById('type-colorless').style.display = 'none'
+            document.getElementById('type-darkness').style.display = 'none'
+            document.getElementById('type-metal').style.display = 'none'
+        }
     }
 
     return (
@@ -141,7 +171,7 @@ export default function SearchFilter({ onSearch }) {
                                         <button type="submit" id="search-button" class="border border-dark px-4 bg-info" onClick={submitClick}>Search</button>
                                     </li>
                                     <li class="col px-0 my-2">
-                                        <button type="reset" id="reset-button" class="border border-dark px-4 bg-warning">Reset</button>
+                                        <button type="reset" id="reset-button" class="border border-dark px-4 bg-warning" onClick={resetInput}>Reset</button>
                                     </li>
                                 </ul>
                             </section>
@@ -155,27 +185,25 @@ export default function SearchFilter({ onSearch }) {
                                 <li class="bg-light col-lg-5 col-md-5 m-1 pt-1 border rounded border-dark">
                                     <img class="mb-1" width="24" src="https://i.imgur.com/0n7qI08.png" alt="" />
                                     <input class="type-input" type="radio" id="card-type-pokemon" name="supertype"
-                                        checked={cardType === 'Pokémon'} onChange={() => changeCardType('Pokémon')} />
+                                        checked={cardType === 'Pokémon'} onChange={() => changeCardType('Pokémon')} onClick={toggleCardElement} />
                                     <label for="card-type-pokemon" class="mx-2 fw-bold"> Pokémon</label>
                                 </li>
                                 <li class="bg-light col-lg-5 col-md-5 m-1 pt-1 border rounded border-dark">
                                     <img class="mb-1" src="https://i.imgur.com/N3AkovO.png" width="24" alt="" />
                                     <input class="type-input" type="radio" id="card-type-trainer" name="supertype"
-                                        checked={cardType === 'Trainer'} onChange={() => changeCardType('Trainer')} />
+                                        checked={cardType === 'Trainer'} onChange={() => changeCardType('Trainer')} onClick={toggleCardElement} />
                                     <label for="card-type-trainer" class="mx-2 fw-bold"> Trainer</label>
                                 </li>
                                 <li class="bg-light col-lg-5 col-md-5 m-1 pt-1 border rounded border-dark">
                                     <img class="mb-1" src="https://media.discordapp.net/attachments/625333124808572932/1046148951826501712/30px-Rainbow-attack.png" width="24" alt="" />
                                     <input class="type-input" type="radio" id="card-type-energy" name="supertype"
-                                        checked={cardType === 'Energy'} onChange={() => changeCardType('Energy')} />
+                                        checked={cardType === 'Energy'} onChange={() => changeCardType('Energy')} onClick={toggleCardElement} />
                                     <label for="card-type-energy" class="mx-2 fw-bold"> Energy</label>
                                 </li>
                             </ul>
                         </section>
                     </div>
                 </section>
-
-
 
                 <div class="searchFilterContainer">
                     <div class="row mx-0">
@@ -186,47 +214,47 @@ export default function SearchFilter({ onSearch }) {
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Grass" alt="" />
                                         <label for="type-grass" class="col fw-bold"> Grass</label>
-                                        <input class="type-input" type="radio" id="type-grass" name="type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
+                                        <input class="type-input element-input" type="radio" id="type-grass" name="energy-type" checked={cardElement.includes('grass')} onChange={() => changeCardElement('grass')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Fire" alt="" />
                                         <label for="type-fire" class="col fw-bold"> Fire</label>
-                                        <input class="type-input" type="radio" id="type-fire" name="type" checked={cardElement.includes('fire')} onChange={() => changeCardElement('fire')} />
+                                        <input class="type-input element-input" type="radio" id="type-fire" name="energy-type" checked={cardElement.includes('fire')} onChange={() => changeCardElement('fire')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Water" alt="" />
                                         <label for="type-water" class="col fw-bold"> Water</label>
-                                        <input class="type-input" type="radio" id="type-water" name="type" checked={cardElement.includes('water')} onChange={() => changeCardElement('water')} />
+                                        <input class="type-input element-input" type="radio" id="type-water" name="energy-type" checked={cardElement.includes('water')} onChange={() => changeCardElement('water')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Lightning" alt="" />
                                         <label for="type-lightning" class="col fw-bold"> Lightning</label>
-                                        <input class="type-input" type="radio" id="type-lightning" name="type" checked={cardElement.includes('lightning')} onChange={() => changeCardElement('lightning')} />
+                                        <input class="type-input element-input" type="radio" id="type-lightning" name="energy-type" checked={cardElement.includes('lightning')} onChange={() => changeCardElement('lightning')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Psychic" alt="" />
                                         <label for="type-psychic" class="col fw-bold"> Psychic</label>
-                                        <input class="type-input" type="radio" id="type-psychic" name="type" checked={cardElement.includes('psychic')} onChange={() => changeCardElement('psychic')} />
+                                        <input class="type-input element-input" type="radio" id="type-psychic" name="energy-type" checked={cardElement.includes('psychic')} onChange={() => changeCardElement('psychic')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Fighting" alt="" />
                                         <label for="type-fighting" class="col fw-bold"> Fighting</label>
-                                        <input class="type-input" type="radio" id="type-fighting" name="type" checked={cardElement.includes('fighting')} onChange={() => changeCardElement('fighting')} />
+                                        <input class="type-input element-input" type="radio" id="type-fighting" name="energy-type" checked={cardElement.includes('fighting')} onChange={() => changeCardElement('fighting')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Colorless" alt="" />
                                         <label for="type-colorless" class="col fw-bold"> Colorless</label>
-                                        <input class="type-input" type="radio" id="type-colorless" name="type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
+                                        <input class="type-input element-input" type="radio" id="type-colorless" name="energy-type" checked={cardElement.includes('colorless')} onChange={() => changeCardElement('colorless')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Darkness" alt="" />
                                         <label for="type-darkness" class="col fw-bold"> Darkness</label>
-                                        <input class="type-input" type="radio" id="type-darkness" name="type" checked={cardElement.includes('darkness')} onChange={() => changeCardElement('darkness')} />
+                                        <input class="type-input element-input" type="radio" id="type-darkness" name="energy-type" checked={cardElement.includes('darkness')} onChange={() => changeCardElement('darkness')} />
                                     </li>
                                     <li class="bg-light row col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                         <div class="icon-Metal" alt="" />
                                         <label for="type-metal" class="col fw-bold"> Metal</label>
-                                        <input class="type-input" type="radio" id="type-metal" name="type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
+                                        <input class="type-input element-input" type="radio" id="type-metal" name="energy-type" checked={cardElement.includes('metal')} onChange={() => changeCardElement('metal')} />
                                     </li>
                                 </ul>
                             </section>

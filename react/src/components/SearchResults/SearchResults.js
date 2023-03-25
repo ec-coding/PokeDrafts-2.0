@@ -22,11 +22,13 @@ export default function SearchResults({ totalCount }) {
     const pageCount = Math.ceil(totalCount / itemsPerPage)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(cards, 14);
-    
+
+
     const handlePageClick = (event) => {
-        const pageNumber = (event.selected * itemsPerPage) % totalCount;
-        console.log(pageNumber)
-        changePageNumber(pageNumber)
+        const pageResults = (event.selected * itemsPerPage) % totalCount
+        console.log(pageResults)
+        changeCards(cards)
+        changePageNumber(pageResults)
     }
 
     const sortByName = () => {
@@ -124,7 +126,7 @@ export default function SearchResults({ totalCount }) {
                         </ul>
                     </div>
                 </nav>
-                <div class="carousel-inner active pt-2">
+                <div class="carousel-inner active pt-3">
 
                     {currentItems && currentItems.map ((card) => (
 
@@ -133,12 +135,12 @@ export default function SearchResults({ totalCount }) {
                     ))}
 
                     <ReactPaginate
-                        nextLabel="Next >"
+                        nextLabel=">"
                         onPageChange={handlePageClick}
                         pageRangeDisplayed={3}
                         pageCount={pageCount}
                         forcePage={0}
-                        previousLabel="< Prev"
+                        previousLabel="<"
                         pageClassName="page-item"
                         pageLinkClassName="page-link"
                         previousClassName="page-item"
@@ -148,7 +150,7 @@ export default function SearchResults({ totalCount }) {
                         breakLabel="..."
                         breakClassName="page-item"
                         breakLinkClassName="page-link"
-                        containerClassName="pagination"
+                        containerClassName="pagination mt-4 my-0"
                         activeClassName="active"
                         renderOnZeroPageCount={null}
                     />
