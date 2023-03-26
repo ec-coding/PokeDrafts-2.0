@@ -6,7 +6,9 @@ import '../../style/Dropdown.css';
 import './SearchResults.css';
 
 export default function SearchResults({ totalCount }) {
-    
+    const pageStart = 1
+    const itemsLimit = 14
+
     const [cards, changeCards] = useContext(CardContext)
     const [nameSort, setNameSort] = useState(true)
     const [typeSort, setTypeSort] = useState(true)
@@ -14,21 +16,20 @@ export default function SearchResults({ totalCount }) {
     const [hpSort, setHpSort] = useState(true)
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
-    const [pageNumber, changePageNumber] = useState(0)
+    const [currentPage, setCurrentPage] = useState(pageStart)
+    const [itemsPerPage, setItemsPerPage] = useState(itemsLimit)
 
-    const itemsPerPage = 14;
-    const endOffset = pageNumber + itemsPerPage;
-    const currentItems = cards.slice(pageNumber, endOffset)
+    const endOffset = currentPage + itemsPerPage;
+    const currentCards = cards.slice(currentPage, endOffset)
+
     const pageCount = Math.ceil(totalCount / itemsPerPage)
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
     const chunks = arrayChunks(cards, 14);
 
-
     const handlePageClick = (event) => {
         const pageResults = (event.selected * itemsPerPage) % totalCount
-        console.log(pageResults)
         changeCards(cards)
-        changePageNumber(pageResults)
+        setCurrentPage(pageResults)
     }
 
     const sortByName = () => {
@@ -128,7 +129,7 @@ export default function SearchResults({ totalCount }) {
                 </nav>
                 <div class="carousel-inner active pt-3">
 
-                    {currentItems && currentItems.map ((card) => (
+                    {currentCards && currentCards.map ((card) => (
 
                         <Card card={card} onDeck={false} />
 
@@ -142,7 +143,7 @@ export default function SearchResults({ totalCount }) {
                         forcePage={0}
                         previousLabel="<"
                         pageClassName="page-item"
-                        pageLinkClassName="page-link"
+                        pageLinkClassName="page-link border-0"
                         previousClassName="page-item"
                         previousLinkClassName="carousel-control-prev"
                         nextClassName="page-item"

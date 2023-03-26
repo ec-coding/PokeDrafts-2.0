@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import CardContext from '../../CardContext';
 import Icon from '../Icon/Icon';
 import { BiSearchAlt } from 'react-icons/bi'
@@ -19,7 +19,8 @@ export default function SearchFilter({ onSearch }) {
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
     const [show, toggleShow] = useState(false)
-    const [pageNumber, changePageNumber] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [itemsPerPage, setItemsPerPage] = useState(14)
 
     function getCards() {
         const nameInput = document.querySelector('#name-search').value
@@ -70,7 +71,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `page=${pageNumber}&pageSize=14&orderBy=set&q=`
+        fetchURLText = url + `pageNum=${currentPage}&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -92,7 +93,6 @@ export default function SearchFilter({ onSearch }) {
             .then(res => res.json())
             .then(response => {
                 changeCards(response.data)
-                console.log(response.data)
                 toggleShow(false)
                 onSearch(response.totalCount)
             }, []);

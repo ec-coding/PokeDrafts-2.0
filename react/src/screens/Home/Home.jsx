@@ -23,10 +23,10 @@ const Home = ({ }) => {
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
     const [showResults, setShowResults] = useState(false)
-    const [totalCount, changeTotalCount] = useState(0)
-    const [pageNumber, changePageNumber] = useState(0)
-    // REACT ROUTER
+    const [totalCount, setTotalCount] = useState(0)
+    const [currentPage, setCurrentPage] = useState(0)
 
+    // REACT ROUTER
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/decks/profile`, {
             headers: {
@@ -46,8 +46,8 @@ const Home = ({ }) => {
 
     function onSearch(totalCount) {
         setShowResults(true)
-        changeTotalCount(totalCount)
-        changePageNumber(pageNumber)
+        setTotalCount(totalCount)
+        setCurrentPage(currentPage)
         // Sharing State Between Components
     }
 
@@ -59,7 +59,7 @@ const Home = ({ }) => {
                         <div class="container-fluid px-4">
                             <ul class="navbar-nav h-100">
                                 <li>
-                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" class="pt-1" />
+                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" class="pt-1 mx-2" />
                                 </li>
                                 {/* <li class="nav-item">
                                         <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
@@ -104,7 +104,7 @@ const Home = ({ }) => {
 
                                     <h3 class="componentBanner bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
                                     <div id="tab-one" className="searchFilterTab border border-dark panel text-start">
-                                        <SearchFilter onSearch={onSearch} pageNumber={pageNumber} />
+                                        <SearchFilter onSearch={onSearch} currentPage={currentPage} />
                                     </div>
 
                                 </div>
