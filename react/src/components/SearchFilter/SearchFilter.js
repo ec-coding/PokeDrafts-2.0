@@ -17,16 +17,16 @@ export default function SearchFilter({ onSearch, currentPage }) {
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])
     const [cardElement, changeCardElement] = useState('')
-    const [searchResultsReveal, setSearchResultsReveal] = useState('')
     // Contexts are states that multiple components can share
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
     const [show, toggleShow] = useState(false)
-    const [pageCount, setPageCount] = useContext(PageCountContext)
 
     useEffect(() => {
         // Call this function when the state in brackets changes
-        getCards()
+        if (show == true) {
+            getCards()
+        }
     }, [currentPage])
 
     function getCards() {
@@ -104,7 +104,6 @@ export default function SearchFilter({ onSearch, currentPage }) {
                 const pageCount = Math.ceil(totalItems / itemsPerPage);
 
                 changeCards(response.data)
-                toggleShow(false)
                 onSearch(response.totalCount, pageCount)
             }, []);
     }
