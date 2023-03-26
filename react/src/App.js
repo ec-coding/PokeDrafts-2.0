@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import UserContext from './UserContext';
+import UserContext from './contexts/UserContext';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Landing from "./screens/Landing/Landing";
 import Login from "./screens/Login/Login";

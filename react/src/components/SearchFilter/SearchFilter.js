@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import CardContext from '../../CardContext';
+import CardContext from '../../contexts/CardContext';
+import PageCountContext from '../../contexts/PageCountContext';
 import Icon from '../Icon/Icon';
 import { BiSearchAlt } from 'react-icons/bi'
 import './SearchFilter.css'
@@ -10,7 +11,9 @@ import './SearchFilter.css'
 
 // fill the buttons with an up and down arrow
 
-export default function SearchFilter({ onSearch }) {
+export default function SearchFilter({ onSearch, currentPage }) {
+    const itemsPerPage = 14
+
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])
     const [cardElement, changeCardElement] = useState('')
@@ -19,8 +22,12 @@ export default function SearchFilter({ onSearch }) {
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
     const [show, toggleShow] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1)
-    const [itemsPerPage, setItemsPerPage] = useState(14)
+    const [pageCount, setPageCount] = useContext(PageCountContext)
+
+    useEffect(() => {
+        // Call this function when the state in brackets changes
+        getCards()
+    }, [currentPage])
 
     function getCards() {
         const nameInput = document.querySelector('#name-search').value
@@ -71,7 +78,7 @@ export default function SearchFilter({ onSearch }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        fetchURLText = url + `pageNum=${currentPage}&orderBy=set&q=`
+        fetchURLText = url + `page=${currentPage}&pageSize=14&orderBy=set&q=`
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -92,9 +99,13 @@ export default function SearchFilter({ onSearch }) {
         })
             .then(res => res.json())
             .then(response => {
+                console.log(response)
+                const totalItems = response.totalCount
+                const pageCount = Math.ceil(totalItems / itemsPerPage);
+
                 changeCards(response.data)
                 toggleShow(false)
-                onSearch(response.totalCount)
+                onSearch(response.totalCount, pageCount)
             }, []);
     }
 

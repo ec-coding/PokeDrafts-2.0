@@ -6,9 +6,9 @@ import SearchResults from '../../components/SearchResults/SearchResults'
 // import Profile from '../components/Profile'
 import Deck from '../../components/UserDeck/Deck'
 // import Parallax from '../components/Parallax/Parallax'
-import UserContext from '../../UserContext';
-import CardContext from '../../CardContext';
-import DeckContext from '../../DeckContext';
+import UserContext from '../../contexts/UserContext';
+import CardContext from '../../contexts/CardContext';
+import DeckContext from '../../contexts/DeckContext';
 import './Home.css'
 import '../../style/Modal.css';
 
@@ -23,8 +23,10 @@ const Home = ({ }) => {
     const [decks, changeDecks] = useState([])
     const [tab, changeTab] = useState('slide1')
     const [showResults, setShowResults] = useState(false)
-    const [totalCount, setTotalCount] = useState(0)
-    const [currentPage, setCurrentPage] = useState(0)
+    const [totalCount, setTotalCount] = useState()
+    const [currentPage, setCurrentPage] = useState(1)
+    const [pageCount, setPageCount] = useState()
+    const [fetchLink, setFetchLink] = useState()
 
     // REACT ROUTER
     useEffect(() => {
@@ -44,11 +46,15 @@ const Home = ({ }) => {
             })
     }, []);
 
-    function onSearch(totalCount) {
+    function onSearch(totalCount, pageCount) {
         setShowResults(true)
         setTotalCount(totalCount)
-        setCurrentPage(currentPage)
+        setPageCount(pageCount)
         // Sharing State Between Components
+    }
+
+    function pageSwitch(updatedPage) {
+        setCurrentPage(updatedPage)
     }
 
     return (
@@ -93,9 +99,12 @@ const Home = ({ }) => {
                                             <h3 class="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
                                             <div id="tab-two" className="searchResultsTab">
                                                 <SearchResults
+                                                    pageSwitch={pageSwitch}
                                                     autoResetPage={true}
+                                                    currentPage={currentPage}
                                                     showResults={showResults}
                                                     totalCount={totalCount}
+                                                    pageCount={pageCount}
                                                 />
                                             </div>
                                         </div>
@@ -104,7 +113,10 @@ const Home = ({ }) => {
 
                                     <h3 class="componentBanner bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
                                     <div id="tab-one" className="searchFilterTab border border-dark panel text-start">
-                                        <SearchFilter onSearch={onSearch} currentPage={currentPage} />
+                                        <SearchFilter
+                                            onSearch={onSearch}
+                                            currentPage={currentPage}
+                                        />
                                     </div>
 
                                 </div>

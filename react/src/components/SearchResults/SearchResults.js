@@ -1,13 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactPaginate from 'react-paginate';
-import CardContext from '../../CardContext';
+import CardContext from '../../contexts/CardContext';
+import PageCountContext from '../../contexts/PageCountContext';
 import Card from '../Card/Card'
 import '../../style/Dropdown.css';
 import './SearchResults.css';
 
-export default function SearchResults({ totalCount }) {
-    const pageStart = 1
-    const itemsLimit = 14
+export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
 
     const [cards, changeCards] = useContext(CardContext)
     const [nameSort, setNameSort] = useState(true)
@@ -16,20 +15,23 @@ export default function SearchResults({ totalCount }) {
     const [hpSort, setHpSort] = useState(true)
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
-    const [currentPage, setCurrentPage] = useState(pageStart)
-    const [itemsPerPage, setItemsPerPage] = useState(itemsLimit)
+    const [itemsPerPage, setItemsPerPage] = useState(14)
 
-    const endOffset = currentPage + itemsPerPage;
-    const currentCards = cards.slice(currentPage, endOffset)
 
-    const pageCount = Math.ceil(totalCount / itemsPerPage)
-    const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
-    const chunks = arrayChunks(cards, 14);
+    const handlePrevPage = () => {
+        if (currentPage > 1) {
+            const updatedPage = currentPage - 1
+            console.log(`This is the updated page: ${updatedPage}`)
+            pageSwitch(updatedPage)
+          }
+    }
 
-    const handlePageClick = (event) => {
-        const pageResults = (event.selected * itemsPerPage) % totalCount
-        changeCards(cards)
-        setCurrentPage(pageResults)
+    const handleNextPage = () => {
+        if (currentPage < pageCount) {
+            const updatedPage = currentPage + 1
+            console.log(`This is the updated page: ${updatedPage}`)
+            pageSwitch(updatedPage)
+          }
     }
 
     const sortByName = () => {
@@ -129,13 +131,13 @@ export default function SearchResults({ totalCount }) {
                 </nav>
                 <div class="carousel-inner active pt-3">
 
-                    {currentCards && currentCards.map ((card) => (
+                    {cards && cards.map ((card) => (
 
                         <Card card={card} onDeck={false} />
 
                     ))}
 
-                    <ReactPaginate
+                    {/* <ReactPaginate
                         nextLabel=">"
                         onPageChange={handlePageClick}
                         pageRangeDisplayed={3}
@@ -151,20 +153,20 @@ export default function SearchResults({ totalCount }) {
                         breakLabel="..."
                         breakClassName="page-item"
                         breakLinkClassName="page-link"
-                        containerClassName="pagination mt-4 my-0"
+                        containerClassName="pagination mt-4 mb-3"
                         activeClassName="active"
                         renderOnZeroPageCount={null}
-                    />
+                    /> */}
 
                 </div>
-                {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onClick={handlePrevPage}>
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onClick={handleNextPage}>
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button> */}
+                </button>
             </div>
 
         </>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import UserContext from '../../UserContext';
-import DeckContext from '../../DeckContext';
+import UserContext from '../../contexts/UserContext';
+import DeckContext from '../../contexts/DeckContext';
 import Card from '../Card/Card'
 import './Deck.css'
 

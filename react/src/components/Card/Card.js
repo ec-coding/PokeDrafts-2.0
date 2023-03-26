@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import UserContext from '../../UserContext';
-import DeckContext from '../../DeckContext';
+import UserContext from '../../contexts/UserContext';
+import DeckContext from '../../contexts/DeckContext';
 import Icon from '../Icon/Icon'
 import CardAttributes from '../CardAttributes/CardAttributes'
 import './Card.css';
