@@ -180,7 +180,7 @@ export default function Card({ card, onDeck }) {
 
               <div class="row card-box">
                 <div class="card-divider card-image">
-                  <img src={card.images.large} class="modal-img" alt="..." />
+                  <img src={card.images.large} loading="lazy" class="modal-img" alt="..." />
                   <section class="card-button-box">
                     <div class="row modal-button-container">
                       <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>

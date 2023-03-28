@@ -39,6 +39,10 @@
   border-bottom: 0.5vh solid rgb(110, 110, 110);
 }
 
+.searchResultsContainer {
+  padding: 0 12.5vh;
+}
+
 /* CAROUSEL */
 .carousel-item {
   margin-top: 20px;
@@ -62,10 +66,6 @@
   padding-top: 0vh;
   padding-bottom: 0;
   margin-bottom: 0;
-}
-
-.carousel-inner {
-  padding: 0 12.5vh;
 }
 
 .carousel-inner .pagination {
@@ -105,4 +105,57 @@
 .carousel-control-prev {
   font-size: 48px;
   text-shadow: 1.5px 1.5px 0 black;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchResultsContainer {
+    padding: 0 0.5vh;
+  }
+
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12.5%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .searchResultsContainer {
+    padding: 0 2.5vh;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .searchResultsContainer {
+    padding: 0 5vh;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10.5%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .searchResultsContainer {
+    padding: 0 10vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .searchResultsContainer {
+    padding: 0 12.5vh;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 8.5%;
+    background: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+  }
 }

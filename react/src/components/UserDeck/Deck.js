@@ -58,7 +58,7 @@ export default function UserDeck() {
                         return (
                             <div className={'deck-card pokemon-card'} style={{
                                 // zIndex: index + 1, 
-                                top: 30 * index
+                                top: 25 * index
                             }} >
                                 <Card card={card} onDeck={true} />
                             </div>
@@ -86,7 +86,7 @@ export default function UserDeck() {
                         return (
                             <div className={'deck-card trainer-card'} style={{
                                 // zIndex: index + 1, 
-                                top: 30 * index
+                                top: 25 * index
                             }} >
                                 <Card card={card} onDeck={true} />
                             </div>
@@ -115,7 +115,7 @@ export default function UserDeck() {
                             return (
                                 <div className={'deck-card energy-card'} style={{
                                     // zIndex: index + 1, 
-                                    top: 30 * index
+                                    top: 25 * index
                                 }} >
                                     <Card card={card} onDeck={true} />
                                 </div>
@@ -256,17 +256,6 @@ export default function UserDeck() {
 
     return (
         <>
-            <section class="sub-header button-input deck-console">
-                <ul class="row bg-secondary mb-0 ps-0">
-                    {/* <li class="col">
-                        <button type="submit">Rename Deck</button>
-                    </li> */}
-                    <li class="col">
-                        <button type="submit" onClick={deleteDeck}>Delete Deck</button>
-                    </li>
-                </ul>
-            </section>
-
             {/* <section class="sub-header button-input">
                 <ul class="row">
                     <li class="col"><h4>Sort By</h4></li>
@@ -280,47 +269,68 @@ export default function UserDeck() {
             </section> */}
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-
-                <div class="deck-inner carousel-inner active">
-                    <div class="deck-inner-header mb-3">
-                        <h3>Rain Dance</h3>
-                        <h4>Cards in Deck: {decks.length}</h4>
-                    </div>
-
-                    {chunks.map(slides => {
-                        if (chunks.indexOf(slides) === 0) {
-                            return (
-                                <>
-                                    <div class="deck-header row d-flex justify-content-center">
-                                        <h4 class="card-stack-title">Pokémon</h4>
-                                        <h4>x {typePokemon.length}</h4>
-                                    </div>
-                                    <div className="deck-type type-pokemon">
-                                        {renderPokemon()}
-                                    </div>
-
-                                    <div class="deck-header row d-flex justify-content-center">
-                                        <h4 class="card-stack-title">Trainer</h4>
-                                        <h4>x {typeTrainer.length}</h4>
-                                    </div>
-                                    <div className="deck-type type-trainer">
-                                        {renderTrainer()}
-                                    </div>
-
-                                    <div class="deck-header row d-flex justify-content-center">
-                                        <h4 class="card-stack-title">Energy</h4>
-                                        <h4>x {typeEnergy.length}</h4>
-                                    </div>
-                                    <div class="deck-type type-energy">
-                                        {renderEnergy()}
-                                    </div>
-                                </>
-                            )
+                <div class="deck-inner carousel-inner active mx-0 pt-2 pb-4 row">
+                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 px-0">
+                        <div class="deck-inner-header mb-3">
+                            <h3>Rain Dance</h3>
+                            <h4>Cards in Deck: {decks.length}</h4>
+                        </div>
+                        <section class="sub-header button-input deck-console">
+                            <ul class="row mb-3 ps-0">
+                                {/* <li class="col">
+                        <button type="submit">Rename Deck</button>
+                    </li> */}
+                                <li class="col">
+                                    <button type="submit" class="px-3" onClick={deleteDeck}>Delete Deck</button>
+                                </li>
+                            </ul>
+                        </section>
+                        {chunks.map(slides => {
+                            if (chunks.indexOf(slides) === 0) {
+                                return (
+                                    <>
+                                        <section class="deck-box mb-5 py-4">
+                                            <div class="deck-header row d-flex justify-content-center mx-3">
+                                                <div class="col-lg-2"></div>
+                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Pokémon</h4>
+                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typePokemon.length}</h4>
+                                                <div class="col-lg-2"></div>
+                                            </div>
+                                            <div className="deck-type type-pokemon mx-3">
+                                                {renderPokemon()}
+                                            </div>
+                                            <hr class="mt-1 mb-4" />
+                                            <div class="deck-header row d-flex justify-content-center mx-3">
+                                                <div class="col-lg-2"></div>
+                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Trainer</h4>
+                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typeTrainer.length}</h4>
+                                                <div class="col-lg-2"></div>
+                                            </div>
+                                            <div className="deck-type type-trainer mx-3">
+                                                {renderTrainer()}
+                                            </div>
+                                            <hr class="mt-1 mb-4" />
+                                            <div class="deck-header row d-flex justify-content-center mx-3">
+                                                <div class="col-lg-2"></div>
+                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Energy</h4>
+                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typeEnergy.length}</h4>
+                                                <div class="col-lg-2"></div>
+                                            </div>
+                                            <div class="deck-type type-energy mx-3">
+                                                {renderEnergy()}
+                                            </div>
+                                        </section>
+                                    </>
+                                )
+                            }
+                        })
                         }
-                    })
-                    }
 
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
                 </div>
+
             </div>
         </>
     )

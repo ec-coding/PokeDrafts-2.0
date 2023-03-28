@@ -15,7 +15,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
     const [hpSort, setHpSort] = useState(true)
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
-    const [itemsPerPage, setItemsPerPage] = useState(14)
 
 
     const handlePrevPage = () => {
@@ -32,6 +31,11 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
             console.log(`This is the updated page: ${updatedPage}`)
             pageSwitch(updatedPage)
           }
+    }
+
+    const onPageChange = (event) => {
+        const newPage = event.selected + 1
+        pageSwitch(newPage)
     }
 
     const sortByName = () => {
@@ -115,40 +119,43 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
         }
     }
 
+    const sortByPrice = () => {
+
+    }
+
     return (
         <>
             <div id="carouselExampleCaptions" class="searchResultsMaster carousel slide" data-bs-ride="false">
                 <nav id="results-nav" class="d-flex justify-content-center border border-top-0 border-dark">
                     <div>
-                        <ul class="row m-0">
-                            <li class="col nav-title p-0"><h4 class="mt-1">Sort By</h4></li>
+                        <ul class="row m-0 p-0">
+                            {/* <li class="col nav-title p-0"><h4 class="mt-1">Sort By</h4></li> */}
                             <li class="col p-0 m-0"><button onClick={sortByName}>Name</button></li>
                             <li class="col p-0 m-0"><button onClick={sortById}>Set No.</button></li>
                             <li class="col p-0 m-0"><button onClick={sortByRarity}>Rarity</button></li>
                             <li class="col p-0 m-0"><button onClick={sortByArtist}>Artist</button></li>
+                            <li class="col p-0 m-0"><button onClick={sortByPrice}>Price</button></li>
                         </ul>
                     </div>
                 </nav>
-                <div class="carousel-inner active pt-3">
+                <div class="searchResultsContainer carousel-inner active pt-3">
 
-                    {cards && cards.map ((card) => (
-
+                    {cards && cards.map ((card) => (  
                         <Card card={card} onDeck={false} />
-
                     ))}
 
-                    {/* <ReactPaginate
+                    <ReactPaginate
                         nextLabel=">"
-                        onPageChange={handlePageClick}
+                        onPageChange={onPageChange}
                         pageRangeDisplayed={3}
                         pageCount={pageCount}
-                        forcePage={0}
+                        forcePage={currentPage - 1}
                         previousLabel="<"
                         pageClassName="page-item"
                         pageLinkClassName="page-link border-0"
-                        previousClassName="page-item"
+                        previousClassName="d-none"
                         previousLinkClassName="carousel-control-prev"
-                        nextClassName="page-item"
+                        nextClassName="d-none"
                         nextLinkClassName="carousel-control-next"
                         breakLabel="..."
                         breakClassName="page-item"
@@ -156,14 +163,14 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                         containerClassName="pagination mt-4 mb-3"
                         activeClassName="active"
                         renderOnZeroPageCount={null}
-                    /> */}
+                    />
 
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onClick={handlePrevPage}>
+                <button class="carousel-control-prev lg-button-remove" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onClick={handlePrevPage}>
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onClick={handleNextPage}>
+                <button class="carousel-control-next lg-button-remove" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onClick={handleNextPage}>
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>

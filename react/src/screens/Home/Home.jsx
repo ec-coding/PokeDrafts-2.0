@@ -70,15 +70,15 @@ const Home = ({ }) => {
                                 {/* <li class="nav-item">
                                         <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                     </li> */}
-                                <li class="nav-item">
+                                {/* <li class="nav-item">
                                     <button id="tab-one-button" class="tab-links h-100" onClick={() => changeTab('slide1')}>Search</button>
-                                </li>
+                                </li> */}
                                 {/* <li class="nav-item">
                                     <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
                                 </li> */}
-                                <li class="nav-item">
+                                {/* <li class="nav-item">
                                     <button id="tab-three-button" class="tab-links h-100" onClick={() => changeTab('slide3')}>Deck</button>
-                                </li>
+                                </li> */}
                             </ul>
                             <ul class="navbar-nav h-100">
                                 <li class="nav-item">
@@ -114,17 +114,26 @@ const Home = ({ }) => {
                                     <h3 class="componentBanner bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
                                     <div id="tab-one" className="searchFilterTab border border-dark panel text-start">
                                         <SearchFilter
+                                            pageSwitch={pageSwitch}
                                             onSearch={onSearch}
                                             currentPage={currentPage}
                                         />
-                                    </div>
 
+                                    </div>
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tab-three" aria-expanded="true" aria-controls="tab-three">
+                                        <h3 class="componentBanner bg-info border border-top-0 border-dark mb-0 py-1 w-100 d-flex justify-content-center">
+                                            Decks
+                                        </h3>
+                                    </button>
+                                    <div id="tab-three" className="deckMaster panel accordion-collapse collapse show" aria-labelledby="headingOne">
+                                        <Deck />
+                                    </div>
                                 </div>
                                 }
 
-                                {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
+                                {/* {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
                                     <Deck />
-                                </div>}
+                                </div>} */}
 
                             </div>
 
