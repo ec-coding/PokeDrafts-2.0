@@ -269,27 +269,28 @@ export default function UserDeck() {
             </section> */}
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                <div class="deck-inner carousel-inner active mx-0 pt-2 pb-4 row">
-                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
-                    <div class="col-lg-10 col-md-10 col-sm-12 px-0">
-                        <div class="deck-inner-header mb-3">
-                            <h3>Emberstorm</h3>
-                            <h4>Cards in Deck: {decks.length}</h4>
-                        </div>
-                        <section class="sub-header button-input deck-console">
-                            <ul class="row mb-3 ps-0">
-                                {/* <li class="col">
-                        <button type="submit">Rename Deck</button>
-                    </li> */}
-                                <li class="col">
-                                    <button type="submit" class="px-3" onClick={deleteDeck}>Delete Deck</button>
-                                </li>
-                            </ul>
-                        </section>
-                        {chunks.map(slides => {
-                            if (chunks.indexOf(slides) === 0) {
-                                return (
-                                    <>
+
+                {chunks.map(slides => {
+                    if (chunks.indexOf(slides) === 0) {
+                        return (
+                            <>
+                                <div class="deck-inner carousel-inner active mx-0 pt-2 pb-4 row">
+                                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 px-0">
+                                        <div class="deck-inner-header mb-3">
+                                            <h3>Deck</h3>
+                                            <h4>Cards in Deck: {decks.length}</h4>
+                                        </div>
+                                        <section class="sub-header button-input deck-console">
+                                            <ul class="row mb-3 ps-0">
+                                                {/* <li class="col">
+                                                    <button type="submit">Rename Deck</button>
+                                                </li> */}
+                                                <li class="col">
+                                                    <button type="submit" class="px-3" onClick={deleteDeck}>Delete Deck</button>
+                                                </li>
+                                            </ul>
+                                        </section>
                                         <section class="deck-box mb-5 py-4">
                                             <div class="deck-header row d-flex justify-content-center mx-3">
                                                 <div class="col-lg-2"></div>
@@ -321,15 +322,16 @@ export default function UserDeck() {
                                                 {renderEnergy()}
                                             </div>
                                         </section>
-                                    </>
-                                )
-                            }
-                        })
-                        }
 
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
-                </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                                </div>
+                            </>
+                        )
+                    }
+                })
+                }
+
 
             </div>
         </>
