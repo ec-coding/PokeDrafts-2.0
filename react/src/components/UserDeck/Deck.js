@@ -283,9 +283,6 @@ export default function UserDeck() {
                                         </div>
                                         <section class="sub-header button-input deck-console">
                                             <ul class="row mb-3 ps-0">
-                                                {/* <li class="col">
-                                                    <button type="submit">Rename Deck</button>
-                                                </li> */}
                                                 <li class="col">
                                                     <button type="submit" class="px-3" onClick={deleteDeck}>Delete Deck</button>
                                                 </li>
