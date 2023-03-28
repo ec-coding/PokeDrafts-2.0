@@ -126,7 +126,7 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
     return (
         <>
             <div id="carouselExampleCaptions" class="searchResultsMaster carousel slide" data-bs-ride="false">
-                <nav id="results-nav" class="d-flex justify-content-center border border-top-0 border-dark">
+                <nav id="results-nav" class="justify-content-center border border-top-0 border-dark">
                     <div>
                         <ul class="row m-0 p-0">
                             {/* <li class="col nav-title p-0"><h4 class="mt-1">Sort By</h4></li> */}
@@ -153,10 +153,10 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                         previousLabel="<"
                         pageClassName="page-item"
                         pageLinkClassName="page-link border-0"
-                        previousClassName="d-none"
-                        previousLinkClassName="carousel-control-prev"
-                        nextClassName="d-none"
-                        nextLinkClassName="carousel-control-next"
+                        previousClassName="page-item sm-pag-btn"
+                        previousLinkClassName="page-link border-0"
+                        nextClassName="page-item sm-pag-btn"
+                        nextLinkClassName="page-link border-0"
                         breakLabel="..."
                         breakClassName="page-item"
                         breakLinkClassName="page-link"

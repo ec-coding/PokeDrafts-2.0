@@ -65,39 +65,44 @@
       #dea1ca)
 }
 
+.modal-footer-container {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 0.5vh;
+}
+
+.modal-footer-container section {
+  border-top-right-radius: 0.5vh;
+  border-top-left-radius: 0.5vh;
+  box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal-footer-container section+section {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0.5vh;
+  border-bottom-left-radius: 0.5vh;
+  box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+}
+
 .modal-button-container {
-  margin-top: 10px;
   padding: 10px;
 }
 
 .modal-button-container button {
-  margin: 0 5px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #ffffff;
-  filter: drop-shadow(2px 2px 2px black);
-  color: rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
-  padding: 5px 30px;
-  border: 2px solid rgba(145, 145, 145, 0.35);
-  transition: 0.2s;
+  color: rgb(72, 72, 72);
+  border-radius: 0px;
   box-shadow:
-    2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.9),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.34);
-  background-image: linear-gradient(-72deg,
-      #dedede,
-      #ffffff 16%,
-      #dedede 21%,
-      #ffffff 24%,
-      #b4b4b4 27%,
-      #dedede 36%,
-      #ffffff 45%,
-      #ffffff 60%,
-      #dedede 72%,
-      #ffffff 80%,
-      #dedede 84%,
-      #a1a1a1);
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .modal-button-container .btn:hover {
@@ -105,8 +110,10 @@
 }
 
 .modal-button-container button:active {
-  transform: scale(0.9);
-  filter: drop-shadow(1px 1px 1px black);
+  box-shadow:
+    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+    inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .modal-button-container .btn a {
@@ -224,3 +231,48 @@
     inset 1px 1px 0 rgba(255, 255, 255, 0.9),
     inset -1px -1px 0 rgba(0, 0, 0, 0.5);
 }
+
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media only screen and (max-width: 590px) {
+  .modal {
+    --bs-modal-margin: 0;
+  }
+
+  .card-image {
+    padding: 0;
+  }
+
+  .card-title-box h4 {
+    font-size: 18.5px;
+  }
+
+  .card-title-box .icon-large {
+    zoom: 0.8;
+  }
+
+  .card-attack-box h5 {
+    font-size: 18px;
+  }
+
+  .icon-sm {
+    zoom: 0.7;
+  }
+
+  .modal-footer-container {
+    margin-bottom: 1.5vh;
+  }
+
+  .card-trio-row h6 {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

@@ -156,9 +156,9 @@ export default function Card({ card, onDeck }) {
 
   let button;
   if (onDeck == false) {
-    button = <button type="button" class="btn btn-primary col" onClick={addCardToDeck}>Add to Deck</button>
+    button = <button type="button" class="btn btn-primary col ts-light border-dark mx-3 bg-warning" onClick={addCardToDeck}>Add to Deck</button>
   } else if (onDeck == true) {
-    button = <button type="button" class="btn btn-primary col" onClick={removeCardFromDeck}>Delete</button>
+    button = <button type="button" class="btn btn-primary col text-light ts-dark border-dark mx-3 bg-red" onClick={removeCardFromDeck}>Delete</button>
   }
 
 
@@ -181,19 +181,19 @@ export default function Card({ card, onDeck }) {
               <div class="row card-box">
                 <div class="card-divider card-image">
                   <img src={card.images.large} loading="lazy" class="modal-img" alt="..." />
-                  <section class="card-button-box">
-                    <div class="row modal-button-container">
-                      <button type="button" class="btn btn-primary col"><a href={card?.cardmarket?.url} target="_blank">Marketboard</a></button>
+                  <section class="modal-footer-container border mt-3">
+                    <section class="row card-counter mx-0">
+                      <div class="col">
+                        <h5 class="text-center ts-light pt-1 mt-1 mb-2">Cards in deck: {decks.length}</h5>
+                      </div>
+                      <div class="col">
+                        <h5 class="text-center ts-light pt-1 mt-1 mb-2">Copies in deck: {cardCopyCount}</h5>
+                      </div>
+                    </section>
+                    <section class="row modal-button-container mx-0">
+                      <button type="button" class="btn btn-primary col ts-dark border-dark mx-3 bg-blue"><a href={card?.cardmarket?.url} class="text-light" target="_blank">Marketboard</a></button>
                       {button}
-                    </div>
-                    <div class="row card-counter">
-                      <div class="col">
-                      <h5 class="text-center pt-1">Cards in deck: {decks.length}</h5>
-                      </div>
-                      <div class="col">
-                      <h5 class="text-center pt-1">Copies in deck: {cardCopyCount}</h5>
-                      </div>
-                    </div>
+                    </section>
                   </section>
                 </div>
 

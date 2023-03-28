@@ -24,21 +24,6 @@
   padding: 0 15px 0 5px;
 }
 
-.card-counter {
-  margin: -0.25vh 0.5vh 0 0.5vh;
-  border: 2px solid white;
-  background: rgb(212, 212, 212);
-  border-radius: 0.5vh;
-  box-shadow:
-  1px 1px 0.5em rgba(122, 122, 122, 0.55),
-  inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
-  inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
-}
-
-.card-counter div+div {
-  border-left: 2px solid white;
-}
-
 .card-divider {
   float: left;
   flex: 50%;

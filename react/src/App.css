@@ -28,6 +28,14 @@ body ul {
   margin-bottom: 12px;
 }
 
+.ts-light {
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+.ts-dark {
+  text-shadow: 1px 1px 0 #000000;
+}
+
 .flex-quarter {
   flex: 0.35;
 }

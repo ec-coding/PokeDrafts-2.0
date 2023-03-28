@@ -107,21 +107,46 @@
   text-shadow: 1.5px 1.5px 0 black;
 }
 
-@media only screen and (max-width: 600px) {
-  .searchResultsContainer {
-    padding: 0 0.5vh;
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media only screen and (max-width: 590px) {
+  #results-nav {
+    display: none
   }
 
+  #root .navbar-substitute {
+    height: 53.5px;
+}
+  .searchResultsContainer {
+    padding: 0 2.5vh;
+  }
+
+  .searchResultsContainer .slide-img {
+    width: 18.5vh;
+  }
+
+  .sm-pag-btn {
+    display: flex;
+  }
 
   .carousel-control-prev,
   .carousel-control-next {
-    width: 12.5%;
+    display: none;
   }
 }
 
 @media only screen and (min-width: 600px) {
+  #results-nav {
+    display: flex
+  }
+
   .searchResultsContainer {
     padding: 0 2.5vh;
+  }
+
+  .sm-pag-btn {
+    display: none;
   }
 
   .carousel-control-prev,

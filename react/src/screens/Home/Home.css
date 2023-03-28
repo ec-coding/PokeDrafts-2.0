@@ -36,3 +36,21 @@
     text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
     background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180));
 }
+
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media screen and (max-width: 500px) {
+    .navbar .container-fluid {
+        padding: 0 0px !important;
+    }
+
+    .navbar .nav-item {
+        margin-top: 1.5vh;
+        margin-right: 1vh;
+    }
+
+    .navbar .nav-item button {
+        font-size: 18px;
+    }
+}

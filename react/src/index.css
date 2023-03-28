@@ -20,3 +20,19 @@ code {
   --dark-grey: rgb(128, 128, 128);
   --charcoal-grey: rgb(58, 58, 58);
 }
+
+.bg-red {
+  background: var(--red-gradient)
+}
+
+.bg-blue {
+  background: var(--blue-gradient)
+}
+
+.bg-green {
+  background: var(--green-gradient)
+}
+
+.bg-gold {
+  background: var(--gold-gradient)
+}

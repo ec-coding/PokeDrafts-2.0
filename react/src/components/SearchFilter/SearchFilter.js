@@ -178,7 +178,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
                 <section class="col-xl-2 col-lg-0 col-md-1 col-sm-0"></section>
                 <section class="col-xl-8 col-lg-12 col-md-10 col-sm-12">
                     <section class="row mx-0">
-                        <div className="col-lg-5 mb-3 p-0">
+                        <div className="col-lg-5 col-md-10 mb-3 p-0">
                             <h4 class="text-light px-1 textWhiteShadow">Search by Card Name</h4>
                             <input type="text" id="name-search" className="searchFilterSearchBar h-25 m-1 p-3 w-100 border border-dark" placeholder="Search for cards..." />
                             {/* <BiSearchAlt className='searchFilterIcon ml-1' width="16" height="16" size={24} /> */}
@@ -195,7 +195,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
                                 </section>
                             </div>
                         </div>
-                        <div class="col-lg-1"></div>
+                        <div class="col-lg-1 col-md-2"></div>
                         <div class="col-lg-6 mb-3 px-0">
                             <section class="supertype-input-sec search-input">
                                 <h4 class="text-light px-1 textWhiteShadow">Card Type</h4>
