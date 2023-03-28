@@ -1,0 +1,25 @@
+/* HEADER */
+#title-container {
+    color: white;
+    text-shadow: 1px 1px 0 #000000;
+    background-image: url('https://i.imgur.com/eUFKNVm.png');
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+  }
+  
+  #title-container .title {
+    display: flex;
+    justify-content: left;
+  }
+  
+  #title-container h3 {
+    font-weight: bold;
+    font-size: 26px;
+  }
+  
+  #title-img {
+    width: 20vh;
+    margin-top: 0.5vh;
+  }

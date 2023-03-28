@@ -1,0 +1,140 @@
+.deckMaster {
+  background: var(--charcoal-grey);
+}
+
+.deck-inner .slide-img {
+  width: 19.5vh;
+  border-radius: 0.5vh;
+  margin: 5px 5px;
+}
+
+.deck-inner-header {
+  margin-top: 1vh;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.deck-box {
+  border-radius: 10px;
+  border: 3px solid rgb(213, 220, 226);
+  background: rgb(92, 92, 92);
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1.5px 1.5px 0 rgb(212, 212, 212),
+  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.34);
+}
+
+.deck-box hr {
+  border: none;
+  height: 1.5px;
+  opacity: 1;
+  background: rgb(213, 220, 226);
+
+}
+
+.deck-type {
+  /* background:
+    linear-gradient(to right, darkgray, 4px, transparent 4px) 0 0,
+    linear-gradient(to right, darkgray, 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, darkgray, 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, darkgray, 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, darkgray, 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, darkgray, 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, darkgray, 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, darkgray, 4px, transparent 4px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 5vh 5vh; */
+  margin: 20px auto 40px auto;
+  display: inline-block;
+}
+
+.deck-type .deck-card-stack {
+  float: left;
+  margin-top: 5px;
+}
+
+.deck-card-stack {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex: 1;
+  margin-bottom: 8vh;
+}
+
+.deck-card:first-child {
+  position: relative;
+}
+
+.deck-card {
+  position: absolute;
+}
+
+.deck-header h4 {
+  color: rgb(224, 224, 224);
+  padding: 5px 10px;
+  border: 2px dashed darkgray;
+}
+
+.deck-console button {
+  width: 20vh;
+  background: rgb(218, 218, 218);
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ffffff;
+  filter: drop-shadow(1.5px 1.5px 1.5px black);
+  color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 5px 30px;
+  border: 2px solid rgba(145, 145, 145, 0.35);
+  transition: 0.2s;
+  box-shadow:
+    2px 2px 0.5em rgba(122, 122, 122, 0.55),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.9),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+}
+
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media only screen and (max-width: 600px) {
+  .deck-box {
+    border-radius: 0;
+  }
+
+  .deck-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+  .deck-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .deck-card-stack {
+    flex: 0 0 auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .deck-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .deck-card-stack {
+    flex: 0 0 auto;
+  }
+}

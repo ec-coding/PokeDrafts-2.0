@@ -1,0 +1,56 @@
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    z-index: 10;
+}
+
+.navbar .container-fluid {
+    background-image: var(--red-gradient);
+    height: 6.5vh;
+}
+
+/* Style the buttons that are used to open the tab content */
+.navbar button {
+    cursor: pointer;
+    width: 11.5vh;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 black;
+    color: white;
+    background: inherit;
+    border: none;
+}
+
+/* Change background color of buttons on hover */
+.navbar button:hover {
+    background: rgb(192, 192, 192);
+}
+
+/* What's an alternative way to do this? */
+.navbar-substitute {
+    height: 57.70px;
+}
+
+.componentBanner {
+    color: rgb(255, 255, 255);
+    text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
+    background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180));
+}
+
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media screen and (max-width: 500px) {
+    .navbar .container-fluid {
+        padding: 0 0px !important;
+    }
+
+    .navbar .nav-item {
+        margin-top: 1.5vh;
+        margin-right: 1vh;
+    }
+
+    .navbar .nav-item button {
+        font-size: 18px;
+    }
+}

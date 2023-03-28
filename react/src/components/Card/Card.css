@@ -1,0 +1,215 @@
+/* CARD COMPONENT */
+#card {
+  height: 10vh;
+  width: 10%;
+}
+
+.card-modal-undefined {
+  background-image: linear-gradient(99.6deg, rgba(112, 128, 152, 1) 10.6%, rgba(242, 227, 234, 1) 32.9%, rgba(234, 202, 213, 1) 52.7%, rgba(220, 227, 239, 1) 72.8%, rgba(185, 205, 227, 1) 81.1%, rgba(154, 180, 212, 1) 102.4%);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.card-box {
+  display: flex;
+  margin: 2vh 1.5vh;
+}
+
+.card-box hr {
+  margin-left: -1.25vh;
+  margin-right: -1.25vh;
+}
+
+.card-image {
+  padding: 0 15px 0 5px;
+}
+
+.card-divider {
+  float: left;
+  flex: 50%;
+}
+
+.card-text {
+  padding: 1vh 1.5vh;
+  border-radius: 0.5vh;
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+  1px 1px 0.5em rgba(122, 122, 122, 0.55),
+  inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+  inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-title-box h4 {
+  flex: 0.35;
+}
+
+.card-title-box h5 {
+  padding-top: 3px;
+}
+
+.card-ability {
+  margin: 0px -2.5px -5px -2.5px;
+}
+
+.card-ability-title {
+  color: rgb(75, 15, 15);
+  text-shadow: 1px 1px 0 #ffffff;
+  box-shadow:
+  1px 1px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-image: linear-gradient(-72deg,
+  rgb(255, 222, 202, 0.70),
+  rgb(255, 255, 255, 0.70) 16%,
+  rgb(255, 222, 202, 0.70) 21%,
+  rgb(255, 255, 255, 0.70) 24%,
+  rgb(222, 115, 69, 0.70) 27%,
+  rgb(255, 222, 202, 0.70) 36%,
+  rgb(255, 255, 255, 0.70) 45%,
+  rgb(255, 255, 255, 0.70) 60%,
+  rgb(255, 222, 202, 0.70) 72%,
+  rgb(255, 255, 255, 0.70) 80%,
+  rgb(255, 222, 202, 0.70) 84%,
+  rgb(222, 115, 69, 0.70));
+}
+
+.card-ability h6 {
+  font-size: 0.95rem;
+  box-shadow:
+  1px 1px 0.5em rgba(122, 122, 122, 0.55),
+  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* ATTACKS */
+.card-attack-box .attack-name {
+  flex: 1.2;
+}
+
+.card-attack-box .attack-icons {
+  flex: 0.7;
+}
+
+.attack-text {
+  font-size: 14px;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.card-bio {
+  padding: 3px 3px;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.card-trio-row {
+  min-height: 6vh;
+  padding: 0.35vh 0 0.25vh 0;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  margin: 0px -2.5px 1vh -2.5px;
+  box-shadow:
+  1px 1px 0.5em rgba(122, 122, 122, 0.55),
+  inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+  inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* NOTIFICATIONS */
+.notification-area {
+    position:fixed;
+    top: 5.5vh;
+    right:10px;
+    width:300px;
+    height:20vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-top;
+  }
+  
+  .notification-area .notification {
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    position:relative;
+    padding:15px 10px;
+    background:#111;
+    color:#f5f5f5;
+    font-family:"Raleway";
+    font-size:14px;
+    font-weight:600;
+    border-radius:5px;
+    margin:5px 0px;
+    opacity:0;
+    left:250px;
+    z-index: 10;
+  }
+  
+  @keyframes fadeInFromNone {
+      0% {
+          display: none;
+          opacity: 0;
+        
+      }
+  
+      5% {
+          display: block;
+          opacity: 1;
+          left: 0px;
+      }
+    
+      75% {
+          display: block;
+          opacity: 1;
+          left: 0px;
+      }
+  
+      100% {
+          display: block;
+          opacity: 0;
+          left: 250px;
+      
+      }
+  }
+  .notification-area .fade_out {
+    animation: fadeInFromNone 5s ease-out;
+  }
+  
+  .notification-area .move_element_up {
+    animation: fadeInFromNone 5s ease-out;
+  }
+  
+  .notification-area .do_after_goan{
+     opacity: 1;
+     overflow-y: hidden;
+     visibility: hidden;
+     left: 0px ;
+     -webkit-animation: after_goan 0.5s;
+     animation: after_goan 0.5s;
+  
+  
+  }
+  
+  @keyframes after_goan {
+      0% {
+          visibility:hidden;
+          overflow-y: hidden;
+      } 
+      100% {
+          padding: 0px;
+          height: 0px;
+      }
+  }
+  
+.notification-area .notification.success {
+    background:rgba(56, 152, 56, 0.75);
+  }
+.notification-area .notification.deck-full {
+    background:rgba(60, 10, 95, 0.95);
+  }
+.notification-area .notification.dupe-full {
+    background:rgba(255, 68, 0, 0.95);
+  }
+.notification-area .notification.info {
+    background:#00acee;
+  }
