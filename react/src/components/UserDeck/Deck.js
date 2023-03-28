@@ -273,7 +273,7 @@ export default function UserDeck() {
                     <div class="col-lg-1 col-md-1 col-sm-0"></div>
                     <div class="col-lg-10 col-md-10 col-sm-12 px-0">
                         <div class="deck-inner-header mb-3">
-                            <h3>Emberstorm</h3>
+                            <h3>Deck</h3>
                             <h4>Cards in Deck: {decks.length}</h4>
                         </div>
                         <section class="sub-header button-input deck-console">
