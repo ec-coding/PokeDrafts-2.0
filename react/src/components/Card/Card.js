@@ -177,8 +177,8 @@ export default function Card({ card, onDeck }) {
 
             <div class="modal-body card-master" className={targetType}>
 
-              <div class="row card-box">
-                <div class="card-divider card-image">
+              <div class="row m-3">
+                <div class="card-image col-xl-6 col-lg-6 col-lg-6 col-md-6 col-sm-12">
                   <img src={card.images.large} loading="lazy" class="modal-img" alt="..." />
                   <section class="modal-footer-container border mt-3">
                     <section class="row card-counter mx-0">
@@ -196,7 +196,7 @@ export default function Card({ card, onDeck }) {
                   </section>
                 </div>
 
-                <div class="card-divider card-text text-start">
+                <div class="card-text text-start col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <div class="row card-title-box">
                     <CardAttributes cardName={card?.name} />
                     <CardAttributes cardCheck={card} />
