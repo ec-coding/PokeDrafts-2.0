@@ -13,6 +13,17 @@ export default function Icon(props) {
         )
     }
 
+    //TEXT REPLACEMENT
+    const textToIcon = `icon-sm icon-${props.textSwitch}`
+
+    if (props.textSwitch !== undefined) {
+        return (
+            <>
+                <div className={textToIcon}></div>
+            </>
+        )
+    }
+
     //ATTACK COSTS
     const attackCostElement = `icon-sm icon-${props.attackCost}`
 

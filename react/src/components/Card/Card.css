@@ -95,6 +95,13 @@
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+.attack-text .icon-sm {
+  display: inline-block;
+  zoom: 0.6;
+  position: relative;
+  top: 1px;
+}
+
 .card-bio {
   padding: 3px 3px;
   margin-left: -4px;
@@ -112,7 +119,9 @@
   inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
+/*---------------*/
 /* NOTIFICATIONS */
+/*---------------*/
 .notification-area {
     position:fixed;
     top: 5.5vh;
@@ -208,3 +217,36 @@
 .notification-area .notification.info {
     background:#00acee;
   }
+
+/*---------------*/
+/* MEDIA QUERIES */
+/*---------------*/
+@media only screen and (max-width: 375px) {
+  .modal-button-container {
+    display: block;
+  }
+
+  .modal-button-container button {
+    margin: 5px auto !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}

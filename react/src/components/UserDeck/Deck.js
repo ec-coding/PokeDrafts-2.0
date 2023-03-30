@@ -19,8 +19,6 @@ export default function UserDeck() {
     const chunks = arrayChunks(decks, 60);
     const user = useContext(UserContext);
 
-    console.log(chunks)
-
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
     var groupBy = function (xs, key) {
         return xs.reduce(function (rv, x) {

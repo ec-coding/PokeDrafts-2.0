@@ -57,7 +57,8 @@ export default function CardAttributes(props) {
             <>
                 <div class="row card-ability">
                     <h5 class="card-ability-title">Pokémon Power: {props.pokemonPower.map(x => x.name)?.join('')}</h5>
-                    <h6 id="pokemon-power-text" class="m-0 py-2">{props.pokemonPower.map(x => x.text)?.join('')}</h6>
+                    {/* <h6 class="m-0 py-2">{props.pokemonPower.map(x => x.text)?.join('')}</h6> */}
+                    <h6 class="m-0 py-2"><TextFilter text={props.pokemonPower.map(x => x.text)?.join('')} /></h6>
                 </div>
                 <br />
             </>
