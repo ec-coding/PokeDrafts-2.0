@@ -161,7 +161,6 @@ export default function Card({ card, onDeck }) {
     button = <button type="button" class="btn btn-primary col text-light ts-dark border-dark mx-3 bg-red" onClick={removeCardFromDeck}>Delete</button>
   }
 
-
   return (
     <>
       <img src={card.images.small} type="button" class="slide-img p-0 w-10" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
@@ -184,10 +183,10 @@ export default function Card({ card, onDeck }) {
                   <section class="modal-footer-container border mt-3">
                     <section class="row card-counter mx-0">
                       <div class="col">
-                        <h5 class="text-center ts-light pt-1 mt-1 mb-2">Cards in deck: {decks.length}</h5>
+                        <h5 class="text-center pt-1 mt-1 mb-2">Cards in deck: {decks.length}</h5>
                       </div>
                       <div class="col">
-                        <h5 class="text-center ts-light pt-1 mt-1 mb-2">Copies in deck: {cardCopyCount}</h5>
+                        <h5 class="text-center pt-1 mt-1 mb-2">Copies in deck: {cardCopyCount}</h5>
                       </div>
                     </section>
                     <section class="row modal-button-container mx-0">

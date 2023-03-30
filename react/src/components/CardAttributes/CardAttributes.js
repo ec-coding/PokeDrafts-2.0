@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from '../Icon/Icon'
+import TextFilter from '../TextFilter/TextFilter'
 
 export default function CardAttributes(props) {
     //CARD NAME
@@ -56,7 +57,7 @@ export default function CardAttributes(props) {
             <>
                 <div class="row card-ability">
                     <h5 class="card-ability-title">Pokémon Power: {props.pokemonPower.map(x => x.name)?.join('')}</h5>
-                    <h6 class="m-0 py-2">{props.pokemonPower.map(x => x.text)?.join('')}</h6>
+                    <h6 id="pokemon-power-text" class="m-0 py-2">{props.pokemonPower.map(x => x.text)?.join('')}</h6>
                 </div>
                 <br />
             </>
@@ -65,7 +66,6 @@ export default function CardAttributes(props) {
 
     //ATTACKS
     if (props.pokemonAttacks !== undefined) {
-
         return (
             <>
                 {props.pokemonAttacks.map((attack) => (
@@ -75,13 +75,12 @@ export default function CardAttributes(props) {
                             <div class="attack-icons col row m-0">{attack.cost.map((x) => <Icon attackCost={x} />)}</div>
                             <h5 class="attack-damage col text-upwards text-center flex-quarter">{attack.damage}</h5>
                         </div>
-                        <p class="attack-text mb-0">{attack.text}</p>
+                        <TextFilter text={attack.text} />
                         <hr />
                     </div>
                 ))}
             </>
-        )
-
+        ) 
     }
 
     //WEAKNESS, RESISTANCE, AND RETREAT COST
@@ -125,5 +124,4 @@ export default function CardAttributes(props) {
             </>
         )
     }
-
 }

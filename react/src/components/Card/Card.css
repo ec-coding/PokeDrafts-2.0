@@ -172,11 +172,11 @@
       }
   }
   .notification-area .fade_out {
-    animation: fadeInFromNone 5s ease-out;
+    animation: fadeInFromNone 3s ease-out;
   }
   
   .notification-area .move_element_up {
-    animation: fadeInFromNone 5s ease-out;
+    animation: fadeInFromNone 3s ease-out;
   }
   
   .notification-area .do_after_goan{

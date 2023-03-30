@@ -238,6 +238,11 @@
 @media only screen and (max-width: 590px) {
   .modal {
     --bs-modal-margin: 0;
+    --bs-modal-border-radius: 0;
+  }
+
+  .modal-content {
+    --bs-modal-inner-border-radius: 0;
   }
 
   .card-image {

@@ -277,46 +277,50 @@ export default function UserDeck() {
                                 <div class="deck-inner carousel-inner active mx-0 pt-2 pb-4 row">
                                     <div class="col-lg-1 col-md-1 col-sm-0"></div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 px-0">
-                                        <div class="deck-inner-header mb-3">
+                                        <div class="deck-inner-header mt-2 mb-3">
                                             <h3>Deck</h3>
                                             <h4>Cards in Deck: {decks.length}</h4>
                                         </div>
-                                        <section class="sub-header button-input deck-console">
+                                        <section class="button-input">
                                             <ul class="row mb-3 ps-0">
                                                 <li class="col">
-                                                    <button type="submit" class="px-3" onClick={deleteDeck}>Delete Deck</button>
+                                                    <button type="submit" class="ts-dark text-light fw-bold bg-danger px-4 py-1" onClick={deleteDeck}>Delete Deck</button>
                                                 </li>
                                             </ul>
                                         </section>
-                                        <section class="deck-box mb-5 py-4">
-                                            <div class="deck-header row d-flex justify-content-center mx-3">
-                                                <div class="col-lg-2"></div>
-                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Pokémon</h4>
-                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typePokemon.length}</h4>
-                                                <div class="col-lg-2"></div>
+                                        <section class="deck-box mb-5">
+                                            <div class="bs-lift pt-2 pb-4 rounded-top">
+                                                <div class="deck-header row d-flex justify-content-center pt-4 mx-3 mb-3">
+                                                    <div class="col-lg-2"></div>
+                                                    <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Pokémon</h4>
+                                                    <h4 class="mb-0 col-lg-2 col-md-10">x {typePokemon.length}</h4>
+                                                    <div class="col-lg-2"></div>
+                                                </div>
+                                                <div className="deck-type type-pokemon mx-3 mb-2">
+                                                    {renderPokemon()}
+                                                </div>
                                             </div>
-                                            <div className="deck-type type-pokemon mx-3">
-                                                {renderPokemon()}
+                                            <div class="bs-lift pt-2 pb-4">
+                                                <div class="deck-header row d-flex justify-content-center pt-4 mx-3 mb-3">
+                                                    <div class="col-lg-2"></div>
+                                                    <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Trainer</h4>
+                                                    <h4 class="mb-0 col-lg-2 col-md-10">x {typeTrainer.length}</h4>
+                                                    <div class="col-lg-2"></div>
+                                                </div>
+                                                <div className="deck-type type-trainer mx-3 mb-2">
+                                                    {renderTrainer()}
+                                                </div>
                                             </div>
-                                            <hr class="mt-1 mb-4" />
-                                            <div class="deck-header row d-flex justify-content-center mx-3">
-                                                <div class="col-lg-2"></div>
-                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Trainer</h4>
-                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typeTrainer.length}</h4>
-                                                <div class="col-lg-2"></div>
-                                            </div>
-                                            <div className="deck-type type-trainer mx-3">
-                                                {renderTrainer()}
-                                            </div>
-                                            <hr class="mt-1 mb-4" />
-                                            <div class="deck-header row d-flex justify-content-center mx-3">
-                                                <div class="col-lg-2"></div>
-                                                <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Energy</h4>
-                                                <h4 class="mb-0 col-lg-2 col-md-10">x {typeEnergy.length}</h4>
-                                                <div class="col-lg-2"></div>
-                                            </div>
-                                            <div class="deck-type type-energy mx-3">
-                                                {renderEnergy()}
+                                            <div class="bs-lift pt-2 pb-4 rounded-bottom">
+                                                <div class="deck-header row d-flex justify-content-center pt-4 mx-3 mb-3">
+                                                    <div class="col-lg-2"></div>
+                                                    <h4 class="card-stack-title mb-0 col-lg-2 col-md-10">Energy</h4>
+                                                    <h4 class="mb-0 col-lg-2 col-md-10">x {typeEnergy.length}</h4>
+                                                    <div class="col-lg-2"></div>
+                                                </div>
+                                                <div class="deck-type type-energy mx-3 mb-2">
+                                                    {renderEnergy()}
+                                                </div>
                                             </div>
                                         </section>
 

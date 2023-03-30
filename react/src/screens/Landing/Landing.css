@@ -126,8 +126,8 @@ footer {
 }
 
 .landing-sets .set-header {
-  color: rgb(54, 54, 54);
-  text-shadow: 1px 1px 0 #ffffff;
+  color: rgb(255, 255, 255);
+  text-shadow: 1.5px 1.5px 0 #000000;
   border: 1px solid white;
   padding: 0.5vh 0;
   width: 100%;
@@ -136,6 +136,12 @@ footer {
     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
     inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
   margin: 0 35%;
+}
+
+.landing-sets .set-header+.set-header {
+  color: rgb(54, 54, 54);
+  text-shadow: 1px 1px 0 #ffffff;
+  margin-bottom: 2vh;
   background-image: linear-gradient(-72deg,
       #dedeff,
       #ffffff 16%,
@@ -148,11 +154,6 @@ footer {
       #ffffff 80%,
       #dedeff 84%,
       #555564);
-}
-
-.landing-sets .set-header+.set-header {
-  margin-bottom: 2vh;
-  background: white;
 }
 
 .landing-sets img {
@@ -174,8 +175,8 @@ footer {
 }
 
 .landing-sets .set-booster-pack h4 {
-  color: rgb(54, 54, 54);
-  text-shadow: 1px 1px 0 #ffffff;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 0 #000000;
   padding: 0.75vh 0;
   margin: auto 2vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -183,7 +184,6 @@ footer {
     1px 1px 0.5em rgba(122, 122, 122, 0.55),
     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
     inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
-  background: rgb(212, 212, 212);
 }
 
 .set-divider {
@@ -207,25 +207,24 @@ footer {
 
 .landing-button-container button {
   margin: 2vh 1.5vh;
-  background: rgb(218, 218, 218);
   font-size: 20px;
   font-weight: bold;
   text-shadow: 1px 1px 0 #ffffff;
-  filter: drop-shadow(1.5px 1.5px 1.5px black);
   color: rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
   padding: 5px 30px;
-  border: 2px solid rgba(145, 145, 145, 0.35);
+  border: 1px solid rgba(145, 145, 145, 0.35);
   transition: 0.2s;
   box-shadow:
     2px 2px 0.5em rgba(122, 122, 122, 0.55),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.9),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.34);
 }
 
 .landing-button-container button:active {
-  filter: drop-shadow(1px 1px 1px black);
-  transform: scale(0.9);
+  box-shadow:
+    2px 2px 0.5em rgba(122, 122, 122, 0.55),
+    inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.34);
 }
 
 .landing-button-container button a {

@@ -28,6 +28,28 @@ body ul {
   margin-bottom: 12px;
 }
 
+.bs-lift {
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset 2px 2px 0 rgb(212, 212, 212),
+  inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+}
+
+.bs-sink {
+  box-shadow:
+  2px 2px 0.5em rgba(122, 122, 122, 0.55),
+  inset -1.5px -1.5px 0 rgb(212, 212, 212),
+  inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.34);
+}
+
+.ds-light {
+  filter: drop-shadow(1.5px 1.5px 1.5px rgb(255, 255, 255));
+}
+
+.ds-dark {
+  filter: drop-shadow(1.5px 1.5px 1.5px black);
+}
+
 .ts-light {
   text-shadow: 1px 1px 0 #ffffff;
 }
