@@ -17,6 +17,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
     const [cardType, changeCardType] = useState('Pokémon')
     const [cardSet, changeCardSet] = useState([])
     const [cardElement, changeCardElement] = useState('')
+    const [cardRarity, setCardRarity] = useState('')
     // Contexts are states that multiple components can share
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
@@ -84,6 +85,9 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         }
 
         fetchURLText = url + `page=${currentPage}&pageSize=14&orderBy=set,number&q=`
+        if (subtypeParam !== '') {
+            fetchURLText += subtypeParam
+        }
         if (nameInput !== '') {
             fetchURLText += ` name:${nameInput}`
         }
@@ -93,10 +97,10 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         if (cardType !== '') {
             fetchURLText += ` supertype:${cardType}`
         }
-        if (subtypeParam !== '') {
-            fetchURLText += subtypeParam
+        if (cardRarity !== '') {
+            fetchURLText += ` rarity:${cardRarity}`
         }
-        console.log(subtypeParam)
+
         fetch(fetchURLText, {
             headers: {
                 "X-Api-Key": "9aac7fc4-dfb9-41eb-ab2f-f30e2976bd08"
@@ -105,11 +109,15 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
             .then(res => res.json())
             .then(response => {
                 console.log(response)
-                const totalItems = response.totalCount
-                const pageCount = Math.ceil(totalItems / itemsPerPage);
+                if (response.count != 0) {
+                    const totalItems = response.totalCount
+                    const pageCount = Math.ceil(totalItems / itemsPerPage);
+                    changeCards(response.data)
+                    onSearch(response.totalCount, pageCount)
+                } else {
+                    alert('No cards found.')
+                }
 
-                changeCards(response.data)
-                onSearch(response.totalCount, pageCount)
             }, []);
     }
 
@@ -129,11 +137,6 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         changeCardSet(cardSetArr)
     }
 
-
-    function cardRarityToggle(event) {
-
-    }
-
     const submitClick = event => {
         toggleShow(true)
         // document.getElementById('searchResultsLoading').scrollIntoView()
@@ -142,9 +145,11 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
     }
 
     const resetInput = event => {
+        document.querySelector('#name-search').value = ''
         changeCardType('Pokémon')
         changeCardSet([])
         changeCardElement('')
+        setCardRarity('')
     }
 
     const toggleCardElement = event => {
@@ -281,29 +286,29 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
                                     <ul class="type-input-div row p-0 mx-0">
                                         <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/zI5tHNt.png" class="pb-1" alt="" />
-                                            <input class="type-input mb-1" type="checkbox" id="rarity-common" name="rarity" value="Common" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                            <input class="type-input mb-1" type="radio" id="rarity-common" name="rarity" value="Common" checked={cardRarity === 'Common'} onChange={() => setCardRarity('Common')} />
                                             <label for="rarity-common" class="mx-2 fw-bold"> Common</label>
                                         </li>
                                         <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/TQbnt7r.png" class="pb-1" alt="" />
-                                            <input class="type-input mb-1" type="checkbox" id="rarity-uncommon" name="rarity" value="Uncommon" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                            <input class="type-input mb-1" type="radio" id="rarity-uncommon" name="rarity" value="Uncommon" checked={cardRarity === 'Uncommon'} onChange={() => setCardRarity('Uncommon')} />
                                             <label for="rarity-uncommon" class="mx-2 fw-bold"> Uncommon</label>
                                         </li>
                                         <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/tyMN1Lv.png" class="pb-1" alt="" />
-                                            <input class="type-input mb-1" type="checkbox" id="rarity-rare" name="rarity" value="Rare" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                            <input class="type-input mb-1" type="radio" id="rarity-rare" name="rarity" value="Rare" checked={cardRarity === 'Rare'} onChange={() => setCardRarity('Rare')} />
                                             <label for="rarity-rare" class="mx-2 fw-bold"> Rare</label>
                                         </li>
-                                        <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
+                                        {/* <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/Jk6IpPt.png" alt="" class="iconEnlarge" />
-                                            <input class="type-input mb-1" type="checkbox" id="rarity-rareHolo" name="rarity" value="Rare Holo" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                            <input class="type-input mb-1" type="radio" id="rarity-rareHolo" name="rarity" value="Rare Holo" checked={cardRarity === 'Rare Holo'} onChange={() => setCardRarity('Rare%20Holo')} />
                                             <label for="rarity-rareHolo" class="mx-1 fw-bold"> Rare Holo</label>
                                         </li>
                                         <li class="ds-dark bg-light col-lg-5 col-md-5 m-1 py-1 border rounded border-dark">
                                             <img src="https://i.imgur.com/8E4WHGL.png" alt="" class="iconEnlarge" />
-                                            <input class="type-input mb-1" type="checkbox" id="rarity-rareShining" name="rarity" value="Rare Shining" checked={cardSet.includes('rarity')} onChange={cardRarityToggle} />
+                                            <input class="type-input mb-1" type="radio" id="rarity-rareShining" name="rarity" value="Rare Shining" checked={cardRarity === 'Rare Shining'} onChange={() => setCardRarity('Rare Shining')} />
                                             <label for="rarity-rareShining" class="mx-1 fw-bold"> Rare Shining</label>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </section>
                             </div>

@@ -146,11 +146,11 @@ export default function Card({ card, onDeck }) {
                   break;
                 }
               }
-            }, 500);
+            }, 350);
             break;
           }
         }
-      }, 3000);
+      }, 1500);
     })();
   }
 

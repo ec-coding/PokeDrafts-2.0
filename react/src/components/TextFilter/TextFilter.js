@@ -16,15 +16,13 @@ export default function TextFilter(props) {
     };
     const cardText = props.text
     const elementCheck = (/(grass|fire|water|lightning|psychic|fighting|colorless|darkness|metal)/gi)
-    const iconComponent = <Icon type={elementCheck}/>
-    const elementType = `icon-`
 
     if (props.text != undefined)  {
         return (
             <p class="attack-text mb-0">
-            {reactStringReplace(cardText, elementCheck, (match) => (
-                <Icon textSwitch={match} />
-            ))}
+                {reactStringReplace(cardText, elementCheck, (match) => (
+                    <Icon textSwitch={match} />
+                ))}
             </p>     
         )
     }
