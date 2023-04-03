@@ -131,7 +131,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         if (target.checked) {
             cardSetArr.push(target.value)
             // Click twice
-        } else {
+        } else { 
             cardSetArr.splice(cardSetArr.indexOf(target.value), 1)
         }
         changeCardSet(cardSetArr)

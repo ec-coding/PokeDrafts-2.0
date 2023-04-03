@@ -119,7 +119,7 @@ export default function CardAttributes(props) {
         return (
             <>
                 <div class="row">
-                    <h6 class="col">{props.cardRules}</h6>
+                    <div class="card-energy-info col"><TextFilter text={props.cardRules} /></div>
                 </div>
                 <hr />
             </>

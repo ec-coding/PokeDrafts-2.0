@@ -61,42 +61,42 @@ const Home = ({ }) => {
         <>
             <CardContext.Provider value={changeCards} >
                 <DeckContext.Provider value={[decks, changeDecks]} >
-                    <nav class="navbar navbar-expand-lg bg-light border border-dark py-0 w-100">
-                        <div class="container-fluid px-4">
-                            <ul class="navbar-nav h-100">
+                    <nav className="navbar navbar-expand-lg bg-light border border-dark py-0 w-100">
+                        <div className="container-fluid px-4">
+                            <ul className="navbar-nav h-100">
                                 <li>
-                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" class="pt-1 mx-2" />
+                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" className="pt-1 mx-2" />
                                 </li>
-                                {/* <li class="nav-item">
-                                        <button id="tab-zero-button" class="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
+                                {/* <li className="nav-item">
+                                        <button id="tab-zero-button" className="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                     </li> */}
-                                {/* <li class="nav-item">
-                                    <button id="tab-one-button" class="tab-links h-100" onClick={() => changeTab('slide1')}>Search</button>
+                                {/* <li className="nav-item">
+                                    <button id="tab-one-button" className="tab-links h-100" onClick={() => changeTab('slide1')}>Search</button>
                                 </li> */}
-                                {/* <li class="nav-item">
-                                    <button id="tab-two-button" class="tab-links" onClick={() => changeTab('slide2')}>Results</button>
+                                {/* <li className="nav-item">
+                                    <button id="tab-two-button" className="tab-links" onClick={() => changeTab('slide2')}>Results</button>
                                 </li> */}
-                                {/* <li class="nav-item">
-                                    <button id="tab-three-button" class="tab-links h-100" onClick={() => changeTab('slide3')}>Deck</button>
+                                {/* <li className="nav-item">
+                                    <button id="tab-three-button" className="tab-links h-100" onClick={() => changeTab('slide3')}>Deck</button>
                                 </li> */}
                             </ul>
-                            <ul class="navbar-nav h-100">
-                                <li class="nav-item">
-                                    <button id="logout-button" class="tab-links h-100" onClick={logout}>Logout</button>
+                            <ul className="navbar-nav h-100">
+                                <li className="nav-item">
+                                    <button id="logout-button" className="tab-links h-100" onClick={logout}>Logout</button>
                                 </li>
                             </ul>
                         </div>
                     </nav>
-                    <div class="navbar-substitute"></div>
+                    <div className="navbar-substitute"></div>
 
                     <div className="App text-center">
                         <div className="App-inner">
                             <div className="homeContainer">
-                                {tab === 'slide1' && <div class="searchFieldContainer">
+                                {tab === 'slide1' && <div className="searchFieldContainer">
 
                                     {(showResults) &&
                                         <div>
-                                            <h3 class="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
+                                            <h3 className="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
                                             <div id="tab-two" className="searchResultsTab">
                                                 <SearchResults
                                                     pageSwitch={pageSwitch}
@@ -111,19 +111,19 @@ const Home = ({ }) => {
 
                                     }
 
-                                    <ul class="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
-                                        <li class="nav-item mx-1" role="presentation">
-                                            <button class="active p-0" id="search-tab" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="search" aria-selected="true">
-                                                <h3 class="border-0 m-0 p-1">Search</h3>
+                                    <ul className="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
+                                        <li className="nav-item mx-1" role="presentation">
+                                            <button className="active p-0" id="search-tab" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="search" aria-selected="true">
+                                                <h3 className="border-0 m-0 p-1">Search</h3>
                                             </button>
                                         </li>
-                                        <li class="nav-item mx-1" role="presentation">
-                                            <button class="p-0" id="deck-tab" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="deck" aria-selected="false">
-                                                <h3 class="border-0 m-0 p-1">Deck</h3>
+                                        <li className="nav-item mx-1" role="presentation">
+                                            <button className="p-0" id="deck-tab" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="deck" aria-selected="false">
+                                                <h3 className="border-0 m-0 p-1">Deck</h3>
                                             </button>
                                         </li>
                                     </ul>
-                                    <div class="tab-content" id="myTabContent">
+                                    <div className="tab-content" id="myTabContent">
                                         <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane fade show active" role="tabpanel">
                                             <SearchFilter
                                                 pageSwitch={pageSwitch}

@@ -119,10 +119,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
         }
     }
 
-    const sortByPrice = () => {
-
-    }
-
     return (
         <>
             <div id="carouselExampleCaptions" class="searchResultsMaster carousel slide" data-bs-ride="false">
@@ -134,7 +130,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                             <li class="col p-0 m-0"><button onClick={sortById}>Set No.</button></li>
                             <li class="col p-0 m-0"><button onClick={sortByRarity}>Rarity</button></li>
                             <li class="col p-0 m-0"><button onClick={sortByArtist}>Artist</button></li>
-                            <li class="col p-0 m-0"><button onClick={sortByPrice}>Price</button></li>
                         </ul>
                     </div>
                 </nav>

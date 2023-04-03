@@ -15,8 +15,8 @@ export default function UserDeck() {
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
     const [decks, changeDecks] = useContext(DeckContext)
+    
     const arrayChunks = (array, chunk_size) => Array(Math.ceil(array?.length / chunk_size)).fill().map((_, index) => index * chunk_size).map((begin) => array.slice(begin, begin + chunk_size));
-    const chunks = arrayChunks(decks, 60);
     const user = useContext(UserContext);
 
     // HOW DO I MAKE THIS MUTATE THE ARRAYS?
@@ -98,33 +98,47 @@ export default function UserDeck() {
     }
 
     const renderEnergy = () => {
-        const energyChunks = arrayChunks(typeEnergy, 4);
         const mySet4 = new Set()
-
-        let retArr = []
+      
+        // Add all energy IDs to `mySet4`
         for (var i = 0; i < typeEnergy.length; i++) {
-            mySet4.add(typeEnergy[i].id)
+          mySet4.add(typeEnergy[i].id)
         }
+      
+        let retArr = []
         for (const [key, value] of mySet4.entries()) {
+          const cards = deckDict[value]
+      
+          // Split `cards` into chunks of up to 4 items each
+          const energyChunks = []
+          for (let i = 0; i < cards.length; i += 4) {
+            energyChunks.push(cards.slice(i, i + 4))
+          }
+      
+          // Render each chunk as a separate stack of 4 cards
+          for (let i = 0; i < energyChunks.length; i++) {
+            const chunk = energyChunks[i]
+            const cards = chunk.map((card, index) => (
+              <div
+                // Add a unique `key` prop to avoid React warnings
+                className="deck-card energy-card"
+                style={{ top: 25 * index }}
+              >
+                <Card card={card} onDeck={true} />
+              </div>
+            ))
+      
             retArr.push(
-                <div className={'deck-card-stack energy-card-stack'} >
-                    {deckDict[value].map((card, index) => {
-                        if (index < 4) {
-                            return (
-                                <div className={'deck-card energy-card'} style={{
-                                    // zIndex: index + 1, 
-                                    top: 25 * index
-                                }} >
-                                    <Card card={card} onDeck={true} />
-                                </div>
-                            )
-                        }
-                    })}
-                </div>
+              <div className="deck-card-stack energy-card-stack">
+                {cards}
+              </div>
             )
+          }
         }
+      
         return retArr
-    }
+      }
+      
 
     function deleteDeck(id) {
         fetch(`${process.env.REACT_APP_API_URL}/decks/deleteDeck`, {
