@@ -268,10 +268,10 @@ export default function UserDeck() {
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 
-                {chunks.map(slides => {
+                {/* {chunks.map(slides => {
                     if (chunks.indexOf(slides) === 0) {
                         return (
-                            <>
+                            <> */}
                                 <div class="deck-inner carousel-inner active mx-0 pt-2 pb-4 row">
                                     <div class="col-lg-1 col-md-1 col-sm-0"></div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 px-0">
@@ -325,11 +325,11 @@ export default function UserDeck() {
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-0"></div>
                                 </div>
-                            </>
+                            {/* </>
                         )
                     }
                 })
-                }
+                } */}
 
 
             </div>

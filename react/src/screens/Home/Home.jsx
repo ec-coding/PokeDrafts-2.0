@@ -111,30 +111,32 @@ const Home = ({ }) => {
 
                                     }
 
-                                    <h3 class="componentBanner bg-info border border-bottom-0 border-dark mb-0 py-1">Card Search</h3>
-                                    <div id="tab-one" className="searchFilterTab border border-dark panel text-start">
-                                        <SearchFilter
-                                            pageSwitch={pageSwitch}
-                                            onSearch={onSearch}
-                                            currentPage={currentPage}
-                                        />
-
-                                    </div>
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tab-three" aria-expanded="true" aria-controls="tab-three">
-                                        <h3 class="componentBanner bg-info border border-top-0 border-dark mb-0 py-1 w-100 d-flex justify-content-center">
-                                            Decks
-                                        </h3>
-                                    </button>
-                                    <div id="tab-three" className="deckMaster panel accordion-collapse collapse show" aria-labelledby="headingOne">
-                                        <Deck />
+                                    <ul class="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
+                                        <li class="nav-item mx-1" role="presentation">
+                                            <button class="active p-0" id="search-tab" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="search" aria-selected="true">
+                                                <h3 class="border-0 m-0 p-1">Search</h3>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item mx-1" role="presentation">
+                                            <button class="p-0" id="deck-tab" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="deck" aria-selected="false">
+                                                <h3 class="border-0 m-0 p-1">Deck</h3>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane fade show active" role="tabpanel">
+                                            <SearchFilter
+                                                pageSwitch={pageSwitch}
+                                                onSearch={onSearch}
+                                                currentPage={currentPage}
+                                            />
+                                        </div>
+                                        <div id="tab-three" className="deckMaster panel show tab-pane fade" aria-labelledby="headingOne" role="tabpanel">
+                                            <Deck />
+                                        </div>
                                     </div>
                                 </div>
                                 }
-
-                                {/* {tab === 'slide3' && <div id="tab-three" className="deckMaster panel">
-                                    <Deck />
-                                </div>} */}
-
                             </div>
 
                         </div>

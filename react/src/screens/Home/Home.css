@@ -28,13 +28,27 @@
 
 /* What's an alternative way to do this? */
 .navbar-substitute {
-    height: 57.70px;
+    height: 64px;
 }
 
 .componentBanner {
     color: rgb(255, 255, 255);
     text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
     background-image: linear-gradient(to left, rgb(136, 185, 255), rgb(35, 95, 180));
+}
+
+.componentBanner li button {
+    text-shadow: 2px 2px 0 black;
+    color: white;
+    background: transparent;
+    border: 5px solid rgba(0, 0, 0, 0);
+}
+
+
+.componentBanner button.active {
+    background: transparent;
+    border-top: 5px solid rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(255, 255, 255);
 }
 
 /*---------------*/
