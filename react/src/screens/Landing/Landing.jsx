@@ -38,7 +38,7 @@ const Landing = () => {
       </div>
       <div class="landing-body">
 
-      <FlipCardBanner />
+        <FlipCardBanner />
 
         <section class="landing-set-container">
           <h2>Featuring cards from the following sets:</h2>
@@ -46,58 +46,60 @@ const Landing = () => {
             <section className="set-divider gen-i">
               <h3 className="set-header bg-blue">Generation I</h3>
               <h4 className="set-header">Original Series</h4>
-              <section className="gen-one-set-one">
-                <div className="set-booster-pack">
+              <ol className="gen-one-set-one row d-flex justify-content-center mx-0 px-0">
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></a>
                   <h4 class="bg-blue">Base Set</h4>
-                </div>
-                <div className="set-booster-pack">
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Jungle_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" /></a>
                   <h4 class="bg-blue">Jungle</h4>
-                </div>
-                <div className="set-booster-pack">
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Fossil_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/fzPnBJi.jpg" alt="" /></a>
                   <h4 class="bg-blue">Fossil</h4>
-                </div>
-                <div className="set-booster-pack">
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_2_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/l4fcVLN.jpg" alt="" /></a>
                   <h4 class="bg-blue">Base Set 2</h4>
-                </div>
-              </section>
-              <section className="gen-one-set-two">
-                <div className="set-booster-pack">
+                </li>
+                </ol>
+                <ol className="gen-one-set-two row d-flex justify-content-center mx-0 px-0">
+                <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Team_Rocket_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" /></a>
                   <h4 class="bg-blue">Team Rocket</h4>
-                </div>
-                <div className="set-booster-pack">
+                </li>
+                <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Heroes_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/dk730u5.jpg" alt="" /></a>
                   <h4 class="bg-blue">Gym Heroes</h4>
-                </div>
-                <div className="set-booster-pack">
+                </li>
+                <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/tsM9xhr.jpg" alt="" /></a>
                   <h4 class="bg-blue">Gym Challenge</h4>
-                </div>
-              </section>
+                </li>
+                </ol>
             </section>
             <section className="set-divider gen-ii">
               <h3 className="set-header bg-blue">Generation II</h3>
               <h4 className="set-header">Neo Series</h4>
-              <div className="set-booster-pack">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/gtVq1l1.jpg" alt="" /></a>
-                <h4 class="bg-blue">Neo Genesis</h4>
-              </div>
-              <div className="set-booster-pack">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Discovery_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/FDv9Uok.jpg" alt="" /></a>
-                <h4 class="bg-blue">Neo Discovery</h4>
-              </div>
-              <div className="set-booster-pack">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Revelation_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/ON6FfPy.jpg" alt="" /></a>
-                <h4 class="bg-blue">Neo Revelation</h4>
-              </div>
-              <div className="set-booster-pack">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Destiny_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/cA8s7UR.jpg" alt="" /></a>
-                <h4 class="bg-blue">Neo Destiny</h4>
-              </div>
+              <ol className="row d-flex justify-content-center mx-0 px-0">
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/gtVq1l1.jpg" alt="" /></a>
+                  <h4 class="bg-blue">Neo Genesis</h4>
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Discovery_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/FDv9Uok.jpg" alt="" /></a>
+                  <h4 class="bg-blue">Neo Discovery</h4>
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Revelation_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/ON6FfPy.jpg" alt="" /></a>
+                  <h4 class="bg-blue">Neo Revelation</h4>
+                </li>
+                <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Destiny_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/cA8s7UR.jpg" alt="" /></a>
+                  <h4 class="bg-blue">Neo Destiny</h4>
+                </li>
+              </ol>
             </section>
           </div>
         </section>
