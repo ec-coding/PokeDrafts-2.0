@@ -133,13 +133,14 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                         </ul>
                     </div>
                 </nav>
-                <div class="searchResultsContainer carousel-inner active pt-3">
+                <div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row">
 
                     {cards && cards.map ((card) => (  
                         <Card card={card} onDeck={false} />
                     ))}
 
-                    <ReactPaginate
+                </div>
+                <ReactPaginate
                         nextLabel=">"
                         onPageChange={onPageChange}
                         pageRangeDisplayed={3}
@@ -155,12 +156,10 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                         breakLabel="..."
                         breakClassName="page-item"
                         breakLinkClassName="page-link"
-                        containerClassName="pagination mt-4 mb-3"
+                        containerClassName="pagination mt-4 pb-3"
                         activeClassName="active"
                         renderOnZeroPageCount={null}
                     />
-
-                </div>
                 <button class="carousel-control-prev lg-button-remove" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onClick={handlePrevPage}>
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>

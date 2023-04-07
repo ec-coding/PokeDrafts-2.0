@@ -124,14 +124,14 @@ const Home = ({ }) => {
                                         </li>
                                     </ul>
                                     <div className="tab-content" id="myTabContent">
-                                        <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane fade show active" role="tabpanel">
+                                        <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane show active" role="tabpanel">
                                             <SearchFilter
                                                 pageSwitch={pageSwitch}
                                                 onSearch={onSearch}
                                                 currentPage={currentPage}
                                             />
                                         </div>
-                                        <div id="tab-three" className="deckMaster panel show tab-pane fade" aria-labelledby="headingOne" role="tabpanel">
+                                        <div id="tab-three" className="deckMaster panel show tab-pane" aria-labelledby="headingOne" role="tabpanel">
                                             <Deck />
                                         </div>
                                     </div>

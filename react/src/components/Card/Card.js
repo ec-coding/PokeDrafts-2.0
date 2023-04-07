@@ -163,7 +163,7 @@ export default function Card({ card, onDeck }) {
 
   return (
     <>
-      <img src={card.images.small} type="button" class="slide-img p-0 w-10" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
+      <img src={card.images.small} type="button" class="slide-img p-0 w-10 col-2" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
 
       <div class="modal fade" id={targetModal} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">

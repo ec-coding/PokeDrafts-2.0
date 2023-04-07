@@ -68,7 +68,7 @@
   margin-bottom: 0;
 }
 
-.carousel-inner .pagination {
+.searchResultsMaster .pagination {
   margin: 0 4.25vh;
   background:
     linear-gradient(-72deg,
@@ -91,7 +91,7 @@
   margin: 0 auto;
 }
 
-.carousel-inner .pagination .page-item .page-link {
+.searchResultsMaster .pagination .page-item .page-link {
   box-shadow:
     1px 1px 0.5em rgba(122, 122, 122, 0.55),
     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),

@@ -5,6 +5,7 @@ import Landing from "./screens/Landing/Landing";
 import Login from "./screens/Login/Login";
 import SignUp from "./screens/SignUp/SignUp"
 import Home from "./screens/Home/Home";
+import ExpansionOne from "./screens/Landing/ExpansionOne";
 import './App.css';
 
 
@@ -43,29 +44,31 @@ function App() {
 
   return (
     <UserContext.Provider value={user}>
-    <BrowserRouter>
-    {/* Context for Light / Dark Mode */}
-    <Routes>
-
-      <Route
-        path="/"
-        element={user?.email ? <Navigate to="/home" /> : <Landing />}
-      />
-      <Route
-        path="/login"
-        element={user?.email ? <Navigate to="/home" /> : <Login />}
-      />
-      <Route
-        path="/signup"
-        element={user?.email ? <Navigate to="/home" /> : <SignUp />}
-      />
-      <Route
-        path="/home"
-        element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
-      />
-
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        {/* Context for Light / Dark Mode */}
+        <Routes>
+          <Route
+            path="/"
+            element={user?.email ? <Navigate to="/home" /> : <Landing />}
+          />
+          <Route
+            path="/expOne"
+            element={user?.email ? <Navigate to="/expOne" /> : <ExpansionOne />}
+          />
+          <Route
+            path="/login"
+            element={user?.email ? <Navigate to="/home" /> : <Login />}
+          />
+          <Route
+            path="/signup"
+            element={user?.email ? <Navigate to="/home" /> : <SignUp />}
+          />
+          <Route
+            path="/home"
+            element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
+          />
+        </Routes>
+      </BrowserRouter>
     </UserContext.Provider>
   );
 }

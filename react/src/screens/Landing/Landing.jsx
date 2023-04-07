@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { flushSync } from "react-dom";
 import FlipCardBanner from "../../components/FlipCardBanner/FlipCardBanner"
 import './Landing.css';
 import '../../index.css'
+import "./ExpansionPanel.css"
 import Footer from '../../components/Footer/Footer'
 
 const Landing = () => {
@@ -48,7 +50,7 @@ const Landing = () => {
               <h4 className="set-header">Original Series</h4>
               <ol className="gen-one-set-one row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></a>
+                  <Link to="/expOne"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></Link>
                   <h4 class="bg-blue">Base Set</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
@@ -63,8 +65,8 @@ const Landing = () => {
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_2_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/l4fcVLN.jpg" alt="" /></a>
                   <h4 class="bg-blue">Base Set 2</h4>
                 </li>
-                </ol>
-                <ol className="gen-one-set-two row d-flex justify-content-center mx-0 px-0">
+              </ol>
+              <ol className="gen-one-set-two row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Team_Rocket_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" /></a>
                   <h4 class="bg-blue">Team Rocket</h4>
@@ -77,7 +79,7 @@ const Landing = () => {
                   <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/tsM9xhr.jpg" alt="" /></a>
                   <h4 class="bg-blue">Gym Challenge</h4>
                 </li>
-                </ol>
+              </ol>
             </section>
             <section className="set-divider gen-ii">
               <h3 className="set-header bg-blue">Generation II</h3>
