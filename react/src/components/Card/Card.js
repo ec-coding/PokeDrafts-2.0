@@ -7,8 +7,8 @@ import './Card.css';
 
 export default function Card({ card, onDeck }) {
 
-  const targetModal = `card-modal-${card.id}`
-  const targetModalID = `#card-modal-${card.id}`
+  const targetModal = `card-modal-${card.id}-${onDeck}`
+  const targetModalID = `#card-modal-${card.id}-${onDeck}`
   const targetType = `card-modal-${card.types}`
   const closeModal = `close-modal-${card.id}`
   const addCard = `add-card-${card.id}`

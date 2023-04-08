@@ -79,11 +79,6 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
             subtypeParam = subtypeParam.slice(0, -2)
         }
 
-        if (startingPage === 1) {
-            currentPage = 1
-            pageSwitch(currentPage)
-        }
-
         fetchURLText = url + `page=${currentPage}&pageSize=14&orderBy=set,number&q=`
         if (subtypeParam !== '') {
             fetchURLText += subtypeParam
@@ -131,7 +126,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         if (target.checked) {
             cardSetArr.push(target.value)
             // Click twice
-        } else { 
+        } else {
             cardSetArr.splice(cardSetArr.indexOf(target.value), 1)
         }
         changeCardSet(cardSetArr)
@@ -140,7 +135,12 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
     const submitClick = event => {
         toggleShow(true)
         // document.getElementById('searchResultsLoading').scrollIntoView()
-        getCards(1)
+        // getCards(1)
+        if (currentPage === 1) {
+            getCards(currentPage)
+        } else {
+            pageSwitch(1)
+        }
         // If the user selects any filters before hitting search, it still affects the current fetch response, how can I fix this?
     }
 

@@ -226,7 +226,7 @@
   }
 
   .vt-navbar {
-    height: 100vh;
+    height: calc(100vh - 55px);
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: auto;

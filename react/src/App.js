@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import UserContext from './contexts/UserContext';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Landing from "./screens/Landing/Landing";
+import Expansions from "./screens/Expansions/Expansions";
 import Login from "./screens/Login/Login";
 import SignUp from "./screens/SignUp/SignUp"
 import Home from "./screens/Home/Home";
-import ExpansionOne from "./screens/Landing/ExpansionOne";
 import './App.css';
 
 
@@ -52,9 +52,11 @@ function App() {
             element={user?.email ? <Navigate to="/home" /> : <Landing />}
           />
           <Route
-            path="/expOne"
-            element={user?.email ? <Navigate to="/expOne" /> : <ExpansionOne />}
-          />
+            path="/expansions"
+            // element={<Navigate to="/expansions/base" />}
+          >
+            <Route path=":expansion" element={<Expansions />} />
+          </Route>
           <Route
             path="/login"
             element={user?.email ? <Navigate to="/home" /> : <Login />}

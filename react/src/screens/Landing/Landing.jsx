@@ -1,11 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { flushSync } from "react-dom";
+import { Link, useNavigate, createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
 import FlipCardBanner from "../../components/FlipCardBanner/FlipCardBanner"
+import Expansions from '../Expansions/Expansions'
 import './Landing.css';
 import '../../index.css'
-import "./ExpansionPanel.css"
+import "../Expansions/ExpansionPanel.css"
 import Footer from '../../components/Footer/Footer'
+
+const AnimatedLink = ({ to, children, onClick }) => {
+  const navigate = useNavigate();
+  return (
+      <a
+          href={to}
+          onClick={(ev) => {
+              ev.preventDefault();
+              document.startViewTransition(() => {
+                  navigate(to);
+              });
+          }}
+      >
+          {children}
+      </a>
+  );
+};
 
 const Landing = () => {
   return (
@@ -50,11 +67,12 @@ const Landing = () => {
               <h4 className="set-header">Original Series</h4>
               <ol className="gen-one-set-one row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <Link to="/expOne"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></Link>
+                  {/* Use an Animated Link here instead of Link so that you can pass in the set names */}
+                  <AnimatedLink to="/expansions/base" cardSet={'base'} ><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></AnimatedLink>
                   <h4 class="bg-blue">Base Set</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Jungle_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" /></a>
+                  <AnimatedLink to="/expansions/jungle" cardSet={'jungle'} ><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" /></AnimatedLink>
                   <h4 class="bg-blue">Jungle</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
