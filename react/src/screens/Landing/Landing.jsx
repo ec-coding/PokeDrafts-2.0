@@ -7,7 +7,7 @@ import '../../index.css'
 import "../Expansions/ExpansionPanel.css"
 import Footer from '../../components/Footer/Footer'
 
-const AnimatedLink = ({ to, children, onClick }) => {
+const AnimatedLink = ({ to, children }) => {
   const navigate = useNavigate();
   return (
       <a
@@ -68,33 +68,33 @@ const Landing = () => {
               <ol className="gen-one-set-one row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   {/* Use an Animated Link here instead of Link so that you can pass in the set names */}
-                  <AnimatedLink to="/expansions/base" cardSet={'base'} ><img src="https://i.imgur.com/q2YVnId.jpg" alt="" /></AnimatedLink>
+                  <AnimatedLink to="/expansions/base"><img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Base Set</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <AnimatedLink to="/expansions/jungle" cardSet={'jungle'} ><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" /></AnimatedLink>
+                  <AnimatedLink to="/expansions/jungle"><img src="https://i.imgur.com/WUVqIZa.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Jungle</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Fossil_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/fzPnBJi.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/fossil"><img src="https://i.imgur.com/fzPnBJi.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Fossil</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Base_Set_2_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/l4fcVLN.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/base-2"><img src="https://i.imgur.com/l4fcVLN.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Base Set 2</h4>
                 </li>
               </ol>
               <ol className="gen-one-set-two row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Team_Rocket_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/team-rocket"><img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Team Rocket</h4>
                 </li>
                 <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Heroes_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/dk730u5.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/gym-heroes"><img src="https://i.imgur.com/dk730u5.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Gym Heroes</h4>
                 </li>
                 <li className="set-booster-pack col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/tsM9xhr.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/gym-challenge"><img src="https://i.imgur.com/tsM9xhr.jpg" alt="" class="banner-img" /></AnimatedLink>
                   <h4 class="bg-blue">Gym Challenge</h4>
                 </li>
               </ol>
@@ -104,19 +104,19 @@ const Landing = () => {
               <h4 className="set-header">Neo Series</h4>
               <ol className="row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Gym_Challenge_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/gtVq1l1.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/neo-genesis"><img src="https://i.imgur.com/gtVq1l1.jpg" alt="" class="" /></AnimatedLink>
                   <h4 class="bg-blue">Neo Genesis</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Discovery_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/FDv9Uok.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/neo-discovery"><img src="https://i.imgur.com/FDv9Uok.jpg" alt="" class="" /></AnimatedLink>
                   <h4 class="bg-blue">Neo Discovery</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Revelation_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/ON6FfPy.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/neo-revelation"><img src="https://i.imgur.com/ON6FfPy.jpg" alt="" class="" /></AnimatedLink>
                   <h4 class="bg-blue">Neo Revelation</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
-                  <a href="https://bulbapedia.bulbagarden.net/wiki/Neo_Destiny_(TCG)" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/cA8s7UR.jpg" alt="" /></a>
+                <AnimatedLink to="/expansions/neo-destiny"><img src="https://i.imgur.com/cA8s7UR.jpg" alt="" class="" /></AnimatedLink>
                   <h4 class="bg-blue">Neo Destiny</h4>
                 </li>
               </ol>

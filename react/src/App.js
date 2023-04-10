@@ -8,7 +8,6 @@ import SignUp from "./screens/SignUp/SignUp"
 import Home from "./screens/Home/Home";
 import './App.css';
 
-
 function App() {
   const [user, setUser] = useState({});
   const [decks, changeDecks] = useState([])

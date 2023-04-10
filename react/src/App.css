@@ -54,6 +54,10 @@ body ul {
   filter: drop-shadow(1.5px 1.5px 1.5px black);
 }
 
+.ds-dark-lg {
+  filter: drop-shadow(5px 5px 5px black);
+}
+
 .ts-light {
   text-shadow: 1px 1px 0 #ffffff;
 }
@@ -84,3 +88,4 @@ body ul {
   color: rgb(255, 255, 255);
   text-shadow: 1.5px 1.5px 0 rgb(0 0 0 / 90%);
 }
+
