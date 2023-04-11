@@ -50,6 +50,10 @@
       inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
 }
 
+.main-header svg {
+  fill: white;
+}
+
 .set-booster-pack a {
   text-decoration: none;
 }
