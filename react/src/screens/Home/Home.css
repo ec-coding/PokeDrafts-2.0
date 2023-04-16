@@ -6,7 +6,7 @@
 
 .navbar .container-fluid {
     background-image: var(--red-gradient);
-    height: 6.5vh;
+    height: 64px;
 }
 
 /* Style the buttons that are used to open the tab content */
