@@ -5,7 +5,6 @@
 <p align="center">
 <img src="https://github.com/ec-coding/PokeDrafts-2.0/blob/main/images/pokedrafts-preview1.gif" width="75%">
 </p>
-<h3 align="center">Built for the 100Devs 100-Hours Project</h3>
 <p align="center">
     <h3 align="center"><a href="https://pokedrafts.com/home" target="blank">Website</a></h3>
 </p>
