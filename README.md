@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">A customized deck builder app for the Pokémon Trading Card Game.</h2>
 <p align="center">
-<img src="https://www.kindpng.com/picc/m/368-3683364_custom-banner-pokemon-starters-never-forget-hd-png.png" width="50%">
+<img src="https://github.com/ec-coding/PokeDrafts-2.0/blob/main/images/pokedrafts-preview1.gif" width="50%">
 </p>
 <h3 align="center">Built for the 100Devs 100-Hours Project</h3>
 <p align="center">
