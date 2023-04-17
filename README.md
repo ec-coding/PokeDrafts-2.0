@@ -7,7 +7,7 @@
 </p>
 <p align="center">
 PokéDrafts is a full-stack web app that allows you to build your very own deck from various sets of the Pokémon Trading Card Game. 
-It features Google authentication and is structured using MVC framework.
+<br>It features Google authentication and is structured using MVC framework.
 </p>
 <p align="center">
     <h3 align="center"><a href="https://pokedrafts.com/home" target="blank">Website</a></h3>
