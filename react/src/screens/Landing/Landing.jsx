@@ -68,9 +68,9 @@ const Landing = () => {
               <ol className="gen-one-set-one row d-flex justify-content-center mx-0 px-0">
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
                   {/* Use an Animated Link here instead of Link so that you can pass in the set names */}
-                  {/* <AnimatedLink to="/expansions/base"> */}
+                  <AnimatedLink to="/expansions/base">
                   <img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="banner-img" />
-                  {/* </AnimatedLink> */}
+                  </AnimatedLink>
                   <h4 class="bg-blue">Base Set</h4>
                 </li>
                 <li className="set-booster-pack col-xl-3 col-lg-4 col-md-6 mx-0">
