@@ -73,6 +73,12 @@ Building this app has allowed me to learn and exercise a variety of different co
   - How do you connect a user's ID to a card they added into the database?
   - How can I remove a user's entire deck without affecting the cards in another user's deck?
 
+## Bugs:
+
+- The following is a list of bugs that need fixing:
+    - Deleting cards from the deck will sometimes cause the screen to be locked in a modal shadow.
+    - Fix: Upon clicking delete, check to see if you're deleting the last copy of the card and if so, trigger the modal click before you remove the final card.
+
 ## Project Logs:
 
 8/18/2022
