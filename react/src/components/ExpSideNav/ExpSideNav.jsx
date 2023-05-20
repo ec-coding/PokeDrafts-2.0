@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, createBrowserRouter, RouterProvider } from "react-router-dom";
+import './expSideNav.scss'
 
 const AnimatedLink = ({ to, children }) => {
     const navigate = useNavigate();
@@ -31,14 +32,14 @@ const ExpHero = ({ link, heroContent }) => {
 
 const ExpansionSideNav = ({ expansion }) => {
     return (
-        <nav class="vt-navbar col-4 mx-0 px-0">
-            <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 py-0 px-2">
+        <nav class="vt-navbar col-lg-4 col-sm-12 mx-0 px-0">
+            <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 px-2">
                 {
                     expansion != 'base' &&
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
-                                link={<AnimatedLink to="/expansions/base">
+                                link={<AnimatedLink to="/expansions/base" >
                                     <img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="booster-base booster-sm" />
                                     <h4 class="bg-blue text-center">Base Set</h4>
                                 </AnimatedLink>}
@@ -48,7 +49,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 }
                 {
                     expansion != 'jungle' &&
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/jungle" >
@@ -62,7 +63,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'fossil' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/fossil" >
@@ -76,7 +77,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 }
                 {
                     expansion != 'base-2' &&
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/base-2" >
@@ -90,7 +91,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'team-rocket' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/team-rocket" >
@@ -106,7 +107,7 @@ const ExpansionSideNav = ({ expansion }) => {
                     expansion != 'gym-heroes' &&
 
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/gym-heroes" >
@@ -121,7 +122,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'gym-challenge' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/gym-challenge" >
@@ -136,7 +137,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'neo-genesis' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/neo-genesis" >
@@ -151,7 +152,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'neo-discovery' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/neo-discovery" >
@@ -166,7 +167,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'neo-revelation' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/neo-revelation" >
@@ -181,7 +182,7 @@ const ExpansionSideNav = ({ expansion }) => {
                 {
                     expansion != 'neo-destiny' &&
 
-                    <li class="set-booster-pack row col-6 md-6 mx-0">
+                    <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <ExpHero
                                 link={<AnimatedLink to="/expansions/neo-destiny" >

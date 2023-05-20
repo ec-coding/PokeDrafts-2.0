@@ -1,5 +1,5 @@
 import React from "react";
-import './FlipCardBanner.css';
+import './flipCardBanner.css';
 
 const FlipCardBanner = () => {
     return (

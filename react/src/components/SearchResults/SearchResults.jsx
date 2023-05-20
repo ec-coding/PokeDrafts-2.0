@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import ReactPaginate from 'react-paginate';
 import CardContext from '../../contexts/CardContext';
 import PageCountContext from '../../contexts/PageCountContext';
 import Card from '../Card/Card'
-import '../../style/Dropdown.css';
-import './SearchResults.css';
+import '../../style/dropdown.css';
+import './searchResults.css';
 
-export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
+export default function SearchResults({ pageCount, pageSwitch, currentPage, totalCount }) {
 
     const [cards, changeCards] = useContext(CardContext)
     const [nameSort, setNameSort] = useState(true)
@@ -15,6 +16,13 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
     const [hpSort, setHpSort] = useState(true)
     const [raritySort, setRaritySort] = useState(true)
     const [artistSort, setArtistSort] = useState(true)
+    const [animationKey, setAnimationKey] = useState(0);
+
+    const divsArray = [...Array(totalCount)];
+
+    const divs = divsArray.map((item, index) => (
+        <div key={index}></div>
+    ));
 
 
     const handlePrevPage = () => {
@@ -22,7 +30,8 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
             const updatedPage = currentPage - 1
             console.log(`This is the updated page: ${updatedPage}`)
             pageSwitch(updatedPage)
-          }
+            setAnimationKey(animationKey + 1)
+        }
     }
 
     const handleNextPage = () => {
@@ -30,12 +39,14 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
             const updatedPage = currentPage + 1
             console.log(`This is the updated page: ${updatedPage}`)
             pageSwitch(updatedPage)
-          }
+            setAnimationKey(animationKey + 1)
+        }
     }
 
     const onPageChange = (event) => {
         const newPage = event.selected + 1
         pageSwitch(newPage)
+        setAnimationKey(animationKey + 1)
     }
 
     const sortByName = () => {
@@ -133,33 +144,44 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
                         </ul>
                     </div>
                 </nav>
-                <div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row">
+                <AnimatePresence mode="wait">
+                    <motion.div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row"
+                        key={animationKey}
+                        // initial={{ opacity: 0 }}
+                        // animate={{ opacity: 1 }}
+                        initial={{ x: '100%' }}
+                        animate={{
+                            x: 0
+                          }}
+                        transition={{ delay: 0.25, duration: 0.65 }}
+                    >
 
-                    {cards && cards.map ((card) => (  
-                        <Card card={card} onDeck={false} />
-                    ))}
+                        {cards && cards.map((card) => (
+                            <Card card={card} onDeck={false} />
+                        ))}
 
-                </div>
+                    </motion.div>
+                </AnimatePresence>
                 <ReactPaginate
-                        nextLabel=">"
-                        onPageChange={onPageChange}
-                        pageRangeDisplayed={3}
-                        pageCount={pageCount}
-                        forcePage={currentPage - 1}
-                        previousLabel="<"
-                        pageClassName="page-item"
-                        pageLinkClassName="page-link border-0"
-                        previousClassName="page-item sm-pag-btn"
-                        previousLinkClassName="page-link border-0"
-                        nextClassName="page-item sm-pag-btn"
-                        nextLinkClassName="page-link border-0"
-                        breakLabel="..."
-                        breakClassName="page-item"
-                        breakLinkClassName="page-link"
-                        containerClassName="pagination mt-4 pb-3"
-                        activeClassName="active"
-                        renderOnZeroPageCount={null}
-                    />
+                    nextLabel=">"
+                    onPageChange={onPageChange}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    forcePage={currentPage - 1}
+                    previousLabel="<"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link border-0"
+                    previousClassName="page-item sm-pag-btn"
+                    previousLinkClassName="page-link border-0"
+                    nextClassName="page-item sm-pag-btn"
+                    nextLinkClassName="page-link border-0"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    containerClassName="pagination mt-4 pb-3"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                />
                 <button class="carousel-control-prev lg-button-remove" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onClick={handlePrevPage}>
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -173,3 +195,8 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage }) {
         </>
     )
 }
+
+// Get the total number of cards requested
+// Create an empty div for every X amount of cards within the total above
+// When pagination occurs, place the Xth set of X cards in its respective div container, based on its index
+// Ex. cards between index 0 and 15 are placed in div #1, cards between index 16 and 31 are placed in div #2, etc

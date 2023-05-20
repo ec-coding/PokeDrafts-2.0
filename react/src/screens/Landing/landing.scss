@@ -1,0 +1,345 @@
+@import "../../index.scss";
+
+.landing {
+
+  .top {
+    height: 60.5vh;
+    background-image: url('https://i.imgur.com/91T4JcC.jpg');
+    background-position: top -10vh center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+    padding-top: 20px;
+    position: relative;
+
+    @include large {
+      height: 32.5vh;
+      background-position: top -5.5vh center;
+    }
+
+    @include medium {
+      height: 50vh;
+      background-position: top 0 center;
+      background-size: cover;
+    }
+
+
+    @include small {
+      height: 38.5vh;
+      background-position: center;
+    }
+
+    @include x-small {
+      height: 50vh;
+    }
+
+    .title {
+      margin-top: 10vh;
+      color: white;
+
+      @include medium {
+        margin-top: 25%;
+      }
+
+      h1 {
+        font-size: 50px;
+        font-weight: bold;
+
+        @include small {
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        @include x-small {
+          font-size: 26px;
+          font-weight: bold;
+        }
+      }
+
+      h5 {
+        margin-top: 1vh;
+        font-size: 20px;
+        font-weight: 100;
+
+        @include x-small {
+          font-size: 18px;
+          padding: 0 5vh;
+        }
+      }
+    }
+  }
+
+  .main {
+    min-height: 60vh;
+    background: rgb(212, 212, 212);
+    padding-bottom: 3.5vh;
+
+    @include large {
+      max-width: 992px;
+    }
+
+    .set-container {
+      margin-top: 30vh;
+      width: 1480px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include x-large {
+        width: 100%;
+      }
+
+      @include large {
+        margin-top: 0vh;
+      }
+
+      h2 {
+        text-shadow: 1px 1px 0 #ffffff;
+        margin: 0 auto;
+        padding: 35px;
+        font-size: 24px;
+        color: rgb(54, 54, 54);
+        background: rgb(238, 238, 238);
+        box-shadow:
+          1px 1px 0.5em rgba(122, 122, 122, 0.55),
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+          inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+
+        @include small {
+          font-size: 22px;
+        }
+
+        @include x-small {
+          font-size: 18px;
+          padding: 2vh 2vh;
+        }
+      }
+
+      .sets {
+        padding: 3.5vh;
+        margin-top: 3vh;
+        flex-wrap: wrap;
+        background: rgb(172, 172, 172);
+        box-shadow:
+          1px 1px 0.5em rgba(122, 122, 122, 0.55),
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+          inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+
+        @include large {
+          padding: 2.5vh;
+        }
+
+        .divider {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          background: rgb(238, 238, 238);
+          width: 100%;
+          padding-top: 3vh;
+          padding-bottom: 5vh;
+          border: 1px solid white;
+          box-shadow:
+            1px 1px 0.5em rgba(122, 122, 122, 0.55),
+            inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+            inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+
+          h3 {
+            color: rgb(255, 255, 255);
+            text-shadow: 1.5px 1.5px 0 #000000;
+            border: 1px solid white;
+            padding: 0.5vh 0;
+            width: 100%;
+            box-shadow:
+              1px 1px 0.5em rgba(122, 122, 122, 0.55),
+              inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+              inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+            margin: 0 35%;
+
+            @include large {
+              font-size: 44px;
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 30px;
+            }
+
+            @include medium {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 26px;
+            }
+
+            @include small {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 28px;
+            }
+
+            @include x-small {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 24px;
+            }
+          }
+
+          h4 {
+            border: 1px solid white;
+            padding: 0.5vh 0;
+            width: 100%;
+            box-shadow:
+              1px 1px 0.5em rgba(122, 122, 122, 0.55),
+              inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+              inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+            margin: 0 35%;
+            color: rgb(54, 54, 54);
+            text-shadow: 1px 1px 0 #ffffff;
+            margin-bottom: 2vh;
+            background-image: linear-gradient(-72deg,
+                #dedeff,
+                #ffffff 16%,
+                #dedeff 21%,
+                #ffffff 24%,
+                #dedeff 36%,
+                #ffffff 45%,
+                #ffffff 60%,
+                #dedeff 72%,
+                #ffffff 80%,
+                #dedeff 84%,
+                #555564);
+
+            @include large {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 28px;
+            }
+
+            @include medium {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 24px;
+            }
+
+            @include small {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 22px;
+            }
+            
+            @include x-small {
+              padding: 2% 0;
+              margin-left: 5%;
+              margin-right: 5%;
+              font-size: 18px;
+            }
+            
+          }
+
+          ol {
+
+            li {
+
+              img {
+                position: relative;
+                width: 220px;
+                height: 385px;
+                border-radius: 0.5em;
+                z-index: 10;
+                filter: drop-shadow(5px 5px 5px black);
+                margin: 2vh 2vh;
+                cursor: pointer;
+
+                &:hover {
+                  transform: scale(1.07);
+                }
+
+                @include large {
+                  height: 593px;
+                  width: 343px;
+                }
+
+                @include medium {
+                  height: 450px;
+                  width: 260px;
+                }
+
+                @include small {
+                  height: 311px;
+                  width: 180px;
+                }
+
+                @include x-small {
+                  height: 419px;
+                  width: 242px;
+                }
+              }
+
+              h5 {
+                color: rgb(255, 255, 255);
+                font-size: 1.35rem;
+                text-shadow: 2px 2px 0 #000000;
+                padding: 0.75vh 0;
+                margin: auto 1.5vh;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow:
+                  1px 1px 0.5em rgba(122, 122, 122, 0.55),
+                  inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+                  inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-container {
+      margin: 0 auto;
+      margin-top: 3.5vh;
+      padding: 0;
+      width: 1480px;
+
+      @include x-large {
+        width: 100%;
+      }
+
+      h2 {
+        text-shadow: 1px 1px 0 #ffffff;
+        margin: 0 auto;
+        padding: 35px;
+        font-size: 24px;
+        color: rgb(54, 54, 54);
+        background: rgb(238, 238, 238);
+        box-shadow:
+          1px 1px 0.5em rgba(122, 122, 122, 0.55),
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+          inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      button {
+        margin: 2vh 1.5vh;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0 #ffffff;
+        color: rgba(0, 0, 0, 0.75);
+        padding: 5px 30px;
+        border: 1px solid rgba(145, 145, 145, 0.35);
+        transition: 0.2s;
+        box-shadow:
+          2px 2px 0.5em rgba(122, 122, 122, 0.55),
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+          inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.34);
+
+        &:active {
+          box-shadow:
+            2px 2px 0.5em rgba(122, 122, 122, 0.55),
+            inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+            inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.34);
+        }
+      }
+    }
+  }
+}

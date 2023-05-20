@@ -3,7 +3,7 @@ import CardContext from '../../contexts/CardContext';
 import PageCountContext from '../../contexts/PageCountContext';
 import Icon from '../Icon/Icon';
 import { BiSearchAlt } from 'react-icons/bi'
-import './SearchFilter.css'
+import './searchFilter.css'
 
 // LOOK UP LOADING STRATEGIES ie lazy loading of images
 // using logic to make first load good
@@ -22,6 +22,7 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
     // External card context - We are using that card context
     const [cards, changeCards] = useContext(CardContext)
     const [show, toggleShow] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         // Call this function when the state in brackets changes
@@ -95,20 +96,22 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         if (cardRarity !== '') {
             fetchURLText += ` rarity:${cardRarity}`
         }
-
+        setIsLoading(true)
         fetch(fetchURLText, {
             headers: {
                 "X-Api-Key": "9aac7fc4-dfb9-41eb-ab2f-f30e2976bd08"
-            }
+            },
         })
             .then(res => res.json())
             .then(response => {
                 console.log(response)
+                console.log(isLoading)
                 if (response.count != 0) {
                     const totalItems = response.totalCount
                     const pageCount = Math.ceil(totalItems / itemsPerPage);
                     changeCards(response.data)
-                    onSearch(response.totalCount, pageCount)
+                    setIsLoading(false)
+                    onSearch(response.totalCount, pageCount, isLoading)
                 } else {
                     alert('No cards found.')
                 }

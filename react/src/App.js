@@ -50,10 +50,7 @@ function App() {
             path="/"
             element={user?.email ? <Navigate to="/home" /> : <Landing />}
           />
-          <Route
-            path="/expansions"
-            // element={<Navigate to="/expansions/base" />}
-          >
+          <Route path="/expansions">
             <Route path=":expansion" element={<Expansions />} />
           </Route>
           <Route
