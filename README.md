@@ -47,6 +47,7 @@ Progress Images:
   - When a user is typing in the name of a card, have the search bar offer suggestions.
   - Highlight the button of whichever tab is active.
   - No more than 4 of each card can be added to a deck, with the exception of energy cards.
+  - Integrate view transitions for individual elements so that they phase between different pages.
 
 ## Lessons Learned:
 
