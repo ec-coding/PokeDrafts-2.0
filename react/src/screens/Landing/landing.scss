@@ -90,6 +90,7 @@
 
       @include large {
         margin-top: 0vh;
+        width: 100%;
       }
 
       h2 {
@@ -115,10 +116,11 @@
       }
 
       .sets {
+        border: 2px solid white;
         padding: 3.5vh;
         margin-top: 3vh;
         flex-wrap: wrap;
-        background: rgb(172, 172, 172);
+        background: var(--gold-gradient);
         box-shadow:
           1px 1px 0.5em rgba(122, 122, 122, 0.55),
           inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),

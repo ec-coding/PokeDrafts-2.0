@@ -149,10 +149,10 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
                         key={animationKey}
                         // initial={{ opacity: 0 }}
                         // animate={{ opacity: 1 }}
-                        initial={{ x: '100%' }}
-                        animate={{
-                            x: 0
-                          }}
+                        // initial={{ x: '100%' }}
+                        // animate={{
+                        //     x: 0
+                        //   }}
                         transition={{ delay: 0.25, duration: 0.65 }}
                     >
 
@@ -200,3 +200,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
 // Create an empty div for every X amount of cards within the total above
 // When pagination occurs, place the Xth set of X cards in its respective div container, based on its index
 // Ex. cards between index 0 and 15 are placed in div #1, cards between index 16 and 31 are placed in div #2, etc
+
+
+// PRE-LOAD A GIF, and load it for each card while it is materializing

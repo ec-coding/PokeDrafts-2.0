@@ -407,3 +407,6 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
         </>
     )
 }
+
+
+// Using a router URL, you can have your app trigger API calls based off the text within the URL

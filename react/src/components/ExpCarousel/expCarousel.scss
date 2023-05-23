@@ -1,1 +1,112 @@
 @import "../../index.scss";
+
+.slick-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .slick-prev {
+        
+        &:before {
+
+        }
+    }
+
+    .slick-list {
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+        margin: 0 auto;
+
+        .slick-track {
+
+            .slick-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                div {
+
+                    .set-booster-pack {
+                        margin: 0 0.5vh 1vh 0.5vh;
+
+                        .col {
+
+                            a {
+
+                                img {
+                                    position: relative;
+                                    width: 220px;
+                                    height: 385px;
+                                    border-radius: 0.5em;
+                                    z-index: 10;
+                                    filter: drop-shadow(5px 5px 5px black);
+                                    margin: 1vh 2vh;
+
+                                    &:hover {
+                                        transform: scale(1.05)
+                                    }
+
+                                    &:active {
+                                        transform: scale(0.92)
+                                    }
+                                }
+
+                                h4 {
+                                    color: rgb(255, 255, 255);
+                                    text-shadow: 2px 2px 0 #000000;
+                                    padding: 0.75vh 0;
+                                    margin: auto 1.5vh;
+                                    border: 1px solid rgba(255, 255, 255, 0.5);
+                                    box-shadow: 1px 1px 0.5em rgba(122, 122, 122, 0.55), inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9), inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-next {
+
+        &:before {
+
+        }
+    }
+
+    .slick-dots {
+        padding: 1.5vh 0;
+
+        li {
+
+
+            button {
+
+
+                &:before {
+                    background: url('https://static.thenounproject.com/png/594337-200.png');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    font-size: 12px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+        }
+
+        .slick-active {
+
+            button {
+
+                &:before {
+                    background: url('https://static.thenounproject.com/png/594337-200.png');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    font-size: 14px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

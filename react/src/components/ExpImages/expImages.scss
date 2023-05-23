@@ -4,7 +4,6 @@
 
     img {
 
-
         @include medium {
             width: 372px;
             height: 670px;
@@ -14,7 +13,7 @@
             width: 100%;
             height: 100%;
         }
-        
+
     }
 
     h4 {
@@ -26,20 +25,17 @@
             1px 1px 0.5em rgba(122, 122, 122, 0.55),
             inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
             inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+
+        @include large {
+            margin: 2vh;
+        }
     }
 }
 
-@include large {
+@include large {}
 
-}
+@include medium {}
 
-@include medium {
+@include small {}
 
-}
-
-@include small {
-}
-
-@include x-small {
-
-}
+@include x-small {}
