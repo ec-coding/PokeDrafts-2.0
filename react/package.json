@@ -29,6 +29,7 @@
     "react-icons": "^4.7.1",
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.4.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-string-replace": "^1.1.0",

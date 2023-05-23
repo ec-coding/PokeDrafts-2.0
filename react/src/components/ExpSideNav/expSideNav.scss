@@ -17,7 +17,7 @@
 .landing-sets {
     padding: 1vh;
     flex-wrap: wrap;
-    background: rgb(172, 172, 172);
+    background: var(--gold-gradient);
     box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset -2px -2px 0 rgb(212, 212, 212), inset 2px 2px 0 rgba(0, 0, 0, 0.34);
 }
 

@@ -19,7 +19,7 @@ if (el) {
 
 }
 
-const Expansions = ({ toggleFullScreen, isFullScreen }) => {
+const Expansions = ({ }) => {
   const [isHero, setIsHero] = React.useState(true);
   const { expansion } = useParams()
 
@@ -47,7 +47,7 @@ const Expansions = ({ toggleFullScreen, isFullScreen }) => {
           </span>
         </header>
         <div class="main row mx-0 px-0">
-          <ExpBody expansion={expansion} isFullScreen={isFullScreen} />
+          <ExpBody expansion={expansion} />
           <ExpSideNav expansion={expansion} />
         </div >
       </div>

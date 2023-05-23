@@ -144,24 +144,13 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
                         </ul>
                     </div>
                 </nav>
-                <AnimatePresence mode="wait">
-                    <motion.div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row"
-                        key={animationKey}
-                        // initial={{ opacity: 0 }}
-                        // animate={{ opacity: 1 }}
-                        // initial={{ x: '100%' }}
-                        // animate={{
-                        //     x: 0
-                        //   }}
-                        transition={{ delay: 0.25, duration: 0.65 }}
-                    >
+                    <div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row">
 
                         {cards && cards.map((card) => (
                             <Card card={card} onDeck={false} />
                         ))}
 
-                    </motion.div>
-                </AnimatePresence>
+                    </div>
                 <ReactPaginate
                     nextLabel=">"
                     onPageChange={onPageChange}
@@ -191,7 +180,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
         </>
     )
 }

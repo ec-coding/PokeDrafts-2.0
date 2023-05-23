@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import SearchFilter from '../../components/SearchFilter/SearchFilter'
@@ -107,21 +108,32 @@ const Home = ({ }) => {
                                     {tab === 'slide1' && <div className="searchFieldContainer">
 
                                         {(showResults) &&
-                                            <div>
-                                                <h3 className="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
-                                                <div id="tab-two" className="searchResultsTab">
-                                                    <SearchResults
-                                                        pageSwitch={pageSwitch}
-                                                        autoResetPage={true}
-                                                        currentPage={currentPage}
-                                                        showResults={showResults}
-                                                        totalCount={totalCount}
-                                                        pageCount={pageCount}
-                                                        isLoading={isLoading}
-                                                    />
-                                                </div>
-                                            </div>
-
+                                            <AnimatePresence>
+                                                <motion.div
+                                                    initial={{
+                                                        height: 0,
+                                                        opacity: 0,
+                                                    }}
+                                                    animate={{
+                                                        height: "auto",
+                                                        opacity: 1,
+                                                    }}
+                                                    transition={{ duration: 0.5 }}
+                                                >
+                                                    <h3 className="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
+                                                    <div id="tab-two" className="searchResultsTab">
+                                                        <SearchResults
+                                                            pageSwitch={pageSwitch}
+                                                            autoResetPage={true}
+                                                            currentPage={currentPage}
+                                                            showResults={showResults}
+                                                            totalCount={totalCount}
+                                                            pageCount={pageCount}
+                                                            isLoading={isLoading}
+                                                        />
+                                                    </div>
+                                                </motion.div>
+                                            </AnimatePresence>
                                         }
 
                                         <ul className="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
