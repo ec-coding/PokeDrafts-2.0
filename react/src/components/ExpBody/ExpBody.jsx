@@ -9,8 +9,8 @@ const ExpBody = ({ expansion }) => {
         <>
             <main class="expansion-body row bg-secondary col-lg-8 col-sm-12 m-0 p-4 border border-dark bs-lift">
                 <section class="row bg-light p-0 mx-0 border border-dark bs-lift justify-content-center">
-                        <ExpImages cardSet={expansion} />
-                    <div class="col-xl-5 col-lg-5 col-sm-8 text-start my-5 px-3 d-block justify-content-center">
+                    <ExpImages cardSet={expansion} />
+                    <div class="right col-xl-5 col-lg-5 col-sm-8 text-start my-5 px-3 d-block justify-content-center">
                         <div class="row pt-4 d-flex justify-content-center">
                             <img src="https://i.imgur.com/fo3Kkih.png" alt="" class="col-lg-6 col-sm-8" />
                         </div>

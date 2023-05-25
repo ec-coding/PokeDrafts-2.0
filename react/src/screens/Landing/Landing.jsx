@@ -60,11 +60,11 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
             <div class="sets">
               {/* <ExpCarousel /> */}
               <div className="divider">
-                <h3 className="bg-blue">Generation I</h3>
+                <h3 id="landingGenOne" className="bg-blue">Generation I</h3>
                 <h4>Original Series</h4>
 
                 <ol className="row d-flex justify-content-center mx-0 px-0">
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingBase" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/base" >
                       <Flipped flipId="landingBase">
                         <img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -72,7 +72,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Base Set</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingJungle" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/jungle" >
                       <Flipped flipId="landingJungle">
                         <img src="https://i.imgur.com/WUVqIZa.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -80,7 +80,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Jungle</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingFossil" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/fossil" >
                       <Flipped flipId="landingFossil">
                         <img src="https://i.imgur.com/fzPnBJi.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -88,7 +88,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Fossil</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingBase2" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/base-2" >
                       <Flipped flipId="landingBase2">
                         <img src="https://i.imgur.com/l4fcVLN.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -98,7 +98,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                   </li>
                 </ol>
                 <ol className="gen-one-set-two row d-flex justify-content-center mx-0 px-0">
-                  <li className="col-lg-4 col-md-6 mx-0">
+                  <li id="landingTeamRocket" className="col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/team-rocket" >
                       <Flipped flipId="landingTeamRocket">
                         <img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -106,7 +106,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Team Rocket</h5>
                   </li>
-                  <li className="col-lg-4 col-md-6 mx-0">
+                  <li id="landingGymHeroes" className="col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/gym-heroes" >
                       <Flipped flipId="landingGymHeroes">
                         <img src="https://i.imgur.com/dk730u5.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -114,7 +114,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Gym Heroes</h5>
                   </li>
-                  <li className="col-lg-4 col-md-6 mx-0">
+                  <li id="landingGymChallenge" className="col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/gym-challenge" >
                       <Flipped flipId="landingGymChallenge">
                         <img src="https://i.imgur.com/tsM9xhr.jpg" alt="" class="banner-img" onClick={toggleFullScreen} />
@@ -125,10 +125,10 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                 </ol>
               </div>
               <div className="divider">
-                <h3 className="set-header bg-blue">Generation II</h3>
+                <h3 id="landingGenTwo" className="set-header bg-blue">Generation II</h3>
                 <h4 className="set-header">Neo Series</h4>
                 <ol className="row d-flex justify-content-center mx-0 px-0">
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingNeoGenesis" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/neo-genesis" >
                       <Flipped flipId="landingNeoGenesis">
                         <img src="https://i.imgur.com/gtVq1l1.jpg" alt="" class="" onClick={toggleFullScreen} />
@@ -136,7 +136,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Neo Genesis</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingNeoDiscovery" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/neo-discovery" >
                       <Flipped flipId="landingNeoDiscovery">
                         <img src="https://i.imgur.com/FDv9Uok.jpg" alt="" class="" onClick={toggleFullScreen} />
@@ -144,7 +144,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Neo Discovery</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingNeoRevelation" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/neo-revelation" >
                       <Flipped flipId="landingNeoRevelation">
                         <img src="https://i.imgur.com/ON6FfPy.jpg" alt="" class="" onClick={toggleFullScreen} />
@@ -152,7 +152,7 @@ const Landing = ({ toggleFullScreen, isFullScreen }) => {
                     </Link>
                     <h5 class="bg-blue">Neo Revelation</h5>
                   </li>
-                  <li className="col-xl-3 col-lg-4 col-md-6 mx-0">
+                  <li id="landingNeoDestiny" className="col-xl-3 col-lg-4 col-md-6 mx-0">
                     <Link to="/expansions/neo-destiny" >
                       <Flipped flipId="landingNeoDestiny">
                         <img src="https://i.imgur.com/cA8s7UR.jpg" alt="" class="" onClick={toggleFullScreen} />
