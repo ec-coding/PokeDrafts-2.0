@@ -36,3 +36,37 @@ code {
 .bg-gold {
   background: var(--gold-gradient)
 }
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin x-large {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin x-small {
+  @media (max-width: 500px) {
+    @content;
+  }
+}

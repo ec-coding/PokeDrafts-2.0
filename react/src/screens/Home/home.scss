@@ -1,16 +1,16 @@
 /* NAVBAR */
-.navbar {
+.home .navbar {
     position: fixed;
     z-index: 10;
 }
 
-.navbar .container-fluid {
+.home .navbar .container-fluid {
     background-image: var(--red-gradient);
-    height: 6.5vh;
+    height: 64px;
 }
 
 /* Style the buttons that are used to open the tab content */
-.navbar button {
+.home .navbar button {
     cursor: pointer;
     width: 11.5vh;
     font-size: 20px;
@@ -22,7 +22,7 @@
 }
 
 /* Change background color of buttons on hover */
-.navbar button:hover {
+.home .navbar button:hover {
     background: rgb(192, 192, 192);
 }
 

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import SearchFilter from '../../components/SearchFilter/SearchFilter'
@@ -9,13 +11,21 @@ import Deck from '../../components/UserDeck/Deck'
 import UserContext from '../../contexts/UserContext';
 import CardContext from '../../contexts/CardContext';
 import DeckContext from '../../contexts/DeckContext';
-import './Home.css'
-import '../../style/Modal.css';
+import './home.scss'
+import '../../style/modal.css';
 
 const Home = ({ }) => {
+    const navigate = useNavigate();
+
     const logout = () => {
         localStorage.removeItem("user");
-        window.location.reload();
+        if (!document.startViewTransition) {
+            return navigate(window.location.reload());
+        } else {
+            return document.startViewTransition(() => {
+                navigate(window.location.reload());
+            });
+        }
     };
 
     const user = useContext(UserContext);
@@ -27,6 +37,7 @@ const Home = ({ }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [pageCount, setPageCount] = useState()
     const [fetchLink, setFetchLink] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
     // REACT ROUTER
     useEffect(() => {
@@ -46,10 +57,11 @@ const Home = ({ }) => {
             })
     }, []);
 
-    function onSearch(totalCount, pageCount) {
+    function onSearch(totalCount, pageCount, isLoading) {
         setShowResults(true)
         setTotalCount(totalCount)
         setPageCount(pageCount)
+        setIsLoading(isLoading)
         // Sharing State Between Components
     }
 
@@ -61,84 +73,98 @@ const Home = ({ }) => {
         <>
             <CardContext.Provider value={changeCards} >
                 <DeckContext.Provider value={[decks, changeDecks]} >
-                    <nav className="navbar navbar-expand-lg bg-light border border-dark py-0 w-100">
-                        <div className="container-fluid px-4">
-                            <ul className="navbar-nav h-100">
-                                <li>
-                                    <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" className="pt-1 mx-2" />
-                                </li>
-                                {/* <li className="nav-item">
+                    <div className='home'>
+                        <nav className="navbar navbar-expand-lg bg-light border border-dark py-0 w-100">
+                            <div className="container-fluid px-4">
+                                <ul className="navbar-nav h-100">
+                                    <li>
+                                        <img id="title-img" src="https://i.imgur.com/HgSy1Gq.png" alt="trim-images" border="0" className="pt-1 mx-2" />
+                                    </li>
+                                    {/* <li className="nav-item">
                                         <button id="tab-zero-button" className="tab-links" onClick={() => changeTab('slide0')}>Profile</button>
                                     </li> */}
-                                {/* <li className="nav-item">
+                                    {/* <li className="nav-item">
                                     <button id="tab-one-button" className="tab-links h-100" onClick={() => changeTab('slide1')}>Search</button>
                                 </li> */}
-                                {/* <li className="nav-item">
+                                    {/* <li className="nav-item">
                                     <button id="tab-two-button" className="tab-links" onClick={() => changeTab('slide2')}>Results</button>
                                 </li> */}
-                                {/* <li className="nav-item">
+                                    {/* <li className="nav-item">
                                     <button id="tab-three-button" className="tab-links h-100" onClick={() => changeTab('slide3')}>Deck</button>
                                 </li> */}
-                            </ul>
-                            <ul className="navbar-nav h-100">
-                                <li className="nav-item">
-                                    <button id="logout-button" className="tab-links h-100" onClick={logout}>Logout</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div className="navbar-substitute"></div>
+                                </ul>
+                                <ul className="navbar-nav h-100">
+                                    <li className="nav-item">
+                                        <button id="logout-button" className="tab-links h-100" onClick={logout}>Logout</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div className="navbar-substitute"></div>
 
-                    <div className="App text-center">
-                        <div className="App-inner">
-                            <div className="homeContainer">
-                                {tab === 'slide1' && <div className="searchFieldContainer">
+                        <div className="App text-center">
+                            <div className="App-inner">
+                                <div className="homeContainer">
+                                    {tab === 'slide1' && <div className="searchFieldContainer">
 
-                                    {(showResults) &&
-                                        <div>
-                                            <h3 className="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
-                                            <div id="tab-two" className="searchResultsTab">
-                                                <SearchResults
+                                        {(showResults) &&
+                                            <AnimatePresence>
+                                                <motion.div
+                                                    initial={{
+                                                        height: 0,
+                                                        opacity: 0,
+                                                    }}
+                                                    animate={{
+                                                        height: "auto",
+                                                        opacity: 1,
+                                                    }}
+                                                    transition={{ duration: 0.5 }}
+                                                >
+                                                    <h3 className="componentBanner bg-info border border-dark mb-0 py-1">Search Results</h3>
+                                                    <div id="tab-two" className="searchResultsTab">
+                                                        <SearchResults
+                                                            pageSwitch={pageSwitch}
+                                                            autoResetPage={true}
+                                                            currentPage={currentPage}
+                                                            showResults={showResults}
+                                                            totalCount={totalCount}
+                                                            pageCount={pageCount}
+                                                            isLoading={isLoading}
+                                                        />
+                                                    </div>
+                                                </motion.div>
+                                            </AnimatePresence>
+                                        }
+
+                                        <ul className="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
+                                            <li className="nav-item mx-1" role="presentation">
+                                                <button className="active p-0" id="search-tab" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="search" aria-selected="true">
+                                                    <h3 className="border-0 m-0 p-1">Search</h3>
+                                                </button>
+                                            </li>
+                                            <li className="nav-item mx-1" role="presentation">
+                                                <button className="p-0" id="deck-tab" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="deck" aria-selected="false">
+                                                    <h3 className="border-0 m-0 p-1">Deck</h3>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div className="tab-content" id="myTabContent">
+                                            <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane show active" role="tabpanel">
+                                                <SearchFilter
                                                     pageSwitch={pageSwitch}
-                                                    autoResetPage={true}
+                                                    onSearch={onSearch}
                                                     currentPage={currentPage}
-                                                    showResults={showResults}
-                                                    totalCount={totalCount}
-                                                    pageCount={pageCount}
                                                 />
                                             </div>
-                                        </div>
-
-                                    }
-
-                                    <ul className="componentBanner border border-dark border-bottom-0 m-0 p-0 d-flex justify-content-center" id="myTab" role="tablist">
-                                        <li className="nav-item mx-1" role="presentation">
-                                            <button className="active p-0" id="search-tab" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="search" aria-selected="true">
-                                                <h3 className="border-0 m-0 p-1">Search</h3>
-                                            </button>
-                                        </li>
-                                        <li className="nav-item mx-1" role="presentation">
-                                            <button className="p-0" id="deck-tab" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="deck" aria-selected="false">
-                                                <h3 className="border-0 m-0 p-1">Deck</h3>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <div className="tab-content" id="myTabContent">
-                                        <div id="tab-one" className="searchFilterTab border border-dark panel text-start tab-pane show active" role="tabpanel">
-                                            <SearchFilter
-                                                pageSwitch={pageSwitch}
-                                                onSearch={onSearch}
-                                                currentPage={currentPage}
-                                            />
-                                        </div>
-                                        <div id="tab-three" className="deckMaster panel show tab-pane" aria-labelledby="headingOne" role="tabpanel">
-                                            <Deck />
+                                            <div id="tab-three" className="deckMaster panel show tab-pane" aria-labelledby="headingOne" role="tabpanel">
+                                                <Deck />
+                                            </div>
                                         </div>
                                     </div>
+                                    }
                                 </div>
-                                }
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                     <Footer />

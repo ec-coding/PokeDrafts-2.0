@@ -1,5 +1,6 @@
 .searchResultsMaster {
   background: var(--gold-gradient);
+
 }
 
 .searchResultsMaster ul {
@@ -9,7 +10,7 @@
 
 .searchResultsMaster nav {
   background: rgb(192, 192, 192);
-  position: sticky;
+  /* position: sticky; */
   display: flex;
   z-index: 5;
   top: 6.5vh;
@@ -40,7 +41,7 @@
 }
 
 .searchResultsContainer {
-  padding: 0 12.5vh;
+  padding: 1vh 12.5vh;
 }
 
 /* CAROUSEL */
@@ -178,7 +179,7 @@
 
 @media only screen and (min-width: 1200px) {
   .searchResultsContainer {
-    padding: 0 13.5vh;
+    padding: 1vh 13.5vh;
   }
 
   .carousel-control-prev,

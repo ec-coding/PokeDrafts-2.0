@@ -1,0 +1,46 @@
+@import "../../index.scss";
+
+.vt-navbar {
+    height: calc(100vh - 55px);
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .landing-sets {
+        padding: 1vh;
+        flex-wrap: wrap;
+        background: var(--gold-gradient);
+        box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset -2px -2px 0 rgb(212, 212, 212), inset 2px 2px 0 rgba(0, 0, 0, 0.34);
+
+        .set-booster-pack {
+            margin: 0 0.5vh 1vh 0.5vh;
+
+            div {
+
+                a {
+                    text-decoration: none;
+
+                    img {
+                        position: relative;
+                        width: 220px;
+                        height: 385px;
+                        border-radius: 0.5em;
+                        z-index: 10;
+                        filter: drop-shadow(5px 5px 5px black);
+                        margin: 1vh 2vh;
+                    }
+
+                    h4 {
+                        color: rgb(255, 255, 255);
+                        text-shadow: 2px 2px 0 #000000;
+                        padding: 0.75vh 0;
+                        margin: auto 1.5vh;
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        box-shadow: 1px 1px 0.5em rgba(122, 122, 122, 0.55), inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9), inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+}

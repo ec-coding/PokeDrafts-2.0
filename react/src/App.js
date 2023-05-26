@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UserContext from './contexts/UserContext';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Flipper, Flipped } from 'react-flip-toolkit'
 import Landing from "./screens/Landing/Landing";
 import Expansions from "./screens/Expansions/Expansions";
 import Login from "./screens/Login/Login";
@@ -11,8 +12,8 @@ import './App.css';
 function App() {
   const [user, setUser] = useState({});
   const [decks, changeDecks] = useState([])
-
-  console.log(typeof (changeDecks));
+  const [fullScreen, setFullScreen] = useState(false)
+  const toggleFullScreen = () => setFullScreen(prevState => !prevState)
 
   useEffect(() => {
     const theUser = localStorage.getItem("user");
@@ -45,30 +46,31 @@ function App() {
     <UserContext.Provider value={user}>
       <BrowserRouter>
         {/* Context for Light / Dark Mode */}
-        <Routes>
-          <Route
-            path="/"
-            element={user?.email ? <Navigate to="/home" /> : <Landing />}
-          />
-          <Route
-            path="/expansions"
-            // element={<Navigate to="/expansions/base" />}
-          >
-            <Route path=":expansion" element={<Expansions />} />
-          </Route>
-          <Route
-            path="/login"
-            element={user?.email ? <Navigate to="/home" /> : <Login />}
-          />
-          <Route
-            path="/signup"
-            element={user?.email ? <Navigate to="/home" /> : <SignUp />}
-          />
-          <Route
-            path="/home"
-            element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
-          />
-        </Routes>
+        <Flipper
+          flipKey={fullScreen}
+        >
+          <Routes>
+            <Route
+              path="/"
+              element={user?.email ? <Navigate to="/home" /> : <Landing toggleFullScreen={toggleFullScreen} />}
+            />
+            <Route path="/expansions">
+              <Route path=":expansion" element={<Expansions toggleFullScreen={toggleFullScreen} />} />
+            </Route>
+            <Route
+              path="/login"
+              element={user?.email ? <Navigate to="/home" /> : <Login />}
+            />
+            <Route
+              path="/signup"
+              element={user?.email ? <Navigate to="/home" /> : <SignUp />}
+            />
+            <Route
+              path="/home"
+              element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
+            />
+          </Routes>
+        </Flipper>
       </BrowserRouter>
     </UserContext.Provider>
   );
@@ -76,3 +78,5 @@ function App() {
 
 export default App;
 
+// PROPS DOWN
+// EVENTS UP
