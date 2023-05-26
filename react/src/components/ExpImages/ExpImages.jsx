@@ -6,6 +6,8 @@ import './expImages.scss'
 
 const ExpImages = (props) => {
 
+    const { navSlide } = props;
+
     if (props.cardSet !== undefined) {
         if (props.cardSet == 'base') {
             return (
@@ -15,8 +17,9 @@ const ExpImages = (props) => {
                             <Flipped flipId="landingBase">
                                 <img src="https://i.imgur.com/q2YVnId.jpg" alt="base" className="booster-base booster-hero ds-dark-lg mt-4" />
                             </Flipped>
-                        </HashLink>
+
                         <h4 class="exp-header bg-blue text-center mx-1 mt-3">Base Set</h4>
+                        </HashLink>
                     </div>
                 </div>
             )

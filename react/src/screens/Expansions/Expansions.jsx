@@ -7,20 +7,9 @@ import ExpBody from '../../components/ExpBody/ExpBody'
 import ExpSideNav from '../../components/ExpSideNav/ExpSideNav'
 import "./expansions.scss"
 
-var el = document.getElementById('hero-img')
-if (el) {
-  el.addEventListener('click', () => {
-    document.startViewTransition(() => {
-      document
-        .querySelectorAll('.booster-sm .booster-hero')
-        .forEach((target) => target.classList.toggle('hidden'));
-    });
-  });
-
-}
-
 const Expansions = ({ }) => {
   const [isHero, setIsHero] = React.useState(true);
+  const [navSlide, setNavSlide] = useState(false)
   const { expansion } = useParams()
 
   const navigate = useNavigate();
@@ -35,6 +24,10 @@ const Expansions = ({ }) => {
     }
   };
 
+  const changeNavSlide = () => {
+    setNavSlide(!navSlide)
+  }
+
   return (
     <>
       <div class="expansions">
@@ -47,8 +40,8 @@ const Expansions = ({ }) => {
           </span>
         </header>
         <div class="main row mx-0 px-0">
-          <ExpBody expansion={expansion} />
-          <ExpSideNav expansion={expansion} />
+          <ExpBody expansion={expansion} navSlide={navSlide} />
+          <ExpSideNav expansion={expansion} changeNavSlide={changeNavSlide} />
         </div >
       </div>
     </>

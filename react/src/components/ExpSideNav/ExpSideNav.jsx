@@ -1,36 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Flipper, Flipped } from 'react-flip-toolkit';
 import './expSideNav.scss'
 
-const AnimatedLink = ({ to, children }) => {
-    const navigate = useNavigate();
-    return (
-        <a
-            href={to}
-            id={`hero-img`}
-            onClick={(ev) => {
-                ev.preventDefault();
-                document.startViewTransition(() => {
-                    navigate(to);
-                });
-            }}
-        >
-            {children}
-        </a>
-    );
-};
+const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
+    const toggleNavSlide = () => {
+        changeNavSlide(true)
+    }
 
-const ExpHero = ({ link, heroContent }) => {
 
-    return (
-        <>
-            {link}
-            {heroContent}
-        </>
-    )
-}
-
-const ExpansionSideNav = ({ expansion }) => {
     return (
         <nav class="vt-navbar col-lg-4 col-sm-12 mx-0 px-0">
             <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 px-2">
@@ -38,12 +16,12 @@ const ExpansionSideNav = ({ expansion }) => {
                     expansion != 'base' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/base" >
-                                    <img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="booster-base booster-sm" />
-                                    <h4 class="bg-blue text-center">Base Set</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/base" >
+                                <Flipped flipId="landingBase">
+                                    <img src="https://i.imgur.com/q2YVnId.jpg" alt="" class="booster-base booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Base Set</h4>
+                            </Link>
                         </div>
                     </li>
                 }
@@ -51,12 +29,12 @@ const ExpansionSideNav = ({ expansion }) => {
                     expansion != 'jungle' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/jungle" >
-                                    <img src="https://i.imgur.com/WUVqIZa.jpg" alt="" class="booster-jungle booster-sm" />
-                                    <h4 class="bg-blue text-center">Jungle</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/jungle" >
+                                <Flipped flipId="landingJungle">
+                                    <img src="https://i.imgur.com/WUVqIZa.jpg" alt="" class="booster-jungle booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Jungle</h4>
+                            </Link>
                         </div>
                     </li>
                 }
@@ -65,12 +43,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/fossil" >
-                                    <img src="https://i.imgur.com/fzPnBJi.jpg" alt="" class="booster-fossil booster-sm" />
-                                    <h4 class="bg-blue text-center">Fossil</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/fossil" >
+                                <Flipped flipId="landingFossil">
+                                    <img src="https://i.imgur.com/fzPnBJi.jpg" alt="" class="booster-fossil booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Fossil</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -79,12 +57,12 @@ const ExpansionSideNav = ({ expansion }) => {
                     expansion != 'base-2' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/base-2" >
-                                    <img src="https://i.imgur.com/l4fcVLN.jpg" alt="" class="booster-base-2 booster-sm" />
-                                    <h4 class="bg-blue text-center">Base Set 2</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/base-2" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/l4fcVLN.jpg" alt="" class="booster-base-2 booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Base Set 2</h4>
+                            </Link>
                         </div>
                     </li>
                 }
@@ -93,12 +71,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/team-rocket" >
-                                    <img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" class="booster-team-rocket booster-sm" />
-                                    <h4 class="bg-blue text-center">Team Rocket</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/team-rocket" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/Hj0RN6t.jpg" alt="" class="booster-team-rocket booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Team Rocket</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -109,12 +87,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/gym-heroes" >
-                                    <img src="https://i.imgur.com/dk730u5.jpg" alt="" class="booster-gym-heroes booster-sm" />
-                                    <h4 class="bg-blue text-center">Gym Heroes</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/gym-heroes" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/dk730u5.jpg" alt="" class="booster-gym-heroes booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Gym Heroes</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -124,12 +102,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/gym-challenge" >
-                                    <img src="https://i.imgur.com/tsM9xhr.jpg" alt="" class="booster-gym-challenge booster-sm" />
-                                    <h4 class="bg-blue text-center">Gym Challenge</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/gym-challenge" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/tsM9xhr.jpg" alt="" class="booster-gym-challenge booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Gym Challenge</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -139,12 +117,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/neo-genesis" >
-                                    <img src="https://i.imgur.com/gtVq1l1.jpg" alt="" class="booster-neo-genesis booster-sm" />
-                                    <h4 class="bg-blue text-center">Neo Genesis</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/neo-genesis" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/gtVq1l1.jpg" alt="" class="booster-neo-genesis booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Neo Genesis</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -154,12 +132,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/neo-discovery" >
-                                    <img src="https://i.imgur.com/FDv9Uok.jpg" alt="" class="booster-neo-discovery booster-sm" />
-                                    <h4 class="bg-blue text-center">Neo Discovery</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/neo-discovery" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/FDv9Uok.jpg" alt="" class="booster-neo-discovery booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Neo Discovery</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -169,12 +147,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/neo-revelation" >
-                                    <img src="https://i.imgur.com/ON6FfPy.jpg" alt="" class="booster-neo-revelation booster-sm" />
-                                    <h4 class="bg-blue text-center">Neo Revelation</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/neo-revelation" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/ON6FfPy.jpg" alt="" class="booster-neo-revelation booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Neo Revelation</h4>
+                            </Link>
                         </div>
                     </li>
 
@@ -184,12 +162,12 @@ const ExpansionSideNav = ({ expansion }) => {
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
-                            <ExpHero
-                                link={<AnimatedLink to="/expansions/neo-destiny" >
-                                    <img src="https://i.imgur.com/cA8s7UR.jpg" alt="" class="booster-neo-destiny booster-sm" />
-                                    <h4 class="bg-blue text-center">Neo Destiny</h4>
-                                </AnimatedLink>}
-                            />
+                            <Link to="/expansions/neo-destiny" >
+                                <Flipped flipId="landing">
+                                    <img src="https://i.imgur.com/cA8s7UR.jpg" alt="" class="booster-neo-destiny booster-sm" onClick={toggleNavSlide} />
+                                </Flipped>
+                                <h4 class="bg-blue text-center">Neo Destiny</h4>
+                            </Link>
                         </div>
                     </li>
 
