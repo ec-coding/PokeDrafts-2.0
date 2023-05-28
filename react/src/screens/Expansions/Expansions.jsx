@@ -26,6 +26,7 @@ const Expansions = ({ }) => {
 
   const changeNavSlide = () => {
     setNavSlide(!navSlide)
+    console.log('toggled from Expansions')
   }
 
   return (
@@ -39,10 +40,12 @@ const Expansions = ({ }) => {
             <img src="https://i.imgur.com/HgSy1Gq.png" alt="" class="app-logo" />
           </span>
         </header>
-        <div class="main row mx-0 px-0">
-          <ExpBody expansion={expansion} navSlide={navSlide} />
-          <ExpSideNav expansion={expansion} changeNavSlide={changeNavSlide} />
-        </div >
+        <Flipper flipKey={navSlide}>
+          <div class="main row mx-0 px-0">
+            <ExpBody expansion={expansion} navSlide={navSlide} />
+            <ExpSideNav expansion={expansion} changeNavSlide={changeNavSlide} />
+          </div >
+        </Flipper>
       </div>
     </>
   )
