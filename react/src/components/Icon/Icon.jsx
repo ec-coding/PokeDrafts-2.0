@@ -1,5 +1,5 @@
 import React from 'react'
-import './Icon.css'
+import './Icon.scss'
 
 export default function Icon(props) {
     //TYPE
