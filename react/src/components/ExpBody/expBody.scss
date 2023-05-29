@@ -3,25 +3,71 @@
 .expansion-body {
 
     section {
-
+        // border: 5px solid rgba(255, 255, 255, 0.25);
+        
         .content {
-            background: rgba(255, 255, 255, 0.90);
+            // background: rgba(255, 255, 255, 0.90);
+
             // box-shadow:
             //     1px 1px 0.5em rgba(122, 122, 122, 0.55),
             //     inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
             //     inset -1.5px -1.5px 0 rgba(0, 0, 0, 0.5);
+
             .right {
-            box-shadow:
-                1px 1px 0.5em rgba(122, 122, 122, 0.55),
-                inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
-                inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
-                .row {
+                border: 5px solid rgba(0, 0, 0, 0.25);
+                box-shadow:
+                    1px 1px 0.5em rgba(122, 122, 122, 0.55),
+                    inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+                    inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
+
+                .logo {
 
                     img {
-                        max-width: 180px;
-                        max-height: 110px;
+                        width: auto;
+                        height: 110px;
                     }
                 }
+
+                .quantity {
+                    h3 {
+
+                    }
+                    h5 {
+
+                    }
+                }
+
+                .number {
+                    h3 {
+
+                    }
+                    h5 {
+
+                    }
+                }
+
+                .release {
+                    h3 {
+
+                    }
+                    h5 {
+
+                    }
+                }
+
+                .decks {
+                    min-height: 175px;
+                    h3 {
+
+                    }
+                    h5 {
+                        a {
+                            text-decoration: none;
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
+
             }
         }
     }
@@ -29,88 +75,91 @@
 
 #outer-base {
     background: #DD494E;
+}
 
-    #inner-base {
-        background: #3363AF;
-    }
+#inner-base {
+    background: #3363AF;
+    color: rgb(236, 236, 236);
 }
 
 #outer-jungle {
-    background: #7DB808;
+    background: #3C843E;
+}
 
-    #inner-jungle {
-        background: #AAD15E;
-    }
+#inner-jungle {
+    background: #AAD15E;
 }
 
 #outer-fossil {
     background: #C4B182;
+}
 
-    #inner-fossil {
-        background: #FFEFD1;
-    }
+#inner-fossil {
+    background: #FFEFD1;
 }
 
 #outer-base-2 {
     background: #3366FF;
+}
 
-    #inner-base-2 {
-        background: #99CCFF;
-    }
+#inner-base-2 {
+    background: #99CCFF;
 }
 
 #outer-team-rocket {
     background: #525252;
+}
 
-    #inner-team-rocket {
-        background: #D91329;
-    }
+#inner-team-rocket {
+    background: #D91329;
+    color: rgb(236, 236, 236);
 }
 
 #outer-gym-heroes {
     background: #5BC7E5;
+}
 
-    #inner-gym-heroes {
-        background: #E7C46E;
-    }
+#inner-gym-heroes {
+    background: #E7C46E;
 }
 
 #outer-gym-challenge {
     background: #E24242;
+}
 
-    #inner-gym-challenge {
-        background: #D6D6D6;
-    }
+#inner-gym-challenge {
+    background: #D6D6D6;
 }
 
 #outer-neo-genesis {
     background: #DAA520;
+}
 
-    #inner-neo-genesis {
-        background: #C0C0C0;
-    }
+#inner-neo-genesis {
+    background: #C0C0C0;
 }
 
 #outer-neo-discovery {
     background: #BFB895;
+}
 
-    #inner-neo-discovery {
-        background: #EBE5CA;
-    }
+#inner-neo-discovery {
+    background: #EBE5CA;
 }
 
 #outer-neo-revelation {
     background: #4B6C8E;
+}
 
-    #inner-neo-revelation {
-        background: #8AA0AE;
-    }
+#inner-neo-revelation {
+    background: #8AA0AE;
+    color: rgb(236, 236, 236);
 }
 
 #outer-neo-destiny {
     background: #8F54D8;
+}
 
-    #inner-neo-destiny {
-        background: #F9E889;
-    }
+#inner-neo-destiny {
+    background: #FF7E3F;
 }

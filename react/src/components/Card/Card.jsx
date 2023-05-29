@@ -196,7 +196,7 @@ export default function Card({ card, onDeck }) {
                   </section>
                 </div>
 
-                <div class="card-text text-start col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card-text text-start col-xl-6 col-lg-6 col-md-6 col-sm-12 border">
                   <div class="row card-title-box">
                     <CardAttributes cardName={card?.name} />
                     <CardAttributes cardCheck={card} />

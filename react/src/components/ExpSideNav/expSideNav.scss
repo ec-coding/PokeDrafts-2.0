@@ -10,7 +10,6 @@
         padding: 1vh;
         flex-wrap: wrap;
         background: var(--gold-gradient);
-        box-shadow: 2px 2px 0.5em rgba(122, 122, 122, 0.55), inset -2px -2px 0 rgb(212, 212, 212), inset 2px 2px 0 rgba(0, 0, 0, 0.34);
 
         .set-booster-pack {
             margin: 0 0.5vh 1vh 0.5vh;
@@ -28,6 +27,12 @@
                         z-index: 10;
                         filter: drop-shadow(5px 5px 5px black);
                         margin: 1vh 2vh;
+                        transition-duration: 0.25s;
+
+                        &:hover {
+                            transform: scale(1.05);
+                            transition-duration: 0.15s;
+                        }
                     }
 
                     h4 {

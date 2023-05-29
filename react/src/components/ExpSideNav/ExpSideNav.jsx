@@ -13,7 +13,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
     return (
         <nav class="vt-navbar col-lg-4 col-sm-12 mx-0 px-0">
-            <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 px-2">
+            <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 px-2 bs-lift">
                 {
                     expansion != 'base' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">

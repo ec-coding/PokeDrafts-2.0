@@ -2,13 +2,19 @@
 
 .expansion-image {
 
-    .col-8 {
+    .inner {
+        border: 5px solid rgba(0, 0, 0, 0.25);
+        box-shadow:
+        1px 1px 0.5em rgba(122, 122, 122, 0.55),
+        inset -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+        inset 1.5px 1.5px 0 rgba(0, 0, 0, 0.5);
 
         a {
+
             img {
                 min-width: 330px;
                 min-height: 599px;
-                
+
                 @include medium {
                     width: 372px;
                     height: 670px;
@@ -18,7 +24,6 @@
                     width: 100%;
                     height: 100%;
                 }
-
             }
         }
 
