@@ -12,7 +12,7 @@ const ExpImages = (props) => {
     const { navSlide } = props;
 
     if (props.cardSet !== undefined) {
-        if (props.cardSet == 'base') {
+        if (props.cardSet === 'base') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3'>
@@ -29,7 +29,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'jungle') {
+        } else if (props.cardSet === 'jungle') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -46,7 +46,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'fossil') {
+        } else if (props.cardSet === 'fossil') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -63,7 +63,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'base-2') {
+        } else if (props.cardSet === 'base-2') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -80,7 +80,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'team-rocket') {
+        } else if (props.cardSet === 'team-rocket') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -97,7 +97,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'gym-heroes') {
+        } else if (props.cardSet === 'gym-heroes') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -114,7 +114,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'gym-challenge') {
+        } else if (props.cardSet === 'gym-challenge') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -131,7 +131,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'neo-genesis') {
+        } else if (props.cardSet === 'neo-genesis') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -148,7 +148,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'neo-discovery') {
+        } else if (props.cardSet === 'neo-discovery') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -165,7 +165,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'neo-revelation') {
+        } else if (props.cardSet === 'neo-revelation') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>
@@ -182,7 +182,7 @@ const ExpImages = (props) => {
                     </div>
                 </div>
             )
-        } else if (props.cardSet == 'neo-destiny') {
+        } else if (props.cardSet === 'neo-destiny') {
             return (
                 <div class="expansion-image row col-lg-6 col-md-6 col-sm-10 my-5 justify-content-center">
                     <div id={expInner} className='inner col-10 px-5 pt-3 bs-sink'>

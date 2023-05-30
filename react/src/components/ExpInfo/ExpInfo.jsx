@@ -321,28 +321,28 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Water'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                        <a href="https://bulbapedia.bulbagarden.net/wiki/Overgrowth_(TCG)" target="_blank">Overgrowth</a>
+                        <a href="https://bulbapedia.bulbagarden.net/wiki/Overgrowth_(TCG)" target="_blank" rel="noreferrer">Overgrowth</a>
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Lightning'} />
                     <Icon textSwitch={'Psychic'} />
                     <h5 class="col px-2">
-                        <a href="https://bulbapedia.bulbagarden.net/wiki/Zap!_(TCG)" target="_blank">Zap!</a>         
+                        <a href="https://bulbapedia.bulbagarden.net/wiki/Zap!_(TCG)" target="_blank" rel="noreferrer">Zap!</a>         
                         </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fire'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brushfire_(TCG)" target="_blank">Brushfire</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brushfire_(TCG)" target="_blank" rel="noreferrer">Brushfire</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Water'} />
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Blackout_(TCG)" target="_blank">Blackout!</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Blackout_(TCG)" target="_blank" rel="noreferrer">Blackout!</a>  
                     </h5>
                 </div>
             </>
@@ -354,14 +354,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Psychic'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Power_Reserve_(TCG)" target="_blank">Power Reserve</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Power_Reserve_(TCG)" target="_blank" rel="noreferrer">Power Reserve</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Water'} />
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Water_Blast_(TCG)" target="_blank">Water Blast</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Water_Blast_(TCG)" target="_blank" rel="noreferrer">Water Blast</a>  
                     </h5>
                 </div>
             </>
@@ -373,14 +373,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Grass'} />
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/BodyGuard_(TCG)" target="_blank">BodyGuard</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/BodyGuard_(TCG)" target="_blank" rel="noreferrer">BodyGuard</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fire'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/LockDown_(TCG)" target="_blank">LockDown</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/LockDown_(TCG)" target="_blank" rel="noreferrer">LockDown</a>  
                     </h5>
                 </div>
             </>
@@ -392,28 +392,28 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Fighting'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Grass_Chopper_(TCG)" target="_blank">Grass Chopper</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Grass_Chopper_(TCG)" target="_blank" rel="noreferrer">Grass Chopper</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fire'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Hot_Water_(TCG)" target="_blank">Hot Water</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Hot_Water_(TCG)" target="_blank" rel="noreferrer">Hot Water</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Lightning'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Lightning_Bug_(TCG)" target="_blank">Lightning Bug</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Lightning_Bug_(TCG)" target="_blank" rel="noreferrer">Lightning Bug</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Psychic'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Psych_Out_(TCG)" target="_blank">Psych Out</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Psych_Out_(TCG)" target="_blank" rel="noreferrer">Psych Out</a>  
                     </h5>
                 </div>
             </>
@@ -425,14 +425,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Grass'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Devastation_(TCG)" target="_blank">Devastation</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Devastation_(TCG)" target="_blank" rel="noreferrer">Devastation</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Psychic'} />
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Trouble_(TCG)" target="_blank">Trouble</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Trouble_(TCG)" target="_blank" rel="noreferrer">Trouble</a>  
                     </h5>
                 </div>
             </>
@@ -443,25 +443,25 @@ const ExpInfo = (props) => {
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brock_(TCG)" target="_blank">Brock</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brock_(TCG)" target="_blank" rel="noreferrer">Brock</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Misty_(TCG)" target="_blank">Misty</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Misty_(TCG)" target="_blank" rel="noreferrer">Misty</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Lightning'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Lt._Surge_(TCG)" target="_blank">Lt. Surge</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Lt._Surge_(TCG)" target="_blank" rel="noreferrer">Lt. Surge</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Erika_(TCG)" target="_blank">Erika</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Erika_(TCG)" target="_blank" rel="noreferrer">Erika</a>  
                     </h5>
                 </div>
             </>
@@ -472,25 +472,25 @@ const ExpInfo = (props) => {
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Psychic'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Sabrina_(TCG)" target="_blank">Sabrina</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Sabrina_(TCG)" target="_blank" rel="noreferrer">Sabrina</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Grass'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Koga_(TCG)" target="_blank">Koga</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Koga_(TCG)" target="_blank" rel="noreferrer">Koga</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fire'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Blaine_(TCG)" target="_blank">Blaine</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Blaine_(TCG)" target="_blank" rel="noreferrer">Blaine</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Giovanni_(TCG)" target="_blank">Giovanni</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Giovanni_(TCG)" target="_blank" rel="noreferrer">Giovanni</a>  
                     </h5>
                 </div>
             </>
@@ -502,14 +502,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Grass'} />
                     <Icon textSwitch={'Fire'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Hotfoot_(TCG)" target="_blank">Hotfoot</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Hotfoot_(TCG)" target="_blank" rel="noreferrer">Hotfoot</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Lightning'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/col px-2d_Fusion_(TCG)" target="_blank">Cold Fusion</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/col px-2d_Fusion_(TCG)" target="_blank" rel="noreferrer">Cold Fusion</a>  
                     </h5>
                 </div>
             </>
@@ -521,14 +521,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Psychic'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brain_Wave_(TCG)" target="_blank">Brain Wave</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Brain_Wave_(TCG)" target="_blank" rel="noreferrer">Brain Wave</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Grass'} />
                     <Icon textSwitch={'Fighting'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Wallop_(TCG)" target="_blank">Wallop</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Wallop_(TCG)" target="_blank" rel="noreferrer">Wallop</a>  
                     </h5>
                 </div>
             </>
@@ -548,14 +548,14 @@ const ExpInfo = (props) => {
                     <Icon textSwitch={'Fire'} />
                     <Icon textSwitch={'Psychic'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Dark_(TCG)" target="_blank">Dark</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Dark_(TCG)" target="_blank" rel="noreferrer">Dark</a>  
                     </h5>
                 </div>
                 <div class="row mx-0 px-2">
                     <Icon textSwitch={'Fighting'} />
                     <Icon textSwitch={'Water'} />
                     <h5 class="col px-2">
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/Light_(TCG)" target="_blank">Light</a>  
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/Light_(TCG)" target="_blank" rel="noreferrer">Light</a>  
                     </h5>
                 </div>
             </>

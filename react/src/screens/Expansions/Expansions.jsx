@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
-import { createRoot } from 'react-dom/client';
-import { flushSync } from 'react-dom';
-import { Flipper, Flipped } from 'react-flip-toolkit';
-import { Link, useNavigate, useLocation, createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { Flipper } from 'react-flip-toolkit';
+import { useNavigate, useParams } from "react-router-dom";
 import ExpBody from '../../components/ExpBody/ExpBody'
 import ExpSideNav from '../../components/ExpSideNav/ExpSideNav'
 import "./expansions.scss"

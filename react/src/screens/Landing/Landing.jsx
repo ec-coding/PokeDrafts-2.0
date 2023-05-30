@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Link, useNavigate, useLocation, createBrowserRouter, RouterProvider, useParams, useRouteMatch } from "react-router-dom";
-import { Flipper, Flipped } from 'react-flip-toolkit';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Flipped } from 'react-flip-toolkit';
 import FlipCardBanner from "../../components/FlipCardBanner/FlipCardBanner";
-import Expansions from '../Expansions/Expansions';
-import ExpCarousel from '../../components/ExpCarousel/ExpCarousel'
+// import Expansions from '../Expansions/Expansions';
+// import ExpCarousel from '../../components/ExpCarousel/ExpCarousel'
 import './landing.scss';
 import '../../index.scss'
 import Navbar from '../../components/Navbar/Navbar'

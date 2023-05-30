@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import SearchFilter from '../../components/SearchFilter/SearchFilter'
 import SearchResults from '../../components/SearchResults/SearchResults'
@@ -14,7 +13,7 @@ import DeckContext from '../../contexts/DeckContext';
 import './home.scss'
 import '../../style/modal.css';
 
-const Home = ({ }) => {
+const Home = () => {
     const navigate = useNavigate();
 
     const logout = () => {
@@ -57,11 +56,12 @@ const Home = ({ }) => {
             })
     }, []);
 
-    function onSearch(totalCount, pageCount, isLoading) {
+    function onSearch(totalCount, pageCount) {
         setShowResults(true)
         setTotalCount(totalCount)
         setPageCount(pageCount)
-        setIsLoading(isLoading)
+        setIsLoading(false)
+
         // Sharing State Between Components
     }
 

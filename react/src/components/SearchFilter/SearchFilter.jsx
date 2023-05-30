@@ -106,12 +106,11 @@ export default function SearchFilter({ pageSwitch, onSearch, currentPage }) {
             .then(response => {
                 console.log(response)
                 console.log(isLoading)
-                if (response.count != 0) {
+                if (response.count !== 0) {
                     const totalItems = response.totalCount
                     const pageCount = Math.ceil(totalItems / itemsPerPage);
                     changeCards(response.data)
-                    setIsLoading(false)
-                    onSearch(response.totalCount, pageCount, isLoading)
+                    onSearch(response.totalCount, pageCount)
                 } else {
                     alert('No cards found.')
                 }
