@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import UserContext from '../../contexts/UserContext';
 import DeckContext from '../../contexts/DeckContext';
 import Icon from '../Icon/Icon'
 import CardAttributes from '../CardAttributes/CardAttributes'
 import './card.css';
 
-export default function Card({ card, onDeck }) {
+export default function Card({ card, onDeck, isLoading }) {
+  const [decks, changeDecks] = useContext(DeckContext);
+
+  const [imageLoaded, setImageLoaded] = useState(true);
+  const user = useContext(UserContext);
+
+  console.log(isLoading)
 
   const targetModal = `card-modal-${card.id}-${onDeck}`
   const targetModalID = `#card-modal-${card.id}-${onDeck}`
@@ -14,8 +21,6 @@ export default function Card({ card, onDeck }) {
   const addCard = `add-card-${card.id}`
   const cardName = `${card.name}`
 
-  const user = useContext(UserContext);
-  const [decks, changeDecks] = useContext(DeckContext)
   const cardCopyCount = decks.filter(element => element.id === card.id).length
 
   function addCardToDeck() {
@@ -163,7 +168,16 @@ export default function Card({ card, onDeck }) {
 
   return (
     <>
-      <img src={card.images.small} type="button" class="slide-img p-0 w-10 col-2" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..." />
+      {isLoading ? (
+        <img src="https://i.gifer.com/origin/28/2860d2d8c3a1e402e0fc8913cd92cd7a_w200.gif" alt="Loading..." className="loading-spinner" />
+      ) : (
+        <img src={card.images.small} type="button" data-bs-toggle="modal" data-bs-target={targetModalID} alt="..."
+        key={card.id}
+        className={`slide-img p-0 w-10 col-2 ${isLoading ? 'hidden' : ''}`}
+        onLoad={(!isLoading)}
+        />
+      )}
+
 
       <div class="modal fade" id={targetModal} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">

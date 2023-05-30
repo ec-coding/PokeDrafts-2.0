@@ -15,7 +15,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
         <nav class="vt-navbar col-lg-4 col-sm-12 mx-0 px-0">
             <ol className="gen-one-set-one landing-sets row d-flex justify-content-center m-0 px-2 bs-lift">
                 {
-                    expansion != 'base' &&
+                    expansion !== 'base' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <Link to="/expansions/base" >
@@ -30,7 +30,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
                     </li>
                 }
                 {
-                    expansion != 'jungle' &&
+                    expansion !== 'jungle' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <Link to="/expansions/jungle" >
@@ -45,7 +45,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
                     </li>
                 }
                 {
-                    expansion != 'fossil' &&
+                    expansion !== 'fossil' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -62,7 +62,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'base-2' &&
+                    expansion !== 'base-2' &&
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
                             <Link to="/expansions/base-2" >
@@ -77,7 +77,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
                     </li>
                 }
                 {
-                    expansion != 'team-rocket' &&
+                    expansion !== 'team-rocket' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -94,7 +94,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'gym-heroes' &&
+                    expansion !== 'gym-heroes' &&
 
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
@@ -112,7 +112,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'gym-challenge' &&
+                    expansion !== 'gym-challenge' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -129,7 +129,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'neo-genesis' &&
+                    expansion !== 'neo-genesis' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -146,7 +146,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'neo-discovery' &&
+                    expansion !== 'neo-discovery' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -163,7 +163,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'neo-revelation' &&
+                    expansion !== 'neo-revelation' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">
@@ -180,7 +180,7 @@ const ExpansionSideNav = ({ expansion, changeNavSlide }) => {
 
                 }
                 {
-                    expansion != 'neo-destiny' &&
+                    expansion !== 'neo-destiny' &&
 
                     <li class="set-booster-pack row col-lg-6 col-sm-12 md-6 mx-0">
                         <div class="col">

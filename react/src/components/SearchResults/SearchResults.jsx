@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useContext } from 'react';
+// import { motion, AnimatePresence } from "framer-motion";
 import ReactPaginate from 'react-paginate';
 import CardContext from '../../contexts/CardContext';
-import PageCountContext from '../../contexts/PageCountContext';
+// import PageCountContext from '../../contexts/PageCountContext';
 import Card from '../Card/Card'
 import '../../style/dropdown.css';
 import './searchResults.css';
 
-export default function SearchResults({ pageCount, pageSwitch, currentPage, totalCount }) {
+export default function SearchResults({ pageCount, pageSwitch, currentPage, totalCount, isLoading }) {
 
     const [cards, changeCards] = useContext(CardContext)
     const [nameSort, setNameSort] = useState(true)
@@ -23,7 +23,6 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
     const divs = divsArray.map((item, index) => (
         <div key={index}></div>
     ));
-
 
     const handlePrevPage = () => {
         if (currentPage > 1) {
@@ -147,7 +146,7 @@ export default function SearchResults({ pageCount, pageSwitch, currentPage, tota
                     <div class="searchResultsContainer carousel-inner active pt-3 d-flex justify-content-center row">
 
                         {cards && cards.map((card) => (
-                            <Card card={card} onDeck={false} />
+                            <Card card={card} onDeck={false} isLoading={false} />
                         ))}
 
                     </div>
