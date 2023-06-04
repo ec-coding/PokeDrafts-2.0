@@ -3,7 +3,7 @@ import CardContext from '../../contexts/CardContext';
 import PageCountContext from '../../contexts/PageCountContext';
 import Icon from '../Icon/Icon';
 import { BiSearchAlt } from 'react-icons/bi'
-import './searchFilter.css'
+import './searchFilter.scss'
 
 // LOOK UP LOADING STRATEGIES ie lazy loading of images
 // using logic to make first load good
