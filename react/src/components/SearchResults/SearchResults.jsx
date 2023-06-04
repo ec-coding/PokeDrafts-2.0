@@ -5,7 +5,7 @@ import CardContext from '../../contexts/CardContext';
 // import PageCountContext from '../../contexts/PageCountContext';
 import Card from '../Card/Card'
 import '../../style/dropdown.css';
-import './searchResults.css';
+import './searchResults.scss';
 
 export default function SearchResults({ pageCount, pageSwitch, currentPage, totalCount, isLoading }) {
 
