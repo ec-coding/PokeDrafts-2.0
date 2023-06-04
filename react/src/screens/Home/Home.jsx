@@ -10,8 +10,7 @@ import Deck from '../../components/UserDeck/Deck'
 import UserContext from '../../contexts/UserContext';
 import CardContext from '../../contexts/CardContext';
 import DeckContext from '../../contexts/DeckContext';
-import './home.scss'
-import '../../style/modal.css';
+import './home.scss';
 
 const Home = () => {
     const navigate = useNavigate();
