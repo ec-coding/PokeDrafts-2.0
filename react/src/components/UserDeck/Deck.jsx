@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import DeckContext from '../../contexts/DeckContext';
 import Card from '../Card/Card'
-import './deck.css'
+import './deck.scss'
 
 export default function UserDeck() {
     const typePokemon = []

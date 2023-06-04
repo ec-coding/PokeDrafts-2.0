@@ -4,7 +4,7 @@ import UserContext from '../../contexts/UserContext';
 import DeckContext from '../../contexts/DeckContext';
 import Icon from '../Icon/Icon'
 import CardAttributes from '../CardAttributes/CardAttributes'
-import './card.css';
+import './card.scss';
 
 export default function Card({ card, onDeck, isLoading }) {
   const [decks, changeDecks] = useContext(DeckContext);
