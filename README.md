@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/ec-coding/PokeDrafts/blob/main/public/css/pokedrafts.png" width="30%">
+<img src="https://github.com/ec-coding/PokeDrafts/blob/main/public/css/pokedrafts.png" width="50%">
 </p>
 <h2 align="center">A customized deck builder app for the Pokémon Trading Card Game.</h2>
 <p align="center">
