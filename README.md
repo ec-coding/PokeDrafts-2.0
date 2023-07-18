@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">A customized deck builder app for the Pokémon Trading Card Game.</h2>
 <p align="center">
-<img src="https://github.com/ec-coding/PokeDrafts-2.0/blob/main/images/pokedrafts-preview1.gif" width="75%">
+<img src="https://github.com/ec-coding/PokeDrafts-2.0/blob/main/react/public/images/card2.png" width="75%">
 </p>
 <p align="center">
 PokéDrafts is a full-stack web app that allows you to build your very own deck from various sets of the Pokémon Trading Card Game. 
